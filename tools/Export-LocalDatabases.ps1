@@ -29,7 +29,9 @@ if (-not $pgRunning) {
 }
 
 $openmuDump = Join-Path $BackupDir "openmu-local.dump"
-cmd /c "docker exec $PgContainer pg_dump -U postgres -Fc openmu > `"$openmuDump`""
+docker exec $PgContainer pg_dump -U postgres -Fc openmu -f /tmp/openmu-local.dump
+docker cp "${PgContainer}:/tmp/openmu-local.dump" $openmuDump
+docker exec $PgContainer rm -f /tmp/openmu-local.dump
 $sizeMb = [math]::Round((Get-Item $openmuDump).Length / 1MB, 2)
 Write-Host "    OK: $openmuDump ($sizeMb MB)" -ForegroundColor Green
 

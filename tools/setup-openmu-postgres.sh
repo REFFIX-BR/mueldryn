@@ -68,8 +68,15 @@ else
 fi
 
 log "3/4 — Restaurando dump (contas, chars, itens, joias)..."
-docker exec -i -e PGPASSWORD="${POSTGRES_SUPER_PW}" "$CID" \
-  pg_restore -U postgres -d "$DB_NAME" --clean --if-exists --no-owner --no-acl < "$DUMP"
+if head -c 5 "$DUMP" | grep -q '^PGDMP'; then
+  docker exec -i -e PGPASSWORD="${POSTGRES_SUPER_PW}" "$CID" \
+    pg_restore -U postgres -d "$DB_NAME" --clean --if-exists --no-owner --no-acl < "$DUMP"
+elif [[ "$DUMP" == *.sql ]]; then
+  docker exec -i -e PGPASSWORD="${POSTGRES_SUPER_PW}" "$CID" \
+    psql -U postgres -d "$DB_NAME" < "$DUMP"
+else
+  fail "Dump invalido (corrompido no upload Windows?). Regenere com Export-LocalDatabases.ps1 e reenvie."
+fi
 
 log "4/4 — Permissoes e verificacao..."
 if [[ "$SKIP_USER" != "1" ]]; then
