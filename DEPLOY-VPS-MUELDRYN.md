@@ -93,7 +93,7 @@ Arquivos em `deploy/swarm-vps/`:
 ```bash
 mkdir -p /opt/mueldryn/stack
 cd ~/mueldryn/deploy/swarm-vps
-cp .env.example .env
+cp env.example .env
 nano .env   # senha postgres, domínios Traefik
 ```
 
