@@ -38,8 +38,8 @@ class MakeLauncherBmd
     static void Main(string[] args)
     {
         // Defaults MuEldryn (VPS)
-        string updateUrl = "http://200.11.121.89/update/";
-        string serverIp = "200.11.121.89";
+        string updateUrl = "http://170.80.224.11/update/";
+        string serverIp = "170.80.224.11";
         string gsPort = "55901";
         string csPort = "44406";
         string startFile = "MuEldrynLaunch.exe";

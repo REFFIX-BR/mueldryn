@@ -1296,7 +1296,7 @@ namespace Launcher
 		private bool IsMinimized;
 
 		// Token: 0x04000022 RID: 34
-		private string SiteAdress = "http://200.11.121.89/update/";
+		private string SiteAdress = "http://170.80.224.11/update/";
 
 		// Token: 0x04000023 RID: 35
 		private int iUpdFileCnt;

@@ -7,7 +7,7 @@
 5) GameServer continua nas portas 55901 etc.
 
 Client deste PC ja esta sem PS.dll e apontando para:
-  IP: 200.11.121.89
+  IP: 170.80.224.11
   Porta: 44406  (ConnectServer, sem passar pelo PS)
 
 Depois de parar o PSGuard na VPS, abra o Main.exe neste PC.

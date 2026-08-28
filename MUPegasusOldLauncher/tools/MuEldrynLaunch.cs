@@ -44,7 +44,7 @@ class MuEldrynLaunch
             }
 
             string[] lines = Regex.Split(Decrypt(File.ReadAllText(bmd), EncryptKey), "\r\n");
-            string serverIp = lines.Length > 1 ? lines[1].Trim() : "200.11.121.89";
+            string serverIp = lines.Length > 1 ? lines[1].Trim() : "170.80.224.11";
             string csPort = lines.Length > 3 ? lines[3].Trim() : "44406";
             string mainExe = lines.Length > 4 ? lines[4].Trim() : "Main.exe";
             if (string.IsNullOrEmpty(mainExe)) mainExe = "Main.exe";

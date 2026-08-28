@@ -5,8 +5,8 @@
 #   Main.exe connect /uIP /pPORTA
 
 ## Configuração atual (VPS MuEldryn)
-- Update URL: `http://200.11.121.89/update/`
-- Connect IP: `200.11.121.89`
+- Update URL: `http://170.80.224.11/update/`
+- Connect IP: `170.80.224.11`
 - Connect Port: `44406`
 - GameServer Port (status): `55901`
 - Client exe: `Main.exe`
@@ -37,14 +37,14 @@
    ```powershell
    .\BuildMiniUpdate.ps1 -ClientRoot "C:\caminho\do\cliente" -IncludeAllData
    ```
-3. Envie a pasta `UpdateServer\MiniUpdate\` para `http://200.11.121.89/update/MiniUpdate/`.
+3. Envie a pasta `UpdateServer\MiniUpdate\` para `http://170.80.224.11/update/MiniUpdate/`.
 4. O jogador abre o Launcher → Start → baixa só o que mudou (CRC) → abre o jogo.
 
 ## Regenerar Launcher.bmd
 ```powershell
 cd MUPegasusOldLauncher\tools
 .\csc-tools.ps1   # compila utilitários
-.\MakeLauncherBmd.exe --ip 200.11.121.89 --cs 44406 --gs 55901 --url http://200.11.121.89/update/
+.\MakeLauncherBmd.exe --ip 170.80.224.11 --cs 44406 --gs 55901 --url http://170.80.224.11/update/
 ```
 
 ## Compilar o Launcher

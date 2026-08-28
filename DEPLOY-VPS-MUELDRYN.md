@@ -1,6 +1,6 @@
 # Deploy MuEldryn na VPS (Swarm + Postgres + Traefik)
 
-Guia para subir **OpenMU + update do launcher** na VPS `200.11.121.89`, mantendo o **site Morpheus local** por enquanto, **sem perder dados** do ambiente de desenvolvimento.
+Guia para subir **OpenMU + update do launcher** na VPS `170.80.224.11`, mantendo o **site Morpheus local** por enquanto, **sem perder dados** do ambiente de desenvolvimento.
 
 ---
 
@@ -32,14 +32,14 @@ cd tools
 ### 1. Enviar o dump
 
 ```powershell
-scp backups/openmu-local.dump root@200.11.121.89:/root/
-scp tools/import-openmu-vps.sh root@200.11.121.89:/root/
+scp backups/openmu-local.dump root@170.80.224.11:/root/
+scp tools/import-openmu-vps.sh root@170.80.224.11:/root/
 ```
 
 ### 2. Restaurar na VPS
 
 ```bash
-ssh root@200.11.121.89
+ssh root@170.80.224.11
 chmod +x import-openmu-vps.sh
 # Ajuste senha se necessário: export PGPASSWORD=...
 ./import-openmu-vps.sh openmu-local.dump
@@ -74,7 +74,7 @@ A VPS precisa da imagem **`openmu-rare:local`** (393 MB), não só `munique/open
 
 ```powershell
 docker save openmu-rare:local -o backups/openmu-rare-local.tar
-scp backups/openmu-rare-local.tar root@200.11.121.89:/root/
+scp backups/openmu-rare-local.tar root@170.80.224.11:/root/
 ```
 
 **Na VPS:**
@@ -128,11 +128,11 @@ docker service logs openmu_openmu -f
 ```env
 DB_HOST=host.docker.internal
 DB_ADMIN_PW=<senha postgres vps>
-RESOLVE_IP=200.11.121.89
+RESOLVE_IP=170.80.224.11
 Database__AssumeExternallyProvisioned=true   # já no compose
 ```
 
-`RESOLVE_IP=200.11.121.89` faz o client receber o IP público ao entrar no GS (não loopback).
+`RESOLVE_IP=170.80.224.11` faz o client receber o IP público ao entrar no GS (não loopback).
 
 ---
 
@@ -151,14 +151,14 @@ Estrutura na VPS:
 Publicar do PC:
 
 ```powershell
-scp -r MUPegasusOldLauncher\UpdateServer\MiniUpdate root@200.11.121.89:/opt/mueldryn/www/update/
+scp -r MUPegasusOldLauncher\UpdateServer\MiniUpdate root@170.80.224.11:/opt/mueldryn/www/update/
 ```
 
 No `.env`: `UPDATE_ROOT=/opt/mueldryn/www`
 
-Launcher aponta para: `http://200.11.121.89/update/` (Traefik roteia `/update` → nginx interno).
+Launcher aponta para: `http://170.80.224.11/update/` (Traefik roteia `/update` → nginx interno).
 
-Se usar só IP sem TLS, ajuste labels Traefik para `entrypoints=web` ou regra `Host(\`200.11.121.89\`)`.
+Se usar só IP sem TLS, ajuste labels Traefik para `entrypoints=web` ou regra `Host(\`170.80.224.11\`)`.
 
 ---
 
@@ -169,7 +169,7 @@ Enquanto o site fica no PC, você pode fazer o **Bridge OpenMU** ler o Postgres 
 `MorpheusWeb_SuporteS21(2)/configs/openmu.php`:
 
 ```php
-'dsn' => 'pgsql:host=200.11.121.89;port=5432;dbname=openmu;connect_timeout=5',
+'dsn' => 'pgsql:host=170.80.224.11;port=5432;dbname=openmu;connect_timeout=5',
 ```
 
 Requer Postgres da VPS aceitando conexão do **seu IP** (só para dev; em produção use VPN ou site na mesma rede).

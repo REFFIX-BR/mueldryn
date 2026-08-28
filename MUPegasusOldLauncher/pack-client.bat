@@ -24,5 +24,5 @@ if exist "%MUMAIN%\Main.exe" (
 
 echo.
 echo Pronto: %OUT%
-echo Publique updates em http://200.11.121.89/update/MiniUpdate/
+echo Publique updates em http://170.80.224.11/update/MiniUpdate/
 pause

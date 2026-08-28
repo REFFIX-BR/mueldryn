@@ -12,7 +12,7 @@ if (-not (Test-Path $LauncherExe)) { throw "Launcher.exe not found: $LauncherExe
 function Get-UnicodeBytes([string]$s) { [Text.Encoding]::Unicode.GetBytes($s) }
 
 $replacements = @{
-    "http://update.titanswrathmu.pro/" = "http://200.11.121.89/update/    "
+    "http://update.titanswrathmu.pro/" = "http://170.80.224.11/update/    "
     "https://titanswrathmu.pro/"       = "http://127.0.0.1:8090/    "
 }
 
