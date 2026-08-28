@@ -78,7 +78,12 @@ else
   fail "Dump invalido (corrompido no upload Windows?). Regenere com Export-LocalDatabases.ps1 e reenvie."
 fi
 
-log "4/4 — Permissoes e verificacao..."
+log "4/5 — Roles OpenMU (config/account/guild/friend)..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+docker exec -i -e PGPASSWORD="${POSTGRES_SUPER_PW}" "$CID" \
+  psql -U postgres -d "$DB_NAME" < "${SCRIPT_DIR}/fix-openmu-roles.sql"
+
+log "5/5 — Permissoes e verificacao..."
 if [[ "$SKIP_USER" != "1" ]]; then
   psql -d "$DB_NAME" -c "GRANT ALL ON SCHEMA public TO \"${DB_USER}\";"
   psql -d "$DB_NAME" -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO \"${DB_USER}\";"
