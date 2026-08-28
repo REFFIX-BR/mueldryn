@@ -69,7 +69,7 @@ services:
           - node.role == manager
     labels:
       - traefik.enable=true
-      - traefik.docker.network=proxy
+      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
       - traefik.http.routers.openmu-admin.rule=Host(`${OPENMU_ADMIN_HOST}`)
       - traefik.http.routers.openmu-admin.entrypoints=websecure
       - traefik.http.routers.openmu-admin.tls=true
@@ -89,7 +89,7 @@ services:
           - node.role == manager
     labels:
       - traefik.enable=true
-      - traefik.docker.network=proxy
+      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
       - traefik.http.routers.mueldryn-update.rule=Host(`${UPDATE_HOST}`) && PathPrefix(`/update`)
       - traefik.http.routers.mueldryn-update.entrypoints=websecure
       - traefik.http.routers.mueldryn-update.tls=true
@@ -99,3 +99,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${TRAEFIK_NETWORK:-proxy}
