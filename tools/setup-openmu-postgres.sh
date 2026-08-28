@@ -2,8 +2,8 @@
 # Cria o banco OpenMU no Postgres (stack postgres_postgres) e restaura o dump local.
 #
 # Uso na VPS:
-#   chmod +x tools/setup-openmu-postgres.sh
-#   ./tools/setup-openmu-postgres.sh /root/openmu-local.dump
+#   ./tools/setup-openmu-postgres.sh /root/openmu-local.sql
+#   (preferir .sql — compativel PG15; .dump exige mesma versao pg_restore)
 #
 # Variaveis opcionais:
 #   PGSVC=postgres_postgres   nome do servico/container postgres

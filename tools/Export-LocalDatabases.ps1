@@ -28,12 +28,18 @@ if (-not $pgRunning) {
     throw "Container Postgres '$PgContainer' nao esta rodando. Suba com: docker start database"
 }
 
+$openmuSql = Join-Path $BackupDir "openmu-local.sql"
+docker exec $PgContainer pg_dump -U postgres --no-owner --no-acl --clean --if-exists openmu -f /tmp/openmu-local.sql
+docker cp "${PgContainer}:/tmp/openmu-local.sql" $openmuSql
+docker exec $PgContainer rm -f /tmp/openmu-local.sql
+$sizeMb = [math]::Round((Get-Item $openmuSql).Length / 1MB, 2)
+Write-Host "    OK: $openmuSql ($sizeMb MB) — use este na VPS (compativel PG15+)" -ForegroundColor Green
+
+# Formato custom (.dump) — opcional; pode falhar se versao pg_restore for mais antiga
 $openmuDump = Join-Path $BackupDir "openmu-local.dump"
 docker exec $PgContainer pg_dump -U postgres -Fc openmu -f /tmp/openmu-local.dump
 docker cp "${PgContainer}:/tmp/openmu-local.dump" $openmuDump
 docker exec $PgContainer rm -f /tmp/openmu-local.dump
-$sizeMb = [math]::Round((Get-Item $openmuDump).Length / 1MB, 2)
-Write-Host "    OK: $openmuDump ($sizeMb MB)" -ForegroundColor Green
 
 Write-Host "==> Morpheus SQL Server ($SqlDatabase)..." -ForegroundColor Cyan
 $sqlBackupDir = sqlcmd -S $SqlInstance -U $SqlUser -P $SqlPassword -Q "SET NOCOUNT ON; SELECT CAST(SERVERPROPERTY('InstanceDefaultBackupPath') AS nvarchar(512))" -W -h-1
