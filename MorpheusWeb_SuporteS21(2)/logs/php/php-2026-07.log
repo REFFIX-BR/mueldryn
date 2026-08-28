@@ -1,0 +1,7 @@
+[24-Jul-2026 15:47:47 America/Sao_Paulo] Database connection error [default]: SQLSTATE[08001]: [Microsoft][SQL Server Native Client 11.0]TCP Provider: Timeout error [258]. 
+[24-Jul-2026 15:48:02 America/Sao_Paulo] Database connection error [default]: SQLSTATE[08001]: [Microsoft][SQL Server Native Client 11.0]TCP Provider: Timeout error [258]. 
+[24-Jul-2026 15:48:24 America/Sao_Paulo] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 105
+[24-Jul-2026 15:51:18 America/Sao_Paulo] PHP Fatal error:  Class 'upload' not found in C:\xampp_5.6\htdocs\src\basics.php on line 534
+[24-Jul-2026 15:55:53 America/Sao_Paulo] PHP Fatal error:  Class 'upload' not found in C:\xampp_5.6\htdocs\src\basics.php on line 534
+[24-Jul-2026 15:57:03 America/Sao_Paulo] PHP Fatal error:  Class 'upload' not found in C:\xampp_5.6\htdocs\src\basics.php on line 534
+[24-Jul-2026 15:57:57 America/Sao_Paulo] PHP Fatal error:  Class 'upload' not found in C:\xampp_5.6\htdocs\src\basics.php on line 534

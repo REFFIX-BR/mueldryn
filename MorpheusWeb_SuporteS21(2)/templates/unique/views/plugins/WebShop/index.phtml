@@ -1,0 +1,40 @@
+<?php View::add('page.title', __('WebShops')) ?>
+<?php $shopHubActive = 'shops' ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('WebShop') ?></h1>
+            <p class="md-shop-header__lead">Compre itens usando <strong><?= config('coins.wcoinc.name', 'WCoinC') ?></strong>. Adquira WCoin na <a data-ajax href="<?= url_to('/packages') ?>">loja de créditos</a>.</p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= config('coins.wcoinc.name', 'WCoinC') ?></small>
+                <strong><?= util('Number')->format(user()->getCoin('wcoinc')) ?></strong>
+                <a data-ajax class="md-shop-balance__link" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive]) ?>
+
+    <?php if (empty($shops)): ?>
+        <div class="md-shop-alert">
+            <i class="fa fa-info-circle"></i>
+            Nenhuma loja cadastrada. Configure em Admin → WebShop.
+        </div>
+    <?php else: ?>
+        <div class="md-shop-grid">
+            <?php foreach ($shops as $shop): ?>
+                <?php $coinName = config('coins.' . $shop['coin'] . '.name', $shop['coin']) ?>
+                <a data-ajax class="md-shop-card" href="<?= url_to('/shop/' . $shop['slug']) ?>">
+                    <div class="md-shop-card__icon"><i class="fa fa-store"></i></div>
+                    <h3 class="md-shop-card__title"><?= $shop['name'] ?></h3>
+                    <p class="md-shop-card__desc"><?= $shop['description'] ?></p>
+                    <span class="md-shop-card__coin"><i class="fa fa-coins"></i> <?= $coinName ?></span>
+                    <span class="md-shop-card__cta"><?= __('Enter') ?> <i class="fa fa-arrow-right"></i></span>
+                </a>
+            <?php endforeach ?>
+        </div>
+    <?php endif ?>
+</div>

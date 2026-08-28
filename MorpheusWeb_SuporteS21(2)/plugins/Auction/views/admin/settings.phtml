@@ -1,0 +1,42 @@
+<h2>Configurações do Sistema de Leilão</h2>
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Permitir Leilões de Players</label>
+        <div class="col-sm-9">
+            <select name="player_auctions" class="form-control">
+                <option value="1" <?= config('auction.player_auctions') ? 'selected' : '' ?>>Sim</option>
+                <option value="0" <?= !config('auction.player_auctions') ? 'selected' : '' ?>>Não</option>
+            </select>
+            <p class="help-block">Quando ativo, os players podem anunciar itens do baú em leilão.</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Máximo de Leilões por Player</label>
+        <div class="col-sm-9">
+            <input type="number" name="max_player_auctions" class="form-control" value="<?= config('auction.max_player_auctions', 3) ?>" min="1" max="20">
+            <p class="help-block">Número máximo de leilões ativos que cada player pode ter.</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Duração Mínima (dias)</label>
+        <div class="col-sm-9">
+            <input type="number" name="min_duration" class="form-control" value="<?= config('auction.min_duration', 1) ?>" min="1" max="30">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Duração Máxima (dias)</label>
+        <div class="col-sm-9">
+            <input type="number" name="max_duration" class="form-control" value="<?= config('auction.max_duration', 30) ?>" min="1" max="90">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Salvar Configurações</button>
+        </div>
+    </div>
+</form>

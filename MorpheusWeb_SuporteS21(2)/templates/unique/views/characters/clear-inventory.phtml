@@ -1,0 +1,13 @@
+<?= partial('rates') ?>
+
+<p style="margin-bottom:2px;"><span class="required">*</span> <strong>CUIDADO!</strong> este comando irá deletar todos os itens de seu personagem!</p>
+
+<form style="margin-top:10px" data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/clear-inventory') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <input type="hidden" name="pid" value="" />
+
+    <div class="submit">
+        <input type="submit" class="btn btn-info" value="<?= __('Clear') ?>">
+    </div>
+</form>

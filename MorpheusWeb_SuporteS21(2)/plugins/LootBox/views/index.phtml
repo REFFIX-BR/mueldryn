@@ -1,0 +1,32 @@
+<h1 class="title"><?= __('Loot boxes') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Loot boxes') ?></li>
+</ul>
+
+<ul class="credit-shop">
+    <?php foreach ($boxes as $box): ?>
+        <li>
+            <p class="title">
+                <?= $box['name'] ?>
+                <?php if (isset($availables[$box['id']])): ?>
+                    <span class="lootboxes-available"><?= $availables[$box['id']] ?></span>
+                <?php endif ?>
+            </p>
+            <div class="desc">
+                <?php if (empty($box['image'])): ?>
+                    <?= nl2br($box['description']) ?>
+                <?php else: ?>
+                    <div class="align-center"><img src="<?= upload_to('/lootboxes/' . $box['image']) ?>" height="100" /></div>
+                <?php endif ?>
+            </div>
+
+            <p class="price"><?= $box['amount'] ?> <?= util('Coin')->name($box['coin']) ?></p>
+
+            <div class="buy">
+                <a href="<?= url_to('/lootboxes/' . $box['id']) ?>" class="btn" data-ajax><?= __('View') ?></a>
+            </div>
+        </li>
+    <?php endforeach ?>
+</ul>

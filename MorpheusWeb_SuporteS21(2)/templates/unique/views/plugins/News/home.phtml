@@ -1,0 +1,66 @@
+<?php
+    function newsTypeBadge($type) {
+        $types = config('news.types', []);
+        if (isset($types[$type])) {
+            return '<span class="badge badge-news" style="background:' . htmlspecialchars($types[$type]['color']) . '">' . htmlspecialchars($types[$type]['name']) . '</span>';
+        }
+        return '';
+    }
+?>
+<div class="home-news">
+    <div class="home-news__header">
+        <h2 class="title"><?= __('Latest news') ?></h2>
+        <a data-ajax class="btn btn-outline-success btn-sm" href="<?= url_to('/news') ?>"><?= __('See all') ?></a>
+    </div>
+
+    <?php if (empty($news)): ?>
+        <div class="home-news__empty">
+            <p><?= __('No news found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="posts">
+            <?php foreach ($news as $n): ?>
+                <article class="post">
+                    <div class="cover">
+                        <?php if (!empty($n['image_cover'])): ?>
+                            <img src="<?= upload_to('/news/' . $n['image_cover']) ?>" alt="<?= htmlspecialchars($n['title']) ?>" />
+                        <?php else: ?>
+                            <img src="<?= asset_to('/images/logo-header.png') ?>" alt="<?= htmlspecialchars($n['title']) ?>" />
+                        <?php endif ?>
+                    </div>
+
+                    <div class="preview">
+                        <div class="title">
+                            <?= newsTypeBadge($n['type']) ?>
+                            <a<?= empty($n['link']) ? ' data-ajax' : ' target="_blank"' ?> href="<?= url_to('/news/' . $n['slug']) ?>"><?= $n['title'] ?></a>
+                        </div>
+
+                        <?php if (config('news.show_preview', true)): ?>
+                            <div class="body"><?= util('Text')->truncate(strip_tags(nl2br($n['body']), '<br>'), 28) ?></div>
+                        <?php endif ?>
+
+                        <div class="info">
+                            <div>
+                                <i class="fa fa-user"></i>
+                                <?= __('Posted by') ?>
+                                <span><?= $n['username'] ?></span>
+                            </div>
+
+                            <div>
+                                <i class="fa fa-calendar"></i>
+                                <?= __('Posted in') ?>
+                                <span><?= util('Date')->date($n['create_date']) ?></span>
+                            </div>
+
+                            <div>
+                                <i class="fa fa-eye"></i>
+                                <?= __('Views') ?>
+                                <span><?= (int) $n['views'] ?></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            <?php endforeach ?>
+        </div>
+    <?php endif ?>
+</div>

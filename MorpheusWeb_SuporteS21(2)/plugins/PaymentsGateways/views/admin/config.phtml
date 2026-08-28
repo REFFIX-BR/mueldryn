@@ -1,0 +1,166 @@
+<section class="content-header">
+    <h1><?= __('Gateways settings') ?></h1>
+</section>
+
+<section class="content">
+    <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/gateways/config') ?>" method="post">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#gateway-pagseguro" data-toggle="tab">PagSeguro</a></li>
+                <li><a href="#gateway-paypal" data-toggle="tab">Paypal</a></li>
+                <li><a href="#gateway-boletofacil" data-toggle="tab">Boleto fácil</a></li>
+                <li><a href="#gateway-picpay" data-toggle="tab">Picpay</a></li>
+                <li><a href="#gateway-mercadopago" data-toggle="tab">MercadoPago</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="gateway-pagseguro">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-pagseguro-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-pagseguro-active"<?= config('gateways.pagseguro.active') ? 'checked="checked"' : '' ?> value="1" name="pagseguro_active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-pagseguro-email"><?= __('E-mail') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.pagseguro.email') ?>" name="pagseguro_email" id="gateway-pagseguro-email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-pagseguro-token"><?= __('Token') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.pagseguro.token') ?>" name="pagseguro_token" id="gateway-pagseguro-token" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-pagseguro-sandbox"><?= __('Sandbox') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-pagseguro-sandbox"<?= config('gateways.pagseguro.sandbox') ? 'checked="checked"' : '' ?> value="1" name="pagseguro_sandbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="gateway-paypal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-paypal-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-paypal-active"<?= config('gateways.paypal.active') ? 'checked="checked"' : '' ?> value="1" name="paypal_active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-paypal-client-id"><?= __('Client ID') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.paypal.client_id') ?>" name="paypal_client_id" id="gateway-paypal-client-id" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-paypal-client-secret"><?= __('Client secret') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.paypal.client_secret') ?>" name="paypal_client_secret" id="gateway-paypal-client-secret" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-paypal-sandbox"><?= __('Sandbox') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-paypal-sandbox"<?= config('gateways.paypal.sandbox') ? 'checked="checked"' : '' ?> value="1" name="paypal_sandbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="gateway-boletofacil">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-boletofacil-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-boletofacil-active"<?= config('gateways.boletofacil.active') ? 'checked="checked"' : '' ?> value="1" name="boletofacil_active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-boletofacil-token"><?= __('Token') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.boletofacil.token') ?>" name="boletofacil_token" id="gateway-boletofacil-token" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-boletofacil-sandbox"><?= __('Sandbox') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-boletofacil-sandbox"<?= config('gateways.boletofacil.sandbox') ? 'checked="checked"' : '' ?> value="1" name="boletofacil_sandbox" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="gateway-picpay">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-picpay-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-picpay-active"<?= config('gateways.picpay.active') ? 'checked="checked"' : '' ?> value="1" name="picpay_active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-picpay-token"><?= __('Token') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.picpay.token') ?>" name="picpay_token" id="gateway-picpay-token" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-picpay-seller-token"><?= __('Seller Token') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.picpay.seller_token') ?>" name="picpay_seller_token" id="gateway-picpay-seller-token" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="gateway-mercadopago">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-mercadopago-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="gateway-mercadopago-active"<?= config('gateways.mercadopago.active') ? 'checked="checked"' : '' ?> value="1" name="mercadopago_active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-mercadopago-public-key"><?= __('Public Key') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.mercadopago.public_key') ?>" name="mercadopago_public_key" id="gateway-mercadopago-public-key" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gateway-mercadopago-access-token"><?= __('Access Token') ?></label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" value="<?= config('gateways.mercadopago.access_token') ?>" name="mercadopago_access_token" id="gateway-mercadopago-access-token" />
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-left:5px;" class="col-sm-offset-2">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

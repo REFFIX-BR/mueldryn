@@ -1,0 +1,47 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Loot boxes') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Loot boxes') ?></li>
+        </ol>
+    </nav>
+
+
+    <div class="form-row">
+        <?php foreach ($boxes as $box): ?>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card" style="margin-bottom:10px">
+                    <div class="card-header">
+                        <?= $box['name'] ?>
+                        <?php if (isset($availables[$box['id']])): ?>
+                            <span class="lootboxes-available"><?= $availables[$box['id']] ?></span>
+                        <?php endif ?>
+                    </div>
+                    <div class="desc text-center">
+                        <?php if (empty($box['image'])): ?>
+                            <?= nl2br($box['description']) ?>
+                        <?php else: ?>
+                            <div class="align-center"><img src="<?= upload_to('/lootboxes/' . $box['image']) ?>" height="100" /></div>
+                        <?php endif ?>
+                    </div>
+                    <div class="card-footer">
+                        <a href="<?= url_to('/lootboxes/' . $box['id']) ?>" class="btn btn-info" data-ajax><?= __('View') ?></a>
+                        <span class="badge badge-warning price"><?= $box['amount'] ?> <?= util('Coin')->name($box['coin']) ?></span>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

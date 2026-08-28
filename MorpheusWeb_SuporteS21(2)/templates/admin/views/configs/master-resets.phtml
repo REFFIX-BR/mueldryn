@@ -1,0 +1,81 @@
+<section class="content-header">
+    <h1><?= __('Settings for master resets') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/master-resets') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="mr-only-full"><?= __('Only Character Full') ?></span></label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="mr-only-full"<?= config('mr.only_full') ? 'checked="checked"' : '' ?> value="1" name="only_full" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="mr-clear-skilsl"><?= __('Clear skills') ?></span></label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="mr-clear-skills"<?= config('mr.clear_skills') ? 'checked="checked"' : '' ?> value="1" name="clear_skills" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="mr-reset-class"><?= __('Reset class') ?></span></label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="mr-reset-class"<?= config('mr.reset_class') ? 'checked="checked"' : '' ?> value="1" name="reset_class" />
+                    </div>
+                </div>
+
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <?php $i = 0; foreach (config('vip.types', []) as $code => $name): ?>
+                            <li class="<?= $i++ == 0 ? 'active' : '' ?>"><a href="#vip-<?= $code ?>" data-toggle="tab"><?= $name ?></a></li>
+                        <?php endforeach ?>
+                    </ul>
+                    <div class="tab-content">
+                        <?php $i = 0; foreach (config('vip.types', []) as $code => $name): ?>
+                            <div class="tab-pane<?= $i++ == 0 ? ' active' : '' ?>" id="vip-<?= $code ?>">
+                                <fieldset>
+                                    <legend><?= __('Requirements') ?></legend>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="mr-<?= $code ?>-resets"><?= __('Resets') ?></span></label>
+
+                                        <div class="col-sm-3">
+                                            <input class="form-control" type="text" id="mr-<?= $code ?>-resets" value="<?= $requirements[$code]['resets'] ?>" name="resets[<?= $code ?>]" />
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <label for="mr-<?= $code ?>-clear-resets" style="margin-top: 7px;">
+                                                <input class="form-control" type="checkbox" id="mr-<?= $code ?>-clear-resets"<?= isset($requirements[$code]['clear_resets']) && $requirements[$code]['clear_resets'] ? 'checked="checked"' : '' ?> value="1" name="clear_resets[<?= $code ?>]" />
+                                                <?= __('Clear resets') ?>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="mr-<?= $code ?>-level"><?= __('Level') ?></span></label>
+
+                                        <div class="col-sm-3">
+                                            <input class="form-control" type="text" id="mr-<?= $code ?>-level" value="<?= $requirements[$code]['level'] ?>" name="level[<?= $code ?>]" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

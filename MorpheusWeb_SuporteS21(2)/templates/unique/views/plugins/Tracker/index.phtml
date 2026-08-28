@@ -1,0 +1,63 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Tracker') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <?php if ($category): ?>
+                <li class="breadcrumb-item"><a href="<?= url_to('/trackers') ?>" data-ajax><?= __('Trackers') ?></a></li>
+                <li class="breadcrumb-item active"><?= $category['name'] ?></li>
+            <?php else: ?>
+                <li class="breadcrumb-item active"><?= __('Trackers') ?></li>
+            <?php endif ?>
+        </ol>
+    </nav>
+
+    <div class="text-center">
+        <?php foreach ($categories as $cat): ?>
+            <a data-ajax href="<?= url_to('/trackers/' . $cat['id']) ?>" class="mb-2 btn btn-outline-info<?= $cat['id'] === $category['id'] ? ' active' : '' ?>"><?= $cat['name'] ?></a>
+        <?php endforeach ?>
+    </div>
+
+    <?php foreach ($versions as $version): ?>
+        <h2 class="title"><?= __('Version') ?> <?= $version['version'] ?></h2>
+        <ul class="trackers">
+            <?php foreach ($version['trackers'] as $tracker): ?>
+                <li>
+                    <span>
+                        <a data-ajax href="<?= url_to('/trackers/view/' . $tracker['id']) ?>" data-toggle-visibility="tracker-<?= $tracker['id'] ?>">
+                            #<?= $tracker['id'] ?> - <?= $tracker['title'] ?> <?= __('in') ?> <?= util('Date')->dateTime($tracker['create_date']) ?>
+                        </a>
+
+                        <?php if ($tracker['closed'] || !logged_in()): ?>
+                            <i class="fa fa-thumbs-up vote-up"></i> (<?= $tracker['up'] ?>)
+                            <i class="fa fa-thumbs-down vote-down"></i> (<?= $tracker['down'] ?>)
+                        <?php else: ?>
+                            <a data-ajax-action class="vote-up" href="<?= url_to('/trackers/up/' . $tracker['id']) ?>">
+                                <i class="fa fa-thumbs-up"></i> (<?= $tracker['up'] ?>)
+                            </a>
+                            <a data-ajax-action class="vote-down" href="<?= url_to('/trackers/down/' . $tracker['id']) ?>">
+                                <i class="fa fa-thumbs-down"></i> (<?= $tracker['down'] ?>)
+                            </a>
+                        <?php endif ?>
+
+                        <?php if (!empty($tracker['fixed_in'])): ?>
+                            - <strong><?= __('Fixed in version') ?> <?= $tracker['fixed_in'] ?></strong>
+                        <?php endif ?>
+                    </span>
+                    <span class="badge badge-<?= $tracker['status_color'] ?>"><?= $tracker['status_name'] ?></span>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    <?php endforeach ?>
+</div>

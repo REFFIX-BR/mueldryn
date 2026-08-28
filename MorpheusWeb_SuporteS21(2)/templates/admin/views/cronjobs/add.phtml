@@ -1,0 +1,86 @@
+<section class="content-header">
+    <h1><?= __('Add cron job') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/cronjobs') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/cronjobs/add') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="cronjob-name" name="name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-minutes"><?= __('Minutes') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" value="*" type="text" id="cronjob-minutes" name="minutes" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-hours"><?= __('Hours') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" value="*" type="text" id="cronjob-hours" name="hours" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-days"><?= __('Days') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" value="*" type="text" id="cronjob-days" name="days" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-weeks"><?= __('Weeks') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" value="*" type="text" id="cronjob-weeks" name="weeks" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-months"><?= __('Months') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" value="*" type="text" id="cronjob-months" name="months" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-script"><?= __('Script') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <select class="form-control" id="cronjob-script" name="script">
+                            <?php foreach ($tasks as $group => $task): ?>
+                                <optgroup label="<?= __($group) ?>">
+                                    <?php foreach ($task as $t => $name): ?>
+                                        <option value="<?= $t ?>"><?= $name ?></option>
+                                    <?php endforeach ?>
+                                </optgroup>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

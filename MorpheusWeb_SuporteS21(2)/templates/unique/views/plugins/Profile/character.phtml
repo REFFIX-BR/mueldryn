@@ -1,0 +1,100 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('character') ?> <?= $character->getName() ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Character perfil') ?></li>
+        </ol>
+    </nav>
+
+    <h2 class="title"><?= __('information') ?></h2>
+    <table class="table table-sm">
+        <tr>
+            <td valign="top" rowspan="7" width="80">
+                <img src="<?= $character->getAvatarUrl(asset_to('/images/no-avatar.png')) ?>" width="80" height="90" />
+            </td>
+            <td width="100"><?= __('character') ?></td>
+            <td><?= $character->getName() ?></td>
+        </tr>
+        <tr>
+            <td><?= __('class') ?></td>
+            <td><?= util('Character')->className($character->getClass()) ?></td>
+        </tr>
+        <?php if (config('columns.resets')): ?>
+            <tr>
+                <td><?= __('resets') ?></td>
+                <td><?= $character->getResets() ?></td>
+            </tr>
+        <?php endif ?>
+        <tr>
+            <td><?= __('level') ?></td>
+            <td><?= $character->getLevel() ?></td>
+        </tr>
+        <tr>
+            <td><?= __('map') ?></td>
+            <td><?= util('Character')->mapName($character->getMap()) ?> (<?= $character->getPositionX() ?>/<?= $character->getPositionY() ?>)</td>
+        </tr>
+        <tr>
+            <td><?= __('status') ?></td>
+            <td><?= util('Character')->status($character->isConnected()) ?></td>
+        </tr>
+    </table>
+
+    <?php if ($character->getGuild() != null): ?>
+        <h2 class="title"><?= __('guild') ?></h2>
+        <table class="table table-sm">
+            <tr>
+                <td valign="top" rowspan="7" width="80">
+                    <?= util('Guild')->logo($character->getGuild()->getMark(), 80) ?>
+                </td>
+                <td width="100"><?= __('guild') ?></td>
+                <td><a data-ajax href="<?= url_to('/perfil/guild/' . $character->getGuild()->getName()) ?>"><?= $character->getGuild()->getName() ?></a></td>
+            </tr>
+            <tr>
+                <td><?= __('master') ?></td>
+                <td><a data-ajax href="<?= url_to('/perfil/character/' . $character->getGuild()->getMaster()->getName()) ?>"><?= $character->getGuild()->getMaster()->getName() ?></a></td>
+            </tr>
+            <tr>
+                <td><?= __('score') ?></td>
+                <td><?= $character->getGuild()->getScore() ?></td>
+            </tr>
+            <tr>
+                <td><?= __('members') ?></td>
+                <td><?= count($character->getGuild()->getMembers()) ?></td>
+            </tr>
+        </table>
+    <?php endif ?>
+
+    <?php if (config('perfil.show_equipments', true)): ?>
+        <h2 class="title"><?= __('Equipments') ?></h2>
+        <div class="box-panel-content equipments">
+            <div class="mapping">
+                <img src="<?= resource_to('/images/inventories/' . strtolower(util('Character')->classShortName($character->getClass())) . '.png') ?>" />
+                <?php for ($i = 0; $i < 12; $i++): ?>
+                    <div class="item-mapping item<?= $i ?>">
+                        <?php $it = $character->getInventory()->getEquipment($i) ?>
+                        <?php if ($it !== null): ?>
+                            <?php $image = util('Item')->getImage($it) ?>
+                             <?php if ($image !== null): ?>
+                                <img data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $it->getHex()) ?>" style="position:absolute;top:50%;left:50%;margin-left:-<?= $it->getWidth()*32/2 ?>px;margin-top:-<?= $it->getHeight()*32/2 ?>px;" src="<?= $image ?>" />
+                            <?php endif ?>
+                        <?php endif ?>
+                    </div>
+                <?php endfor ?>
+            </div>
+        </div>
+    <?php endif ?>
+
+    <?= notify('perfil.character', $character) ?>
+</div>

@@ -1,0 +1,15 @@
+<?= partial('rates') ?>
+
+<div class="alert alert-warning">
+    <p class="title"><?= __('Requirements') ?>:</p>
+    <ul>
+        <li><?= __('Need to have %s Resets', [util('Number')->format($requirements['resets'])]) ?></li>
+        <li><?= __('Needs to be level %s', [$requirements['level']]) ?></li>
+    </ul>
+</div>
+
+<form data-ajax data-confirmation="<?= __('Are you sure?') ?>" action="<?= url_to('/panel/character/' . $character->getName() . '/master-reset') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Master Reset') ?>">
+</form>

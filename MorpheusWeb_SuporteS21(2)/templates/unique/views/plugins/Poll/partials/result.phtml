@@ -1,0 +1,15 @@
+<ul class="poll">
+    <?php foreach ($poll['answers'] as $answer): ?>
+        <?php $percent = util('Number')->percent($answer['votes'], $poll['total']) ?>
+        <li>
+            <div class="answer">
+                <?= $answer['answer'] ?> <span style="float:right"><?= $answer['votes'] ?> <?= __('votes') ?></span>
+                <div class="progress">
+                    <div class="progress-bar" style="width:<?= $percent ?>%"><?= $percent ?>%</div>
+                </div>
+            </div>
+        </li>
+    <?php endforeach ?>
+</ul>
+
+<div class="total-votes"><?= __('Total votes') ?>: <?= $poll['total'] ?></div>

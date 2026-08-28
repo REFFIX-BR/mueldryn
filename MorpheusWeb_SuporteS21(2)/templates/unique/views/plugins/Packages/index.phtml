@@ -1,0 +1,178 @@
+<?php View::add('page.title', 'VIPs do jogador') ?>
+<?php $shopHubActive = 'packages' ?>
+
+<div class="page-container md-shop-page eldryn-vip-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('Buy Vip/Coin') ?></h1>
+            <p class="md-shop-header__lead">Ative bônus MuEldryn com créditos — VIP completo ou por tipo.</p>
+        </div>
+        <div class="md-shop-balance">
+            <small><?= config('coins.credits.name', __('Credits')) ?></small>
+            <strong><?= util('Number')->format(user()->getCredit(), 2, ',') ?></strong>
+            <a data-ajax class="md-shop-balance__link" href="<?= url_to('/donate') ?>"><?= __('Recharge') ?></a>
+        </div>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <section class="eldryn-vips">
+        <div class="eldryn-vips__banner">
+            <div class="eldryn-vips__banner-copy">
+                <span class="eldryn-vips__eyebrow">MuEldryn · Assinatura</span>
+                <h2>Planos VIP</h2>
+                <p>
+                    Pegue o <strong>All Inclusive</strong> ou combine
+                    <strong>EXP</strong>, <strong>DROP</strong> e <strong>CRAFT</strong> do seu jeito.
+                </p>
+            </div>
+        </div>
+
+        <?php if (empty($vipCards)): ?>
+            <div class="md-shop-alert" style="margin:16px">Nenhum VIP cadastrado. Rode o seed ou adicione pacotes com descrição <code>vip:all</code>, <code>vip:exp</code>, etc.</div>
+        <?php else: ?>
+            <div class="eldryn-vips__grid">
+                <?php foreach ($vipCards as $card): ?>
+                    <?php
+                        $default = $card['default'];
+                        $family = $card['family'];
+                        $isAll = $family === 'all';
+                        $familyClass = 'eldryn-vip--' . preg_replace('/[^a-z0-9_-]/i', '', $family);
+                    ?>
+                    <article class="eldryn-vip <?= $familyClass ?><?= $isAll ? ' eldryn-vip--featured' : '' ?>" data-vip-card>
+                        <?php if (!empty($card['discount'])): ?>
+                            <span class="eldryn-vip__tag"><?= htmlspecialchars($card['discount']) ?></span>
+                        <?php endif ?>
+
+                        <div class="eldryn-vip__media">
+                            <?php if (!empty($card['image'])): ?>
+                                <img src="<?= upload_to('/packages/' . $card['image']) ?>" alt="<?= htmlspecialchars($card['title']) ?>" />
+                            <?php else: ?>
+                                <div class="eldryn-vip__empty"><i class="fa fa-star"></i></div>
+                            <?php endif ?>
+                        </div>
+
+                        <div class="eldryn-vip__body">
+                            <h3 class="eldryn-vip__title">
+                                <?= htmlspecialchars($card['title']) ?>
+                                <?php if (!empty($card['blurb'])): ?>
+                                    <i class="fa fa-info-circle" title="<?= htmlspecialchars($card['blurb']) ?>"></i>
+                                <?php endif ?>
+                            </h3>
+                            <?php if (!empty($card['blurb'])): ?>
+                                <p class="eldryn-vip__desc"><?= htmlspecialchars($card['blurb']) ?></p>
+                            <?php endif ?>
+
+                            <div class="eldryn-vip__prices">
+                                <?php if ($default && !empty($default['old'])): ?>
+                                    <span class="eldryn-vip__old" data-vip-old><?= util('Number')->format($default['old'], 2, ',') ?> <?= __('Credits') ?></span>
+                                <?php else: ?>
+                                    <span class="eldryn-vip__old is-empty" data-vip-old></span>
+                                <?php endif ?>
+                                <strong class="eldryn-vip__price" data-vip-price>
+                                    <?= $default ? util('Number')->format($default['price'], 2, ',') : '0' ?>
+                                    <span><?= __('Credits') ?></span>
+                                </strong>
+                            </div>
+
+                            <div class="eldryn-vip__foot">
+                                <select class="eldryn-vip__days" data-vip-days>
+                                    <?php foreach ($card['options'] as $opt): ?>
+                                        <option
+                                            value="<?= (int) $opt['id'] ?>"
+                                            data-price="<?= util('Number')->format($opt['price'], 2, ',') ?>"
+                                            data-old="<?= $opt['old'] !== null ? util('Number')->format($opt['old'], 2, ',') : '' ?>"
+                                            <?= $default && (int)$opt['id'] === (int)$default['id'] ? 'selected' : '' ?>
+                                        ><?= (int) $opt['days'] ?> dias</option>
+                                    <?php endforeach ?>
+                                </select>
+
+                                <a
+                                    class="eldryn-vip__buy"
+                                    data-vip-buy
+                                    data-confirm="<?= __('Are you sure you want to buy this package?') ?>"
+                                    href="<?= url_to('/packages/buy/' . ($default ? $default['id'] : 0)) ?>"
+                                    data-ajax-action
+                                >Ativar</a>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+    </section>
+
+    <?php if (!empty($packages)): ?>
+        <section class="md-shop-section" style="margin-top:24px">
+            <h2 class="md-shop-section__title">Pacotes de WCoin</h2>
+            <div class="md-package-grid">
+                <?php foreach ($packages as $package): ?>
+                    <?php $coins = json_decode($package['coins'], true); ?>
+                    <article class="md-package-card">
+                        <div class="md-package-card__badge"><?= config('coins.wcoinc.name', 'WCoinC') ?></div>
+                        <h3 class="md-package-card__title"><?= $package['package'] ?></h3>
+                        <?php if (!empty($package['description'])): ?>
+                            <p class="md-package-card__desc"><?= nl2br(htmlspecialchars($package['description'])) ?></p>
+                        <?php endif ?>
+                        <ul class="md-package-card__perks">
+                            <?php if (is_array($coins)): ?>
+                                <?php foreach ($coins as $coin => $amount): ?>
+                                    <?php if ($amount > 0): ?>
+                                        <li><i class="fa fa-coins"></i> <?= config('coins.' . $coin . '.name', $coin) ?>: <?= util('Number')->format($amount) ?></li>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            <?php endif ?>
+                        </ul>
+                        <div class="md-package-card__footer">
+                            <span class="md-package-card__price"><?= util('Number')->format($package['price'], 2, ',') ?> <?= __('Credits') ?></span>
+                            <a data-confirm="<?= __('Are you sure you want to buy this package?') ?>" href="<?= url_to('/packages/buy/' . $package['id']) ?>" class="btn btn-outline-success btn-sm" data-ajax-action><?= __('Purchase') ?></a>
+                        </div>
+                    </article>
+                <?php endforeach ?>
+            </div>
+        </section>
+    <?php endif ?>
+</div>
+
+<script>
+(function () {
+    function bindVipCards(root) {
+        var cards = (root || document).querySelectorAll('[data-vip-card]');
+        for (var i = 0; i < cards.length; i++) {
+            (function (card) {
+                var select = card.querySelector('[data-vip-days]');
+                var buy = card.querySelector('[data-vip-buy]');
+                var price = card.querySelector('[data-vip-price]');
+                var old = card.querySelector('[data-vip-old]');
+                if (!select || !buy) return;
+                function sync() {
+                    var opt = select.options[select.selectedIndex];
+                    if (!opt) return;
+                    buy.href = buy.href.replace(/\/packages\/buy\/\d+/, '/packages/buy/' + opt.value);
+                    if (price) {
+                        price.innerHTML = opt.getAttribute('data-price') + ' <span>Créditos</span>';
+                    }
+                    if (old) {
+                        var ov = opt.getAttribute('data-old');
+                        if (ov) {
+                            old.textContent = ov + ' Créditos';
+                            old.classList.remove('is-empty');
+                        } else {
+                            old.textContent = '';
+                            old.classList.add('is-empty');
+                        }
+                    }
+                }
+                select.addEventListener('change', sync);
+                sync();
+            })(cards[i]);
+        }
+    }
+    bindVipCards(document);
+    if (window.jQuery) {
+        jQuery(document).off('pjax:end.vipcards').on('pjax:end.vipcards', function () {
+            bindVipCards(document);
+        });
+    }
+})();
+</script>

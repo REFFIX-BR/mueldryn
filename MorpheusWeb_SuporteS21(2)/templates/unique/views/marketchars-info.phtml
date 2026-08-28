@@ -1,0 +1,157 @@
+<?php
+    $char = $character;
+    $className = util('Character')->className($char->getClass());
+    $classSlug = util('Character')->classIconSlug($char->getClass());
+    $classIcon = util('Character')->classIconUrl($char->getClass());
+    $invRenderer = $char->getInventory()->getRenderer()->setEnabledItemInfo(true);
+    $jp = isset($listing['jewel_prices']) ? $listing['jewel_prices'] : array();
+    $hasJewels = false;
+    foreach ($jp as $qv) { if ((int) $qv > 0) { $hasJewels = true; break; } }
+    $hasCoin = ((int) $listing['price'] > 0) && !empty($listing['coin_id']) && $listing['coin_id'] !== 'jewels' && isset($coins[$listing['coin_id']]);
+    $backUrl = url_to('/panel/marketchars');
+    $buyUrl = url_to('/panel/marketchars/buy/' . $listing['id']);
+    $cancelUrl = url_to('/panel/marketchars/cancel/' . $listing['id']);
+?>
+
+<div class="panel-heading"><i class="fa fa-user"></i> Informações do Personagem</div>
+<div class="panel-body" style="padding: 0; background: transparent; border: none;">
+<div class="mkt-info">
+    <div class="mkt-info__bg"></div>
+
+    <div class="mkt-info__header">
+        <div class="mkt-info__statbox mkt-info__statbox--left">
+            <span class="mkt-info__statbox-label">Level</span>
+            <strong><?= (int) $char->getLevel() ?></strong>
+            <span class="mkt-info__statbox-sub">Master 0</span>
+        </div>
+
+        <div class="mkt-info__hero">
+            <div class="mkt-info__hero-orb is-<?= htmlspecialchars($classSlug) ?>"></div>
+            <img class="mkt-info__hero-art" src="<?= $classIcon ?>" alt="<?= htmlspecialchars($className) ?>">
+            <h1 class="mkt-info__name"><?= htmlspecialchars($char->getName()) ?></h1>
+            <p class="mkt-info__class">Classe: <strong><?= htmlspecialchars($className) ?></strong></p>
+        </div>
+
+        <div class="mkt-info__statbox mkt-info__statbox--right">
+            <span class="mkt-info__statbox-label">Resets</span>
+            <strong><?= (int) $char->getResets() ?></strong>
+            <span class="mkt-info__statbox-sub"><?= (int) $char->getMasterResets() ?> Grand Resets</span>
+        </div>
+    </div>
+
+    <div class="mkt-info__toolbar">
+        <div class="mkt-info__attrs">
+            <div class="mkt-info__attr"><i class="fa fa-bolt"></i> STR <strong><?= number_format((int) $char->getStrength(), 0, ',', '.') ?></strong></div>
+            <div class="mkt-info__attr"><i class="fa fa-leaf"></i> AGI <strong><?= number_format((int) $char->getAgility(), 0, ',', '.') ?></strong></div>
+            <div class="mkt-info__attr"><i class="fa fa-heart"></i> VIT <strong><?= number_format((int) $char->getVitality(), 0, ',', '.') ?></strong></div>
+            <div class="mkt-info__attr"><i class="fa fa-flash"></i> ENE <strong><?= number_format((int) $char->getEnergy(), 0, ',', '.') ?></strong></div>
+            <?php if ((int) $char->getCommand() > 0): ?>
+                <div class="mkt-info__attr"><i class="fa fa-star"></i> CMD <strong><?= number_format((int) $char->getCommand(), 0, ',', '.') ?></strong></div>
+            <?php endif; ?>
+        </div>
+
+        <div class="mkt-info__pricebar">
+            <?php if ($hasCoin): ?>
+                <span class="mkt-info__price-coin">
+                    <i class="fa fa-diamond"></i>
+                    <?= number_format($listing['price'], 0, ',', '.') ?>
+                    <?= htmlspecialchars($coins[$listing['coin_id']]['name']) ?>
+                </span>
+            <?php endif; ?>
+            <?php if ($hasJewels): ?>
+                <span class="mkt-info__price-jewels">
+                    <?php foreach ($jewelCatalog as $code => $meta): ?>
+                        <?php if (empty($jp[$code])) continue; ?>
+                        <span title="<?= htmlspecialchars($meta['name']) ?>">
+                            <img src="<?= resource_to('/images/items/' . $meta['image']) ?>" alt="">
+                            <?= (int) $jp[$code] ?>
+                        </span>
+                    <?php endforeach; ?>
+                </span>
+            <?php endif; ?>
+            <span class="mkt-info__seller">Vendedor: <strong><?= htmlspecialchars($listing['seller']) ?></strong></span>
+        </div>
+
+        <div class="mkt-info__actions-top">
+            <?php if ($isOwner): ?>
+                <form action="<?= $cancelUrl ?>" method="POST" class="ajax-form" style="margin:0;">
+                    <button type="submit" class="mkt-info__btn mkt-info__btn--cancel"><i class="fa fa-times"></i> Cancelar</button>
+                </form>
+            <?php else: ?>
+                <form action="<?= $buyUrl ?>" method="POST" class="ajax-form" style="margin:0;">
+                    <button type="submit" class="mkt-info__btn mkt-info__btn--buy"><i class="fa fa-shopping-cart"></i> Comprar</button>
+                </form>
+            <?php endif; ?>
+            <a href="<?= $backUrl ?>" class="mkt-info__btn mkt-info__btn--back" data-ajax><i class="fa fa-arrow-left"></i> Voltar</a>
+        </div>
+    </div>
+
+    <div class="mkt-info__body">
+        <div class="mkt-info__equip">
+            <h3 class="mkt-info__panel-title"><i class="fa fa-shield"></i> Equipamento</h3>
+            <div class="mkt-info__equip-scroll">
+                <?= $invRenderer->render() ?>
+            </div>
+            <?= $invRenderer->renderVisualList() ?>
+        </div>
+
+        <div class="mkt-info__right">
+            <div class="mkt-info__tabs" role="tablist">
+                <button type="button" class="mkt-info__tab is-active" data-tab="stats">Atributos</button>
+                <button type="button" class="mkt-info__tab" data-tab="inventory">Inventário</button>
+            </div>
+
+            <div class="mkt-info__tabpanel is-active" data-panel="stats">
+                <div class="mkt-info__stats-head">
+                    <span>Pontos livres</span>
+                    <strong><?= number_format((int) $char->getPoints(), 0, ',', '.') ?></strong>
+                </div>
+                <ul class="mkt-info__stats-list">
+                    <li><span>Level</span><strong><?= (int) $char->getLevel() ?></strong></li>
+                    <li><span>Resets</span><strong><?= (int) $char->getResets() ?></strong></li>
+                    <li><span>Grand Resets</span><strong><?= (int) $char->getMasterResets() ?></strong></li>
+                    <li><span>Força (STR)</span><strong><?= number_format((int) $char->getStrength(), 0, ',', '.') ?></strong></li>
+                    <li><span>Agilidade (AGI)</span><strong><?= number_format((int) $char->getAgility(), 0, ',', '.') ?></strong></li>
+                    <li><span>Vitalidade (VIT)</span><strong><?= number_format((int) $char->getVitality(), 0, ',', '.') ?></strong></li>
+                    <li><span>Energia (ENE)</span><strong><?= number_format((int) $char->getEnergy(), 0, ',', '.') ?></strong></li>
+                    <?php if ((int) $char->getCommand() > 0): ?>
+                        <li><span>Comando (CMD)</span><strong><?= number_format((int) $char->getCommand(), 0, ',', '.') ?></strong></li>
+                    <?php endif; ?>
+                    <li><span>Zen</span><strong><?= number_format((int) $char->getMoney(), 0, ',', '.') ?></strong></li>
+                    <li><span>PK Level</span><strong><?= (int) $char->getPkLevel() ?></strong></li>
+                    <li><span>Mapa</span><strong><?= htmlspecialchars(util('Character')->mapName($char->getMap())) ?></strong></li>
+                    <li><span>Posição</span><strong><?= (int) $char->getPositionX() ?> / <?= (int) $char->getPositionY() ?></strong></li>
+                    <li><span>Status</span><strong><?= util('Character')->status($char->isConnected()) ?></strong></li>
+                    <?php if ($char->getGuild() !== null): ?>
+                        <li><span>Guild</span><strong><?= htmlspecialchars($char->getGuild()->getName()) ?></strong></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+
+            <div class="mkt-info__tabpanel" data-panel="inventory">
+                <div class="mkt-info__inv-scroll">
+                    <?= $invRenderer->render() ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+(function(){
+    var root = document.querySelector('.mkt-info');
+    if (!root) return;
+
+    root.querySelectorAll('.mkt-info__tab').forEach(function(tab){
+        tab.addEventListener('click', function(){
+            var name = tab.getAttribute('data-tab');
+            root.querySelectorAll('.mkt-info__tab').forEach(function(t){ t.classList.remove('is-active'); });
+            root.querySelectorAll('.mkt-info__tabpanel').forEach(function(p){ p.classList.remove('is-active'); });
+            tab.classList.add('is-active');
+            var panel = root.querySelector('.mkt-info__tabpanel[data-panel="' + name + '"]');
+            if (panel) panel.classList.add('is-active');
+        });
+    });
+})();
+</script>

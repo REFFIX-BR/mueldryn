@@ -1,0 +1,66 @@
+<h2>Leilões de Players</h2>
+
+<div class="alert alert-info">
+    <strong>Informação:</strong> Esta lista mostra todos os leilões criados pelos players.
+</div>
+
+<?php if (empty($auctions)): ?>
+    <div class="alert alert-warning">Nenhum leilão de players encontrado.</div>
+<?php else: ?>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Vendedor</th>
+                <th>Item</th>
+                <th>Preço Inicial</th>
+                <th>Lance Atual</th>
+                <th>Vencedor</th>
+                <th>Encerra em</th>
+                <th>Status</th>
+                <th>Entregue</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($auctions as $auction): ?>
+                <tr>
+                    <td><?= $auction['id'] ?></td>
+                    <td><?= htmlspecialchars($auction['seller_name'] ?? $auction['seller']) ?></td>
+                    <td>
+                        <?php 
+                        $itemObj = new \Morpheus\Item\Item($auction['item_hex']);
+                        $itemObj->parse();
+                        echo htmlspecialchars($itemObj->getName());
+                        ?>
+                    </td>
+                    <td><?= number_format($auction['start_price'], 0, '', '.') ?> <?= ucfirst($auction['coin']) ?></td>
+                    <td><?= number_format($auction['current_price'], 0, '', '.') ?> <?= ucfirst($auction['coin']) ?></td>
+                    <td><?= !empty($auction['winner_name']) ? htmlspecialchars($auction['winner_name']) : '-' ?></td>
+                    <td><?= date('d/m/Y H:i', strtotime($auction['end_date'])) ?></td>
+                    <td>
+                        <?php if ($auction['status'] === 'active'): ?>
+                            <span class="label label-success">Ativo</span>
+                        <?php elseif ($auction['status'] === 'completed'): ?>
+                            <span class="label label-primary">Concluído</span>
+                        <?php else: ?>
+                            <span class="label label-default"><?= ucfirst($auction['status']) ?></span>
+                        <?php endif ?>
+                    </td>
+                    <td>
+                        <?= $auction['delivered'] ? '<span class="label label-success">Sim</span>' : '<span class="label label-warning">Não</span>' ?>
+                    </td>
+                    <td>
+                        <?php if ($auction['status'] === 'active'): ?>
+                            <a href="<?= url_to('/admin/auctions/player/cancel/' . $auction['id']) ?>" class="btn btn-xs btn-danger" onclick="return confirm('Tem certeza que deseja cancelar este leilão? O item será devolvido ao vendedor e o lance será reembolsado.')">Cancelar</a>
+                        <?php elseif ($auction['status'] === 'completed' && !$auction['delivered']): ?>
+                            <a href="<?= url_to('/admin/auctions/player/delivery/' . $auction['id']) ?>" class="btn btn-xs btn-success" onclick="return confirm('Confirmar entrega do item ao vencedor?')">Entregar</a>
+                        <?php else: ?>
+                            -
+                        <?php endif ?>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+<?php endif ?>

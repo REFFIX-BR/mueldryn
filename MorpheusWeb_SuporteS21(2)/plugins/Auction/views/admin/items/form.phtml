@@ -1,0 +1,252 @@
+<section class="content-header">
+    <h1><?= $action == 'add' ? __('Adicionar Item') : __('Editar Item') ?></h1>
+</section>
+
+<section class="content">
+    <form class="form-horizontal ajax-form" method="post" action="/admin/auctions/items/<?= $action ?><?= $action == 'edit' ? '/' . $item['id'] : '?auction_id=' . $auction_id ?>">
+        <div class="box box-default">
+            <div class="box-body">
+                
+                <div class="callout callout-info">
+                    <h4>Criador de Item (Item Maker)</h4>
+                    <p>Preencha os dados abaixo para gerar o código hexadecimal automaticamente, ou pule esta etapa caso já possua o Hexadecimal do item.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Categoria (Tabela)</label>
+                            <div class="col-sm-8">
+                                <input type="number" id="im_category" class="form-control item-maker-trigger" min="0" max="15" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">ID (Index)</label>
+                            <div class="col-sm-8">
+                                <input type="number" id="im_index" class="form-control item-maker-trigger" min="0" max="512" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Level (+)</label>
+                            <div class="col-sm-8">
+                                <input type="number" id="im_level" class="form-control item-maker-trigger" min="0" max="15" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Option (Add)</label>
+                            <div class="col-sm-8">
+                                <select id="im_opt" class="form-control item-maker-trigger">
+                                    <option value="0">+0</option>
+                                    <option value="1">+4</option>
+                                    <option value="2">+8</option>
+                                    <option value="3">+12</option>
+                                    <option value="4">+16</option>
+                                    <option value="5">+20</option>
+                                    <option value="6">+24</option>
+                                    <option value="7">+28</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Básicos</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox"><label><input type="checkbox" id="im_skill" class="item-maker-trigger"> Skill</label></div>
+                                <div class="checkbox"><label><input type="checkbox" id="im_luck" class="item-maker-trigger"> Luck</label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Atributos Excelentes</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="32"> <span id="lbl_exc_32">Adicional Excelente 1</span></label></div>
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="16"> <span id="lbl_exc_16">Adicional Excelente 2</span></label></div>
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="8"> <span id="lbl_exc_8">Adicional Excelente 3</span></label></div>
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="4"> <span id="lbl_exc_4">Adicional Excelente 4</span></label></div>
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="2"> <span id="lbl_exc_2">Adicional Excelente 5</span></label></div>
+                                <div class="checkbox"><label><input type="checkbox" class="im_exc item-maker-trigger" value="1"> <span id="lbl_exc_1">Adicional Excelente 6</span></label></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Hex do Item</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="item" id="im_hex_output" class="form-control" value="<?= isset($item['item']) ? $item['item'] : '00000000000000000000000000000000' ?>" required maxlength="32">
+                        <span class="help-block">Código de 32 caracteres gerado automaticamente, ou cole o seu aqui.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">URL da Imagem</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="image" class="form-control" value="<?= isset($item['image']) ? $item['image'] : '' ?>" placeholder="Ex: /resources/images/items/0-0.gif ou link da internet">
+                        <span class="help-block">Cole o link de uma imagem (Interno ou Externo). Se deixado em branco, o sistema tentará buscar a imagem nativa.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Lance Inicial</label>
+                    <div class="col-sm-2">
+                        <input type="number" name="initial_bid" class="form-control" value="<?= isset($item['initial_bid']) ? $item['initial_bid'] : 0 ?>" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tipo de Moeda</label>
+                    <div class="col-sm-4">
+                        <select name="coin" class="form-control" required>
+                            <option value="credits" <?= (isset($item['coin']) && $item['coin'] === 'credits') ? 'selected' : '' ?>>Credits</option>
+                            <?php foreach (config('coins', []) as $coinId => $coin): ?>
+                                <option value="<?= $coinId ?>" <?= (isset($item['coin']) && $item['coin'] == $coinId) ? 'selected' : '' ?>><?= $coin['name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                        <span class="help-block">Selecione a moeda que será usada para os lances deste item.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Data de Término</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="end_date" class="form-control" value="<?= isset($item['end_date']) && $item['end_date'] ? date('Y-m-d H:i:s', strtotime($item['end_date'])) : date('Y-m-d H:i:s', strtotime('+7 days')) ?>" required placeholder="YYYY-MM-DD HH:MM:SS">
+                        <span class="help-block">Data e hora que os lances serão encerrados para este item.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ativo?</label>
+                    <div class="col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" name="active" value="0">
+                                <input type="checkbox" name="active" value="1" <?= (!isset($item['active']) || $item['active']) ? 'checked' : '' ?>>
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box-footer">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary"><?= __('Salvar') ?></button>
+                    <a data-ajax href="/admin/auctions/items?auction_id=<?= isset($auction_id) ? $auction_id : $item['auction_id'] ?>" class="btn btn-default"><?= __('Cancelar') ?></a>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+$(function() {
+    function updateExcLabels(category, index) {
+        var isWeapon = (category >= 0 && category <= 5) || (category === 13 && [12, 13, 14, 21, 22, 23, 24, 25, 26, 27, 28].indexOf(index) !== -1);
+        
+        if (isWeapon) {
+            $('#lbl_exc_32').text("Mana após matar monstro +Mana/8");
+            $('#lbl_exc_16').text("Vida após matar monstro +Vida/8");
+            $('#lbl_exc_8').text("Velocidade de Ataque +7");
+            $('#lbl_exc_4').text("Aumenta Dano +2%");
+            $('#lbl_exc_2').text("Aumenta Dano +Level/20");
+            $('#lbl_exc_1').text("Dano Excelente Rate +10%");
+        } else {
+            $('#lbl_exc_32').text("Aumenta Zen após matar monstro +30%");
+            $('#lbl_exc_16').text("Taxa de Defesa com Sucesso +10%");
+            $('#lbl_exc_8').text("Reflete o Dano +5%");
+            $('#lbl_exc_4').text("Diminui o Dano +4%");
+            $('#lbl_exc_2').text("Aumenta Mana Máxima +4%");
+            $('#lbl_exc_1').text("Aumenta Vida Máxima +4%");
+        }
+    }
+
+    function buildHex() {
+        var category = parseInt($('#im_category').val()) || 0;
+        var index = parseInt($('#im_index').val()) || 0;
+        var level = parseInt($('#im_level').val()) || 0;
+        var skill = $('#im_skill').is(':checked') ? 128 : 0;
+        var luck = $('#im_luck').is(':checked') ? 4 : 0;
+        var opt = parseInt($('#im_opt').val()) || 0;
+        
+        updateExcLabels(category, index);
+
+        var exc = 0;
+        $('.im_exc:checked').each(function() {
+            exc += parseInt($(this).val());
+        });
+
+        var byte0 = index & 255;
+        
+        var optLvl = level * 8;
+        var optData = (opt & 3);
+        var byte1 = skill + optLvl + luck + optData;
+        
+        var byte2 = 255; // Durabilidade Máxima Padrão
+        
+        var byte7 = exc;
+        
+        var catByte = (category * 16) & 240;
+        var indexHigh = (index > 255) ? 128 : 0;
+        var optHigh = (opt > 3) ? 64 : 0;
+        var byte9 = catByte | indexHigh | optHigh;
+
+        var hex = new Array(32).fill('0');
+        
+        function setByte(pos, val) {
+            var str = val.toString(16).toUpperCase();
+            if (str.length < 2) str = '0' + str;
+            hex[pos*2] = str[0];
+            hex[pos*2+1] = str[1];
+        }
+        
+        setByte(0, byte0);
+        setByte(1, byte1);
+        setByte(2, byte2);
+        setByte(7, byte7);
+        setByte(9, byte9);
+        setByte(10, 255);
+        
+        $('#im_hex_output').val(hex.join(''));
+    }
+
+    $('.item-maker-trigger').on('change keyup', function() {
+        buildHex();
+    });
+
+    function parseHex(hex) {
+        if (!hex || hex.length !== 32 || hex === '00000000000000000000000000000000') {
+            updateExcLabels(0, 0);
+            return;
+        }
+        var getByte = function(pos) { return parseInt(hex.substring(pos*2, pos*2+2), 16) || 0; };
+        
+        var byte0 = getByte(0);
+        var byte1 = getByte(1);
+        var byte7 = getByte(7);
+        var byte9 = getByte(9);
+        
+        var category = (byte9 & 240) >> 4;
+        var index = byte0 + (((byte9 & 128) > 0 && category < 12) ? 256 : 0);
+        
+        updateExcLabels(category, index);
+        
+        $('#im_category').val(category);
+        $('#im_index').val(index);
+        $('#im_level').val((byte1 >> 3) & 15);
+        $('#im_skill').prop('checked', (byte1 & 128) > 0);
+        $('#im_luck').prop('checked', (byte1 & 4) > 0);
+        
+        var opt = (byte1 & 3) + (((byte9 & 64) > 0) ? 4 : 0);
+        $('#im_opt').val(opt);
+        
+        $('.im_exc').each(function() {
+            $(this).prop('checked', (byte7 & parseInt($(this).val())) > 0);
+        });
+    }
+
+    // Preenche o gerador automaticamente ao abrir a página de edição
+    parseHex($('#im_hex_output').val());
+});
+</script>

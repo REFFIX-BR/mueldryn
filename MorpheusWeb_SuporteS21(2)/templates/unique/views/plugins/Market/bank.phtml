@@ -1,0 +1,332 @@
+<?php View::add('title', 'Banco da Conta')->add('description', 'Jogo Banco e Banco do Site') ?>
+
+<?php
+$siteItems = isset($siteItems) ? $siteItems : array();
+$gameItems = isset($gameItems) ? $gameItems : array();
+$connected = !empty($connected);
+$gameZen = isset($gameZen) ? (int) $gameZen : 0;
+$siteZen = isset($siteZen) ? (int) $siteZen : 0;
+$cols = 8;
+$rows = 15;
+$slots = $cols * $rows;
+
+$gameMap = array();
+foreach ($gameItems as $v) {
+    $s = isset($v['slot']) ? (int) $v['slot'] : -1;
+    if ($s >= 0 && $s < $slots && !isset($gameMap[$s])) {
+        $gameMap[$s] = $v;
+    }
+}
+$siteMap = array();
+$si = 0;
+foreach ($siteItems as $v) {
+    if ($si < $slots) {
+        $siteMap[$si++] = $v;
+    }
+}
+$bankError = isset($bankError) ? $bankError : null;
+$bankImgSrc = function ($image) {
+    $image = (string) $image;
+    if ($image === '') {
+        return '';
+    }
+    if (preg_match('#^https?://#i', $image)) {
+        return $image;
+    }
+    return full_url() . $image;
+};
+$fmtZen = function ($n) {
+    return number_format((int) $n, 0, ',', ' ');
+};
+?>
+
+<div class="page-container account-bank">
+    <div class="page-title">
+        <div class="t1"></div>
+        <div class="t2"><h1>Banco da Conta</h1></div>
+        <div class="t3"></div>
+    </div>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a data-ajax href="<?= url_to('/') ?>"><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a data-ajax href="<?= url_to('/market') ?>"><?= __('Market') ?></a></li>
+            <li class="breadcrumb-item active">Banco da Conta</li>
+        </ol>
+    </nav>
+
+    <div class="account-bank__tabs">
+        <a class="account-bank__tab" data-ajax href="<?= url_to('/market') ?>">Mercado</a>
+        <a class="account-bank__tab" data-ajax href="<?= url_to('/market/sell') ?>">Vender</a>
+        <a class="account-bank__tab is-active" href="<?= url_to('/market/bank') ?>">Banco da Conta</a>
+        <a class="account-bank__tab" data-ajax href="<?= url_to('/panel/marketchars') ?>">Personagens</a>
+    </div>
+
+    <p class="account-bank__note">
+        Compras do mercado vão para o <strong>Banco do Site</strong>. Transfira para o <strong>Baú do Jogo</strong> para usar in-game.
+        Para <strong>vender no mercado</strong>, o item precisa estar no Banco do Site. Offline para transferir.
+    </p>
+
+    <?php if ($connected): ?>
+        <div class="account-bank__alert account-bank__alert--warn">
+            <i class="fa fa-exclamation-triangle"></i> Você está online no jogo. Saia do personagem para transferir.
+        </div>
+    <?php endif ?>
+    <?php if ($bankError): ?>
+        <div class="account-bank__alert account-bank__alert--warn">
+            <i class="fa fa-info-circle"></i> <?= htmlspecialchars($bankError) ?> — mostrando espelho do warehouse se disponível.
+        </div>
+    <?php endif ?>
+
+    <div class="account-bank__layout">
+        <div class="account-bank__panel account-bank__panel--game">
+            <div class="account-bank__panel-head">
+                <span class="account-bank__badge account-bank__badge--game"><i class="fa fa-gamepad"></i></span>
+                <div>
+                    <h3>Baú do Jogo</h3>
+                    <small><?= count($gameItems) ?> itens · OpenMU (jogo)</small>
+                </div>
+            </div>
+            <div class="account-bank__vault" id="gameGrid">
+                <?php for ($i = 0; $i < $slots; $i++): ?>
+                    <?php if (isset($gameMap[$i])): $v = $gameMap[$i]; ?>
+                        <div class="account-bank__slot has-item"
+                             data-side="game"
+                             data-id="<?= htmlspecialchars($v['id']) ?>"
+                             <?php if (!empty($v['hex'])): ?>data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $v['hex']) ?>"<?php endif; ?>
+                             title="<?= htmlspecialchars($v['name'] . ($v['level'] > 0 ? ' +' . $v['level'] : '')) ?>">
+                            <img src="<?= htmlspecialchars($bankImgSrc($v['image'])) ?>" alt="<?= htmlspecialchars($v['name']) ?>" loading="lazy">
+                            <?php if ($v['level'] > 0): ?>
+                                <span class="account-bank__lvl">+<?= (int) $v['level'] ?></span>
+                            <?php endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="account-bank__slot"></div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+            <div class="account-bank__foot">
+                <div class="account-bank__zen">
+                    <span class="account-bank__zen-label">Zen no jogo</span>
+                    <strong><?= $fmtZen($gameZen) ?></strong>
+                </div>
+                <label class="account-bank__zen-field">
+                    <span>Enviar Zen → Site</span>
+                    <input type="number" min="0" id="zenToSite" placeholder="0" <?= $connected ? 'disabled' : '' ?>>
+                </label>
+            </div>
+        </div>
+
+        <div class="account-bank__actions">
+            <a class="account-bank__action account-bank__action--sync" data-ajax href="<?= url_to('/market/bank?sync=1') ?>" title="Sincronizar com o jogo">
+                <i class="fa fa-refresh"></i>
+                <span>Sincronizar</span>
+            </a>
+            <button type="button" class="account-bank__action account-bank__action--transfer" id="btnTransfer" title="Transferir item" <?= $connected ? 'disabled' : '' ?>>
+                <span class="account-bank__transfer-visual" id="transferVisual" data-dir="idle">
+                    <svg class="account-bank__transfer-svg account-bank__transfer-svg--idle" viewBox="0 0 72 28" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="transferGradIdle" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#68a6b9"/>
+                                <stop offset="100%" stop-color="#04be96"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M8 14 H24" stroke="url(#transferGradIdle)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 8 L28 14 L20 20" fill="none" stroke="url(#transferGradIdle)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M64 14 H48" stroke="url(#transferGradIdle)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 8 L44 14 L52 20" fill="none" stroke="url(#transferGradIdle)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="36" cy="14" r="5" fill="#073f4c" stroke="#1b82a2" stroke-width="1.5"/>
+                    </svg>
+                    <svg class="account-bank__transfer-svg account-bank__transfer-svg--right" viewBox="0 0 72 28" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="transferGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#04be96"/>
+                                <stop offset="100%" stop-color="#7fdf98"/>
+                            </linearGradient>
+                            <filter id="transferGlowR" x="-20%" y="-80%" width="140%" height="260%">
+                                <feGaussianBlur stdDeviation="1.5" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="10" cy="14" r="7" fill="#073f4c" stroke="#1b82a2" stroke-width="1.5"/>
+                        <text x="10" y="17" text-anchor="middle" fill="#9fd4e3" font-size="8" font-weight="700" font-family="Arial,sans-serif">J</text>
+                        <g filter="url(#transferGlowR)">
+                            <path class="account-bank__arrow-line" d="M20 14 H50" stroke="url(#transferGradRight)" stroke-width="3" stroke-linecap="round"/>
+                            <path class="account-bank__arrow-head" d="M44 7 L58 14 L44 21" fill="none" stroke="url(#transferGradRight)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <circle cx="62" cy="14" r="7" fill="#04be96" stroke="#7fdf98" stroke-width="1.5"/>
+                        <text x="62" y="17" text-anchor="middle" fill="#031a20" font-size="8" font-weight="800" font-family="Arial,sans-serif">S</text>
+                    </svg>
+                    <svg class="account-bank__transfer-svg account-bank__transfer-svg--left" viewBox="0 0 72 28" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="transferGradLeft" x1="100%" y1="0%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#04be96"/>
+                                <stop offset="100%" stop-color="#7fdf98"/>
+                            </linearGradient>
+                            <filter id="transferGlowL" x="-20%" y="-80%" width="140%" height="260%">
+                                <feGaussianBlur stdDeviation="1.5" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="10" cy="14" r="7" fill="#04be96" stroke="#7fdf98" stroke-width="1.5"/>
+                        <text x="10" y="17" text-anchor="middle" fill="#031a20" font-size="8" font-weight="800" font-family="Arial,sans-serif">J</text>
+                        <g filter="url(#transferGlowL)">
+                            <path class="account-bank__arrow-line" d="M52 14 H22" stroke="url(#transferGradLeft)" stroke-width="3" stroke-linecap="round"/>
+                            <path class="account-bank__arrow-head" d="M28 7 L14 14 L28 21" fill="none" stroke="url(#transferGradLeft)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <circle cx="62" cy="14" r="7" fill="#073f4c" stroke="#1b82a2" stroke-width="1.5"/>
+                        <text x="62" y="17" text-anchor="middle" fill="#9fd4e3" font-size="8" font-weight="700" font-family="Arial,sans-serif">S</text>
+                    </svg>
+                </span>
+                <span id="transferLabel">Transferir</span>
+            </button>
+            <button type="button" class="account-bank__action account-bank__action--zen" id="btnZen" title="Transferir Zen" <?= $connected ? 'disabled' : '' ?>>
+                <i class="fa fa-money"></i>
+                <span>Zen</span>
+            </button>
+            <button type="button" class="account-bank__action account-bank__action--sell" id="btnSell" title="Vender no mercado" disabled>
+                <i class="fa fa-tag"></i>
+                <span>Vender item</span>
+            </button>
+            <p class="account-bank__actions-hint">Selecione um item e use os botões ao lado</p>
+        </div>
+
+        <div class="account-bank__panel account-bank__panel--site">
+            <div class="account-bank__panel-head">
+                <span class="account-bank__badge account-bank__badge--site"><i class="fa fa-globe"></i></span>
+                <div>
+                    <h3>Banco do Site</h3>
+                    <small><?= count($siteItems) ?> itens · compras do mercado</small>
+                </div>
+            </div>
+            <div class="account-bank__vault" id="siteGrid">
+                <?php for ($i = 0; $i < $slots; $i++): ?>
+                    <?php if (isset($siteMap[$i])): $v = $siteMap[$i]; ?>
+                        <div class="account-bank__slot has-item"
+                             data-side="site"
+                             data-id="<?= (int) $v['id'] ?>"
+                             <?php if (!empty($v['hex'])): ?>data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $v['hex']) ?>"<?php endif; ?>
+                             title="<?= htmlspecialchars($v['name'] . ($v['level'] > 0 ? ' +' . $v['level'] : '')) ?>">
+                            <img src="<?= htmlspecialchars($bankImgSrc($v['image'])) ?>" alt="<?= htmlspecialchars($v['name']) ?>" loading="lazy">
+                            <?php if ($v['level'] > 0): ?>
+                                <span class="account-bank__lvl">+<?= (int) $v['level'] ?></span>
+                            <?php endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="account-bank__slot"></div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+            <div class="account-bank__foot">
+                <div class="account-bank__zen">
+                    <span class="account-bank__zen-label">Zen no site</span>
+                    <strong><?= $fmtZen($siteZen) ?></strong>
+                </div>
+                <label class="account-bank__zen-field">
+                    <span>Enviar Zen → Jogo</span>
+                    <input type="number" min="0" id="zenToGame" placeholder="0" <?= $connected ? 'disabled' : '' ?>>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var selected = null;
+    var connected = <?= $connected ? 'true' : 'false' ?>;
+    var withdrawBase = <?= json_encode(url_to('/market/bank/withdraw')) ?>;
+    var depositUrl = <?= json_encode(url_to('/market/bank/deposit')) ?>;
+    var zenUrl = <?= json_encode(url_to('/market/bank/zen')) ?>;
+    var bankUrl = <?= json_encode(url_to('/market/bank')) ?>;
+    var sellUrl = <?= json_encode(url_to('/market/sell')) ?>;
+
+    function updateActions() {
+        var btnSell = document.getElementById('btnSell');
+        var btnTransfer = document.getElementById('btnTransfer');
+        var canAct = !connected && selected;
+        btnTransfer.disabled = !canAct;
+        btnSell.disabled = !(canAct && selected && selected.side === 'site');
+
+        var transferVisual = document.getElementById('transferVisual');
+        var transferLabel = document.getElementById('transferLabel');
+
+        if (!selected) {
+            transferVisual.setAttribute('data-dir', 'idle');
+            transferLabel.textContent = 'Transferir';
+            btnTransfer.title = 'Selecione um item';
+        } else if (selected.side === 'game') {
+            transferVisual.setAttribute('data-dir', 'to-site');
+            transferLabel.textContent = 'Para o Site';
+            btnTransfer.title = 'Enviar para o Banco do Site';
+        } else {
+            transferVisual.setAttribute('data-dir', 'to-game');
+            transferLabel.textContent = 'Para o Jogo';
+            btnTransfer.title = 'Enviar para o Baú do Jogo';
+        }
+    }
+
+    function clearSel() {
+        document.querySelectorAll('.account-bank__slot.is-on').forEach(function(el){ el.classList.remove('is-on'); });
+        selected = null;
+        updateActions();
+    }
+
+    document.querySelectorAll('.account-bank__slot.has-item').forEach(function(cell){
+        cell.addEventListener('click', function(){
+            clearSel();
+            cell.classList.add('is-on');
+            selected = { side: cell.getAttribute('data-side'), id: cell.getAttribute('data-id') };
+            updateActions();
+        });
+    });
+
+    function postAjax(url, data) {
+        if (typeof jQuery === 'undefined') { alert('jQuery indisponível'); return; }
+        jQuery.ajax({
+            url: url, type: 'POST', data: data || {},
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        }).done(function(res){
+            if (typeof res === 'string') { try { res = JSON.parse(res); } catch(e){} }
+            if (res && res.success === false) { alert(res.message || 'Erro'); return; }
+            var redirect = (res && res.redirect) ? res.redirect : bankUrl;
+            var $a = jQuery('<a data-ajax href="'+redirect+'" style="display:none"></a>').appendTo('body');
+            $a.trigger('click');
+            setTimeout(function(){ $a.remove(); }, 80);
+        }).fail(function(xhr){
+            var msg = 'Falha na transferência';
+            try { var r = JSON.parse(xhr.responseText); if (r.message) msg = r.message; } catch(e){}
+            alert(msg);
+        });
+    }
+
+    document.getElementById('btnTransfer').addEventListener('click', function(){
+        if (connected) return;
+        if (!selected) { alert('Selecione um item.'); return; }
+        if (selected.side === 'game') {
+            postAjax(depositUrl, { vault_item_id: selected.id });
+        } else {
+            postAjax(withdrawBase.replace(/\/$/,'') + '/' + selected.id, {});
+        }
+    });
+
+    document.getElementById('btnZen').addEventListener('click', function(){
+        if (connected) return;
+        var toSite = parseInt(document.getElementById('zenToSite').value, 10) || 0;
+        var toGame = parseInt(document.getElementById('zenToGame').value, 10) || 0;
+        if (toSite > 0 && toGame > 0) { alert('Preencha só um campo de Zen por vez.'); return; }
+        if (toSite <= 0 && toGame <= 0) { alert('Informe o valor de Zen.'); return; }
+        if (toSite > 0) postAjax(zenUrl, { amount: toSite, dir: 'to_site' });
+        else postAjax(zenUrl, { amount: toGame, dir: 'to_game' });
+    });
+
+    document.getElementById('btnSell').addEventListener('click', function(){
+        if (connected || !selected || selected.side !== 'site') return;
+        var $a = jQuery('<a data-ajax href="'+sellUrl+'?site_bank='+encodeURIComponent(selected.id)+'" style="display:none"></a>').appendTo('body');
+        $a.trigger('click');
+        setTimeout(function(){ $a.remove(); }, 80);
+    });
+
+    updateActions();
+})();
+</script>

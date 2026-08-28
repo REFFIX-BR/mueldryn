@@ -1,0 +1,49 @@
+<section class="content-header">
+    <h1><?= __('News') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/news/config') ?>"><?= __('Settings') ?></a>
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/news/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($news)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No news found') ?></p>
+        </div>
+    <?php else: ?>
+
+        <div class="box box-default table-responsive">
+            <table class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th width="100"><?= __('Category') ?></th>
+                        <th><?= __('Title') ?></th>
+                        <th width="200"><?= __('Author') ?></th>
+                        <th width="100"><?= __('Views') ?></th>
+                        <th width="200"><?= __('Posted in') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($news as $n): ?>
+                        <tr>
+                            <td><?= util('News.News')->newsType($n['type']) ?></td>
+                            <td><?= $n['title'] ?></td>
+                            <td><?= $n['username'] ?></td>
+                            <td><?= $n['views'] ?></td>
+                            <td><?= util('Date')->dateTime(strtotime($n['create_date'])) ?></td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/news/edit/' . $n['id']) ?>"><?= __('Edit') ?></a>
+                                <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= url_to('/admin/news/delete/' . $n['id']) ?>"><?= __('Delete') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

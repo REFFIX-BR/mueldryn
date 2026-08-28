@@ -1,0 +1,49 @@
+<section class="content-header">
+    <h1><?= __('Dashboard') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue"><i class="fa fa-user"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text"><?= __('Accounts') ?></span>
+                    <span class="info-box-number"><?= util('Number')->format(account()->count()) ?></span>
+                    <span class="info-box-text"><?= __('New accounts') ?></span>
+                    <span class="info-box-number"><?= util('Number')->format(account()->count('new')) ?></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="fa fa-users"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text"><?= __('Characters') ?></span>
+                    <span class="info-box-number"><?= util('Number')->format(character()->count()) ?></span>
+                    <span class="info-box-text"><?= __('Onlines') ?></span>
+                    <span class="info-box-number">
+                        <a data-ajax href="<?= url_to('/admin/characters/online') ?>"><?= util('Number')->format(count(server()->getCharactersOnline())) ?></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="fa fa-shield"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text"><?= __('Guilds') ?></span>
+                    <span class="info-box-number"><?= util('Number')->format(guild()->count()) ?></span>
+                </div>
+            </div>
+        </div>
+
+        <?php notify('admin.dashboard.tiles.render') ?>
+    </div>
+
+
+    <?php notify('admin.dashboard.after.render') ?>
+</section>

@@ -1,0 +1,54 @@
+<section class="content-header">
+    <h1><?= __('Import products') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/products') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-upload class="form-horizontal" action="<?= url_to('/admin/webshop/products/import') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="product-shop"><?= __('Shop') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="shop_id" id="product-shop">
+                            <option value=""></option>
+                            <?php foreach ($shops as $shop): ?>
+                                <option value="<?= $shop['id'] ?>"<?= isset($product['shop_id']) && $product['shop_id'] === $shop['id'] ? ' selected="selected"' : '' ?>><?= $shop['name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="categories"><?= __('Categories') ?></span></label>
+
+                    <div class="col-sm-10">
+                        <?php foreach (config('item.categories') as $code => $category): ?>
+                            <div style="width:33%;margin-bottom:5px;float:left">
+                                <input type="checkbox" name="categories[]" id="categories-<?= $code ?>" value="<?= $code ?>" /> <label for="categories-<?= $code ?>"><?= $category ?></label>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="category-name">ItemKOR <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input data-upload-field class="form-control" type="file" name="itemkor" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Import') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

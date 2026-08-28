@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Vault') ?></h3>
+</div>
+<form data-ajax class="form-horizontal" method="post" action="<?= url_to('/admin/accounts/warehouse/' . $account->getUsername()) ?>">
+    <?= $warehouse->getRenderer()->renderAll() ?>
+
+    <div class="form-group" style="margin:5px">
+        <label for="warehouse-money">ZEN</label>
+        <input type="text" name="money" class="form-control" id="warehouse-money" value="<?= $warehouse->getMoney() ?>" />
+    </div>
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+    </div>
+</form>

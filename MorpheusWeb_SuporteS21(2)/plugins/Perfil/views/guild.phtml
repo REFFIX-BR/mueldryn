@@ -1,0 +1,67 @@
+<h1 class="title"><?= __('guild') ?> <?= $guild->getName() ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Guild perfil') ?></li>
+</ul>
+
+<div class="box-panel">
+    <div class="box-panel-title"><?= __('information') ?></div>
+    <div class="box-panel-content">
+        <table class="list">
+            <tr>
+                <td valign="top" rowspan="7" width="80">
+                    <img src="<?= util('Guild')->logoUrl($guild->getMark(), 80) ?>" />
+                </td>
+                <td width="100"><?= __('guild') ?></td>
+                <td><a data-ajax href="<?= url_to('/perfil/guild/' . $guild->getName()) ?>"><?= $guild->getName() ?></a></td>
+            </tr>
+            <tr>
+                <td><?= __('master') ?></td>
+                <td><a data-ajax href="<?= url_to('/perfil/character/' . $guild->getMaster()->getName()) ?>"><?= $guild->getMaster()->getName() ?></a></td>
+            </tr>
+            <tr>
+                <td><?= __('score') ?></td>
+                <td><?= $guild->getScore() ?></td>
+            </tr>
+            <tr>
+                <td><?= __('members') ?></td>
+                <td><?= count($guild->getMembers()) ?></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="box-panel" style="margin-top:10px">
+    <div class="box-panel-title"><?= __('members') ?></div>
+    <div class="box-panel-content">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th><?= __('character') ?></th>
+                    <th><?= __('class') ?></th>
+                    <?php if (config('columns.resets')): ?>
+                        <th><?= __('resets') ?></th>
+                    <?php endif ?>
+                    <th><?= __('level') ?></th>
+                    <th width="50"><?= __('member level') ?></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($guild->getMembers() as $member): ?>
+                    <tr>
+                        <td><a href="<?= url_to('/perfil/character/' . $member->getName()) ?>" data-ajax><?= $member->getName() ?></a></td>
+                        <td><?= util('Character')->className($member->getClass()) ?></td>
+                        <?php if (config('columns.resets')): ?>
+                            <td><?= $member->getResets() ?></td>
+                        <?php endif ?>
+                        <td><?= $member->getLevel() ?></td>
+                        <td><?= $member->isMaster() ? 'Master' : 'Membro' ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

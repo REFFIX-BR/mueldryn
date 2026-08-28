@@ -1,0 +1,25 @@
+<section class="content-header">
+    <h1><?= __('Edit e-mail') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/configs/emails') ?>">Listar</a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/emails/edit/' . $file) ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <textarea id="configs-email-content" class="form-control" style="height:325px" name="filecontent"><?= h($filecontent) ?></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+            </div>
+        </form>
+    </div>
+</section>

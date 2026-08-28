@@ -1,0 +1,91 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Ticket') ?> #<?= $ticket->getId() ?> - <?= $ticket->getDepartment() ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/support/tickets') ?>" data-ajax><?= __('Support') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Ticket') ?> #<?= $ticket->getId() ?></li>
+        </ol>
+    </nav>
+
+    <div class="ticket">
+        <div class="message">
+            <?= nl2br($ticket->getMessage()) ?>
+        </div>
+
+        <?php if ($ticket->hasImages()): ?>
+            <ul class="helpdesk-images">
+                <?php foreach (explode(',', $ticket->getImages()) as $image): ?>
+                    <li>
+                        <a href="<?= upload_to('/helpdesk/' . $image) ?>" target="_blank">
+                            <img src="<?= upload_to('/helpdesk/' . $image) ?>" width="50" />
+                        </a>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+
+            <div class="clear"></div>
+        <?php endif ?>
+
+        <?php if ($ticket->hasMessages()): ?>
+            <h2 class="title"><?= __('Messages') ?></h2>
+            <ul class="helpdesk-messages">
+                <?php foreach ($ticket->getMessages() as $message): ?>
+                    <li>
+                        <div class="desc">
+                            <span class="name"><?= $message->getAuthor() ?></span>
+                            <?php if ($message->isAdmin()): ?>
+                                <span class="badge badge-warning"><?= __('Administration') ?></span>
+                            <?php endif ?>
+                            <span class="created"><?= util('Time')->relative($message->getCreated()) ?></span>
+                            <div class="m"><?= nl2br(strip_tags($message->getMessage())) ?></div>
+                            <?php if ($message->hasImages()): ?>
+                                <div class="helpdesk-images">
+                                    <?php foreach (explode(',', $message->getImages()) as $image): ?>
+                                        <a href="<?= upload_to('/helpdesk/' . $image) ?>" target="_blank">
+                                            <img src="<?= upload_to('/helpdesk/' . $image) ?>" width="50" />
+                                        </a>
+                                    <?php endforeach ?>
+                                </div>
+
+                                <div class="clear"></div>
+                            <?php endif ?>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+
+        <?php if ($ticket->getStatus() != 3): ?>
+            <h2 class="title"><?= __('Add message') ?></h2>
+            <form data-ajax data-upload action="<?= url_to('/support/tickets/add_message/' . $ticket->getId()) ?>" class="form" method="post">
+                <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+                <div class="box-panel-content">
+                    <div class="form-group">
+                        <label class="form-control-label" for="ticket-message"><?= __('Message') ?> <span class="required">*</span></label>
+                        <textarea class="form-control" id="ticket-message" name="message"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="images"><?= __('Images') ?></label>
+                        <input class="form-control-file" data-upload-field type="file" multiple name="images" id="images" />
+                    </div>
+                </div>
+
+                <input type="submit" value="<?= __('Send message') ?>" class="btn btn-info" />
+            </form>
+        <?php endif ?>
+    </div>
+</div>

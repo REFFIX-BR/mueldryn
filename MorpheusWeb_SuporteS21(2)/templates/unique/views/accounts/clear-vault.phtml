@@ -1,0 +1,21 @@
+<?php View::add('page.title', __('Clear vault')) ?>
+
+<?= partial('rates') ?>
+
+<p style="margin-bottom:10px;"><span class="required">*</span> <?= __('Attention to what you are doing, this option is irreversible!') ?></p>
+
+<form data-ajax data-confirmation="<?= __('Are you sure?') ?>" action="<?= url_to('/panel/account/clear-vault') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-group">
+        <input class="styled-checkbox" type="checkbox" value="1" name="items" id="clear-items" />
+        <label for="clear-items"><?= __('Clear items') ?></label>
+    </div>
+
+    <div class="form-group">
+        <input class="styled-checkbox" type="checkbox" value="1" name="zen" id="clear-zen" />
+        <label for="clear-zen"><?= __('Clear zen') ?></label>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Clear') ?>" />
+</form>

@@ -1,0 +1,89 @@
+<section class="content-header">
+    <h1><?= $action == 'add' ? 'Adicionar Rifa' : 'Editar Rifa' ?></h1>
+</section>
+
+<section class="content">
+    <form action="" method="POST" data-ajax-form>
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_geral" data-toggle="tab">Geral</a></li>
+                <li><a href="#tab_recompensas" data-toggle="tab">Recompensas</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_geral">
+                    <div class="form-group">
+                        <label>Nome da Rifa</label>
+                        <input type="text" name="name" class="form-control" value="<?= isset($raffle['name']) ? htmlspecialchars($raffle['name']) : '' ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea name="description" class="form-control" rows="3"><?= isset($raffle['description']) ? htmlspecialchars($raffle['description']) : '' ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Total de Números</label>
+                        <input type="number" name="total_numbers" class="form-control" value="<?= isset($raffle['total_numbers']) ? $raffle['total_numbers'] : 100 ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Moeda</label>
+                        <select name="coin_id" class="form-control">
+                            <?php foreach ($coins as $id => $coin): ?>
+                                <option value="<?= $id ?>" <?= (isset($raffle['coin_id']) && $raffle['coin_id'] == $id) ? 'selected' : '' ?>><?= htmlspecialchars($coin['name']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preço por Número</label>
+                        <input type="number" name="price" class="form-control" value="<?= isset($raffle['price']) ? $raffle['price'] : 10 ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="active" value="1" <?= (!isset($raffle['active']) || $raffle['active'] == 1) ? 'checked' : '' ?>>
+                            Rifa Ativa
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab_recompensas">
+                    <div class="form-group">
+                        <label>Nível do VIP</label>
+                        <select name="reward_vip_type" class="form-control">
+                            <option value="0">Nenhum</option>
+                            <?php foreach ($vips as $id => $vipName): ?>
+                                <option value="<?= $id ?>" <?= (isset($raffle['reward_vip_type']) && $raffle['reward_vip_type'] == $id) ? 'selected' : '' ?>><?= htmlspecialchars($vipName) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dias de VIP</label>
+                        <input type="number" name="reward_vip_days" class="form-control" value="<?= isset($raffle['reward_vip_days']) ? $raffle['reward_vip_days'] : 0 ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Créditos</label>
+                        <input type="number" name="reward_credits" class="form-control" value="<?= isset($raffle['reward_credits']) ? $raffle['reward_credits'] : 0 ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>WCoinC</label>
+                        <input type="number" name="reward_wcoinc" class="form-control" value="<?= isset($raffle['reward_wcoinc']) ? $raffle['reward_wcoinc'] : 0 ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>WCoinP</label>
+                        <input type="number" name="reward_wcoinp" class="form-control" value="<?= isset($raffle['reward_wcoinp']) ? $raffle['reward_wcoinp'] : 0 ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Goblin Points</label>
+                        <input type="number" name="reward_goblinpoints" class="form-control" value="<?= isset($raffle['reward_goblinpoints']) ? $raffle['reward_goblinpoints'] : 0 ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Consulta SQL (Customizada)</label>
+                        <p class="help-block">Use <code>{account}</code> ou <code>{character}</code> para referenciar o ganhador na sua lógica SQL.</p>
+                        <textarea name="reward_sql" class="form-control" rows="3"><?= isset($raffle['reward_sql']) ? htmlspecialchars($raffle['reward_sql']) : '' ?></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success">Salvar Rifa</button>
+                <a href="<?= url_to('/admin/raffles') ?>" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,48 @@
+<h1 class="title"><?= __('Support') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Support') ?></li>
+</ul>
+
+<div class="box-panel">
+    <div class="box-panel-title"><?= __('My tickets') ?></div>
+
+    <div class="box-panel-content">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th width="10"></th>
+                    <th><?= __('Subject') ?></th>
+                    <th width="90"><?= __('Department') ?></th>
+                    <th style="text-align:center;" width="90"><?= __('Created at') ?></th>
+                    <th style="text-align:center;" width="90"><?= __('Updated at') ?></th>
+                    <th style="text-align:center;" width="80"><?= __('Status') ?></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php if (empty($tickets)): ?>
+                    <tr>
+                        <td colspan="6"><?= __('No support tickets found') ?></td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($tickets as $ticket): ?>
+                        <tr>
+                            <td><a data-ajax href="<?= url_to('/support/tickets/view/' . $ticket['id']) ?>">#<?= $ticket['id'] ?></a></td>
+                            <td><?= $ticket['subject'] ?></td>
+                            <td><?= $ticket['department'] ?></td>
+                            <td style="text-align:center;"><?= util('Date')->dateTime($ticket['create_date']) ?></td>
+                            <td style="text-align:center;"><?= empty($ticket['update_date']) ? '' : util('Date')->dateTime($ticket['create_date']) ?></td>
+                            <td style="text-align:center;"><?= util('HelpDesk.HelpDesk')->ticketStatus($ticket['status']) ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="margin-top:10px">
+    <a data-ajax href="<?= url_to('/support/tickets/add') ?>" class="btn"><?= __('Open new ticket') ?></a>
+</div>

@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Config ranking %s', [$ranking]) ?></h3>
+</div>
+
+<form id="form-ranking" class="form" type="POST" action="<?= url_to('/admin/configs/rankings/' . $ranking) ?>">
+    <div class="modal-body">
+        <?php foreach ($configs as $field => $config): ?>
+            <?php if ($field == '-'): ?>
+                <hr />
+            <?php else: ?>
+                <div class="form-group">
+                    <label class="form-label" for="<?= $field ?>"><?= isset($config['title']) ? __($config['title']) : $field ?></label>
+                    <input class="form-control" type="text" name="<?= $field ?>" value="<?= config('rankings.' . $ranking . '.configs.' . $field) ?>" />
+                </div>
+            <?php endif ?>
+        <?php endforeach ?>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" data-send-modal-form="form-ranking" class="btn btn-primary"><?= __('Save') ?></button>
+    </div>
+</form>

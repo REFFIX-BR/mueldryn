@@ -1,0 +1,198 @@
+<?php View::add('page.title', $product['name']) ?>
+<?php $shopHubActive = 'shops' ?>
+<?php $coinName = config('coins.' . $shop['coin'] . '.name', $shop['coin']) ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= $product['name'] ?></h1>
+            <p class="md-shop-header__lead"><?= $shop['name'] ?> / <?= $category['name'] ?></p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= $coinName ?></small>
+                <strong><?= util('Number')->format(user()->getCoin($shop['coin'])) ?></strong>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <nav class="md-shop-breadcrumb">
+        <a data-ajax href="<?= url_to('/') ?>"><?= __('Home') ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shops') ?>"><?= __('WebShops') ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shop/' . $shop['slug']) ?>"><?= $shop['name'] ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shop/' . $shop['slug'] . '/' . $category['slug']) ?>"><?= $category['name'] ?></a>
+        <span>/</span>
+        <strong><?= $product['name'] ?></strong>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-md-3 text-center">
+            <div class="md-ws-item" style="min-height:auto">
+                <div class="md-ws-item__img" style="width:96px;height:96px">
+                    <img src="<?= util('WebShop.WebShop')->image($product) ?>" />
+                </div>
+                <h3 class="md-ws-item__name"><?= $product['name'] ?></h3>
+                <div class="md-ws-item__price" style="font-size:1rem;margin-top:8px">
+                    Total:
+                    <span data-price="<?= $prices['default'] ?>" id="product-price"><?= $product['price'] ?></span>
+                    <?= $coinName ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <form data-ajax id="shop-product" action="<?= url_to('/shop/' . $shop['slug'] . '/' . $category['slug'] . '/' . $product['slug'] . '/buy') ?>" method="POST" class="form form-action">
+                <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+                <input type="hidden" name="id" value="<?= $product['id'] ?>" id="product-id" />
+
+                <?php if (!empty($product['classes'])): ?>
+                    <h2 class="title"><?= __('Available for') ?></h2>
+                    <p>
+                        <?= util('Text')->toList($product['classes']) ?>
+                    </p>
+                <?php endif ?>
+
+                <?php if ($product['fix_level'] < 0
+                    || $product['fix_option'] < 0
+                    || ($product['ancient'] && !empty($ancients))
+                    || $product['skill']
+                    || $product['luck']): ?>
+
+                    <h2 class="title"><?= __('Basic options') ?></h2>
+                    <?php if ($product['fix_level'] < 0): ?>
+                        <div class="form-group">
+                            <label class="form-control-label" for="product-level"><?= __('Level') ?></label>
+                            <select class="form-control" data-price="<?= $prices['level'] ?>" name="level" id="product-level">
+                                <?php for ($i = 0; $i <= $shop['max_level']; $i++): ?>
+                                    <option value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($product['fix_option'] < 0): ?>
+                        <div class="form-group">
+                            <label class="form-control-label" for="product-option"><?= __('Option') ?></label>
+                            <select class="form-control" data-price="<?= $prices['option'] ?>" name="option" id="product-option">
+                                <?php for ($i = 0; $i <= $shop['max_option']; $i+=4): ?>
+                                    <option value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($product['ancient'] && !empty($ancients)): ?>
+                        <div class="form-group">
+                            <label class="form-control-label" for="product-ancient"><?= __('Ancient') ?></label>
+                            <select class="form-control" data-price="<?= $prices['ancient'] ?>" name="ancient" id="product-ancient">
+                                <option value="0"></option>
+                                <?php foreach ($ancients as $index => $name): ?>
+                                    <option value="<?= $index ?>"><?= $name ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($product['skill']): ?>
+                        <div class="form-group">
+                            <input class="styled-checkbox" data-price="<?= $prices['skill'] ?>" type="checkbox" id="product-skill" value="1" name="skill" />
+                            <label for="product-skill"><?= __('Skill') ?></label>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($product['luck']): ?>
+                        <div class="form-group">
+                            <input class="styled-checkbox" data-price="<?= $prices['luck'] ?>" type="checkbox" id="product-luck" value="1" name="luck" />
+                            <label for="product-luck"><?= __('Luck') ?></label>
+                        </div>
+                    <?php endif ?>
+                <?php endif ?>
+
+                <?php if ($excellents && $product['max_excellent'] > 0): ?>
+                    <div id="excellent-options" data-max-excellents="<?= $product['max_excellent'] ?>">
+                        <h2 class="title"><?= __('Excellent options') ?></h2>
+                        <?php foreach ($excellents as $index => $name): ?>
+                            <div class="checkbox">
+                                <input class="styled-checkbox" data-price="<?= $prices['excellent'] ?>" type="checkbox" id="exc-<?= $index ?>" name="excellents[<?= $index ?>]" value="1" />
+<!--                                <input class="styled-checkbox" data-price="--><?//= $prices['excellent'] ?><!--" type="checkbox" id="exc---><?//= $index ?><!--" name="excellents[--><?//= $index ?><!--]" value="1" />-->
+                                <label for="exc-<?= $index ?>"><?= $name ?></label>
+                            </div>
+                        <?php endforeach ?>
+
+                        <div class="alert alert-warning"><?= __('Maximum of excellent options: %d', [$maxExcellents]) ?></div>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($product['refine']): ?>
+                    <h2 class="title"><?= __('Level 380 option') ?></h2>
+                    <div class="form-group">
+                        <input class="styled-checkbox" data-price="<?= $prices['refine'] ?>" type="checkbox" id="product-refine" value="1" name="refine" />
+                        <label for="product-refine"><?= __('Refine') ?></label>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($product['harmony']): ?>
+                    <h2 class="title"><?= __('Harmony options') ?></h2>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="product-harmony"><?= __('Harmony type') ?></label>
+                        <select class="form-control" data-price="<?= $prices['harmony'] ?>" name="harmony" id="product-harmony">
+                            <option value=""></option>
+                            <?php foreach ($harmonys as $harmony):  ?>
+                                <optgroup label="<?= $harmony['name'] ?>">
+                                    <?php foreach ($harmony['levels'] as $level): ?>
+                                        <option value="<?= $harmony['index'] ?>,<?= $level['level'] ?>"><?= $harmony['name'] ?> +<?= $level['name'] ?></option>
+                                    <?php endforeach ?>
+                                </optgroup>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <?= __('Essa opçõo depende do level do item! Não nos responsabilizamos por opções incorretas.') ?>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($product['sockets']): ?>
+                    <h2 class="title"><?= __('Socket options') ?></h2>
+
+                    <?php for ($i = 1; $i <= $product['max_sockets']; $i++): ?>
+                        <div class="form-group">
+                            <label class="form-control-label" for="product-socket-<?= $i ?>"><?= __('Socket %d', $i) ?></label>
+                            <select class="form-control" data-price="<?= $prices['socket'] ?>" name="sockets[]" id="product-socket-<?= $i ?>">
+                                <option value="-2"><?= __('No socket') ?></option>
+                                <option value="-1"><?= __('Empty socket') ?></option>
+                                <?php foreach ($sockets as $type => $socks):  ?>
+                                    <optgroup label="<?= __($type) ?>">
+                                        <?php foreach ($socks as $socket): ?>
+                                            <option data-level="<?= $socket['level'] ?>" value="<?= $socket['value'] ?>"><?= $socket['name'] ?></option>
+                                        <?php endforeach ?>
+                                    </optgroup>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    <?php endfor ?>
+
+                    <div class="alert alert-warning">
+                        <?= __('Só selecione as opções caso você saiba exatamente o que está fazendo! Não nos responsabilizamos por opções incorretas.') ?>
+                    </div>
+                <?php endif ?>
+
+                <h2 class="title"><?= __('Discount coupon') ?></h2>
+                <div class="form-group">
+                    <label class="form-control-label" for="product-coupon"><?= __('Coupon') ?></label>
+                    <input class="form-control" type="text" name="coupon" id="product-coupon" style="width:100%" />
+                </div>
+
+                <input type="submit" value="<?= __('Purchase') ?>" class="btn btn-info" />
+            </form>
+        </div>
+    </div>
+</div>

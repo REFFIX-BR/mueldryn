@@ -1,0 +1,25 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Workshop') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Workshop') ?></li>
+        </ol>
+    </nav>
+
+    <div class="text-center">
+        <a data-ajax href="<?= url_to('/workshop/inventory' . (count(user()->getCharacters()) ? '/' . user()->getCharacters()[0]->getName() : '')) ?>" class="btn btn-info"><?= __('Inventory') ?></a>
+        <a data-ajax href="<?= url_to('/workshop/warehouse') ?>" class="btn btn-info"><?= __('Warehouse') ?></a>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<?php View::add('page.title', __('Donation')) ?>
+<?php $shopHubActive = 'donate' ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('Donation') ?></h1>
+            <p class="md-shop-header__lead">Apoie o <?= config('server.name', 'MuEldryn') ?> e receba <strong><?= config('coins.credits.name', __('Credits')) ?></strong> na sua conta. R$ 1,00 = 1 crédito.</p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= config('coins.credits.name', __('Credits')) ?></small>
+                <strong><?= util('Number')->format(user()->getCredit(), 2, ',') ?></strong>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive]) ?>
+
+    <?php if (!logged_in()): ?>
+        <div class="md-shop-alert">
+            <i class="fa fa-lock"></i>
+            <?= __('You must be logged for comment this news') ?>
+            <a data-ajax class="btn btn-outline-success btn-sm ml-2" href="<?= url_to('/login') ?>"><?= __('Login') ?></a>
+        </div>
+    <?php else: ?>
+        <section class="md-shop-section">
+            <h2 class="md-shop-section__title"><?= __('SELECT A PAYMENT METHOD BELOW') ?></h2>
+
+            <div class="md-gateway-grid">
+                <?php $hasGateway = false ?>
+                <?php foreach (config('gateways', []) as $gateway => $cfg): ?>
+                    <?php if (!empty($cfg['active'])): ?>
+                        <?php $hasGateway = true ?>
+                        <a data-ajax class="md-gateway-card" href="<?= url_to('/donate/' . $gateway) ?>">
+                            <div class="md-gateway-card__logo">
+                                <img src="<?= asset_to('PaymentsGateways./images/logo-' . $gateway . '.png') ?>" alt="<?= util('PaymentsGateways.Gateway')->name($gateway) ?>" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                                <span class="md-gateway-card__fallback"><?= util('PaymentsGateways.Gateway')->name($gateway) ?></span>
+                            </div>
+                            <div class="md-gateway-card__name"><?= util('PaymentsGateways.Gateway')->name($gateway) ?></div>
+                            <div class="md-gateway-card__cta"><?= __('Select') ?> <i class="fa fa-arrow-right"></i></div>
+                        </a>
+                    <?php endif ?>
+                <?php endforeach ?>
+
+                <?php if (!$hasGateway): ?>
+                    <div class="md-shop-alert md-shop-alert--wide">
+                        <i class="fa fa-info-circle"></i>
+                        Nenhum gateway ativo no momento. Configure em <strong>Admin → Gateways</strong> ou use transferência manual abaixo.
+                    </div>
+                <?php endif ?>
+            </div>
+        </section>
+
+        <section class="md-shop-section">
+            <h2 class="md-shop-section__title">Depósito manual (PIX / transferência)</h2>
+            <div class="md-shop-info-box">
+                <p>Envie comprovante pelo WhatsApp ou Discord da equipe. Após confirmação, os créditos são creditados manualmente na sua conta.</p>
+                <div class="md-shop-info-box__actions">
+                    <a data-ajax class="btn btn-outline-success" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+                    <a class="btn btn-outline-success" href="https://chat.whatsapp.com/LIVHB1pi8GwBS0CYaj7Liq" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <?php if (!empty($orders)): ?>
+            <section class="md-shop-section">
+                <h2 class="md-shop-section__title"><?= __('My orders') ?></h2>
+                <div class="md-shop-table-wrap">
+                    <table class="md-shop-table">
+                        <thead>
+                            <tr>
+                                <th>#ID</th>
+                                <th><?= __('Gateway') ?></th>
+                                <th><?= __('Value') ?></th>
+                                <th><?= __('Created at') ?></th>
+                                <th><?= __('Status') ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($orders as $order): ?>
+                                <tr>
+                                    <td><?= $order['id'] ?></td>
+                                    <td><?= util('PaymentsGateways.Gateway')->name($order['gateway']) ?></td>
+                                    <td><?= util('Number')->currency($order['value'], ['currency' => $order['currency']]) ?></td>
+                                    <td><?= util('Date')->dateTime($order['create_date']) ?></td>
+                                    <td><span class="md-status md-status--<?= util('PaymentsGateways.Gateway')->statusColor($order['status']) ?>"><?= util('PaymentsGateways.Gateway')->simplePaymentStatus($order['status']) ?></span></td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        <?php endif ?>
+    <?php endif ?>
+</div>

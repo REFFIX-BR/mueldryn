@@ -1,0 +1,36 @@
+<?php foreach ($connections as $conn): ?>
+    <table class="table table-sm table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <?= __('Server') ?>
+                    <span class="badge badge-secondary"><?= $conn['server_name'] ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?= __('IP') ?>
+                    <span class="badge badge-secondary"><?= $conn['ip'] ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?= __('Character') ?>
+                    <span class="badge badge-secondary"><?= $conn['character'] ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?= __('Connected at') ?>
+                    <span class="badge badge-secondary"><?= util('Date')->dateTime($conn['connected_at']) ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?= __('Disconnected at') ?>
+                    <span class="badge badge-secondary"><?= util('Date')->dateTime($conn['disconnected_at']) ?></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<?php endforeach ?>

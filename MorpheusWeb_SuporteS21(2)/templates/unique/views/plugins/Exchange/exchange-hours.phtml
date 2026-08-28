@@ -1,0 +1,30 @@
+<p class="saldo"><?= __('Your current balance is %d hours', [$balance]) ?></p>
+
+<div class="credit-shop">
+    <div class="row">
+        <?php foreach ($packages as $package): ?>
+            <div class="col-lg-6 col-sm-6">
+                <div class="card" style="margin-bottom:10px">
+                    <div class="card-header">
+                        <?= $package['package'] ?>
+                    </div>
+                    <div class="desc">
+                        <?php if (empty($package['image'])): ?>
+                            <div class="card-body">
+                                <?= nl2br($package['description']) ?>
+                            </div>
+                        <?php else: ?>
+                            <img src="<?= upload_to('/exchange/' . $package['image']) ?>" width="168" />
+                        <?php endif ?>
+                    </div>
+
+                    <div class="card-footer">
+                        <a data-confirm="<?= __('Are you sure you want to buy this package?') ?>" href="<?= url_to('/panel/account/exchange-hours/buy/' . $package['id']) ?>" class="btn btn-sm btn-info" data-ajax-action><?= __('Purchase') ?></a>
+
+                        <span class="badge badge-warning price"><?= $package['hours'] ?> <?= __('hours') ?></span>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

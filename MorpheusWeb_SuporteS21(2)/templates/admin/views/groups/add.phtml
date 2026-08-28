@@ -1,0 +1,41 @@
+<section class="content-header">
+    <h1><?= __('Add new group') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/groups') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/groups/add') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="user-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="name" id="user-name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="group-access"><?= __('Access') ?></span></label>
+
+                    <div class="col-sm-10">
+                        <?php foreach ($routes as $route): ?>
+                            <div style="width:50%;margin-bottom:5px;float:left">
+                                <input type="checkbox" name="access[]" id="grous-access-<?= str_replace('.', '-', $route['route']) ?>" value="<?= $route['route'] ?>" /> <label for="grous-access-<?= str_replace('.', '-', $route['route']) ?>"><?= $route['title'] ?></label>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

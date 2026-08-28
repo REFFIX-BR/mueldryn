@@ -1,0 +1,41 @@
+<section class="content-header">
+    <h1><?= __('Coins') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/coins/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <?php if (empty($coins)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No coins found') ?></p>
+        </div>
+    <?php else: ?>
+
+        <div class="box box-default table-responsive">
+            <table data-table class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Name') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($coins as $id => $coin): ?>
+                        <tr>
+                            <td><?= $coin['name'] ?></td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/coins/edit/' . $id) ?>"><?= __('Edit') ?></a>
+                                <a data-ajax-delete class="btn btn-xs btn-danger" href="<?= url_to('/admin/coins/delete/' . $id) ?>"><?= __('Delete') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

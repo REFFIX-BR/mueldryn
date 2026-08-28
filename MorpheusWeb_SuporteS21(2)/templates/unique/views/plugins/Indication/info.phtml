@@ -1,0 +1,35 @@
+<h4 class="mt-3"><?= __('Indication program') ?></h4>
+<?php if (empty($code)): ?>
+    <a class="btn btn-info" data-ajax-action href="<?= url_to('/indication/participate') ?>"><?= __('Participate') ?></a>
+<?php else: ?>
+    <table class="table table-sm table-striped">
+        <tr>
+            <td>
+                <?= __('Link for indication') ?>
+                <span class="badge badge-secondary"><?= url_to('/i-' . $code, true) ?></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?= __('Indications') ?>
+                <span class="badge badge-secondary"><?= $indications ?></span>
+
+                <a data-ajax href="<?= url_to('/indications') ?>"><?= __('Show indications') ?></a>
+            </td>
+        </tr>
+        <?php foreach ($rewards as $reward): ?>
+            <tr>
+                <td>
+                    <?= util('Coin')->name($reward['coin']) ?>
+                    <span class="badge badge-secondary"><?= $reward['total'] ?></span>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+
+    <?php if (!empty($rewards)): ?>
+        <div class="margin-top">
+            <a class="btn btn-info" data-ajax-action href="<?= url_to('/indication/rescue') ?>"><?= __('Rescue') ?></a>
+        </div>
+    <?php endif ?>
+<?php endif ?>

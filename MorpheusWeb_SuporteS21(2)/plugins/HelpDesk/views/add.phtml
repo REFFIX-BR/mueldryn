@@ -1,0 +1,63 @@
+<h1 class="title"><?= __('Support') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/support/tickets') ?>" data-ajax><?= __('Support') ?></a></li>
+    <li class="active"><?= __('Add') ?></li>
+</ul>
+
+<?= config('helpdesk.rules') ?>
+
+<div class="box-panel margin-top">
+    <div class="box-panel-title"><?= __('Open new ticket') ?></div>
+    <form data-ajax data-upload action="<?= url_to('/support/tickets/add') ?>" enctype="multipart/form-data" method="POST" class="form form-action">
+        <?= csrf_field() ?>
+        <div class="box-panel-content">
+            <div class="row">
+                <div class="label">
+                    <label for="subject"><?= __('Subject') ?> <span class="required">*</span></label>
+                </div>
+                <div class="field">
+                    <input type="text" style="width:100%" name="subject" id="subject" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">
+                    <label for="department"><?= __('Department') ?> <span class="required">*</span></label>
+                </div>
+                <div class="field">
+                    <select name="department" id="department">
+                        <option value=""></option>
+                        <?php foreach (config('helpdesk.departments', []) as $department): ?>
+                            <option value="<?= $department ?>"><?= $department ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">
+                    <label for="images"><?= __('Images') ?></label>
+                </div>
+                <div class="field">
+                    <input data-upload-field type="file" multiple name="images" id="images" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">
+                    <label for="message"><?= __('Message') ?> <span class="required">*</span></label>
+                </div>
+                <div class="field">
+                    <textarea name="message" id="message"></textarea>
+                    <div class="align-right font-small"><?= __('Max %s characteres', [config('helpdesk.max_char_message', 400)]) ?></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="submit">
+            <input type="submit" value="<?= __('Open ticket') ?>" class="btn" />
+        </div>
+    </form>
+</div>

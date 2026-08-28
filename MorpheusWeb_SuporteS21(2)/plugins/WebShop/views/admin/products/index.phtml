@@ -1,0 +1,98 @@
+<script>
+    $(function () {
+        $("[data-select-all]").click(function (e) {
+            var $this = $(this);
+            var check = $this.attr("checked");
+
+            if (!check) {
+                $("#products-table :checkbox").icheck('checked');
+                $this.attr("checked", true);
+            } else {
+                $("#products-table :checkbox").icheck('unchecked');
+                $this.attr("checked", false);
+            }
+
+            e.preventDefault();
+        });
+
+        $("[data-btn-action]").click(function (e) {
+            var $this = $(this);
+            var $inputs = $("#products-table :checkbox:checked");
+
+            var ids = "";
+            $inputs.each(function () {
+                if (ids !== "") {
+                    ids += ",";
+                }
+                ids += $(this).val();
+            });
+
+            $this.attr("href", $this.attr("href") + "&ids=" + ids);
+        });
+    });
+</script>
+
+<div class="modal" id="modal-search"></div>
+
+<section class="content-header">
+    <h1><?= __('Products') ?></h1>
+
+    <div class="actions">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-defaultdropdown-toggle" data-toggle="dropdown">
+                <?= __('Actions') ?> <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a data-btn-action data-ajax-action data-confirm="<?= __('You are sure?') ?>" href="<?= url_to('/admin/webshop/products/activate?page=' . $page) ?>"><?= __('Activate') ?></a></li>
+                <li><a data-btn-action data-ajax-action data-confirm="<?= __('You are sure?') ?>" href="<?= url_to('/admin/webshop/products/deactivate?page=' . $page) ?>"><?= __('Deactivate') ?></a></li>
+                <li><a data-btn-action data-ajax-action data-confirm="<?= __('You are sure?') ?>" href="<?= url_to('/admin/webshop/products/delete-all?page=' . $page) ?>"><?= __('Delete') ?></a></li>
+            </ul>
+        </div>
+        <a data-load-with-modal data-modal="modal-search" class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/products/search') ?>"><?= __('Search') ?></a>
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/products/import') ?>"><?= __('Import') ?></a>
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/webshop/products/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if ($total == 0): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No products found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="products-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <td width="10">
+                            <input data-select-all type="checkbox" />
+                        </td>
+                        <th><?= __('Product') ?></th>
+                        <th><?= __('Shop') ?></th>
+                        <th><?= __('Category') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <?php foreach ($products as $product): ?>
+                    <tr class="<?= !$product['active'] ? 'danger' : '' ?>">
+                        <td>
+                            <input type="checkbox" name="products[]" value="<?= $product['id'] ?>" />
+                        </td>
+                        <td><?= $product['name'] ?></td>
+                        <td><?= $product['shop_name'] ?></td>
+                        <td><?= $product['category_name'] ?></td>
+                        <td class="record-actions">
+                            <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/webshop/products/edit/' . $product['id']) ?>"><?= __('Edit') ?></a>
+                            <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= url_to('/admin/webshop/products/delete/' . $product['id']) ?>"><?= __('Delete') ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+            <div class="paginator">
+                <?= $paginator->toHtml() ?>
+            </div>
+        </div>
+    <?php endif ?>
+</section>

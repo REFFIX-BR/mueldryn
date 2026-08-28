@@ -1,0 +1,37 @@
+<h1 class="title"><?= $shop['name'] ?> - <?= $category['name'] ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/shops') ?>" data-ajax><?= __('WebShops') ?></a></li>
+    <li><a href="<?= url_to('/shop/' . $shop['slug']) ?>" data-ajax><?= $shop['name'] ?></a></li>
+    <li class="active"><?= $category['name'] ?></li>
+</ul>
+
+<div class="shop-categories">
+    <?= partial('WebShop.categories', [
+        'categories' => $categories,
+        'shop' => $shop
+    ]) ?>
+</div>
+
+<div class="shop-itens">
+    <?php foreach ($products as $product): ?>
+        <div class="item">
+            <div class="name"><?= $product['name'] ?></div>
+            <div class="image">
+                <img src="<?= util('WebShop.WebShop')->image($product) ?>" />
+            </div>
+            <div class="info">
+                <div><?= __('from %d %s', [$product['price'], config('coins')[$shop['coin']]['name']]) ?></div>
+                <div><?= __('%d sold', [$product['solds']]) ?></div>
+            </div>
+            <div class="buy">
+                <a data-ajax href="<?= url_to('/shop/' . $shop['slug'] . '/' . $category['slug'] . '/' . $product['slug']) ?>" class="btn"><?= __('+ details') ?></a>
+            </div>
+        </div>
+    <?php endforeach ?>
+
+    <div class="clear"></div>
+
+    <?= $paginator->toHtml() ?>
+</div>

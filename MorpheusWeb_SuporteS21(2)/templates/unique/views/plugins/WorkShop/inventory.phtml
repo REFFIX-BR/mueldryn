@@ -1,0 +1,60 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Workshop - Inventory') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/workshop') ?>" data-ajax><?= __('Workshop') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Inventory') ?></li>
+        </ol>
+    </nav>
+
+    <?php if (empty($characters)): ?>
+        <div class="msg"><?= __('You don\'t have any characters') ?></div>
+    <?php else: ?>
+        <div class="characters mb-4">
+            <?php foreach ($characters as $c): ?>
+                <a class="character<?= $character !== null && $c->getName() === $character->getName() ? ' active' : '' ?>" data-ajax href="<?= url_to('/workshop/inventory/' . $c->getName()) ?>">
+                    <div class="name"><?= $c->getName() ?></div>
+                    <div class="avatar">
+                        <img src="<?= $c->getAvatarUrl(asset_to('/images/no-avatar.png')) ?>" width="90" height="100" />
+                    </div>
+                </a>
+            <?php endforeach ?>
+        </div>
+
+        <div class="clear"></div>
+
+        <?php if ($character !== null): ?>
+            <div class="workshop-inventory-container">
+                <?= $inventory->getRenderer()
+                    ->setItemUrl('/workshop/inventory/' . $character->getName() . '/{slot}')
+                    ->setActiveItem($item, $slot)
+                    ->render() ?>
+
+                <div class="workshop-item">
+                  <?php if ($item != null): ?>
+                      <?= partial('Workshop.item', [
+                          'item' => $item,
+                          'prices' => $prices,
+                          'slot' => $slot,
+                          'base' => '/workshop/inventory/' . $character->getName() . '/'
+                      ]) ?>
+                  <?php endif ?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        <?php endif ?>
+    <?php endif ?>
+</div>

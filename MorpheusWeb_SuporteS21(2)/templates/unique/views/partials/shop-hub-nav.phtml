@@ -1,0 +1,50 @@
+<?php
+    $shopNav = [
+        'donate' => [
+            'label' => __('Donation'),
+            'url' => '/donate',
+            'icon' => 'fa-heart',
+        ],
+        'packages' => [
+            'label' => __('Buy Vip/Coin'),
+            'url' => '/packages',
+            'icon' => 'fa-shopping-bag',
+        ],
+        'skins' => [
+            'label' => 'Skins',
+            'url' => '/skins',
+            'icon' => 'fa-magic',
+        ],
+    ];
+    $current = isset($shopHubActive) ? $shopHubActive : '';
+?>
+<nav class="md-shop-nav" aria-label="Loja MuEldryn">
+    <?php foreach ($shopNav as $key => $item): ?>
+        <a data-ajax class="md-shop-nav__item<?= $current === $key ? ' is-active' : '' ?>" href="<?= url_to($item['url']) ?>">
+            <i class="fa <?= $item['icon'] ?>"></i>
+            <span><?= $item['label'] ?></span>
+        </a>
+    <?php endforeach ?>
+</nav>
+
+<?php if (empty($shopHubCompact)): ?>
+<div class="md-shop-flow">
+    <div class="md-shop-flow__step">
+        <span class="md-shop-flow__num">1</span>
+        <strong><?= __('Donation') ?></strong>
+        <small>R$ → <?= config('coins.credits.name', __('Credits')) ?></small>
+    </div>
+    <div class="md-shop-flow__arrow"><i class="fa fa-chevron-right"></i></div>
+    <div class="md-shop-flow__step">
+        <span class="md-shop-flow__num">2</span>
+        <strong><?= __('Buy Vip/Coin') ?></strong>
+        <small><?= __('Credits') ?> → VIP / WCoin</small>
+    </div>
+    <div class="md-shop-flow__arrow"><i class="fa fa-chevron-right"></i></div>
+    <div class="md-shop-flow__step">
+        <span class="md-shop-flow__num">3</span>
+        <strong>Skins</strong>
+        <small><?= __('Credits') ?> → Skins</small>
+    </div>
+</div>
+<?php endif ?>

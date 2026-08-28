@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MUAssetInspector.Analysis/MUAssetInspector.Analysis.csproj" />
+    <Project Path="src/MUAssetInspector.App/MUAssetInspector.App.csproj" />
+    <Project Path="src/MUAssetInspector.Cli/MUAssetInspector.Cli.csproj" />
+    <Project Path="src/MUAssetInspector.Core/MUAssetInspector.Core.csproj" />
+    <Project Path="src/MUAssetInspector.Formats/MUAssetInspector.Formats.csproj" />
+    <Project Path="src/MUAssetInspector.Migration/MUAssetInspector.Migration.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MUAssetInspector.Tests/MUAssetInspector.Tests.csproj" />
+  </Folder>
+</Solution>

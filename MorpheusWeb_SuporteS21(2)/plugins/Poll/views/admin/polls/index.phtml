@@ -1,0 +1,49 @@
+<section class="content-header">
+    <h1><?= __('Polls') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/polls/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($polls)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No polls found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="shops-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Title') ?></th>
+                        <th width="130"><?= __('Starts at') ?></th>
+                        <th width="130"><?= __('Ends at') ?></th>
+                        <th width="110" style="text-align:center"><?= __('Multiple') ?></th>
+                        <th width="110" style="text-align:center"><?= __('Allow IPs') ?></th>
+                        <th width="110" style="text-align:center"><?= __('Only logged in') ?></th>
+                        <th width="80"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($polls as $poll): ?>
+                        <tr class="<?= !$poll['active'] ? 'danger' : '' ?>">
+                            <td><?= $poll['title'] ?></td>
+                            <td><?= util('Date')->date($poll['start_date']) ?></td>
+                            <td><?= util('Date')->date($poll['end_date']) ?></td>
+                            <td style="text-align:center"><?= $poll['allow_multiple'] ? __('Yes') : __('No') ?></td>
+                            <td style="text-align:center"><?= $poll['allow_ips'] ? __('Yes') : __('No') ?></td>
+                            <td style="text-align:center"><?= $poll['only_logged_in'] ? __('Yes') : __('No') ?></td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/polls/answers?poll_id=' . $poll['id']) ?>"><?= __('Result') ?></a>
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/polls/edit/' . $poll['id']) ?>"><?= __('Edit') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

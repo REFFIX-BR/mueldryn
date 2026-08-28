@@ -1,0 +1,39 @@
+<section class="content-header">
+    <h1><?= __('Settings for move character') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/move') ?>" method="post">
+            <div class="box-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="move-when-pk"><?= __('When PK') ?></span></label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="move-when-pk"<?= config('move.when_pk') ? 'checked="checked"' : '' ?> value="1" name="when_pk" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="move-maps"><?= __('Maps') ?></span></label>
+
+                    <div class="col-sm-10">
+                        <?php foreach (config('maps', []) as $code => $map): ?>
+                            <div style="width:33%;margin-bottom:5px;float:left">
+                                <input<?= in_array($code, config('move.maps', [])) ? ' checked' : '' ?> type="checkbox" name="maps[]" id="map-<?= $code ?>" value="<?= $code ?>" /> <label for="map-<?= $code ?>"><?= $map['name'] ?></label>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

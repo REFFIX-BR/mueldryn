@@ -1,0 +1,154 @@
+<section class="content-header">
+    <h1><?= __('Setting new records') ?></h1>
+</section>
+
+<div class="modal" id="modal-add-custom-field"></div>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/register') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('Basic information') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-news-limit"><?= __('Secret questions') ?></label>
+
+                        <div class="col-sm-10 container-add-vip-type">
+                            <div class="field container-add-secret-question">
+                                <?php if (isset($register['secret_questions'])): ?>
+                                    <?php foreach ($register['secret_questions'] as $question): ?>
+                                        <input class="form-control" type="text" style="margin-bottom:3px;" value="<?= $question ?>" name="secret_questions[]" />
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                                <input class="form-control" type="text" name="secret_questions[]" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align:right;margin-top:-10px">
+                        <a class="btn btn-xs btn-success add-secret-question" href="javascript:void(0)"><?= __('Add') ?></a>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-confirm_email"><?= __('Email confirmation') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="config-register-confirm_email"<?= $register['confirm_email'] ? 'checked="checked"' : '' ?> value="1" name="confirm_email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-blocked"><?= __('Create blocked') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="config-register-blocked"<?= $register['create_blocked'] ? 'checked="checked"' : '' ?> value="1" name="create_blocked" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-terms"><?= __('Terms') ?></label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="config-register-terms" name="terms" style="height:250px"><?= config('register.terms') ?></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="margin:0"><?= __('custom fields') ?></legend>
+
+                    <?php if (empty($register['custom_fields'])): ?>
+                        <div style="margin:0;margin-top:10px" class="callout callout-warning">
+                            <p><?= __('No custom field created') ?></p>
+                        </div>
+                    <?php else: ?>
+                        <table class="table table-condensed table-hover table-striped">
+                            <thead>
+                                <tr>
+									<th><?= __('Name') ?></th>
+                                    <th><?= __('Label') ?></th>
+                                    <th><?= __('Required') ?></th>
+									<th><?= __('Type') ?></th>
+									<th width="10"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php foreach ($register['custom_fields'] as $field): ?>
+                                    <tr>
+										<td><?= $field['name'] ?></td>
+                                        <td><?= $field['label'] ?></td>
+                                        <td><?= $field['required'] == 1 ? __('Yes') : __('No') ?></td>
+										<td><?= $field['type'] ?></td>
+										<td class="record-actions">
+											<a data-ajax-delete class="btn btn-xs btn-danger" href="<?= url_to('/admin/configs/register/delete_custom_field/' . $field['name']) ?>"><?= __('delete') ?></a>
+										</td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    <?php endif ?>
+
+                    <div style="text-align:right;margin-top:10px">
+                        <a data-load-with-modal data-modal="modal-add-custom-field" class="btn btn-xs btn-success" href="<?= url_to('/admin/configs/register/add_custom_field') ?>"><?= __('Add') ?></a>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Vip bonus') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-bonus_vip_type"><?= __('Vip') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" id="config-register-bonus_vip_type" name="bonus_vip_type">
+                                <option value=""></option>
+                                <?php foreach (config('vip.types', []) as $key => $value): ?>
+                                    <option value="<?= $key ?>"<?= $key == config('register.bonus.vip.type') ? ' selected="selected"' : '' ?>><?= $value ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-bonus_vip_days"><?= __('Days') ?></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="config-register-bonus_vip_days" name="bonus_vip_days" value="<?= config('register.bonus.vip.days') ?>" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Coin bonus') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-bonus-coin"><?= __('Coin') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" id="config-register-bonus-coin" name="bonus_vip_coin">
+                                <option value=""></option>
+                                <?php foreach (config('coins', []) as $key => $coin): ?>
+                                    <option value="<?= $coin['id'] ?>"<?= $coin['id'] == config('register.bonus.coin.type') ? ' selected="selected"' : '' ?>><?= $coin['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-register-bonus-coin-amount"><?= __('Amount') ?></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="config-register-bonus-coin-amount" name="bonus_vip_coin_amount" value="<?= config('register.bonus.coin.amount') ?>" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

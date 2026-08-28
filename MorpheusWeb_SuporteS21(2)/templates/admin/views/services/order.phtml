@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    $(function () {
+        $("#services-table tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/services/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('services') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/services') ?>"><?= __('list') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <? if (empty($services)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('no services found') ?></p>
+        </div>
+    <? else: ?>
+
+        <div class="box box-default table-responsive">
+            <table id="services-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('service') ?></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <? foreach ($services as $root): ?>
+                        <tr id="sequence_<?= $root['id'] ?>" class="root">
+                            <td colspan="3"><i class="fa fa-bars"></i> <?= $root['name'] ?></td>
+                        </tr>
+                    <? endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <? endif ?>
+</section>

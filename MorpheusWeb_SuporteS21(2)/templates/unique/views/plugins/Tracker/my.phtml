@@ -1,0 +1,59 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Trackers') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('My trackers') ?></li>
+        </ol>
+    </nav>
+
+    <table class="table table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th width="10"></th>
+                <th><?= __('Title') ?></th>
+                <th width="90"><?= __('Category') ?></th>
+                <th style="text-align:center;" width="140"><?= __('Created at') ?></th>
+                <th style="text-align:center;" width="80"><?= __('Status') ?></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php if (empty($trackers)): ?>
+                <tr>
+                    <td colspan="6"><?= __('No trackers found') ?></td>
+                </tr>
+            <?php else: ?>
+                <?php foreach ($trackers as $tracker): ?>
+                    <tr>
+                        <td>#<?= $tracker['id'] ?></td>
+                        <td><?= $tracker['title'] ?></td>
+                        <td><?= util('Tracker.Tracker')->categoryName($tracker['category_id']) ?></td>
+                        <td style="text-align:center;"><?= util('Date')->dateTime($tracker['create_date']) ?></td>
+                        <td style="text-align:center;">
+                            <span class="badge badge-<?= util('Tracker.Tracker')->statusColor($tracker['category_id'], $tracker['status']) ?>">
+                                <?= util('Tracker.Tracker')->statusName($tracker['category_id'], $tracker['status']) ?>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            <?php endif ?>
+        </tbody>
+    </table>
+
+    <div style="margin-top:10px">
+        <a data-ajax href="<?= url_to('/my-trackers/add') ?>" class="btn btn-info"><?= __('Open new tracker') ?></a>
+    </div>
+</div>
+

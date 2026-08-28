@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+
+        <title><?= __('Administration') ?> | <?= config('server.name') ?></title>
+
+        <link rel="icon" href="<?= asset_to('/favicon.ico') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/jquery-ui.min.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/bootstrap.min.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/sweetalert.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/libs/iCheck/all.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/libs/summernote/summernote.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/libs/datepicker/css/bootstrap-datepicker3.min.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/bootstrap-modal.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/libs/codemirror/lib/codemirror.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/morpheus.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/skins/skin-blue.min.css') ?>" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+        <?= fetch('css') ?>
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript">
+            var base = '<?= url_to('/') ?>';
+        </script>
+
+        <script type="text/javascript" src="<?= asset_to('/js/jquery.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/jquery-ui.min.js') ?>"></script>
+        <script>$.widget.bridge('uitooltip', $.ui.tooltip);</script>
+        <script type="text/javascript" src="<?= asset_to('/js/bootstrap.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/bootstrap-modal.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/bootstrap-modalmanager.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/iCheck/icheck.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/summernote/summernote.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/summernote/lang/summernote-' . str_replace('_', '-', config('locale', 'pt_BR')) . '.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/datepicker/js/bootstrap-datepicker.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/datepicker/locales/bootstrap-datepicker.' . str_replace('_', '-', config('locale', 'pt_BR')) . '.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/jquery.pjax.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/jquery.mask-money.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/sweetalert.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/highcharts/highcharts.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/slimScroll/jquery.slimscroll.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/libs/codemirror/lib/codemirror.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/morpheus.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/admin.js') ?>"></script>
+
+        <script type="text/javascript" src="<?= asset_to('/js/custom/downloads.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/custom/servers.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/custom/config.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/custom/accounts.js') ?>"></script>
+
+        <?= fetch('script') ?>
+    </head>
+
+    <body class="skin-blue sidebar-mini layout-boxed">
+
+        <?php if (is_dir(ROOT . DS . 'install' . DS)): ?>
+            <div class="alert alert-danger" style="margin-bottom:0">
+                <h4><?= __('Security alert') ?></h4>
+                <p><?= __('For your security delete the install folder') ?></p>
+            </div>
+        <?php endif ?>
+
+        <div class="wrapper">
+            <header class="main-header">
+                <a data-ajax href="<?= url_to('/admin/') ?>" class="logo">
+                    <span class="logo-mini"><b>M</b>W</span>
+                    <span class="logo-lg"><b>MORPHEUS</b>WEB</span>
+                </a>
+
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="hidden-xs"><?= admin('name') ?></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="<?= url_to('/admin/logout') ?>" class=""><?= __('logout') ?></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <aside class="main-sidebar">
+                <div class="partial-sidebar">
+                    <?= partial('sidebar') ?>
+                </div>
+            </aside>
+
+            <div class="content-wrapper ajax-container">
+                <?= $content ?>
+            </div>
+        </div>
+    </body>
+</html>

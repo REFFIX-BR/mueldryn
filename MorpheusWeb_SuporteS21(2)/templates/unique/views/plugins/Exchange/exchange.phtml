@@ -1,0 +1,39 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/account/exchange') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-row">
+        <div class="col-md-5">
+            <div class="form-group">
+                <label class="form-control-label" for="coin-amount"><?= __('Amount') ?> <span class="required">*</span></label>
+                <input class="form-control calculate-rate" id="coin-amount" type="text" name="amount" />
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="form-group">
+                <label class="form-control-label" for="coin-from"><?= __('Coin') ?> <span class="required">*</span></label>
+                <select class="form-control calculate-rate" id="coin-from" name="from">
+                    <option value=""></option>
+                    <?php foreach ($coins as $id => $coin): ?>
+                        <option value="<?= $id ?>"><?= util('Coin')->name($id) ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-control-label" for="coin-to"><?= __('To') ?> <span class="required">*</span></label>
+        <select class="form-control calculate-rate" id="coin-to" name="to" style="width:100%">
+            <option value=""></option>
+        </select>
+    </div>
+    <div class="text-center" style="line-height:30px;font-size:18px;">=</div>
+    <div>
+        <div id="change-tax-text" class="text-center" style="display:none"><?= __('Tax') ?></div>
+        <div id="change-tax" class="text-center" style="font-size:20px"></div>
+        <div id="change-amount-text" class="text-center" style="display:none;margin-top:10px"><?= __('You receive') ?></div>
+        <div id="change-amount" class="text-center" style="font-size:20px"></div>
+    </div>
+    <input style="margin-top:20px" type="submit" class="btn btn-info" value="<?= __('Convert') ?>">
+</form>

@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Block user') ?></h3>
+</div>
+
+<form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/accounts/ban/' . $username) ?>" method="post">
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="ban-cause"><?= __('Cause') ?> <span class="required">*</span></label>
+
+            <div class="col-sm-9">
+                <textarea class="form-control" id="ban-cause" name="cause"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="ban-days"><?= __('Days') ?> <span class="required">*</span></label>
+
+            <div class="col-sm-9">
+                <input class="form-control" type="text" name="days" id="ban-days" />
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="margin-top:0">
+        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+    </div>
+</form>

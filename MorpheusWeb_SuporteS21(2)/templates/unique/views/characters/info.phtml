@@ -1,0 +1,120 @@
+<table class="table table-sm table-striped">
+    <tr>
+        <td>
+            <?= __('Class') ?>
+            <span class="badge badge-secondary">
+                <?= util('Character')->className($character->getClass()) ?>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Level') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getLevel() ?>
+            </span>
+        </td>
+    </tr>
+    <?php if (config('columns.resets')): ?>
+        <tr>
+            <td>
+                <?= __('Resets') ?>
+                <span class="badge badge-secondary">
+                    <?= $character->getResets() ?>
+                </span>
+            </td>
+        </tr>
+    <?php endif ?>
+    <?php if (config('columns.master_resets')): ?>
+        <tr>
+            <td>
+                <?= __('Master Resets') ?>
+                <span class="badge badge-secondary">
+                    <?= $character->getMasterResets() ?>
+                </span>
+            </td>
+        </tr>
+    <?php endif ?>
+    <tr>
+        <td>
+            <?= __('Strenght') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getStrength() ?>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Agility') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getAgility() ?>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Vitality') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getVitality() ?>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Energy') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getEnergy() ?>
+            </span>
+        </td>
+    </tr>
+
+    <?php if (util('Character')->isClass($character->getClass(), ['DL', 'LE'])): ?>
+        <tr>
+            <td>
+                <?= __('Leadership') ?>
+                <span class="badge badge-secondary">
+                    <?= $character->getCommand() ?>
+                </span>
+            </td>
+        </tr>
+    <?php endif ?>
+
+    <tr>
+        <td>
+            <?= __('Map') ?>
+            <span class="badge badge-secondary">
+                <?= util('Character')->mapName($character->getMap()) ?> (<?= $character->getPositionX() ?>x<?= $character->getPositionY() ?>)
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Zen') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getMoney() ?>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Status') ?>
+            <?php if ($character->isConnected()): ?>
+                <span class="badge badge-success">
+                    online
+                </span>
+            <?php else: ?>
+                <span class="badge badge-danger">
+                    offline
+                </span>
+            <?php endif ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?= __('Guild') ?>
+            <span class="badge badge-secondary">
+                <?= $character->getGuild() !== null ? $character->getGuild()->getName() : '-' ?>
+            </span>
+        </td>
+    </tr>
+</table>

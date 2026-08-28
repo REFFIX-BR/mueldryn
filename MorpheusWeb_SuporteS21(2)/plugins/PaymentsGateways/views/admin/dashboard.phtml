@@ -1,0 +1,85 @@
+<script type="text/javascript">
+    $(function () {
+        $("#chart-pedidos").highcharts({
+            chart: {
+                height: 200
+            },
+            title: {
+                text: false
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                categories: [<?= join(',', array_map(function ($d) { return "'" . $d ."'"; }, util('Hash')->extract($data, '{n}.date'))) ?>]
+            },
+            yAxis: {
+                title: {
+                    text: '<?= __('Total value ($)') ?>'
+                },
+                labels: {
+                    formatter: function () {
+                        return Highcharts.numberFormat(this.value, 2, ",", ".");
+                    }
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return this.x + ": <?= __('$') ?> " + Highcharts.numberFormat(this.y, 2, ",", ".");
+                }
+            },
+            legend: {
+                enabled: true
+            },
+            series: [{
+                name: '<?= __('Total') ?>',
+                data: [<?= join(',', util('Hash')->extract($data, '{n}.price')) ?>]
+            },{
+                name: '<?= __('Paid') ?>',
+                color: '#00a65a',
+                data: [<?= join(',', util('Hash')->extract($paid, '{n}.price')) ?>]
+            }]
+        });
+    });
+</script>
+
+<div class="row" style="margin-top:15px">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"><?= __('Orders') ?></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="text-center">
+                            <strong><?= __('Orders on last 15 days') ?></strong>
+                        </p>
+
+                        <div class="chart" id="chart-pedidos">
+
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            <strong><?= __('Status') ?></strong>
+                        </p>
+
+                        <?php foreach ($status as $s): ?>
+                            <div class="progress-group">
+                                <span class="progress-text"><?= util('PaymentsGateways.Gateway')->simplePaymentStatus($s['status']) ?></span>
+                                <span class="progress-number"><b><?= $s['total'] ?></b>/<?= $total ?></span>
+
+                                <div class="progress sm">
+                                    <div class="progress-bar progress-bar-<?= util('PaymentsGateways.Gateway')->statusColor($s['status']) ?>" style="width: <?= $s['total'] * 100 / $total ?>%"></div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

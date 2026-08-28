@@ -1,0 +1,72 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Achievements') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Achievements') ?></li>
+        </ol>
+    </nav>
+
+    <div class="row achievements">
+        <?php $total = count($achievements) ?>
+
+        <?php foreach ($achievements as $index => $achievement): ?>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header"><?= $achievement['name'] ?></div>
+                    <div class="card-body">
+                        <div class="description">
+                            <?= $achievement['description'] ?>
+                        </div>
+                        <div class="requirements">
+                            <div class="title"><?= __('Requirements') ?></div>
+                            <?php foreach ($achievement['requirements'] as $requirement): ?>
+                                <div class="requirement">
+                                    <?= $requirement['title'] ?>
+                                    <span style="float:right"><?= $requirement['current'] ?>/<?= $requirement['total'] ?></span>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" style="width:<?= $requirement['percentage'] ?>%"><?= $requirement['percentage'] ?>%</div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                            <?php if ($achievement['require_achievement']): ?>
+                                <div class="requirement">
+                                    <?= __('Require') ?> <?= $achievement['require_achievement'] ?>
+                                    <span style="float:right"><?= $achievement['require_achievement_ok'] ? 1 : 0 ?>/1</span>
+                                    <div class="progress">
+                                        <div class="bar" style="width:<?= $achievement['require_achievement_ok'] ? 100 : 0 ?>%"><?= $achievement['require_achievement_ok'] ? 100 : 0 ?>%</div>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+                            <div class="rewards">
+                                <div class="title"><?= __('Rewards') ?></div>
+                                <ul>
+                                    <?php foreach ($achievement['rewards'] as $reward): ?>
+                                        <li><?= $reward['title'] ?></li>
+                                    <?php endforeach ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php if ($achievement['available']): ?>
+                        <div class="card-footer">
+                            <a data-ajax-action href="<?= url_to('/achievements/rescue/' . $achievement['id']) ?>" class="btn btn-sm btn-info"><?= __('Rescue') ?></a>
+                        </div>
+                    <?php endif ?>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

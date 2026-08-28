@@ -1,0 +1,400 @@
+<style>
+.mkt-wrap {
+    position: relative;
+    padding: 28px 8px 8px;
+}
+.mkt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 56px 18px;
+    align-items: stretch;
+}
+.mkt-card {
+    --accent: #5ec8ff;
+    --glow: rgba(94, 200, 255, 0.45);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 92px;
+    padding: 78px 14px 14px;
+    border-radius: 16px;
+    background:
+        radial-gradient(ellipse at 50% 0%, var(--glow), transparent 55%),
+        linear-gradient(180deg, rgba(22, 28, 40, 0.92) 0%, rgba(10, 14, 22, 0.96) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    overflow: visible;
+}
+.mkt-card.is-dw { --accent: #6ec8ff; --glow: rgba(110, 200, 255, 0.42); }
+.mkt-card.is-bk { --accent: #ff9a3c; --glow: rgba(255, 154, 60, 0.4); }
+.mkt-card.is-elf { --accent: #5fe08a; --glow: rgba(95, 224, 138, 0.4); }
+.mkt-card.is-dl { --accent: #c084fc; --glow: rgba(192, 132, 252, 0.42); }
+.mkt-card.is-sum { --accent: #f472b6; --glow: rgba(244, 114, 182, 0.4); }
+.mkt-card.is-rf { --accent: #fb7185; --glow: rgba(251, 113, 133, 0.42); }
+
+.mkt-card__hero {
+    position: absolute;
+    left: 50%;
+    top: -96px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 168px;
+    z-index: 3;
+    pointer-events: none;
+}
+.mkt-card__orb {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.55), transparent 28%),
+        radial-gradient(circle at 50% 55%, var(--accent), rgba(0,0,0,0.15) 72%);
+    box-shadow:
+        0 0 28px var(--glow),
+        inset 0 -10px 22px rgba(0,0,0,0.25);
+}
+.mkt-card__art {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    max-height: 168px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 16px rgba(0,0,0,0.55));
+    transition: transform 0.25s ease;
+}
+.mkt-card:hover .mkt-card__art {
+    transform: translateX(-50%) translateY(-6px) scale(1.04);
+}
+
+.mkt-card__name {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+}
+.mkt-card__class {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+}
+
+.mkt-primary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.mkt-primary div {
+    text-align: center;
+}
+.mkt-primary strong {
+    display: block;
+    color: #ffb84d;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.mkt-primary span {
+    display: block;
+    margin-top: 3px;
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.mkt-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 14px;
+    flex: 1;
+}
+.mkt-rows > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.78);
+}
+.mkt-rows strong {
+    color: #ffb84d;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.mkt-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+.mkt-price__coin {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.mkt-price__coin small {
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+    font-size: 11px;
+}
+.mkt-jewels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 10px;
+}
+.mkt-jewels__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 36px;
+}
+.mkt-jewels__item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    image-rendering: auto;
+}
+.mkt-jewels__item span {
+    font-size: 11px;
+    color: #ffb84d;
+    font-weight: 700;
+    margin-top: 2px;
+}
+.mkt-seller {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+}
+.mkt-seller strong { color: rgba(255,255,255,0.75); }
+
+.mkt-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.mkt-actions .btn {
+    flex: 1;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 9px 10px;
+    border: none;
+}
+.mkt-actions .btn-info-mkt {
+    background: #1e7bff;
+    color: #fff;
+}
+.mkt-actions .btn-info-mkt:hover {
+    background: #1669e0;
+    color: #fff;
+}
+.mkt-actions .btn-buy-mkt {
+    background: #22c55e;
+    color: #fff;
+}
+.mkt-actions .btn-buy-mkt:hover {
+    background: #16a34a;
+    color: #fff;
+}
+.mkt-actions .btn-cancel-mkt {
+    background: #ef4444;
+    color: #fff;
+}
+
+.mkt-inv {
+    margin: 0 0 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 8px;
+}
+.mkt-inv summary {
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px;
+}
+.mkt-inv summary::-webkit-details-marker { display: none; }
+.mkt-inv[open] summary { margin-bottom: 8px; color: #ffb84d; }
+.mkt-inv__scroll {
+    overflow-x: auto;
+    transform: scale(0.62);
+    transform-origin: top center;
+    height: 280px;
+}
+
+.mkt-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 16px;
+    color: rgba(255,255,255,0.55);
+}
+
+@media (max-width: 520px) {
+    .mkt-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+</style>
+
+<div class="panel-heading"><i class="fa fa-shopping-cart"></i> Mercado de Personagens</div>
+<div class="panel-body">
+    <div class="alert alert-info">
+        <i class="fa fa-info-circle"></i> Compre personagens de outros jogadores ou venda os seus para conseguir mais moedas!
+    </div>
+
+    <div class="text-right" style="margin-bottom: 12px;">
+        <a href="/panel/marketchars/sell" class="btn btn-success"><i class="fa fa-tag"></i> Vender um Personagem</a>
+    </div>
+
+    <div class="mkt-wrap">
+        <div class="mkt-grid">
+            <?php foreach ($chars as $char): ?>
+                <?php
+                    $className = util('Character')->className($char['Class']);
+                    $classSlug = util('Character')->classIconSlug($char['Class']);
+                    $classIcon = util('Character')->classIconUrl($char['Class']);
+                    $coinName = isset($coins[$char['coin_id']]) ? $coins[$char['coin_id']]['name'] : 'Moeda';
+                    $infoUrl = url_to('/panel/marketchars/info/' . $char['id']);
+                ?>
+                <article class="mkt-card is-<?= htmlspecialchars($classSlug) ?>">
+                    <div class="mkt-card__hero">
+                        <div class="mkt-card__orb"></div>
+                        <img class="mkt-card__art" src="<?= $classIcon ?>" alt="<?= htmlspecialchars($className) ?>">
+                    </div>
+
+                    <h3 class="mkt-card__name"><?= htmlspecialchars($char['character_name']) ?></h3>
+                    <span class="mkt-card__class"><?= htmlspecialchars($className) ?></span>
+
+                    <div class="mkt-primary">
+                        <div>
+                            <strong><?= (int) $char['cLevel'] ?></strong>
+                            <span>Level</span>
+                        </div>
+                        <div>
+                            <strong><?= (int) $char['ResetCount'] ?></strong>
+                            <span>Reset</span>
+                        </div>
+                        <div>
+                            <strong><?= (int) $char['MasterResetCount'] ?></strong>
+                            <span>GReset</span>
+                        </div>
+                    </div>
+
+                    <div class="mkt-rows">
+                        <div><span>Força</span><strong><?= (int) $char['Strength'] ?></strong></div>
+                        <div><span>Agilidade</span><strong><?= (int) $char['Dexterity'] ?></strong></div>
+                        <div><span>Vitalidade</span><strong><?= (int) $char['Vitality'] ?></strong></div>
+                        <div><span>Energia</span><strong><?= (int) $char['Energy'] ?></strong></div>
+                        <?php if (!empty($char['Leadership'])): ?>
+                            <div><span>Comando</span><strong><?= (int) $char['Leadership'] ?></strong></div>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php
+                        $jp = isset($char['jewel_prices']) ? $char['jewel_prices'] : array();
+                        $hasJewels = false;
+                        foreach ($jp as $qv) { if ((int)$qv > 0) { $hasJewels = true; break; } }
+                        $hasCoin = ((int)$char['price'] > 0) && !empty($char['coin_id']) && $char['coin_id'] !== 'jewels' && isset($coins[$char['coin_id']]);
+                    ?>
+                    <div class="mkt-price">
+                        <?php if ($hasCoin): ?>
+                            <div class="mkt-price__coin">
+                                <?= number_format($char['price'], 0, ',', '.') ?>
+                                <small><?= htmlspecialchars($coins[$char['coin_id']]['name']) ?></small>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($hasJewels): ?>
+                            <div class="mkt-jewels">
+                                <?php foreach ($jewelCatalog as $code => $meta): ?>
+                                    <?php if (empty($jp[$code])) continue; ?>
+                                    <div class="mkt-jewels__item" title="<?= htmlspecialchars($meta['name']) ?>">
+                                        <img src="<?= resource_to('/images/items/' . $meta['image']) ?>" alt="<?= htmlspecialchars($meta['short']) ?>">
+                                        <span><?= (int) $jp[$code] ?></span>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!$hasCoin && !$hasJewels): ?>
+                            <div class="mkt-price__coin">—</div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="mkt-seller">
+                        Vendedor: <strong><?= htmlspecialchars($char['seller']) ?></strong>
+                    </div>
+
+                    <?php if (!empty($char['character'])): ?>
+                        <?php $mInv = $char['character']->getInventory()->getRenderer()->setEnabledItemInfo(true); ?>
+                        <details class="mkt-inv">
+                            <summary>Inventário / Equipamento</summary>
+                            <div class="mkt-inv__scroll">
+                                <?= $mInv->render() ?>
+                            </div>
+                            <div style="max-height:120px; overflow-y:auto; font-size:11px;">
+                                <?= $mInv->renderVisualList() ?>
+                            </div>
+                        </details>
+                    <?php endif; ?>
+
+                    <div class="mkt-actions">
+                        <a href="<?= $infoUrl ?>" class="btn btn-info-mkt" data-ajax>Info</a>
+                        <?php if ($char['seller'] === user()->getUsername()): ?>
+                            <form action="/panel/marketchars/cancel/<?= $char['id'] ?>" method="POST" class="ajax-form" style="flex:1; margin:0;">
+                                <button type="submit" class="btn btn-cancel-mkt btn-block"><i class="fa fa-times"></i> Cancelar</button>
+                            </form>
+                        <?php else: ?>
+                            <form action="/panel/marketchars/buy/<?= $char['id'] ?>" method="POST" class="ajax-form" style="flex:1; margin:0;">
+                                <button type="submit" class="btn btn-buy-mkt btn-block"><i class="fa fa-shopping-cart"></i> Comprar</button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+
+            <?php if (empty($chars)): ?>
+                <div class="mkt-empty">
+                    <i class="fa fa-frown-o fa-3x" style="margin-bottom: 12px; display: block;"></i>
+                    Nenhum personagem à venda no momento.<br>Seja o primeiro a anunciar!
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

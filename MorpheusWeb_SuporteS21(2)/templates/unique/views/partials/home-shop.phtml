@@ -1,0 +1,27 @@
+<section class="md-home-shop">
+    <h2 class="md-home-shop__title">Loja & VIP</h2>
+    <div class="md-home-shop__grid">
+        <a data-ajax class="md-home-shop__card md-home-shop__card--donate" href="<?= url_to('/donate') ?>">
+            <i class="fa fa-heart"></i>
+            <strong><?= __('Donation') ?></strong>
+            <span>Doação → Créditos</span>
+        </a>
+        <a data-ajax class="md-home-shop__card md-home-shop__card--packages" href="<?= url_to('/packages') ?>">
+            <i class="fa fa-shopping-bag"></i>
+            <strong><?= __('Buy Vip/Coin') ?></strong>
+            <span>Créditos → VIP / WCoin</span>
+        </a>
+        <?php if (plugin_active('WebShop')): ?>
+        <a data-ajax class="md-home-shop__card md-home-shop__card--webshop" href="<?= url_to('/shops') ?>">
+            <i class="fa fa-shopping-cart"></i>
+            <strong><?= __('WebShop') ?></strong>
+            <span>WCoin → Itens</span>
+        </a>
+        <?php endif ?>
+        <a data-ajax class="md-home-shop__card md-home-shop__card--vip" href="<?= url_to('/vip') ?>">
+            <i class="fa fa-crown"></i>
+            <strong><?= __('VIP') ?></strong>
+            <span>Vantagens exclusivas</span>
+        </a>
+    </div>
+</section>

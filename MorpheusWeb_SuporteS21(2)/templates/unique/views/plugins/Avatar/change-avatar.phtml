@@ -1,0 +1,15 @@
+<?= partial('rates') ?>
+
+<p style="margin-bottom:2px;"><span class="required">*</span> <?= __('The image can not exceed the limit %skb', config('avatar.filesize', 100)) ?></p>
+<p style="margin-bottom:2px;"><span class="required">*</span> <?= __('No offensive or pornographic images') ?></p>
+<p style="margin-bottom:10px;"><span class="required">*</span> <?= __('Only %s files are accepted', util('Text')->toList($extensions)) ?></p>
+
+<form data-ajax data-upload action="<?= url_to('/panel/character/' . $character->getName() . '/change-avatar') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-group">
+        <input class="form-control-file" data-upload-field type="file" name="avatar" id="avatar" />
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Change') ?>">
+</form>

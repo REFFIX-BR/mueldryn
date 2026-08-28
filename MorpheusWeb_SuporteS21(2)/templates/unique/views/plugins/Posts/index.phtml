@@ -1,0 +1,67 @@
+<?php
+function newsType($type) {
+    $types = config('posts.types');
+    if (isset($types[$type])) {
+        return '<span class="badge badge-default" style="background:' . $types[$type]['color'] . '">' . $types[$type]['name'] . '</span>';
+    } else {
+        return '';
+    }
+}
+?>
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('News') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Posts') ?></li>
+        </ol>
+    </nav>
+
+    <div class="posts">
+        <?php foreach ($posts as $post): ?>
+            <div class="post">
+                <?php if ($post['image_cover']): ?>
+                    <div class="cover">
+                        <img src="<?= upload_to('/news/' . $post['image_cover']) ?>" />
+                    </div>
+                <?php endif ?>
+
+                <div class="preview">
+                    <div class="title">
+                        <?= newsType($post['type']) ?>
+                        <a<?= empty($post['link']) ? ' data-ajax' : ' target="_blank"' ?>  href="<?= url_to('/post/' . $post['slug']) ?>"><?= $post['title'] ?></a>
+                    </div>
+
+                    <?php if (config('posts.show_preview')): ?>
+                        <div class="body"><?= util('Text')->truncate(strip_tags(nl2br($post['body']), '<br>'), 10) ?></div>
+                    <?php endif ?>
+
+                    <div class="info">
+                        <div>
+                            <i class="fa fa-eye"></i>
+                            <?= __('Views') ?>
+                            <span><?= $post['views'] ?></span>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-calendar"></i>
+                            <?= __('Posted in') ?>
+                            <span><?= util('Date')->date($post['create_date']) ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

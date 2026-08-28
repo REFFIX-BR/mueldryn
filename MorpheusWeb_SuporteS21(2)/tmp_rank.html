@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>MuEldryn</title>
+
+    <link rel="icon" href="/templates/youplay_v3/assets/favicon.ico" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/css/morpheus.min.css" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/youplay/css/youplay.min.css" />
+    <link rel="stylesheet" href="/templates/youplay_v3/assets/css/custom.css" />
+	
+    <link rel="stylesheet" href="/plugins/Perfil/assets/css/perfil.css" /><link rel="stylesheet" href="/plugins/Slides/assets/css/slippry.css" />
+    <script type="text/javascript">
+        var onReady = [];
+    </script>
+</head>
+
+<body>
+
+<!-- Preloader -->
+<div class="page-preloader preloader-wrapp">
+    <img src="/templates/youplay_v3/assets/images/logo.png" alt="">
+    <div class="preloader"></div>
+</div>
+<!-- /Preloader -->
+
+<!-- Navbar -->
+<nav class="navbar-youplay navbar navbar-default navbar-fixed-top ">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/index.php/" class="navbar-brand">
+                <img src="/templates/youplay_v3/assets/images/logo.png" alt="">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-hover ">
+                    <a data-akax href="/index.php/" class="dropdown-toggle">
+                        Início <span class="label">Princípio</span>
+                    </a>
+                </li>
+                <li class="dropdown dropdown-hover ">
+                    <a href="/index.php/register" id="home" class="dropdown-toggle">
+                        Registrar-se <span class="label">Fazendo parte</span>
+                    </a>
+                </li>
+                <li class="dropdown dropdown-hover ">
+                    <a href="/index.php/downloads" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Downloads <span class="label">Essencial</span>
+                    </a>
+                </li>
+                <li class="dropdown dropdown-hover ">
+                    <a href="/index.php/rankings" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Ranking <span class="caret"></span> <span class="label">os melhores</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul role="menu">
+                                                                                                <li><a href="/index.php/rankings/resets">Top Resets</a></li>
+
+                                                                                                                                                                    <li><a href="/index.php/rankings/master-resets">Top Master Resets</a></li>
+
+                                                                                                                                                                    <li><a href="/index.php/rankings/character">Top Level</a></li>
+
+                                                                                                                                                                    <li><a href="/index.php/rankings/master-level">Top Master Level</a></li>
+
+                                                                                                                                                                    <li><a href="/index.php/rankings/pk">Top PK</a></li>
+
+                                                                                                                                                                    <li><a href="/index.php/rankings/guild">Top Guilds</a></li>
+
+                                                                            </ul>
+                                        <ul role="menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                    </div>
+                </li>
+                <li class="dropdown dropdown-hover ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Improvements <span class="caret"></span> <span class="label">Aprimoramentos</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul role="menu">
+                                                        <li><a  href="/index.php/market">Mercado</a></li>
+                                                        <li><a  href="/index.php/vip">Comprar Vip</a></li>
+                            <li><a  href="/index.php/packages">Comprar Moedas</a></li>
+                            <li><a  href="/index.php/events">Eventos</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown dropdown-hover ">
+                    <a href="/index.php/info" class="dropdown-toggle"  " role="button" aria-expanded="false">
+                    Informações <span class="label">About the server</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="partial-login">
+                <ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
+        <li class="dropdown dropdown-hover dropdown-cart">
+            <a href="#login1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                Login
+            </a>
+            <div class="dropdown-menu" style="width: 300px;">
+                 <div class="row header-login">
+                    <form data-ajax-login action="/index.php/login" method="post">
+                        <div class="youplay-input">
+                            <input type="text" name="username" placeholder="Usuário" class="form-control" onclick="$('.dropdown-cart').addClass('open');" />
+                        </div>
+                        <div class="youplay-input">
+                            <input type="password" name="password" placeholder="Senha" class="form-control"  onclick="$('.dropdown-cart').addClass('open');" />
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 small">
+                                <div class="youplay-checkbox">
+                                                                    </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-default pull-right">Login</button>
+                            </div>
+                        </div>
+
+                        <div class="loading-login" style="display:none;text-align:center;font-size:12px;">
+                            Aguarde um momento<br/> carregando...
+                        </div>
+
+                        <br />
+                        <div class="mt-5 small" style="text-align: center; color: #999">
+                            <a href="/index.php/forgot-password" class="link">Esqueceu sua senha?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+
+        <li class="dropdown dropdown-hover">
+        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <div class="pull-left mr-10 angled-img">
+                <img style="height: 27px; opacity: 0.7;" class="img" src="/templates/youplay_v3/assets/images/flags/pt_BR.jpg">
+            </div>
+        </a>
+        <div class="dropdown-menu">
+            <ul role="menu">
+                                    <li class=""><a href="/index.php/lang/es_ES">Spanish (Spain)</a></li>
+                                    <li class="active"><a href="/index.php/lang/pt_BR">Portuguese (Brazil)</a></li>
+                                    <li class=""><a href="/index.php/lang/en_US">English (United States)</a></li>
+                            </ul>
+        </div>
+    </li>
+</ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="youplay-banner banner-top youplay-banner-parallax small">
+        <div class="image" style="background-image: url(/templates/youplay_v3/assets/images/banner-blog-bg2.jpg)"></div>
+        <div class="info">
+            <div class="container">
+                <h1 class="mb-0">Rankings</h1>
+                <h3 class="mt-5">A verdadeira batalha, vai ficar de fora?</h3>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container youplay-news">
+    <div class="row">
+        <div class="col-md-9 ajax-container">
+                
+
+<div class="col-md-4">
+    <div class="side-block">
+        <h4 class="block-title">Categorias</h4>
+        <div class="block-content p-0 col-md-12 submenu-col">
+                                                <a href="/index.php/rankings/resets" class="rankingLink">
+                        <div class="item angled-bg active">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-assassins-creed-4-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top Resets</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                <a href="/index.php/rankings/master-resets" class="rankingLink">
+                        <div class="item angled-bg">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-bloodborne-3-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top Master Resets</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                <a href="/index.php/rankings/character" class="rankingLink">
+                        <div class="item angled-bg">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-bloodborne-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top Level</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                <a href="/index.php/rankings/master-level" class="rankingLink">
+                        <div class="item angled-bg">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-diablo-iii-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top Master Level</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                <a href="/index.php/rankings/pk" class="rankingLink">
+                        <div class="item angled-bg">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-dragons-dogma-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top PK</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                <a href="/index.php/rankings/guild" class="rankingLink">
+                        <div class="item angled-bg">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-2">
+                                    <div class="angled-img">
+                                        <div class="img">
+                                                                                        <img src="/templates/youplay_v3/assets/images/game-kingdoms-of-amalur-reckoning-2-500x375.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-7">
+                                    <div class="row mt-5">
+                                        <h5>Top Guilds</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                                                                                                                                                                                                                                        </div>
+    </div>
+</div>
+<div class="col-md-8">
+    <h2 class="mt-0 mb-30 ml-20">Top Resets</h2>
+
+    
+
+    <table class="table table-striped mt-20">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Personagem</th>
+                <th>Classe</th>
+                <th>Guild</th>
+                <th>Score</th>
+                <th width="10"></th>
+            </tr>
+        </thead>
+        <tbody>
+                            <tr>
+                    <td>1</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/Baster">Baster</a>                                                                    </td>
+                    <td>Grand Master</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>2</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/Admin">Admin</a>                                                                                                            <span style="background-color: #235782;" class="badge badge-float">VIP Bronze</span>
+                                                                                                </td>
+                    <td>Blade Master</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>3</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/GameMaster">GameMaster</a>                                                                    </td>
+                    <td>Dark Knight</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>4</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/testgmDk">testgmDk</a>                                                                    </td>
+                    <td>-</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>5</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/testgmDl">testgmDl</a>                                                                    </td>
+                    <td>Blade Knight</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>6</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/testgmDw">testgmDw</a>                                                                    </td>
+                    <td>Soul Wizard</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>7</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/testgmElf">testgmElf</a>                                                                    </td>
+                    <td>-</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>8</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/TESTSD">TESTSD</a>                                                                    </td>
+                    <td>Magic Gladiator</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                            <tr>
+                    <td>9</td>
+                    <td>
+                        <a data-ajax href="/index.php/perfil/character/Evomonlvl1">Evomonlvl1</a>                                                                    </td>
+                    <td>Dark Knight</td>
+                    <td></td>
+                    <td>0</td>
+                    <td><span class="rank-stayed">-</span></td>
+                </tr>
+                    </tbody>
+    </table>
+
+    <div style="text-align:right">
+        <span class="off">*</span> O próximo ranking será gerado em 12:42:23    </div>
+</div>        </div>
+
+        <script>
+    var eventsTime = [["Chaos Castle",["01:00","03:00","05:00","07:00","09:00","11:00","13:00","15:00","17:00","19:00","21:00","23:00"]],
+        ["Devil Square",["00:30","04:30","08:30","12:30","16:30","20:30"]],
+        ["Blood Castle",["00:00","03:00","06:00","09:00","12:00","15:00","18:00","21:00"]],
+        ["Castle Deep",["04:00","12:00","20:00"]],
+        ["Skeleton King",["00:05","04:05","08:05","12:05","16:05","20:05"]],
+        ["Red Dragon",["00:15","04:15","08:15","12:15","16:15","20:15"]],
+        ["White Wizard",["00:50","04:50","08:50","12:50","16:50","20:50"]],
+        ["Lorencia Drop",["00:15","04:15","08:15","12:15","16:15","20:15"]]];
+
+    function toSeconds(h,m,s){
+        return h*3600+m*60+s;
+    }
+
+    function updateEventsTime()
+    {
+        var d = new Date();
+        var time = toSeconds(d.getHours(), d.getMinutes(), d.getSeconds());
+
+        var html = '';
+        for (i in eventsTime) {
+            var j;
+            for (j=0; j<eventsTime[i][1].length; j++) {
+                var t = eventsTime[i][1][j].split(':');
+                t = toSeconds(t[0],t[1],0);
+                if(t > time) break;
+            }
+
+            j = j%eventsTime[i][1].length;
+            var t = eventsTime[i][1][j].split(':');
+
+            var diff = toSeconds(t[0],t[1],0) - time;
+            if(diff < 0) diff += 3600*24;
+
+            var c = "label-default";
+            if(diff < 15*60) c = "label-success";
+
+            var h = parseInt(diff/3600);
+            diff -= 3600*h;
+            var m = parseInt(diff/60);
+            var s = diff - m*60;
+
+            var countdown = h+':'+("0" + m).slice(-2)+':'+("0" + s).slice(-2);
+
+            //Eventos contando //
+            html += '<div class="block-content">'+eventsTime[i][1][j]+' - '+eventsTime[i][0]+'<span class="pull-right label '+c+'"  style="font-size: 13px;">'+countdown+'</span></div>';
+            // Eventos zerados //
+            //html += '<div class="block-content"  style="font-size: 12px;">00:00 - '+eventsTime[i][0]+'<span class="pull-right label"  style="font-size: 13px;">00:00</span></div>';
+
+        }
+        $('.events').html(html);
+    }
+
+    onReady.push(function(){ setInterval(updateEventsTime, 1000) });
+</script>
+<div class="col-md-3">
+	<div class="side-block">
+		<h4 class="block-title">Server Status</h4>
+			
+		        <div class="row">
+            <div class="col col-md-5">
+            </div>
+            <div class="col col-md-7 pl-0 pr-0" style="text-align: center">
+                <small>0 Jogadores online</small>
+            </div>
+        </div>
+
+        <div class="block-content">
+			Versão <span class="pull-right label label-default" style="font-size: 15px;">Season 6</span>
+		</div>
+		<div class="block-content">
+			Experiência <span class="pull-right label label-default" style="font-size: 15px;">x20</span>
+		</div>
+		<div class="block-content">
+			Drop <span class="pull-right label label-default" style="font-size: 15px;">30%</span>
+		</div>
+		<div class="block-content">
+			Total de Contas <span class="pull-right label label-default" style="font-size: 15px;">5</span>
+		</div>
+		<div class="block-content">
+			Total de Personagens <span class="pull-right label label-default" style="font-size: 15px;">12</span>
+		</div>
+		<div class="block-content">
+			Total de Guilds <span class="pull-right label label-default" style="font-size: 15px;">0</span>
+		</div>
+	</div>
+
+    <div class="side-block">
+            </div>
+
+	<div class="side-block">
+		<h4 class="block-title">Events</h4>
+		<div class="events"></div>
+	</div>
+	<div class="side-block">
+		<h4 class="block-title">Equipe</h4>
+		<div class="modgroup">
+					<div class="block-content" style="font-size: 12px;">
+			    Phanh <span class="pull-right label label-danger" style="font-size:13px"><span class="offline">Offline</span></span>
+			</div>
+				</div>
+	</div>
+</div>    </div>
+</div>
+
+<!-- Footer -->
+<section>
+    <footer class="youplay-footer-parallax">
+        <div class="wrapper" style="background-image: url('/templates/youplay_v3/assets/images/footer-bg.jpg')">
+
+            <!-- Social Buttons -->
+            <div class="social">
+                <div class="container">
+                    <h3>Colabore com o MuEldryn</h3>
+
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <a href="#">
+                                <i class="fa fa-facebook-square"></i>
+                                <span>Curta nossa página</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="#">
+                                <i class="fa fa-group"></i>
+                                <span>Participe do Forum</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="/index.php/vip">
+                                <i class="fa fa-diamond"></i>
+                                <span>Seja um player VIP</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Social Buttons -->
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <div class="container">
+                    <small><p><a href="http://morpheusmuweb.com" target="_blank">www.morpheusmuweb.com</a> v.3.3.0<br />© Copyright 2026 | Morpheus MuWeb All rights reserved.</p></small>
+                </div>
+            </div>
+            <!-- /Copyright -->
+
+        </div>
+    </footer>
+    <!-- /Footer -->
+</section>
+
+<script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="/resources/js/morpheus.min.js"></script>
+
+<!-- Hexagon Progress -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/HexagonProgress/jquery.hexagonprogress.min.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Jarallax -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/jarallax/dist/jarallax.min.js"></script>
+
+<!-- Smooth Scroll -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/smoothscroll-for-websites/SmoothScroll.js"></script>
+
+<!-- Owl Carousel -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+<!-- Countdown -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/jquery.countdown/dist/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="/templates/youplay_v3/assets/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+
+
+<!-- Youplay -->
+<script type="text/javascript" src="/templates/youplay_v3/assets/youplay/js/youplay.min.js"></script>
+
+<script type="text/javascript" src="/plugins/Market/assets/js/market.js"></script><script type="text/javascript" src="/plugins/Slides/assets/js/slippry.js"></script><script type="text/javascript" src="/plugins/Slides/assets/js/slides.js"></script>
+<script>
+    $(function () {
+        $.morpheus.base_path = '/index.php/';
+    });
+    if(typeof youplay !== 'undefined') {
+        youplay.init({
+            parallax:         true,
+            navbarSmall:      false,
+            fadeBetweenPages: false,
+        });
+    }
+</script>
+
+
+
+<script>
+    for(var i in onReady) onReady[i]();
+</script>
+</body>
+</html>

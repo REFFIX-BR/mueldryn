@@ -1,0 +1,17 @@
+<h1 class="title"><?= __('Web shops') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('WebShops') ?></li>
+</ul>
+
+<?php foreach  ($shops as $shop): ?>
+    <div class="shop">
+        <a data-ajax href="<?= url_to('/shop/' . $shop['slug']) ?>">
+            <img src="<?= asset_to('/images/shops/' . $shop['id'].".png") ?>" />
+
+            <div class="name"><?= $shop['name'] ?></div>
+            <div class="description"><?= $shop['description'] ?></div>
+        </a>
+    </div>
+<?php endforeach ?>

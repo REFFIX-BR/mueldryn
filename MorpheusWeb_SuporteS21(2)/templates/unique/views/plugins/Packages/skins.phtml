@@ -1,0 +1,131 @@
+<?php View::add('page.title', 'Pacotes de skins') ?>
+<?php $shopHubActive = 'skins' ?>
+
+<div class="page-container md-shop-page eldryn-skins-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title">Armadura de skins</h1>
+            <p class="md-shop-header__lead">Visual exclusivo MuEldryn — troque créditos por sets e mounts únicos.</p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= config('coins.credits.name', __('Credits')) ?></small>
+                <strong><?= util('Number')->format(user()->getCredit(), 2, ',') ?></strong>
+                <a data-ajax class="md-shop-balance__link" href="<?= url_to('/donate') ?>"><?= __('Recharge') ?></a>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <section class="eldryn-skins">
+        <div class="eldryn-skins__banner">
+            <div class="eldryn-skins__banner-copy">
+                <span class="eldryn-skins__eyebrow">MuEldryn · Coleção</span>
+                <h2>Vitrine de skins</h2>
+                <p>Prévia em vídeo de cada pacote. Raridade define o destaque.</p>
+            </div>
+            <div class="eldryn-skins__reset" data-skins-reset="<?= htmlspecialchars($nextReset) ?>">
+                <span class="eldryn-skins__reset-label">Próxima rotação</span>
+                <strong class="eldryn-skins__countdown">--:--:--</strong>
+            </div>
+        </div>
+
+        <?php if (empty($skins)): ?>
+            <div class="md-shop-alert">Nenhuma skin cadastrada ainda. Adicione pacotes com descrição iniciando em <code>skin:normal</code> ou <code>skin:rare</code>.</div>
+        <?php else: ?>
+            <div class="eldryn-skins__grid">
+                <?php foreach ($skins as $skin): ?>
+                    <?php
+                        $rarity = isset($skin['rarity']) ? $skin['rarity'] : 'normal';
+                        $rarityLabel = $rarity === 'rare' ? 'Rara' : ($rarity === 'epic' ? 'Épica' : 'Comum');
+                    ?>
+                    <article class="eldryn-skin eldryn-skin--<?= htmlspecialchars($rarity) ?>">
+                        <div class="eldryn-skin__media">
+                            <span class="eldryn-skin__badge"><?= $rarityLabel ?></span>
+                            <?php if (!empty($skin['image'])): ?>
+                                <?php
+                                    $media = $skin['image'];
+                                    $ext = strtolower(pathinfo($media, PATHINFO_EXTENSION));
+                                    $src = upload_to('/packages/' . $media);
+                                ?>
+                                <?php if (in_array($ext, ['mp4', 'webm', 'ogg'], true)): ?>
+                                    <video
+                                        class="eldryn-skin__video"
+                                        src="<?= $src ?>"
+                                        autoplay
+                                        muted
+                                        loop
+                                        playsinline
+                                        preload="metadata"
+                                    ></video>
+                                <?php elseif (in_array($ext, ['gif', 'png', 'jpg', 'jpeg', 'webp'], true)): ?>
+                                    <img class="eldryn-skin__video" src="<?= $src ?>" alt="<?= htmlspecialchars($skin['package']) ?>" />
+                                <?php else: ?>
+                                    <div class="eldryn-skin__empty"><i class="fa fa-magic"></i></div>
+                                <?php endif ?>
+                            <?php else: ?>
+                                <div class="eldryn-skin__empty"><i class="fa fa-magic"></i></div>
+                            <?php endif ?>
+                            <div class="eldryn-skin__fade"></div>
+                        </div>
+                        <div class="eldryn-skin__body">
+                            <h3 class="eldryn-skin__title"><?= htmlspecialchars($skin['package']) ?></h3>
+                            <?php if (!empty($skin['blurb'])): ?>
+                                <p class="eldryn-skin__desc"><?= htmlspecialchars($skin['blurb']) ?></p>
+                            <?php endif ?>
+                            <div class="eldryn-skin__foot">
+                                <div class="eldryn-skin__price">
+                                    <small>Preço</small>
+                                    <strong><?= util('Number')->format($skin['price'], 2, ',') ?> <span><?= __('Credits') ?></span></strong>
+                                </div>
+                                <a
+                                    data-confirm="<?= __('Are you sure you want to buy this package?') ?>"
+                                    href="<?= url_to('/packages/buy/' . $skin['id']) ?>"
+                                    class="eldryn-skin__buy"
+                                    data-ajax-action
+                                >Adquirir</a>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+    </section>
+</div>
+
+<script>
+(function () {
+    var el = document.querySelector('[data-skins-reset]');
+    if (el) {
+        var target = new Date(el.getAttribute('data-skins-reset')).getTime();
+        var out = el.querySelector('.eldryn-skins__countdown');
+        function tick() {
+            var diff = Math.max(0, target - Date.now());
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            out.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+        }
+        tick();
+        setInterval(tick, 1000);
+    }
+
+    function playSkinVideos() {
+        var videos = document.querySelectorAll('.eldryn-skin__video');
+        for (var i = 0; i < videos.length; i++) {
+            if (!videos[i].play) continue;
+            try {
+                videos[i].muted = true;
+                var p = videos[i].play();
+                if (p && typeof p.catch === 'function') p.catch(function () {});
+            } catch (e) {}
+        }
+    }
+    playSkinVideos();
+    if (window.jQuery) {
+        jQuery(document).off('pjax:end.skins').on('pjax:end.skins', playSkinVideos);
+    }
+})();
+</script>

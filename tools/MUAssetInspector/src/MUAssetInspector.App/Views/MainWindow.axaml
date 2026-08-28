@@ -1,0 +1,98 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MUAssetInspector.App.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="MUAssetInspector.App.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="MU Asset Inspector"
+        Width="1400" Height="900">
+
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*,Auto">
+    <Border Grid.Row="0" Padding="8" BorderBrush="#444" BorderThickness="0,0,0,1">
+      <StackPanel Spacing="8">
+        <Grid ColumnDefinitions="Auto,140,Auto,*,Auto,Auto,*,Auto,Auto,Auto">
+          <TextBlock Grid.Column="0" Text="Profile:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+          <ComboBox Grid.Column="1" ItemsSource="{Binding Profiles}" SelectedItem="{Binding SelectedProfile}"/>
+          <TextBlock Grid.Column="2" Text="Source:" VerticalAlignment="Center" Margin="12,0,6,0"/>
+          <TextBox Grid.Column="3" Text="{Binding SourceRoot}" Watermark="Mudream.online/Data"/>
+          <Button Grid.Column="4" Content="Browse Source" Margin="6,0,0,0" Click="BrowseSource_Click"/>
+          <TextBlock Grid.Column="5" Text="Dest:" VerticalAlignment="Center" Margin="12,0,6,0"/>
+          <TextBox Grid.Column="6" Text="{Binding DestRoot}" Watermark="MuMain/src/bin/Data"/>
+          <Button Grid.Column="7" Content="Browse Dest" Margin="6,0,0,0" Click="BrowseDest_Click"/>
+          <StackPanel Grid.Column="8" Orientation="Horizontal" Spacing="6" Margin="12,0,0,0">
+            <Button Content="Scan" Command="{Binding ScanCommand}"/>
+            <Button Content="Import Selected" Command="{Binding ImportSelectedCommand}"/>
+            <Button Content="Import Missing Cosmetics" Command="{Binding ImportCosmeticsMissingCommand}"/>
+            <Button Content="Import ALL Missing" Command="{Binding ImportAllMissingCommand}"/>
+            <Button Content="Undo Last Import" Command="{Binding RollbackLastImportCommand}"/>
+            <Button Content="Export Report" Command="{Binding ExportReportCommand}"/>
+          </StackPanel>
+        </Grid>
+      </StackPanel>
+    </Border>
+
+    <Grid Grid.Row="1" ColumnDefinitions="320,*,360">
+      <Grid Grid.Column="0" RowDefinitions="Auto,*">
+        <StackPanel Grid.Row="0" Spacing="6" Margin="8">
+          <TextBox Text="{Binding SearchText}" Watermark="Search assets..."/>
+          <ComboBox ItemsSource="{Binding CategoryFilters}" SelectedItem="{Binding SelectedCategory}"/>
+        </StackPanel>
+        <TreeView Grid.Row="1" Margin="8" ItemsSource="{Binding AssetTree}" SelectedItem="{Binding SelectedNode}">
+          <TreeView.ItemTemplate>
+            <TreeDataTemplate ItemsSource="{Binding Children}">
+              <TextBlock Text="{Binding Name}"/>
+            </TreeDataTemplate>
+          </TreeView.ItemTemplate>
+        </TreeView>
+      </Grid>
+
+      <Grid Grid.Column="1" RowDefinitions="*,*" Margin="8">
+        <Border Grid.Row="0" BorderBrush="#666" BorderThickness="1" Margin="0,0,0,4">
+          <Grid RowDefinitions="Auto,*">
+            <TextBlock Text="Texture Preview (RGB)" Margin="6"/>
+            <Image Grid.Row="1" Source="{Binding PreviewImage}" Stretch="Uniform"/>
+          </Grid>
+        </Border>
+        <Border Grid.Row="1" BorderBrush="#666" BorderThickness="1" Margin="0,4,0,0">
+          <Grid RowDefinitions="Auto,*">
+            <TextBlock Text="Alpha Channel" Margin="6"/>
+            <Image Grid.Row="1" Source="{Binding AlphaImage}" Stretch="Uniform"/>
+          </Grid>
+        </Border>
+      </Grid>
+
+      <Grid Grid.Column="2" RowDefinitions="Auto,*,Auto,*" Margin="8">
+        <TextBlock Text="Inspector" FontWeight="Bold"/>
+        <ScrollViewer Grid.Row="1">
+          <TextBox Text="{Binding InspectorText}" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="0"/>
+        </ScrollViewer>
+        <TextBlock Grid.Row="2" Text="Dependencies / Diagnostics" FontWeight="Bold" Margin="0,8,0,4"/>
+        <Grid Grid.Row="3" RowDefinitions="*,Auto">
+          <ListBox ItemsSource="{Binding Dependencies}">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding Text}"/>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <ScrollViewer Grid.Row="1" MaxHeight="160">
+            <TextBox Text="{Binding DiagnosticText}" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="0"/>
+          </ScrollViewer>
+        </Grid>
+      </Grid>
+    </Grid>
+
+    <Border Grid.Row="2" Padding="8" BorderBrush="#444" BorderThickness="0,1,0,0">
+      <Grid RowDefinitions="Auto,Auto">
+        <TextBlock Text="{Binding StatusText}"/>
+        <TextBox Grid.Row="1" Text="{Binding LogTail}" IsReadOnly="True" Height="60" TextWrapping="Wrap"/>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>

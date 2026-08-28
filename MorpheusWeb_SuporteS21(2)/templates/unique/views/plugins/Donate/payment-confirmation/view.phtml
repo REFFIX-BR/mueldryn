@@ -1,0 +1,60 @@
+<h4><?= __('Payment confirmations #%s', [$confirmation['id']]) ?></h4>
+<div class="form-group">
+    <div class="row">
+        <label class="form-control-label col-md-3"><strong><?= __('Value') ?></strong></label>
+        <div class="form-control-static">
+            <?= util('Number')->currency($confirmation['value']) ?>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="form-control-label col-md-3"><?= __('Status') ?>:</label>
+
+        <div class="form-control-static">
+            <?= util('Donate.PaymentConfirmation')->paymentStatus($confirmation['status']) ?>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="form-control-label col-md-3"><?= __('Message') ?></label>
+
+        <div class="form-control-static">
+            <?= $confirmation['message'] ?>
+        </div>
+    </div>
+</div>
+
+<?php if (!empty($confirmation['messages'])): ?>
+    <h5><?= __('Messages') ?></h5>
+
+    <div class="ticket">
+        <ul class="helpdesk-messages">
+            <?php foreach ($confirmation['messages'] as $message): ?>
+                <li>
+                    <div class="desc">
+                        <span class="name"><?= $message['admin'] ? $message['author'] : $message['account'] ?></span>
+                        <span class="created"><?= util('Time')->relative($message['create_date']) ?></span>
+                        <p><?= nl2br($message['message']) ?></p>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif ?>
+
+<?php if ($confirmation['status'] == 1): ?>
+    <h5><?= __('Add message') ?></h5>
+    <form data-ajax data-upload action="<?= url_to('/orders/payment-confirmations/add_message/' . $confirmation['id']) ?>" class="form" method="post">
+        <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+        <div class="form-group">
+            <textarea id="ticket-message" class="form-control" name="message"></textarea>
+        </div>
+
+        <input type="submit" value="<?= __('Send message') ?>" class="btn bg-orange" />
+    </form>
+<?php endif ?>

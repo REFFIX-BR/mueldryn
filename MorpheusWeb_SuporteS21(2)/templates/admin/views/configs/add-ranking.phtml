@@ -1,0 +1,93 @@
+<script>
+
+    $(function () {
+        $("#ranking-table").change(function () {
+            $this = $(this);
+            $score = $("#ranking-score-column");
+            $name = $("#ranking-character-column");
+
+            $score.html('');
+            $name.html('');
+            $.getJSON(base + "admin/sql/columns/" + $this.val(), function (data) {
+                $.each(data, function (key, value) {
+                    $score.append('<option value="' + value.COLUMN_NAME + '">' + value.COLUMN_NAME + '</option>')
+                });
+
+                if ($this.val() !== "Character") {
+                    $("#character-column").show();
+
+                    $.each(data, function (key, value) {
+                        $name.append('<option vaslue="' + value.COLUMN_NAME + '">' + value.COLUMN_NAME + '</option>')
+                    });
+                } else {
+                    $("#character-column").hide();
+                }
+            });
+        });
+    })
+
+</script>
+
+<section class="content-header">
+    <h1><?= __('Add custom ranking') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/configs/rankings') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/rankings/add') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cronjob-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="cronjob-name" name="name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="ranking-table"><?= __('Table') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <select class="form-control" id="ranking-table" name="table">
+                            <option value=""></option>
+                            <?php foreach (sql_tables() as $table): ?>
+                                <option value="<?= $table['TABLE_NAME'] ?>"><?= $table['TABLE_NAME'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="ranking-score-column"><?= __('Score column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <select class="form-control" id="ranking-score-column" name="score_column">
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="character-column" style="display:none">
+                    <label class="col-sm-2 control-label" for="ranking-character-column"><?= __('Character column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <select class="form-control" id="ranking-character-column" name="character_column">
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

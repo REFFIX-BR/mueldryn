@@ -1,0 +1,54 @@
+<?php View::add('page.title', __('Players online')) ?>
+
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Players online') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Players online') ?></li>
+        </ol>
+    </nav>
+
+    <?php if (!empty($players)): ?>
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th><?= __('Character') ?></th>
+                    <th><?= __('Class') ?></th>
+                    <th><?= __('Guild') ?></th>
+                    <th><?= __('Server') ?></th>
+                    <th width="120"><?= __('Connected at') ?></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($players as $character): ?>
+                    <tr>
+                        <td><?= plugin_active('Perfil') ? '<a data-ajax href="' . url_to('/perfil/character/' . $character['character']) . '">' . $character['character'] . '</a>' : $character['character'] ?></td>
+                        <td><?= util('Character')->className($character['character_class']) ?></td>
+                        <td>
+                            <?php if ($character['guild']): ?>
+                                <?= plugin_active('Perfil') ? '<a data-ajax href="' . url_to('/perfil/guild/' . $character['guild']) . '">' . $character['guild'] . '</a>' : $character['guild'] ?>
+                            <?php else: ?>
+                                -
+                            <?php endif ?>
+                        </td>
+                        <td><?= $character['server_name'] ?></td>
+                        <td><?= util('Date')->dateTime($character['connected_at']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    <?php endif ?>
+</div>

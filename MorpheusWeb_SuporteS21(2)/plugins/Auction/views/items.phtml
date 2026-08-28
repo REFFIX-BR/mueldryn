@@ -1,0 +1,34 @@
+<h1 class="title"><?= __('Auction') ?> - <?= $auction['name'] ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/auctions') ?>" data-ajax><?= __('Auctions') ?></a></li>
+    <li class="active"><?= $auction['name'] ?></li>
+</ul>
+
+<div class="auction-items">
+    <?php foreach ($items as $item): ?>
+        <div class="item" data-id="<?= $item['id'] ?>" data-time-end="<?= config('auction.close_time', 60) ?>" data-now="<?= strtotime('now') ?>" data-time="<?= strtotime($item['best_bid_date']) ?>">
+            <div class="name"><?= util('Item')->getFullName($item['item']) ?></div>
+            <div class="image" data-tooltip data-tooltip-url="<?= tooltip_url($item['item']->getHex()) ?>">
+                <img src="<?= util('Item')->getImage($item['item']) ?>" />
+            </div>
+            <div class="info">
+                <?= __('Initial bid') ?>: <?= $item['initial_bid'] ?> <?= util('Coin')->name($item['coin']) ?><br />
+                <?= __('Best bid') ?>:
+                <div>
+                    <?= $item['best_bid'] ?> <?= util('Coin')->name($item['coin']) ?>
+                    <?php if (!empty($item['best_bid_name'])): ?>
+                        <?= __('by') ?> <?= $item['best_bid_name'] ?>
+                    <?php endif ?>
+                </div>
+            </div>
+
+            <div class="time align-center" style="margin-top:10px">00:00</div>
+
+            <div class="buy">
+                <a data-id="<?= $item['id'] ?>" href="<?= url_to('/auction/bid/' . $item['id']) ?>" class="btn auction-bid"><?= __('Bid') ?></a>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>

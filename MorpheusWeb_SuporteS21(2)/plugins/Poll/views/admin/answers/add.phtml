@@ -1,0 +1,33 @@
+<section class="content-header">
+    <h1><?= __('Answers') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/polls/answers/add?poll_id=' . $poll['id']) ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= url_to('/admin/polls/edit/' . $poll['id']) ?>"><?= __('Poll') ?></a></li>
+            <li class="active"><a href="#"><?= __('Answers') ?></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/polls/answers/add?poll_id=' . $poll['id']) ?>" method="post">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="answer"><?= __('Answer') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" name="answer" id="answer" />
+                    </div>
+                </div>
+
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

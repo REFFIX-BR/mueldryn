@@ -1,0 +1,62 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= $box['name'] ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/lootboxes') ?>" data-ajax><?= __('Loot boxes') ?></a></li>
+            <li class="breadcrumb-item active"><?= $box['name'] ?></li>
+        </ol>
+    </nav>
+
+    <div class="lootbox">
+        <?= $box['description'] ?>
+
+        <h2 class="title mt-4" style="margin-bottom:0;margin-top:10px;"><?= __('Available items') ?></h2>
+
+        <div class="lootbox-items">
+            <div class="row">
+                <?php foreach ($items as $index => $item): ?>
+                    <div class="col-md-3">
+                        <div class="item card" id="item-<?= $index ?>">
+                            <div class="name card-header"><?= util('Item')->name($item['section'], $item['idx']) ?></div>
+                            <div class="card-body">
+                                <div class="image">
+                                    <img src="<?= util('Item')->image($item['section'], $item['idx']) ?>" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+
+        <div class="lootbox-wheel mt-5">
+            <div class="text-center">
+                <canvas id="canvas" data-id="<?= $box['id'] ?>" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class="lootbox-price">
+                <?= $box['amount'] ?> <?= util('Coin')->name($box['coin']) ?>
+            </div>
+
+            <div class="lootbox-actions">
+                <a class="btn btn-info open-box" data-confirm="<?= __('Are you sure you want to open this box?') ?>" href="<?= url_to('/lootboxes/open/' . $box['id']) ?>"><?= __('Open this box') ?></a>
+                <a data-ajax class="btn btn-info" href="<?= url_to('/lootboxes/gift/' . $box['id']) ?>"><?= __('Give gift') ?></a>
+            </div>
+        </div>
+    </div>
+</div>
+

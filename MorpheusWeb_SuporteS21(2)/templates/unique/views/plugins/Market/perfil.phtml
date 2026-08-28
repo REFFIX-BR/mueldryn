@@ -1,0 +1,27 @@
+<?php if (!empty($items)): ?>
+    <h2 class="title"><?= __('Items for sale') ?></h2>
+    <div class="shop">
+        <div class="form-row items">
+            <?php foreach ($items as $item): ?>
+                <div class="col-sm-3">
+                    <div class="card item">
+                        <div class="card-header">
+                            <div class="name"><?= util('Item')->getFullName($item['item']) ?></div>
+                        </div>
+                        <div class="image" data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $item['item']->getHex()) ?>">
+                            <img src="<?= util('Item')->image($item['item']->getSection(), $item['item']->getIndex()) ?>" />
+                        </div>
+                        <div class="card-body text-center">
+                            <?= $item['price'] ?> <?= util('Market.Market')->paymentName($item['payment_type'], $item['coin']) ?>
+                        </div>
+                        <?php if (logged_in() && $item['account'] !== user()->getUsername()): ?>
+                            <div class="card-footer">
+                                <a data-ajax-action href="<?= url_to('/market/buy/' . $item['id']) ?>" class="btn btn-sm btn-info"><?= __('Buy') ?></a>
+                            </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+<?php endif ?>

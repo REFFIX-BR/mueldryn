@@ -1,0 +1,62 @@
+<section class="content-header">
+    <h1><?= __('Add coupon') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/coupons') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/webshop/coupons/edit/' . $coupon['id']) ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coupon"><?= __('Coupon') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="coupon" id="coupon" value="<?= $coupon['coupon'] ?>" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="discount"><?= __('Discount') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="discount" id="discount" value="<?= $coupon['discount'] ?>" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="start-date"><?= __('Start date') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-2">
+                        <input type="text" data-show-calendar class="form-control" name="start_date" id="start-date" value="<?= util('Date')->date($coupon['start_date']) ?>" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="expire-date"><?= __('Expire date') ?></label>
+
+                    <div class="col-sm-2">
+                        <input type="text" data-show-calendar class="form-control" name="expire_date" id="expire-date" value="<?= util('Date')->date($coupon['expire_date']) ?>" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="active"><?= __('Active') ?></label>
+
+                    <div class="col-sm-8" style="padding-top:5px">
+                        <input<?= $coupon['active'] ? ' checked' : '' ?> class="form-control" type="checkbox" id="active" value="1" name="active" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

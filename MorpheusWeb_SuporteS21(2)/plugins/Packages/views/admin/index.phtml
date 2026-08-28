@@ -1,0 +1,79 @@
+<script type="text/javascript">
+    $(function () {
+        $("#packages-table").find("tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/packages/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Packages') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/packages/config') ?>"><?= __('Settings') ?></a>
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/packages/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($packages)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No packages found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="packages-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Package') ?></th>
+                        <th><?= __('Salles') ?></th>
+                        <th width="150"><?= __('Price ($)') ?></th>
+                        <th width="150"><?= __('Vip') ?></th>
+                        <th><?= __('Coins') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($packages as $package): ?>
+                        <tr id="sequence_<?= $package['id'] ?>" class="<?= $package['active'] ? 'success' : 'error' ?>">
+                            <td>
+                                <i class="fa fa-bars"></i> <?= $package['package'] ?>
+                            </td>
+                            <td><?= $package['total_sales'] ?></td>
+                            <td><?= util('Number')->format($package['price'], 2, ',', '.') ?></td>
+                            <td>
+                                <?php if (!empty($package['vipdays']) && !empty($package['viptype'])): ?>
+                                    <?= $package['vipdays'] ?> <?= strtolower(__('days')) ?> <?= config('vip.types')[$package['viptype']] ?>
+                                <?php endif ?>
+                            </td>
+                            <td>
+                                <?php if (!empty($package['coins'])): ?>
+                                    <?php foreach (json_decode($package['coins']) as $name => $coin): ?>
+                                        <?php if (isset(config('coins')[$name])): ?>
+                                            <div class="coin"><?= $coin ?> <?= config('coins')[$name]['name'] ?></div>
+                                        <?php endif ?>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/packages/edit/' . $package['id']) ?>"><?= __('Edit') ?></a>
+                                <a data-ajax-delete class="btn btn-danger btn-xs"href="<?= url_to('/admin/packages/delete/' . $package['id']) ?>"><?= __('Delete') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

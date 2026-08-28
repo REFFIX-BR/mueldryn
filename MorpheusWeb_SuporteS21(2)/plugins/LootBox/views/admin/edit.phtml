@@ -1,0 +1,97 @@
+<section class="content-header">
+    <h1><?= __('Edit loot box') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/lootboxes') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#"><?= __('Loot box') ?></a></li>
+            <li><a data-ajax href="<?= url_to('/admin/lootboxes/items?lootbox_id=' . $box['id']) ?>"><?= __('Items') ?></a></li>
+        </ul>
+        <div class="tab-content">
+            <form data-ajax data-upload class="form-horizontal form-focus" action="<?= url_to('/admin/lootboxes/edit/' . $box['id']) ?>" method="post">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-6">
+                            <input class="form-control" value="<?= $box['name'] ?>" type="text" name="name" id="name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="description"><?= __('Description') ?></label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" type="text" name="description" id="description"><?= $box['description'] ?></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="image"><?= __('Image') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input data-upload-field class="form-control" id="image" type="file" name="image" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="expire-date"><?= __('Expire date') ?></label>
+
+                        <div class="col-sm-2">
+                            <input type="text" data-show-calendar value="<?= util('Date')->date($box['expire_date']) ?>" class="form-control" name="expire_date" id="expire-date" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="coin"><?= __('Coin') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="coin" id="coin">
+                                <option value=""></option>
+                                <?php foreach (config('coins', []) as $coin): ?>
+                                    <option value="<?= $coin['id'] ?>"<?= $box['coin'] === $coin['id'] ? ' selected' : '' ?>><?= $coin['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="amount"><?= __('Amount') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" value="<?= $box['amount'] ?>" name="amount" id="amount" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gift-register"><?= __('Gift when register') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" value="<?= $box['gift_register'] ?>" name="gift_register" id="gift-register" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="active"<?= $box['active'] ? ' checked' : '' ?> value="1" name="active" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box-footer">
+                    <div class="col-sm-offset-2" style="padding-left:5px;">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

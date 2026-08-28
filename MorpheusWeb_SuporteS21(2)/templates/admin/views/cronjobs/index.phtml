@@ -1,0 +1,65 @@
+<section class="content-header">
+    <h1><?= __('Cron jobs') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/cronjobs/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($jobs)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No jobs found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table data-table class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Name') ?></th>
+                        <th class="text-center"><?= __('Minutes') ?></th>
+                        <th class="text-center"><?= __('Hours') ?></th>
+                        <th class="text-center"><?= __('Days') ?></th>
+                        <th class="text-center"><?= __('Weeks') ?></th>
+                        <th class="text-center"><?= __('Months') ?></th>
+                        <th class="text-center"><?= __('Last execution') ?></th>
+                        <th class="text-center"><?= __('Last result') ?></th>
+                        <th width="80"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($jobs as $job): ?>
+                        <tr class="<?= $job['active'] ? 'border-success' : '' ?>">
+                            <td><?= $job['name'] ?></td>
+                            <td class="text-center"><?= $job['minutes'] ?></td>
+                            <td class="text-center"><?= $job['hours'] ?></td>
+                            <td class="text-center"><?= $job['days'] ?></td>
+                            <td class="text-center"><?= $job['weeks'] ?></td>
+                            <td class="text-center"><?= $job['months'] ?></td>
+                            <td class="text-center"><?= util('Date')->dateTime($job['last_execution']) ?></td>
+                            <td class="text-center">
+                                <?php if (!empty($job['result'])): ?>
+                                    <?php if ($job['result'] == 'OK'): ?>
+                                        <span class="label label-success"><?= __('success') ?></span>
+                                    <?php else: ?>
+                                        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" data-title="<?= $job['result'] ?>"><?= __('error') ?></span>
+                                    <?php endif ?>
+                                <?php endif ?>
+                            </td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/cronjobs/edit/' . $job['id']) ?>"><?= __('Edit') ?></a>
+                                <?php if ($job['active']): ?>
+                                    <a data-ajax-action class="btn btn-xs btn-danger" href="<?= url_to('/admin/cronjobs/deactive/' . $job['id']) ?>"><?= __('Deactivate') ?></a>
+                                <?php else: ?>
+                                    <a data-ajax-action class="btn btn-xs btn-success" href="<?= url_to('/admin/cronjobs/active/' . $job['id']) ?>"><?= __('Activate') ?></a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

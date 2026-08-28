@@ -1,0 +1,59 @@
+<?php View::add('page.title', __('Donation')) ?>
+<?php $shopHubActive = 'donate' ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('Donate via %s', [$gateway]) ?></h1>
+            <p class="md-shop-header__lead">Informe o valor em reais. Você receberá a mesma quantidade em <?= config('coins.credits.name', __('Credits')) ?>.</p>
+        </div>
+        <div class="md-shop-balance">
+            <small><?= config('coins.credits.name', __('Credits')) ?></small>
+            <strong><?= util('Number')->format(user()->getCredit(), 2, ',') ?></strong>
+        </div>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive]) ?>
+
+    <div class="md-shop-form-card">
+        <div class="md-shop-form-card__head">
+            <img src="<?= asset_to('PaymentsGateways./images/logo-' . $gateway . '.png') ?>" alt="<?= util('PaymentsGateways.Gateway')->name($gateway) ?>" height="42" onerror="this.style.display='none'" />
+            <strong><?= util('PaymentsGateways.Gateway')->name($gateway) ?></strong>
+        </div>
+
+        <form data-ajax action="<?= url_to('/donate/' . $gateway) ?>" class="form md-shop-form" method="post">
+            <div class="form-group">
+                <label for="amount"><?= __('Value') ?> (R$) <span class="required">*</span></label>
+                <div class="md-amount-input">
+                    <span>R$</span>
+                    <input class="form-control" type="text" id="amount" name="amount" placeholder="50" />
+                    <span>,00</span>
+                </div>
+                <small class="md-form-hint">Ex.: 10, 25, 50, 100 créditos</small>
+            </div>
+
+            <?php if (isset($config['require_cpf']) && $config['require_cpf']): ?>
+                <div class="form-group">
+                    <label for="cpf"><?= __('CPF') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" id="cpf" name="cpf" />
+                </div>
+            <?php endif ?>
+
+            <?php if (isset($config['currency']) && $config['currency']): ?>
+                <div class="form-group">
+                    <label for="currency"><?= __('Currency') ?></label>
+                    <select class="form-control" id="currency" name="currency">
+                        <?php foreach ($currencies as $code => $currency): ?>
+                            <option value="<?= $code ?>"><?= $currency ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+            <?php endif ?>
+
+            <div class="md-shop-form__actions">
+                <a data-ajax class="btn btn-outline-success" href="<?= url_to('/donate') ?>"><?= __('Back') ?></a>
+                <input type="submit" class="btn btn-outline-success" value="<?= __('Continue') ?>">
+            </div>
+        </form>
+    </div>
+</div>

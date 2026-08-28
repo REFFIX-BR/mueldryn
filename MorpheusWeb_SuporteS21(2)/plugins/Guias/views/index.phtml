@@ -1,0 +1,36 @@
+<h1 class="title"><?= __('Guides') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Guides') ?></li>
+</ul>
+
+
+<?php if (!empty($categories)): ?>
+    <div class="panel">
+        <div class="grid">
+            <div class="grid-4">
+                <ul class="panel-services">
+                    <?php foreach ($categories as $category): ?>
+                        <li><a data-ajax href="<?= url_to('/guides/' . $category['slug']) ?>"><?= $category['name'] ?></a></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+
+            <div class="grid-8">
+                <?php foreach ($guides as $guide): ?>
+                    <p class="guide">
+                        <a data-ajax href="<?= url_to('/guide/' . $guide['slug']) ?>"><?= $guide['title'] ?></a>
+
+                        <span class="vote-container">
+                            <i class="fa fa-thumbs-up vote-up"></i> (<?= $guide['up'] ?>)
+                            <i class="fa fa-thumbs-down vote-down"></i> (<?= $guide['down'] ?>)
+                        </span>
+                    </p>
+                <?php endforeach ?>
+
+                <?= $paginator->toHtml() ?>
+            </div>
+        </div>
+    </div>
+<?php endif ?>

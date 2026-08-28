@@ -1,0 +1,6 @@
+{
+  "require": {
+    "pagseguro/pagseguro-php-sdk" : "*",
+    "paypal/rest-api-sdk-php": "*"
+  }
+}

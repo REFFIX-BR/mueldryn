@@ -1,0 +1,7 @@
+<?= partial('rates') ?>
+
+<form data-ajax data-confirmation="<?= __('Are you sure?') ?>" action="<?= url_to('/panel/account/repair-items') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+    
+    <input type="submit" class="btn btn-info" value="<?= __('Repair') ?>">
+</form>

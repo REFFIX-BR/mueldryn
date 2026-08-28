@@ -1,0 +1,52 @@
+<?php View::add('page.title', __('Payment')) ?>
+<?php $shopHubActive = 'donate' ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('Payment methods') ?></h1>
+            <p class="md-shop-header__lead"><?= __('There are several payment methods, but we are working with only a few, see') ?>:</p>
+        </div>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive]) ?>
+
+    <div class="md-shop-info-box">
+        <p>O fluxo do <?= config('server.name', 'MuEldryn') ?> funciona em 3 passos:</p>
+        <ol class="md-shop-steps-list">
+            <li><strong>Doação</strong> — pague via gateway e receba créditos (R$ 1 = 1 crédito)</li>
+            <li><strong>Loja de Créditos</strong> — troque créditos por VIP e WCoin</li>
+            <li><strong>Skins</strong> — troque créditos por pacotes de skins exclusivas</li>
+        </ol>
+    </div>
+
+    <section class="md-shop-section">
+        <h2 class="md-shop-section__title"><?= __('SELECT A PAYMENT METHOD BELOW') ?></h2>
+        <div class="md-gateway-grid">
+            <?php $hasGateway = false ?>
+            <?php foreach (config('gateways', []) as $gateway => $cfg): ?>
+                <?php if (!empty($cfg['active'])): ?>
+                    <?php $hasGateway = true ?>
+                    <a data-ajax class="md-gateway-card" href="<?= url_to('/donate/' . $gateway) ?>">
+                        <div class="md-gateway-card__logo">
+                            <img src="<?= asset_to('PaymentsGateways./images/logo-' . $gateway . '.png') ?>" alt="<?= util('PaymentsGateways.Gateway')->name($gateway) ?>" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                            <span class="md-gateway-card__fallback"><?= util('PaymentsGateways.Gateway')->name($gateway) ?></span>
+                        </div>
+                        <div class="md-gateway-card__name"><?= util('PaymentsGateways.Gateway')->name($gateway) ?></div>
+                    </a>
+                <?php endif ?>
+            <?php endforeach ?>
+        </div>
+
+        <?php if (!$hasGateway): ?>
+            <div class="md-shop-alert">
+                Gateways em configuração. Entre em contato com a equipe ou use depósito manual.
+            </div>
+        <?php endif ?>
+
+        <div class="md-shop-info-box__actions mt-3">
+            <a data-ajax class="btn btn-outline-success" href="<?= url_to('/donate') ?>"><?= __('Donation') ?></a>
+            <a data-ajax class="btn btn-outline-success" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+        </div>
+    </section>
+</div>

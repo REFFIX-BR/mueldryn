@@ -1,0 +1,31 @@
+<h1 class="title"><?= __('Packages shop') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Packages shop') ?></li>
+</ul>
+
+<?= config('packages.info') ?>
+
+<p class="saldo"><?= __('Your current balance is %s', [util('Number')->format(user()->getCredit(), 2, ',')]) ?></p>
+
+<ul class="credit-shop">
+    <?php foreach ($packages as $package): ?>
+        <li>
+            <p class="title"><?= $package['package'] ?></p>
+            <p class="desc">
+                <?php if (empty($package['image'])): ?>
+                    <?= nl2br($package['description']) ?>
+                <?php else: ?>
+                    <img src="<?= upload_to('/packages/' . $package['image']) ?>" width="168" />
+                <?php endif ?>
+            </p>
+
+            <p class="price"><?= __('$') ?><?= util('Number')->format($package['price'], 2, ',') ?></p>
+
+            <div class="buy">
+                <a data-confirm="<?= __('Are you sure you want to buy this package?') ?>" href="<?= url_to('/packages/buy/' . $package['id']) ?>" class="btn" data-ajax-action><?= __('Purchase') ?></a>
+            </div>
+        </li>
+    <?php endforeach ?>
+</ul>

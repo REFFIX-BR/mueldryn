@@ -1,0 +1,36 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Guides') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+        <li class="breadcrumb-item"><a href="<?= url_to('/guides') ?>" data-ajax><?= __('Guides') ?></a></li>
+        <li class="breadcrumb-item"><a href="<?= url_to('/guides/' . $category['slug']) ?>" data-ajax><?= $category['name'] ?></a></li>
+        <li class="breadcrumb-item active"><?= $guide['title'] ?></li>
+    </ol>
+
+    <?= $guide['description'] ?>
+
+    <div class="text-center vote-container">
+        <?php if (!logged_in()): ?>
+            <i class="fa fa-thumbs-up vote-up"></i> (<?= $guide['up'] ?>)
+            <i class="fa fa-thumbs-down vote-down"></i> (<?= $guide['down'] ?>)
+        <?php else: ?>
+            <a data-ajax-action class="vote-up" href="<?= url_to('/guides/up/' . $guide['id']) ?>">
+                <i class="fa fa-thumbs-up"></i> (<?= $guide['up'] ?>)
+            </a>
+            <a data-ajax-action class="vote-down" href="<?= url_to('/guides/down/' . $guide['id']) ?>">
+                <i class="fa fa-thumbs-down"></i> (<?= $guide['down'] ?>)
+            </a>
+        <?php endif ?>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    $(function () {
+        $("#packages-graphic-container").highcharts({
+            chart: {
+                height: 300
+            },
+            title: {
+                text: '<?= __('Buying books in the last 15 days') ?>'
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                categories: [<?= join(',', array_map(function ($d) { return "'" . $d ."'"; }, util('Hash')->extract($data, '{n}.date'))) ?>]
+            },
+            yAxis: {
+                title: {
+                    text: '<?= __('Total value ($)') ?>'
+                },
+                labels: {
+                    formatter: function () {
+                        return Highcharts.numberFormat(this.value, 2, ",", ".");
+                    }
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return this.x + ": <?= __('$') ?> " + Highcharts.numberFormat(this.y, 2, ",", ".");
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Total',
+                data: [<?= join(',', util('Hash')->extract($data, '{n}.price')) ?>]
+            }]
+        });
+    });
+</script>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div id="packages-graphic-container"></div>
+        </div>
+    </div>
+</div>

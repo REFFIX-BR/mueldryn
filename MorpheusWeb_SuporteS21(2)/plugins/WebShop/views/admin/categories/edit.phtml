@@ -1,0 +1,79 @@
+<section class="content-header">
+    <h1><?= __('Edit category') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/categories?shop_id=' . $category['shop_id']) ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= url_to('/admin/webshop/shops/edit/' . $category['shop_id']) ?>"><?= __('Shop') ?></a></li>
+            <li class="active"><a data-ajax href="<?= url_to('/admin/webshop/categories?shop_id=' . $category['shop_id']) ?>"><?= __('Categories') ?></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <form data-ajax class="form-horizontal" action="<?= url_to('/admin/webshop/categories/edit/' . $category['id']) ?>" method="post">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="category-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" value="<?= $category['name'] ?>" type="text" name="name" id="category-name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="category-slug"><?= __('URL') ?></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" value="<?= $category['slug'] ?>" type="text" name="slug" id="category-slug" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="category-type"><?= __('Type') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="type" id="category-type">
+                                <option value=""></option>
+                                <?php foreach ($types as $type): ?>
+                                    <option<?= $category['type'] === strtolower($type) ? ' selected="selected"' : '' ?> value="<?= strtolower($type) ?>"><?= $type ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="category-parent_id"><?= __('Parent category') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="parent_id" id="category-parent_id">
+                                <option value=""></option>
+                                <?php foreach ($categories as $cat): ?>
+                                    <option<?= $cat['id'] == $category['parent_id'] ? ' selected' : '' ?> value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control"<?= $category['active'] ? ' checked' : '' ?> type="checkbox" id="service-active" value="1" name="active" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <div class="col-sm-offset-2" style="padding-left:5px">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

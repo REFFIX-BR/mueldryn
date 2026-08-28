@@ -1,0 +1,45 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Guides') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+        <li class="breadcrumb-item active"><?= __('Guides') ?></li>
+    </ol>
+
+    <?php if (!empty($categories)): ?>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group">
+                    <?php foreach ($categories as $category): ?>
+                        <a data-ajax class="list-group-item list-group-item-action" href="<?= url_to('/guides/' . $category['slug']) ?>"><?= $category['name'] ?></a>
+                    <?php endforeach ?>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <?php foreach ($guides as $guide): ?>
+                    <p class="guide">
+                        <a data-ajax href="<?= url_to('/guide/' . $guide['slug']) ?>"><?= $guide['title'] ?></a>
+
+                        <span class="vote-container">
+                        <i class="fa fa-thumbs-up vote-up"></i> (<?= $guide['up'] ?>)
+                        <i class="fa fa-thumbs-down vote-down"></i> (<?= $guide['down'] ?>)
+                    </span>
+                    </p>
+                <?php endforeach ?>
+
+                <?= $paginator->toHtml() ?>
+            </div>
+        </div>
+    <?php endif ?>
+</div>

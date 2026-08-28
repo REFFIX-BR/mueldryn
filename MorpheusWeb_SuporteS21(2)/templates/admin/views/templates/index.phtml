@@ -1,0 +1,36 @@
+<section class="content-header">
+    <h1><?= __('Templates available') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-warning btn-sm" href="<?= url_to('/admin/market/templates') ?>"><?= __('Market') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <div class="box-body">
+            <div class="row">
+                <?php foreach ($templates as $index => $template): ?>
+                    <div class="col-xs-6 col-md-3">
+                        <div class="thumbnail" style="height:268px;margin:0;margin-top:<?= $index < 4 ? 0 : 20 ?>px;position:relative">
+                            <?php $path = config('base_path') ?>
+                            <img src="<?= !empty($path) ? '/' . $path : '' ?>/templates/<?= $template['name'] ?>/screenshot.png" style="max-height:150px" />
+
+                            <div class="caption">
+                                <h3 style="margin-top:0;"><?= $template['name'] ?></h3>
+                                <p class="author"><?= __('by') ?> <?= $template['author'] ?></p>
+
+                                <div class="buttons" style="position:absolute;bottom:10px;width:100%">
+                                    <?php if (!$template['active']): ?>
+                                        <a data-ajax-action class="btn btn-xs btn-success" href="<?= url_to('/admin/configs/template/active/' . $template['name']) ?>"><?= __('Activate') ?></a>
+                                    <?php endif ?>
+                                </div>
+<!--                                <a data-ajax class="btn btn-warning btn-xs" href="--><?//= url_to('/admin/configs/template/edit/' . $template['name']) ?><!--">--><?//= __('edit') ?><!--</a>-->
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+</section>

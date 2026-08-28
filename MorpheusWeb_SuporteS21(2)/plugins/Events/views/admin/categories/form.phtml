@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title">Categorias de Eventos</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div style="padding: 10px 30px;">
+                <h4 class="m-t-0 header-title"><b><?= $action == 'add' ? 'Adicionar nova categoria' : 'Editar categoria' ?></b></h4>
+
+                <form class="ajax-form m-t-20" action="/admin/events/categories/<?= $action ?><?= $action == 'edit' ? '/' . $category['id'] : '' ?>" method="post">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Nome da Categoria</label>
+                                <input type="text" name="name" class="form-control" value="<?= $category ? $category['name'] : '' ?>" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Cor de Destaque</label>
+                                <input type="color" name="color" class="form-control" value="<?= $category && !empty($category['color']) ? $category['color'] : '#3bafda' ?>" required style="height: 38px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12 text-right m-b-0 m-t-10">
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"><i class="fa fa-save"></i> <?= __("Save") ?></button>
+                            <a href="/admin/events/categories" class="btn btn-default waves-effect waves-light m-l-5"><i class="fa fa-reply"></i> <?= __("Back") ?></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

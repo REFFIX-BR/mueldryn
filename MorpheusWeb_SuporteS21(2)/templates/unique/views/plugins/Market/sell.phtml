@@ -1,0 +1,402 @@
+<?php View::add('title', 'Market')->add('description', 'Sell item') ?>
+
+<style>
+.mu-sell-page { color: #e8eef8; }
+.mu-sell-vault-note { font-size: 12px; color: rgba(255,255,255,.45); margin: 8px 0 14px; }
+.mu-vault-count { font-size: 12px; color: rgba(255,255,255,.5); margin: 0 0 10px; }
+.mu-vault-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 10px;
+    max-height: min(72vh, 720px);
+    overflow: auto;
+    padding: 14px;
+    background: rgba(0,0,0,.35);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+}
+.mu-vault-cell {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 96px; padding: 8px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    color: inherit; text-decoration: none;
+    transition: border-color .15s, background .15s, transform .12s;
+    cursor: pointer;
+}
+.mu-vault-cell:hover, .mu-vault-cell.is-active {
+    border-color: #ff7a18;
+    background: rgba(255,122,24,.14);
+    transform: translateY(-1px);
+}
+.mu-vault-cell img { width: 48px; height: 48px; object-fit: contain; }
+.mu-vault-cell__lvl {
+    margin-top: 6px; font-size: 11px; font-weight: 700; color: #7dff9a;
+}
+.mu-sell-empty {
+    padding: 28px; text-align: center; color: rgba(255,255,255,.5);
+    background: rgba(0,0,0,.2); border-radius: 12px; border: 1px dashed rgba(255,255,255,.12);
+}
+
+/* Modal overlay */
+#muSellModal.modal { z-index: 1050; }
+#muSellModal .modal-dialog { width: 920px; max-width: 94vw; margin: 40px auto; }
+#muSellModal .modal-content {
+    background: linear-gradient(180deg, rgba(16,24,42,.98), rgba(8,12,22,.99));
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.55);
+    color: #e8eef8;
+}
+#muSellModal .modal-header {
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 14px 18px;
+}
+#muSellModal .modal-header .close {
+    color: #fff; opacity: .7; text-shadow: none; font-size: 28px;
+}
+#muSellModal .modal-header .close:hover { opacity: 1; }
+#muSellModal .modal-title { font-size: 15px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+#muSellModal .modal-body { padding: 18px; }
+#muSellModal .modal-backdrop { z-index: 1040; }
+
+.mu-sell-modal-body {
+    display: grid;
+    grid-template-columns: minmax(240px, 300px) 1fr;
+    gap: 18px;
+}
+@media (max-width: 720px) {
+    .mu-sell-modal-body { grid-template-columns: 1fr; }
+}
+.mu-sell-preview {
+    background: rgba(0,0,0,.28);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+.mu-sell-preview__img {
+    width: 120px; height: 120px; margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle, rgba(90,200,120,.25), transparent 70%);
+    border-radius: 50%;
+}
+.mu-sell-preview__img img { max-width: 96px; max-height: 96px; }
+.mu-sell-preview__name { color: #7dff9a; font-weight: 800; font-size: 16px; margin: 0 0 8px; }
+.mu-sell-preview__meta { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.55; text-align: left; }
+.mu-sell-price h4 { margin: 0 0 12px; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.mu-sell-tabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+.mu-sell-tab {
+    flex: 1; min-width: 90px; text-align: center; padding: 10px 12px; border-radius: 10px;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.65); font-weight: 800; font-size: 12px; text-transform: uppercase;
+    cursor: pointer; user-select: none;
+}
+.mu-sell-tab.is-on { background: #ff7a18; border-color: #ff7a18; color: #fff; }
+.mu-sell-hint { font-size: 12px; color: rgba(255,255,255,.45); margin-bottom: 12px; }
+.mu-sell-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+.mu-sell-table th {
+    font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+    color: rgba(255,255,255,.4); font-weight: 700; padding: 6px 8px; text-align: left;
+}
+.mu-sell-table td {
+    padding: 8px; border-top: 1px solid rgba(255,255,255,.06); vertical-align: middle;
+}
+.mu-sell-table img { width: 24px; height: 24px; object-fit: contain; margin-right: 6px; vertical-align: middle; }
+.mu-sell-qty { display: inline-flex; align-items: center; gap: 4px; }
+.mu-sell-qty button {
+    width: 28px; height: 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06); color: #fff; font-weight: 700;
+}
+.mu-sell-qty input {
+    width: 72px; text-align: center; height: 28px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.15); background: rgba(0,0,0,.35); color: #fff;
+}
+.mu-sell-actions { text-align: center; margin-top: 8px; }
+.mu-sell-submit {
+    min-width: 180px; padding: 12px 28px; border: none; border-radius: 12px;
+    background: #ff7a18; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
+}
+.mu-sell-submit:disabled { opacity: .45; cursor: not-allowed; }
+</style>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= url_to('/') ?>"><?= __('Home') ?></a></li>
+        <li class="breadcrumb-item"><a href="<?= url_to('/market') ?>"><?= __('Market') ?></a></li>
+        <li class="breadcrumb-item active"><?= __('Sell item') ?></li>
+    </ol>
+</nav>
+
+<?php
+$siteItems = isset($siteItems) ? $siteItems : array();
+$siteBankId = isset($siteBankId) ? $siteBankId : null;
+$openSellModal = ($item !== null && $siteBankId);
+?>
+
+<div class="mu-sell-page">
+    <div style="margin-bottom:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        <a class="btn" data-ajax href="<?= url_to('/market') ?>">Voltar ao mercado</a>
+        <a class="btn" data-ajax href="<?= url_to('/market/sell') ?>"><i class="fa fa-refresh"></i> Atualizar baú</a>
+        <a class="btn" data-ajax href="<?= url_to('/market/bank') ?>">Banco da Conta</a>
+    </div>
+
+    <p class="mu-sell-vault-note">
+        Só é possível vender itens que estão no <strong>Banco do Site</strong>.
+        Transfira do baú do jogo para o banco antes de anunciar.
+    </p>
+
+    <p class="mu-vault-count"><?= count($siteItems) ?> item(ns) no banco</p>
+
+    <?php if (empty($siteItems)): ?>
+        <div class="mu-sell-empty">Nenhum item no Banco do Site. Compre no mercado ou transfira do baú do jogo.</div>
+    <?php else: ?>
+        <div class="mu-vault-grid">
+            <?php foreach ($siteItems as $v): ?>
+                <?php
+                $isActive = $siteBankId && (int) $siteBankId === (int) $v['id'];
+                $href = url_to('/market/sell?site_bank=' . (int) $v['id']);
+                $label = htmlspecialchars($v['name'] . ($v['level'] > 0 ? ' +' . $v['level'] : ''));
+                ?>
+                <a class="mu-vault-cell<?= $isActive ? ' is-active' : '' ?>"
+                   data-ajax
+                   href="<?= $href ?>"
+                   title="<?= $label ?>">
+                    <img src="<?= htmlspecialchars($v['image']) ?>" alt="<?= $label ?>">
+                    <?php if ($v['level'] > 0): ?>
+                        <span class="mu-vault-cell__lvl">+<?= (int) $v['level'] ?></span>
+                    <?php endif; ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<?php if ($openSellModal): ?>
+<div class="modal fade" id="muSellModal" tabindex="-1" role="dialog" aria-labelledby="muSellModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="muSellModalClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="muSellModalLabel">Vender item</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form" data-ajax action="<?= url_to('/market/sell') ?>" method="post" id="muSellForm">
+                    <input type="hidden" name="payment" id="payment" value="jewels" />
+                    <input type="hidden" name="site_bank_id" value="<?= (int) $siteBankId ?>" />
+
+                    <div class="mu-sell-modal-body">
+                        <div class="mu-sell-preview">
+                            <div class="mu-sell-preview__img">
+                                <img src="<?= util('Item')->image($item->getSection(), $item->getIndex()) ?>" alt="">
+                            </div>
+                            <h3 class="mu-sell-preview__name"><?= util('Item')->getFullName($item) ?></h3>
+                            <div class="mu-sell-preview__meta">
+                                Level: +<?= (int) $item->getLevel() ?><br>
+                                Option: +<?= (int) $item->getOption() * 4 ?><br>
+                                Durability: <?= (int) $item->getDurability() ?><br>
+                                <?php if ($item->hasLuck()): ?>Luck: Yes<br><?php endif; ?>
+                                <?php if ($item->hasSkill()): ?>Skill: Yes<br><?php endif; ?>
+                                <?php if ($item->isExcellent()): ?>Excellent: Yes<br><?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="mu-sell-price">
+                            <h4>Selecionar preço</h4>
+                            <div class="mu-sell-tabs">
+                                <div class="mu-sell-tab" data-pay="zen">Zen</div>
+                                <div class="mu-sell-tab" data-pay="coin">Moedas</div>
+                                <div class="mu-sell-tab is-on" data-pay="jewels">Joias</div>
+                            </div>
+
+                            <div class="mu-sell-panel" id="panel-zen" style="display:none;">
+                                <p class="mu-sell-hint">Informe o valor em Zen.</p>
+                                <table class="mu-sell-table">
+                                    <thead><tr><th>Moeda</th><th>Preço</th></tr></thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ZEN</td>
+                                            <td><input class="form-control" type="number" min="0" name="price_zen" id="price_zen" value="0" style="max-width:140px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mu-sell-panel" id="panel-coin" style="display:none;">
+                                <p class="mu-sell-hint">Informe a moeda e o valor.</p>
+                                <table class="mu-sell-table">
+                                    <thead><tr><th>Moeda</th><th>Preço</th></tr></thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select name="coin" id="coin" class="form-control" style="max-width:180px;">
+                                                    <?php foreach ($coins as $c): ?>
+                                                        <option value="<?= $c['id'] ?>"><?= htmlspecialchars($c['name']) ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </td>
+                                            <td><input class="form-control" type="number" min="0" name="price_coin" id="price_coin" value="0" style="max-width:140px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mu-sell-panel" id="panel-jewels">
+                                <p class="mu-sell-hint">Indique a quantidade de cada joia. O preço total será a <strong>soma</strong> de todas as selecionadas.</p>
+                                <table class="mu-sell-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Preço</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($jewelCatalog as $code => $meta): ?>
+                                            <tr>
+                                                <td>
+                                                    <img src="<?= resource_to('/images/items/' . $meta['image']) ?>" alt="">
+                                                    <?= htmlspecialchars($meta['name']) ?>
+                                                </td>
+                                                <td>
+                                                    <div class="mu-sell-qty">
+                                                        <button type="button" class="jq-minus" data-target="price_<?= $code ?>">−</button>
+                                                        <input type="number" min="0" value="0" name="price_<?= $code ?>" id="price_<?= $code ?>">
+                                                        <button type="button" class="jq-plus" data-target="price_<?= $code ?>">+</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mu-sell-actions">
+                                <button type="submit" class="mu-sell-submit" id="sellBtn" disabled>Vender</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var sellUrl = <?= json_encode(url_to('/market/sell')) ?>;
+    var payment = document.getElementById('payment');
+    var tabs = document.querySelectorAll('#muSellModal .mu-sell-tab');
+    var btn = document.getElementById('sellBtn');
+    var form = document.getElementById('muSellForm');
+    var $modal = $('#muSellModal');
+
+    function showPanel(pay) {
+        payment.value = pay;
+        ['zen','coin','jewels'].forEach(function(p){
+            document.getElementById('panel-' + p).style.display = (p === pay) ? '' : 'none';
+        });
+        tabs.forEach(function(t){
+            t.classList.toggle('is-on', t.getAttribute('data-pay') === pay);
+        });
+        validate();
+    }
+
+    function jewelSum() {
+        var s = 0;
+        <?php foreach ($jewelCatalog as $code => $meta): ?>
+        s += parseInt(document.getElementById('price_<?= $code ?>').value, 10) || 0;
+        <?php endforeach; ?>
+        return s;
+    }
+
+    function validate() {
+        var pay = payment.value;
+        var ok = false;
+        if (pay === 'jewels') ok = jewelSum() > 0;
+        if (pay === 'zen') ok = (parseInt(document.getElementById('price_zen').value, 10) || 0) > 0;
+        if (pay === 'coin') ok = (parseInt(document.getElementById('price_coin').value, 10) || 0) > 0;
+        btn.disabled = !ok;
+    }
+
+    tabs.forEach(function(t){
+        t.addEventListener('click', function(){ showPanel(t.getAttribute('data-pay')); });
+    });
+
+    document.querySelectorAll('#muSellModal .jq-minus').forEach(function(b){
+        b.addEventListener('click', function(){
+            var el = document.getElementById(b.getAttribute('data-target'));
+            el.value = Math.max(0, (parseInt(el.value,10)||0) - 1);
+            validate();
+        });
+    });
+    document.querySelectorAll('#muSellModal .jq-plus').forEach(function(b){
+        b.addEventListener('click', function(){
+            var el = document.getElementById(b.getAttribute('data-target'));
+            el.value = (parseInt(el.value,10)||0) + 1;
+            validate();
+        });
+    });
+
+    form.addEventListener('input', validate);
+    form.addEventListener('submit', function(){
+        var pay = payment.value;
+        var hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'price';
+        if (pay === 'zen') hidden.value = document.getElementById('price_zen').value || 0;
+        else if (pay === 'coin') hidden.value = document.getElementById('price_coin').value || 0;
+        else hidden.value = 0;
+        form.appendChild(hidden);
+    });
+
+    showPanel('jewels');
+
+    function destroyMuSellModal(alreadyHidden) {
+        var $m = $('#muSellModal');
+        if ($m.length) {
+            $m.off('hidden.bs.modal');
+            if (!alreadyHidden) {
+                try { $m.modal('hide'); } catch (e) {}
+                return;
+            }
+            $m.remove();
+        }
+        $('.modal-backdrop').remove();
+        $('body').removeClass('modal-open').css('padding-right', '');
+        $(document).off('ajaxSuccess.muSellModal pjax:send.muSellModal');
+    }
+
+    // Fecha modal ao vender com sucesso (ele fica no body e sobrevive ao pjax)
+    $(document).on('ajaxSuccess.muSellModal', function(e, xhr, settings) {
+        var url = settings.url || '';
+        if (url.indexOf('market/sell') === -1) return;
+        var data;
+        try {
+            data = xhr.responseJSON || JSON.parse(xhr.responseText);
+        } catch (err) { return; }
+        if (data && data.success !== false) {
+            destroyMuSellModal(true);
+        }
+    });
+
+    // Segurança: remove modal/backdrop ao trocar de página via ajax
+    $(document).on('pjax:send.muSellModal', function() {
+        destroyMuSellModal(true);
+    });
+
+    // Move modal to body so backdrop/position work inside ajax layout
+    $modal.appendTo('body');
+    $modal.modal({ backdrop: true, keyboard: true, show: true });
+
+    $modal.on('hidden.bs.modal', function(){
+        destroyMuSellModal(true);
+        var $link = $('<a data-ajax href="' + sellUrl + '" style="display:none"></a>').appendTo('body');
+        $link.trigger('click');
+        setTimeout(function(){ $link.remove(); }, 50);
+    });
+})();
+</script>
+<?php endif; ?>

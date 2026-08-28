@@ -1,0 +1,47 @@
+<?php View::add('page.title', $shop['name']) ?>
+<?php $shopHubActive = 'shops' ?>
+<?php $coinName = config('coins.' . $shop['coin'] . '.name', $shop['coin']) ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= $shop['name'] ?></h1>
+            <p class="md-shop-header__lead"><?= $shop['description'] ?: __('WebShop') ?> — preços em <strong><?= $coinName ?></strong>.</p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= $coinName ?></small>
+                <strong><?= util('Number')->format(user()->getCoin($shop['coin'])) ?></strong>
+                <a data-ajax class="md-shop-balance__link" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <nav class="md-shop-breadcrumb">
+        <a data-ajax href="<?= url_to('/') ?>"><?= __('Home') ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shops') ?>"><?= __('WebShops') ?></a>
+        <span>/</span>
+        <strong><?= $shop['name'] ?></strong>
+    </nav>
+
+    <div class="md-ws-layout">
+        <aside class="md-ws-sidebar">
+            <?= partial('WebShop.categories', [
+                'categories' => $categories,
+                'shop' => $shop
+            ]) ?>
+        </aside>
+
+        <div class="md-ws-content">
+            <h2 class="md-shop-section__title"><?= __('Offers') ?></h2>
+            <?= partial('WebShop.products', [
+                'products' => $products,
+                'paginator' => $paginator,
+                'shop' => $shop
+            ]) ?>
+        </div>
+    </div>
+</div>

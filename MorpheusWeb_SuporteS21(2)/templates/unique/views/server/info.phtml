@@ -1,0 +1,542 @@
+<?php View::add('page.title', __('Info')) ?>
+
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Info') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Info') ?></li>
+        </ol>
+    </nav>
+
+
+    <div class="form-row">
+        <div class="col-sm-6" style="margin-bottom:10px">
+            <div class="card">
+                <div class="card-header"><?= __('Server') ?></div>
+                <div class="card-body p0">
+                    <table class="table table-sm table-hover table-striped" style="margin-bottom:0">
+                        <tbody>
+                       <tr>
+                        <td><strong><?= __('Version') ?></strong></td>
+                        <td style="text-align:right"><?= config('server.version_name') ?></td>					
+                    </tr>
+                    <tr>                        
+						<td><strong><?= __('Experience') ?></strong></td>
+                        <td style="text-align:right"><?= config('server.experience') ?></td>
+                    </tr>
+                    <tr>    
+					
+					   <td><strong><?= __('Reset') ?></strong></td>
+                        <td style="text-align:right">Sem Reset</td>
+                    </tr>
+                    <tr>
+					
+						<td><strong><?= __('Max Level') ?></strong></td>
+                        <td style="text-align:right">400</td>   							
+					 </tr>
+                    <tr>  	
+					
+						<td><strong><?= __('PvP') ?></strong></td>
+                        <td style="text-align:right">Build</td>   							
+					 </tr>
+                    <tr>  	
+					
+					<td><strong><?= __('Max Points') ?></strong></td>
+                        <td style="text-align:right">32k</td>   							
+					 </tr>
+                    <tr>  	
+					
+                        <td><strong>Drop Item</strong></td>
+                       <td style="text-align:right">Hard</td> 
+                    </tr>
+                    <tr>   
+
+					  <td><strong>Drop Zen</strong></td>
+                        <td style="text-align:right">Hard</td> 
+                    </tr>
+                    <tr>    
+                     
+					<td width="50%"><strong><?= __('Trade') ?></strong></td>
+                        <td style="text-align:right">Sala Principal</td>
+                            
+                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6" style="margin-bottom:10px">
+            <div class="card">
+                <div class="card-header"><?= __('Events') ?></div>
+                <div class="card-body p0">
+                    <table class="table table-sm table-hover table-striped" style="margin-bottom:0">
+                        <tbody>
+                        <tr>
+                            <td><strong>Blood Castle</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Castle Siege</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chaos Castle</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Crywolf Fortress</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Devil Square</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gold Invasion</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kalima</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kantru/Maya</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LorenDeep</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>White Wizard</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Red Dragon</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skeleton King</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ice Queen</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gorgon</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Balrog</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hydra</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bali</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zaikan</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hell Maine</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                         <tr>
+                            <td><strong>Phoenix</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                         <tr>
+                            <td><strong>Genocider</strong></td>
+                            <td style="text-align:right"><span class="on">habilitado</span></td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6" style="margin-bottom:10px">
+            <div class="card">
+                <div class="card-header"><?= __('Statistics') ?></div>
+                <div class="card-body p0">
+                    <table class="table table-sm table-hover table-striped" style="margin-bottom:0">
+                        <tbody>
+                        <tr>
+                            <td><strong><?= __('Players online') ?></strong></td>
+                            <td style="text-align:right"><?= character()->count('onlines') ?></td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= __('Record online') ?></strong></td>
+                            <td style="text-align:right"><?= character()->count('onlines:record') ?></td>
+                        </tr>
+                        <?php if (has_castle_siege()): ?>
+                            <tr>
+                                <td><strong><?= __('Castle siege owner') ?></strong></td>
+                                <td style="text-align:right"><?= castle_siege()['guild_owner'] ?></td>
+                            </tr>
+                            <tr>
+                                <td><strong><?= __('Next confrontation') ?></strong></td>
+                                <td style="text-align:right"><?= config('castlesiege.next_confrontation') ?></td>
+                            </tr>
+                        <?php endif ?>
+                        <tr>
+                            <td><strong><?= __('Server status') ?></strong></td>
+                            <td style="text-align:right"><?= util('Server')->status(server_status()) ?></td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= __('Total of accounts') ?></strong></td>
+                            <td style="text-align:right"><?= account()->count() ?></td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= __('Total of characters') ?></strong></td>
+                            <td style="text-align:right"><?= character()->count() ?></td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= __('Total of guilds') ?></strong></td>
+                            <td style="text-align:right"><?= guild()->count() ?></td>
+                        </tr>
+                        <?php if (has_vip_system()): ?>
+                            <tr>
+                                <td><strong><?= __('Total of vips') ?></strong></td>
+                                <td style="text-align:right"><?= account()->count('vips') ?></td>
+                            </tr>
+                        <?php endif ?>
+                        <tr>
+                            <td><strong><?= __('Banned accounts') ?></strong></td>
+                            <td style="text-align:right"><?= account()->count('banneds') ?></td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= __('Banned characters') ?></strong></td>
+                            <td style="text-align:right"><?= character()->count('banneds') ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6" style="margin-bottom:10px">
+            <div class="card">
+                <div class="card-header"><?= __('Commands') ?></div>
+                <div class="card-body p0">
+                    <table class="table table-sm table-hover table-striped" style="margin-bottom:0">
+                        <tbody>
+                        <tr>
+                            <td><strong>/attack 1 1 7</strong></td>
+                            <td style="text-align:right">Atacar MOBs automáticamente.</td>
+                        </tr>
+                       <tr>
+                        <td><strong>/f</strong></td>
+                        <td style="text-align:right">Distribui pontos em Força.</td>
+                    </tr>
+                    <tr>
+					 <td><strong>/a</strong></td>
+                        <td style="text-align:right">Distribui pontos em Agilidade.</td>
+                    </tr>
+                    <tr>
+					 <td><strong>/v</strong></td>
+                        <td style="text-align:right">Distribui pontos em Vitalidade.</td>
+                    </tr>
+                    <tr>
+					 <td><strong>/e</strong></td>
+                        <td style="text-align:right">Distribui pontos em Energia.</td>
+                    </tr>
+                    <tr>
+					 <td><strong>/c</strong></td>
+                        <td style="text-align:right">Distribui pontos em Comando.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>/store</strong></td>
+                        <td style="text-align:right">Abrir uma Personal Store.</td>
+                    </tr>
+                    <tr>            
+                     <td><strong>/post</strong></td>
+                        <td style="text-align:right">Falar no Post.</td>
+                    </tr>
+                        <tr>
+                            <td><strong>/offstore</strong></td>
+                            <td style="text-align:right">Personal Store ativada Offline.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>/bau</strong></td>
+                            <td style="text-align:right">Mudar Baú. Ex: /bau 2.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>/pk</strong></td>
+                            <td style="text-align:right">Limpar Status Pk.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>/pack</strong></td>
+                            <td style="text-align:right">Jutar Jowels (soul,bless) </td>
+                        </tr>
+                        <tr>
+                            <td><strong>/unpack</strong></td>
+                            <td style="text-align:right">Disolver Mix Jowels</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Experience<sup></sup></h4>
+    <table class="table table-sm table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Level</th>
+            <th class="text-center"><b>FREE</b></th>          
+            <th class="text-center"><b>VIP GOLD</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="true">1 a 30</td>
+
+            <td class="true" align="center">110x</td>
+
+            <td class="true" align="center">110x</td>
+            
+        </tr>
+        <tr>           
+           <td class="true">31 a 60</td>
+
+            <td class="true" align="center">90x</td>
+
+            <td class="true" align="center">90x</td>
+           
+			</tr>
+        <tr>           
+           <td class="true">61 a 100</td>
+
+            <td class="true" align="center">75x</td>
+
+            <td class="true" align="center">75x</td>
+          
+        </tr>
+        <tr>           
+          <td class="true">101 a 140</td>
+
+            <td class="true" align="center">60x</td>
+
+            <td class="true" align="center">60x</td>
+           
+			</tr>
+        <tr>           
+		
+		 <td class="true">141 a 180</td>
+
+            <td class="true" align="center">45x</td>
+
+            <td class="true" align="center">45x</td>
+           
+			</tr>
+        <tr>     
+		
+		<td class="true">181 a 220</td>
+
+            <td class="true" align="center">30x</td>
+
+            <td class="true" align="center">30x</td>
+           
+			</tr>
+        <tr>    		
+		
+         <td class="true">221 a 400</td>
+
+            <td class="true" align="center">20x</td>
+
+            <td class="true" align="center">20x</td>
+           
+        </tr>
+    </tbody>
+</table>
+
+<h4>Chaos Machine<sup></sup></h4>
+<table class="table table-sm table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Configurações</th>
+            <th class="text-center"><b>FREE</b></th>
+            <th class="text-center"><b>VIP GOLD</b></th>           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td class="true">Combinação item + 10</td>
+
+            <td class="true" align="center">55%</td>
+
+            <td class="true" align="center">65%</td>          
+
+        </tr>
+        <tr>           
+          <td class="true">Combinação item + 11</td>
+
+            <td class="true" align="center">45%</td>
+
+            <td class="true" align="center">55%</td>
+          
+			</tr>
+        <tr>           
+           <td class="true">Combinação item + 12</td>
+
+            <td class="true" align="center">40%</td>
+
+            <td class="true" align="center">50%</td>
+            
+        </tr>
+        <tr>           
+          <td class="true">Combinação item + 13</td>
+
+            <td class="true" align="center">35%</td>
+
+            <td class="true" align="center">45%</td>
+           
+			</tr>
+        <tr>    
+
+			  <td class="true">Chaos Item</td>
+
+            <td class="true" align="center">60%</td>
+
+            <td class="true" align="center">75%</td>
+            
+			</tr>
+        <tr>  
+
+         <td class="true">Wing lvl 1</td>
+
+            <td class="true" align="center">35%</td>
+
+            <td class="true" align="center">50%</td>
+            
+			</tr>
+        <tr>           
+        <td class="true">Wing lvl 2</td>
+
+            <td class="true" align="center">20%</td>
+
+            <td class="true" align="center">35%</td>
+            
+			</tr>
+        <tr>    
+		
+			 <td class="true">Pet</td>
+
+            <td class="true" align="center">50%</td>
+
+            <td class="true" align="center">65%</td>
+           
+
+			</tr>
+        <tr>      
+		
+		 <td class="true">Dinorant</td>
+
+            <td class="true" align="center">50%</td>
+
+            <td class="true" align="center">65%</td>
+           
+
+			</tr>
+        <tr>
+		
+		 <td class="true">Piece Horn</td>
+
+            <td class="true" align="center">60%</td>
+
+            <td class="true" align="center">70%</td>
+           
+
+			</tr>
+        <tr>   
+       
+         <td class="true">Broken Horn</td>
+
+            <td class="true" align="center">40%</td>
+
+            <td class="true" align="center">50%</td>
+           
+
+			</tr>
+        <tr>           
+         <td class="true">Criação de Fenrir</td>
+
+            <td class="true" align="center">20%</td>
+
+            <td class="true" align="center">30%</td>
+           
+			</tr>
+        <tr>           
+         <td class="true">Upgrade Fenrir</td>
+
+            <td class="true" align="center">20%</td>
+
+            <td class="true" align="center">30%</td>
+           
+        </tr>
+		<tr>   
+		
+		 <td class="true">Convites</td>
+
+            <td class="true" align="center">60%</td>
+
+            <td class="true" align="center">80%</td>
+           
+        </tr>
+       
+    </tbody>
+</table>
+    
+    <?php if (has_vip_system()): ?>
+        <div class="card">
+            <div class="card-header">
+                <?= __('Services') ?>
+            </div>
+            <div class="card-body p0">
+                <table class="table table-sm table-hover table-striped" style="margin-bottom:0">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th></th>
+                        <?php foreach (config('vip.types') as $type): ?>
+                            <th width="70" style="text-align:center"><?= $type ?></th>
+                        <?php endforeach ?>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($services as $service): ?>
+                        <tr>
+                            <td><strong><?= $service['name'] ?></strong></td>
+                            <?php foreach (config('vip.types') as $code => $type): ?>
+                                <td style="text-align:center"><?= $service['allowed'] || array_key_exists($code, $service['viptypes']) ? '<span class="online">' . __('Sim') . '</span>' : '<span class="offline">' . __('No') . '</span>' ?></td>
+                            <?php endforeach ?>
+                        </tr>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <?php endif ?>
+</div>

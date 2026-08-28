@@ -1,0 +1,52 @@
+<script>
+    $(function () {
+
+        $("[data-select-all]").click(function (e) {
+            var $this = $(this);
+            var category = $this.data("select-all");
+            var check = $this.attr("checked");
+
+
+            if (!check) {
+                $("[data-category=" + category + "]").icheck('checked');
+                $this.attr("checked", true);
+            } else {
+                $("[data-category=" + category + "]").icheck('unchecked');
+                $this.attr("checked", false);
+            }
+
+            e.preventDefault();
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Settings plugin webshop') ?></h1>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/webshop/config') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('Blocked items for recover') ?></legend>
+                    <?php foreach (Morpheus\Item\Item::getStorage()->getItems() as $index => $items): ?>
+                        <p class="title">
+                            <a data-select-all="<?= $index ?>" href="#"><?= config('item.categories', [])[$index] ?></a>
+                        </p>
+                        <?php foreach ($items as $iindex => $item): ?>
+                            <div style="width:33%;margin-bottom:5px;float:left">
+                                <input<?= in_array($index . '-' . $iindex, $blockeds) ? ' checked="checked"' : '' ?> type="checkbox" data-category="<?= $index ?>" name="blocked[]" id="grous-access-<?= str_replace(['.', ' '], '-', $item['name']) ?>" value="<?= $index ?>-<?= $iindex ?>" /> <label for="grous-access-<?= str_replace(['.', ' '], '-', $item['name']) ?>"><?= $item['name'] ?></label>
+                            </div>
+                        <?php endforeach ?>
+                        <div class="clearfix"></div>
+                    <?php endforeach ?>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+            </div>
+        </form>
+    </div>
+</section>

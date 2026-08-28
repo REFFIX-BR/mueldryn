@@ -1,0 +1,92 @@
+<script type="text/javascript">
+    $(function () {
+        $("#services-table tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            items: ".drag",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/services/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Services') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/services/order') ?>"><?= __('Order') ?></a>
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/services/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($services)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No services found') ?></p>
+        </div>
+    <?php else: ?>
+
+        <div class="box box-default table-responsive">
+            <table id="services-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Service') ?></th>
+                        <th width="100"><?= __('Released to') ?></th>
+                        <th></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <?php foreach ($services as $root): ?>
+                    <tbody>
+                        <tr class="root">
+                            <td colspan="3"><?= $root['name'] ?></td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/services/edit/' . $root['id']) ?>"><?= __('Edit') ?></a>
+                                <?php if (!empty($root['config_url'])): ?>
+                                    <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin' . $root['config_url']) ?>"><?= __('Config') ?></a>
+                                <?php endif ?>
+                                <?php if ($root['active']): ?>
+                                    <a data-ajax-action class="btn btn-xs btn-danger" href="<?= url_to('/admin/services/deactive/' . $root['id']) ?>"><?= __('Deactivate') ?></a>
+                                <?php else: ?>
+                                    <a data-ajax-action class="btn btn-xs btn-success" href="<?= url_to('/admin/services/active/' . $root['id']) ?>"><?= __('Activate') ?></a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                        <?php foreach ($root['children'] as $service): ?>
+                            <tr id="sequence_<?= $service['id'] ?>" class="drag <?= $service['active'] ? 'success' : 'danger' ?>">
+                                <td><i class="fa fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?= $service['name'] ?></td>
+                                <td class="record-actions" style="text-align:left">
+                                    <?php if ($service['allowed']): ?>
+                                        <span class="label label-success"><?= __('Free for all') ?></span>
+                                    <?php else: ?>
+                                        <?= util('Text')->toList($service['viptypes']) ?>
+                                    <?php endif ?>
+                                </td>
+                                <td></td>
+                                <td class="record-actions">
+                                    <?php if (!empty($service['config_url'])): ?>
+                                        <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin' . $service['config_url']) ?>"><?= __('Config') ?></a>
+                                    <?php endif ?>
+                                    <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/services/edit/' . $service['id']) ?>"><?= __('Edit') ?></a>
+                                    <?php if ($service['active']): ?>
+                                        <a data-ajax-action class="btn btn-xs btn-danger" href="<?= url_to('/admin/services/deactive/' . $service['id']) ?>"><?= __('Deactivate') ?></a>
+                                    <?php else: ?>
+                                        <a data-ajax-action class="btn btn-xs btn-success" href="<?= url_to('/admin/services/active/' . $service['id']) ?>"><?= __('Activate') ?></a>
+                                    <?php endif ?>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                <?php endforeach ?>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

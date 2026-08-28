@@ -1,0 +1,114 @@
+<section class="content-header">
+    <h1><?= __('Edit coin') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/coins') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/coins/edit/' . $coin['id']) ?>" method="post">
+            <div class="box-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coins-table"><?= __('Table') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="table" id="coins-table">
+                            <option value=""><?= __('Select a table') ?></option>
+                            <?php foreach ($tables as $t): ?>
+                                <option value="<?= $t['TABLE_NAME'] ?>"<?= $t['TABLE_NAME'] == $coin['table'] ? ' selected' : '' ?>><?= $t['TABLE_NAME'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coins-id">ID <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <input class="form-control" readonly value="<?= $coin['id'] ?>" type="text" name="id" id="coins-id" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coins-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <input class="form-control"  value="<?= $coin['name'] ?>" type="text" name="name" id="coins-name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coins-column"><?= __('Amount column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="column" id="coins-column">
+                            <option value=""><?= __('Loading...') ?></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coins-foreign-key"><?= __('Account column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="foreign_key" id="coins-foreign-key">
+                            <option value=""><?= __('Loading...') ?></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+function loadColumns(table, selectedColumn, selectedForeignKey) {
+    var columnSelect = document.getElementById('coins-column');
+    var foreignKeySelect = document.getElementById('coins-foreign-key');
+    
+    if (!table) {
+        columnSelect.innerHTML = '<option value="">Select a table first</option>';
+        foreignKeySelect.innerHTML = '<option value="">Select a table first</option>';
+        return;
+    }
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '<?= url_to('/admin/coins/columns/') ?>' + encodeURIComponent(table), true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var columns = JSON.parse(xhr.responseText);
+            var options = '<option value="">Select a column</option>';
+            columns.forEach(function(col) {
+                var selected1 = col.COLUMN_NAME == selectedColumn ? ' selected' : '';
+                var selected2 = col.COLUMN_NAME == selectedForeignKey ? ' selected' : '';
+                options += '<option value="' + col.COLUMN_NAME + '"' + selected1 + '>' + col.COLUMN_NAME + '</option>';
+            });
+            columnSelect.innerHTML = options;
+            
+            var options2 = '<option value="">Select a column</option>';
+            columns.forEach(function(col) {
+                var selected2 = col.COLUMN_NAME == selectedForeignKey ? ' selected' : '';
+                options2 += '<option value="' + col.COLUMN_NAME + '"' + selected2 + '>' + col.COLUMN_NAME + '</option>';
+            });
+            foreignKeySelect.innerHTML = options2;
+        }
+    };
+    xhr.send();
+}
+
+document.getElementById('coins-table').addEventListener('change', function() {
+    loadColumns(this.value, '', '');
+});
+
+loadColumns('<?= $coin['table'] ?>', '<?= $coin['column'] ?>', '<?= $coin['foreign_key'] ?>');
+</script>

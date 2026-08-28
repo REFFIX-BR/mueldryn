@@ -1,0 +1,54 @@
+<section class="content-header">
+    <h1><?= __('Events plugin settings') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= admin_url_to('/events') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-focus" action="<?= admin_url_to('/events/config') ?>" method="post">
+            <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+            <div class="box-body">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <h5><?= __('Settings') ?></h5>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="timezone"><?= __('Timezone') ?> <span class="required">*</span></label>
+                                <select class="form-control" name="timezone" id="timezone">
+                                    <?php foreach ($timezones as $tz): ?>
+                                        <option value="<?= $tz ?>"<?= $tz === config('events.timezone', date_default_timezone_get()) ? ' selected' : '' ?>>
+                                            <?php
+                                            $origin_dtz = new DateTimeZone('UTC');
+                                            $remote_dtz = new DateTimeZone($tz);
+                                            $origin_dt = new DateTime('now', $origin_dtz);
+                                            $remote_dt = new DateTime('now', $remote_dtz);
+                                            $offset = ($remote_dtz->getOffset($remote_dt) - $origin_dtz->getOffset($origin_dt)) / 3600;
+                                            ?>
+
+                                            <?= $tz ?> [<?= $offset ?> <?= __('Hours') ?>]
+                                        </option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-sm-offset-3" style="padding-left:15px">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

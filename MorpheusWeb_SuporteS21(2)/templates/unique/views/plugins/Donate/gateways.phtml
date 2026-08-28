@@ -1,0 +1,74 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Donate') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Donate') ?></li>
+        </ol>
+    </nav>
+
+    <div class="gateways text-center">
+        <div class="form-row">
+            <?php foreach ($gateways as $gateway): ?>
+                <?php $config = config('donate.gateways.' . $gateway) ?>
+                <?php if ($config['active']): ?>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card item" style="margin-bottom:10px">
+                            <div class="card-header">
+                                <?= util('Donate.Gateway')->name($gateway) ?>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="image">
+                                    <img src="<?= asset_to('Donate./images/logo-' . $gateway . '.png') ?>" />
+                                </div>
+                            </div>
+
+                            <div class="card-footer text-center">
+                                <a class="btn btn-info" data-ajax href="<?= url_to('/donate/' . $gateway) ?>"><?= __('Select') ?></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+
+    <?php if (!empty($orders)): ?>
+        <h2 class="title"><?= __('My orders') ?></h2>
+
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#ID</th>
+                    <th><?= __('Gateway') ?></th>
+                    <th><?= __('Value') ?></th>
+                    <th width="120"><?= __('Created at') ?></th>
+                    <th width="100" style="text-align:right"><?= __('Status') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($orders as $order): ?>
+                    <tr>
+                        <td><?= $order['id'] ?></td>
+                        <td><?= $order['gateway'] ?></td>
+                        <td><?= util('Number')->currency($order['value'], ['currency' => $order['currency']]) ?></td>
+                        <td><?= util('Date')->dateTime($order['create_date']) ?></td>
+                        <td style="text-align:right"><?= util('Donate.Gateway')->simplePaymentStatus($order['status']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    <?php endif ?>
+</div>

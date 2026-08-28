@@ -1,0 +1,120 @@
+<section class="content-header">
+    <h1><?= __('Vip system settings') ?></h1>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/vip') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-vip-table"><?= __('Vip table') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" id="config-vip-table" name="table">
+                            <option value=""><?= __('Select a table') ?></option>
+                            <?php foreach (sql_tables() as $t): ?>
+                                <option value="<?= $t['TABLE_NAME'] ?>"<?= isset($vip['table']) && $t['TABLE_NAME'] == $vip['table'] ? ' selected' : '' ?>><?= $t['TABLE_NAME'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-vip-column-account"><?= __('Account column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" id="config-vip-column-account" name="column_account">
+                            <option value=""><?= __('Select a table first') ?></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-vip-column-type"><?= __('Vip column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" id="config-vip-column-type" name="column_type">
+                            <option value=""><?= __('Select a table first') ?></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-vip-column-expire"><?= __('Maturity column') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" id="config-vip-column-expire" name="column_expire">
+                            <option value=""><?= __('Select a table first') ?></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-vip-types"><?= __('Types') ?></label>
+
+                    <div class="col-sm-10 container-add-vip-type">
+                        <?php if (isset($vip['types'])): ?>
+                            <?php $i = 0; foreach ($vip['types'] as $code => $name): ?>
+                                <div class="input-group" style="width:100%;margin-bottom:5px;">
+                                    <input class="form-control" type="text" value="<?= $code ?>" name="types[<?= $i ?>][code]" placeholder="<?= __('code') ?>" style="width:30%;margin-right:2%" />
+                                    <input class="form-control" type="text" value="<?= $name ?>" name="types[<?= $i ?>][name]" placeholder="<?= __('vip name') ?>" style="width:68%" />
+                                </div>
+                            <?php $i++; endforeach ?>
+                        <?php endif ?>
+                        <div class="input-group" style="width:100%;">
+                            <input class="form-control" type="text" name="types[<?= count(config('vip.types')) + 1 ?>][code]" placeholder="<?= __('code') ?>" style="width:30%;margin-right:2%" />
+                            <input class="form-control" type="text" name="types[<?= count(config('vip.types')) + 1 ?>][name]" placeholder="<?= __('vip name') ?>" style="width:68%;" />
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:right;margin-top:-10px">
+                    <a class="btn btn-xs btn-success add-vip-type" href="javascript:void(0)"><?= __('Add') ?></a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+$(function () {
+    function loadColumns(table, selectedAccount, selectedType, selectedExpire) {
+        var $account = $("#config-vip-column-account");
+        var $type = $("#config-vip-column-type");
+        var $expire = $("#config-vip-column-expire");
+        
+        if (!table) {
+            $account.html('<option value=""><?= __('Select a table first') ?></option>');
+            $type.html('<option value=""><?= __('Select a table first') ?></option>');
+            $expire.html('<option value=""><?= __('Select a table first') ?></option>');
+            return;
+        }
+        
+        var apiBase = typeof base !== 'undefined' ? base : '<?= url_to('/') ?>';
+        $.getJSON(apiBase + "admin/sql/columns/" + table, function (data) {
+            var options = '<option value="">Select a column</option>';
+            $.each(data, function (key, value) {
+                options += '<option value="' + value.COLUMN_NAME + '">' + value.COLUMN_NAME + '</option>';
+            });
+            $account.html(options).val(selectedAccount);
+            $type.html(options).val(selectedType);
+            $expire.html(options).val(selectedExpire);
+        });
+    }
+
+    $("#config-vip-table").change(function () {
+        loadColumns($(this).val(), '', '', '');
+    });
+
+    var currentTable = $("#config-vip-table").val();
+    if (currentTable) {
+        loadColumns(currentTable, '<?= isset($vip['column_account']) ? $vip['column_account'] : '' ?>', '<?= isset($vip['column_type']) ? $vip['column_type'] : '' ?>', '<?= isset($vip['column_expire']) ? $vip['column_expire'] : '' ?>');
+    }
+});
+</script>

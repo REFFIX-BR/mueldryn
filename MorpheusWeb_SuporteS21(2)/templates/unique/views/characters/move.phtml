@@ -1,0 +1,17 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/move') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-group">
+        <label class="form-control-label" for="map"><?= __('Map') ?> <span class="required">*</span></label>
+        <select class="form-control" name="map" id="map">
+            <option value=""></option>
+            <?php foreach (config('move.maps', []) as $map): ?>
+                <option value="<?= $map ?>"><?= config('maps')[$map]['name'] ?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Move') ?>">
+</form>

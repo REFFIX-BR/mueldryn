@@ -1,0 +1,36 @@
+<section class="content-header">
+    <h1><?= __('E-mails') ?></h1>
+</section>
+
+<section class="content">
+
+    <?php if (empty($emails)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No e-mails found') ?></p>
+        </div>
+    <?php else: ?>
+
+        <div class="box box-default table-responsive">
+            <table data-table class="table table-condensed table-hover table-striped">
+                <thead>
+                <tr>
+                    <th><?= __('File') ?></th>
+                    <th width="10"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($emails as $email): ?>
+                        <tr>
+                            <td><?= $email ?>.html</td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/configs/emails/edit/' . $email) ?>"><?= __('Edit') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

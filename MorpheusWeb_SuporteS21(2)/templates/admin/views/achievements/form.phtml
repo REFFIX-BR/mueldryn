@@ -1,0 +1,89 @@
+<section class="content-header">
+    <h1><?= $action == 'add' ? 'Adicionar Conquista' : 'Editar Conquista' ?></h1>
+</section>
+
+<section class="content">
+    <form action="" method="POST" data-ajax-form>
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_geral" data-toggle="tab">Geral</a></li>
+                <li><a href="#tab_requisitos" data-toggle="tab">Requisitos</a></li>
+                <li><a href="#tab_recompensas" data-toggle="tab">Recompensas</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_geral">
+                    <div class="form-group">
+                        <label>Nome da Conquista</label>
+                        <input type="text" name="name" class="form-control" value="<?= isset($achievement['name']) ? htmlspecialchars($achievement['name']) : '' ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea name="description" class="form-control" rows="3"><?= isset($achievement['description']) ? htmlspecialchars($achievement['description']) : '' ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade Requerida</label>
+                        <input type="number" name="required_amount" class="form-control" value="<?= isset($achievement['required_amount']) ? $achievement['required_amount'] : 1 ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="active" value="1" <?= (!isset($achievement['active']) || $achievement['active'] == 1) ? 'checked' : '' ?>>
+                            Conquista Ativa
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab_requisitos">
+                    <div id="requirements_list">
+                        <?php $reqs = isset($achievement['requirements']) ? $achievement['requirements'] : array(); ?>
+                        <?php foreach ($reqs as $index => $req): ?>
+                            <div class="well requirement-item">
+                                <button type="button" class="close text-danger" onclick="$(this).parent().remove()">&times;</button>
+                                <div class="form-group">
+                                    <label>Título do Requisito</label>
+                                    <input type="text" name="requirements[<?= $index ?>][title]" class="form-control" value="<?= htmlspecialchars($req['title']) ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Consulta SQL</label>
+                                    <textarea name="requirements[<?= $index ?>][sql]" class="form-control" rows="2"><?= htmlspecialchars($req['sql']) ?></textarea>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm" onclick="addRequirement()">+ Adicionar Requisito</button>
+                </div>
+
+                <div class="tab-pane" id="tab_recompensas">
+                    <div id="rewards_list">
+                        <?php $rews = isset($achievement['rewards']) ? $achievement['rewards'] : array(); ?>
+                        <?php foreach ($rews as $index => $rew): ?>
+                            <div class="well reward-item">
+                                <button type="button" class="close text-danger" onclick="$(this).parent().remove()">&times;</button>
+                                <div class="form-group">
+                                    <label>Título da Recompensa</label>
+                                    <input type="text" name="rewards[<?= $index ?>][title]" class="form-control" value="<?= htmlspecialchars($rew['title']) ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Consulta SQL</label>
+                                    <textarea name="rewards[<?= $index ?>][sql]" class="form-control" rows="2"><?= htmlspecialchars($rew['sql']) ?></textarea>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm" onclick="addReward()">+ Adicionar Recompensa</button>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success">Salvar Conquista</button>
+                <a href="<?= url_to('/admin/achievements') ?>" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+    var reqIndex = <?= isset($achievement['requirements']) ? count($achievement['requirements']) : 0 ?>;
+    function addRequirement() { $('#requirements_list').append('<div class="well requirement-item"><button type="button" class="close text-danger" onclick="$(this).parent().remove()">&times;</button><div class="form-group"><label>Título do Requisito</label><input type="text" name="requirements[' + reqIndex + '][title]" class="form-control"></div><div class="form-group"><label>Consulta SQL</label><textarea name="requirements[' + reqIndex + '][sql]" class="form-control" rows="2"></textarea></div></div>'); reqIndex++; }
+
+    var rewIndex = <?= isset($achievement['rewards']) ? count($achievement['rewards']) : 0 ?>;
+    function addReward() { $('#rewards_list').append('<div class="well reward-item"><button type="button" class="close text-danger" onclick="$(this).parent().remove()">&times;</button><div class="form-group"><label>Título da Recompensa</label><input type="text" name="rewards[' + rewIndex + '][title]" class="form-control"></div><div class="form-group"><label>Consulta SQL</label><textarea name="rewards[' + rewIndex + '][sql]" class="form-control" rows="2"></textarea></div></div>'); rewIndex++; }
+</script>

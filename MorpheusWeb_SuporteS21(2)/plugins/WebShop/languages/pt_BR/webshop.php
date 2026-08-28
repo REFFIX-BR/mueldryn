@@ -1,0 +1,32 @@
+<?php
+
+return [
+    'Available for' => 'Liberado para',
+    'Search' => 'Pesquisar',
+    'from %d %s' => 'A partir de %d %s',
+    '%d sold' => '%d Vendido',
+    'Maximum of excellent options: %d' => 'Máximo de Opcionais Excelentes: %d',
+    'purchase' => 'Comprar',
+    '+ details' => '+ Detalhes',
+    'Item added to your warehouse' => 'Item adicionado em seu Baú',
+    'This option depends on the level of the item! We are not responsible for wrong choices' => 'Essa opção depende do level do item! Não nos responsabilizamos por opções incorretas.',
+    'Just select the options if you know exactly what you are doing! We are not responsible for wrong choices.' => 'Só selecione as opções caso você saiba exatamente o que está fazendo! Não nos responsabilizamos por opções incorretas.',
+    'Select a WebShop' => 'Selecione um WebShop',
+    'Unique sockets' => 'Negar Socket igual',
+    'Duplicated socket' => 'Não pode haver Sockets iguais',
+    'Basic options' => 'Opções Básicas',
+    'Excellent options' => 'Opções Excelentes',
+    'Level 380 option' => 'Opção de Level 380',
+    'Harmony options' => 'Opções de Harmony',
+    'Harmony type' => 'Tipo de Harmony',
+    'Socket options' => 'Opções de Socket',
+    'No socket' => 'Sem Socket',
+    'Empty socket' => 'Socket Liberado',
+    'Water' => 'Água',
+    'Lightning' => 'Raio',
+    'Earth' => 'Terra',
+	'Discount coupon' => 'Cupom de desconto',
+	'Coupon' => 'Cupom',
+    'My purchases in webshop' => 'Minhas Compras no WebShop',
+    'Bought at' => 'Comprado em'
+];

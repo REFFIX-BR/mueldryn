@@ -1,0 +1,63 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Panel') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <?php if ($character->exists()): ?>
+                <li class="breadcrumb-item"><a href="<?= url_to($root['url']) ?>" data-ajax><?= $root['name'] ?></a></li>
+            <?php endif ?>
+            <li class="breadcrumb-item active"><?= $currentService['name'] ?></li>
+        </ol>
+    </nav>
+
+    <?php if (empty($characters)): ?>
+        <div class="msg"><?= __('You don\'t have any characters, enter the game and create a character to use the options of the site') ?></div>
+    <?php else : ?>
+        <?= __('Click on the character you want to use the available services') ?>.
+        <div style="margin-bottom: 10px; padding: 5px;">
+            <div class="characters">
+                <?php foreach ($characters as $c): ?>
+                    <a class="character<?= $c->getName() === $character->getName() ? ' active' : '' ?>" data-ajax href="<?= url_to('/panel/character/' . $c->getName() . '/info') ?>">
+                        <div class="name"><?= $c->getName() ?></div>
+                        <div class="avatar">
+                            <img src="<?= $c->getAvatarUrl(asset_to('/images/no-avatar.png')) ?>" width="90" height="100" />
+                        </div>
+                    </a>
+                <?php endforeach ?>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <?php if ($character->exists()): ?>
+            <h4><?= __('Character') ?>: <?= $character->getName() ?></h4>
+
+            <div class="panel">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="list-group">
+                            <?php foreach ($services as $serv): ?>
+                                <a class="list-group-item list-group-item-action<?= $serv['current'] ? ' active' : '' ?>" data-ajax href="<?= url_to('/panel/character/' . $character->getName() . $serv['url']) ?>"><?= $serv['name'] ?></a>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <?= $service ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+    <?php endif ?>
+</div>

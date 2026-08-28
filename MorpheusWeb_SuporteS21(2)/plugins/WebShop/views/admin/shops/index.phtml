@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    $(function () {
+        $("#shops-table").find("tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/webshop/shops/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Shops') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/webshop/shops/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($shops)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No shops found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="shops-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th><?= __('Name') ?></th>
+                        <th><?= __('Description') ?></th>
+                        <th><?= __('Coin') ?></th>
+                        <th width="80"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($shops as $shop): ?>
+                        <tr class="<?= !$shop['active'] ? 'danger' : '' ?>" id="sequence_<?= $shop['id'] ?>">
+                            <td><i class="fa fa-bars"></i> <?= $shop['name'] ?></td>
+                            <td><?= $shop['description'] ?></td>
+                            <td><?= config('coins')[$shop['coin']]['name'] ?></td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/webshop/shops/edit/' . $shop['id']) ?>"><?= __('Edit') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

@@ -1,0 +1,30 @@
+<?php
+    $types = config('news.types', []);
+    $type = isset($types[$news['type']]) ? $types[$news['type']] : null;
+?>
+<article class="home-hero">
+    <div class="home-hero__glow"></div>
+    <div class="home-hero__content">
+        <div class="home-hero__badge"<?= $type ? ' style="background:' . htmlspecialchars($type['color']) . '"' : '' ?>>
+            <?= $type ? htmlspecialchars($type['name']) : __('News') ?>
+        </div>
+        <h2 class="home-hero__title"><?= $news['title'] ?></h2>
+        <p class="home-hero__excerpt">
+            <?= util('Text')->truncate(strip_tags(nl2br($news['body']), '<br>'), 36) ?>
+        </p>
+        <div class="home-hero__meta">
+            <span><i class="fa fa-user"></i> <?= $news['username'] ?></span>
+            <span><i class="fa fa-calendar"></i> <?= util('Date')->date($news['create_date']) ?></span>
+        </div>
+        <a data-ajax class="btn btn-outline-success home-hero__cta" href="<?= url_to('/news/' . $news['slug']) ?>">
+            <?= __('Read more') ?>
+        </a>
+    </div>
+    <div class="home-hero__art">
+        <?php if (!empty($news['image_cover'])): ?>
+            <img src="<?= upload_to('/news/' . $news['image_cover']) ?>" alt="<?= htmlspecialchars($news['title']) ?>" />
+        <?php else: ?>
+            <img src="<?= asset_to('/images/logo-header.png') ?>" alt="<?= htmlspecialchars($news['title']) ?>" />
+        <?php endif ?>
+    </div>
+</article>

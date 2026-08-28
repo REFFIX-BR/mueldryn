@@ -1,0 +1,81 @@
+<h1 class="title"><?= __('Sell item') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/market') ?>" data-ajax><?= __('Market') ?></a></li>
+    <li class="active"><?= __('Sell item') ?></li>
+</ul>
+
+<div class="warehouse-extended">
+    <?php if (config('warehouse.extended')): ?>
+        <?php if ($extended === null): ?>
+            <a data-ajax class="btn" href="<?= url_to('/market/sell?extended') ?>"><?= __('Extended') ?></a>
+        <?php else: ?>
+            <a data-ajax class="btn" href="<?= url_to('/market/sell') ?>"><?= __('Normal') ?></a>
+        <?php endif ?>
+    <?php endif ?>
+</div>
+
+<div class="morpheus-warehouse">
+    <?= $warehouse->getRenderer()
+        ->setItemUrl('/market/sell/{slot}' . ($extended === null ? '' : '?extended'))
+        ->setActiveItem($item, $slot)
+        ->render($extended === null ? 1 : 2) ?>
+</div>
+
+<div class="market-item">
+    <?php if ($item === null): ?>
+
+    <?php else: ?>
+        <form class="form" data-ajax action="<?= url_to('/market/sell/' . $slot . ($extended === null ? '' : '?extended')) ?>" method="post">
+            <div class="box-panel">
+                <div class="box-panel-title">
+                    <div class="box-panel-title-left"></div>
+                    <div class="box-panel-title-content"><?= util('Item')->getFullName($item) ?></div>
+                    <div class="box-panel-title-right"></div>
+                </div>
+
+                <div class="box-panel-content">
+                    <div class="box">
+                        <div class="row">
+                            <div class="label">
+                                <label for="payment"><?= __('Payment type') ?> <span class="required">*</span></label>
+                            </div>
+                            <div class="field">
+                                <select id="payment" name="payment" style="width:100%">
+                                    <?php foreach ($payments as $id => $payment): ?>
+                                        <option value="<?= $id ?>"><?= $payment ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-coin">
+                            <div class="label">
+                                <label for="coin"><?= __('Coin') ?> <span class="required">*</span></label>
+                            </div>
+                            <div class="field">
+                                <select id="coin" name="coin" style="width:100%">
+                                    <?php foreach (config('coins', []) as $coin): ?>
+                                        <option value="<?= $coin['id'] ?>"><?= $coin['name'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="price"><?= __('Price') ?> <span class="required">*</span></label>
+                            </div>
+                            <div class="field">
+                                <input type="text" id="price" name="price" style="width:100%" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" class="btn" value="<?= __('Sell') ?>">
+                </div>
+            </div>
+        </form>
+    <?php endif ?>
+</div>

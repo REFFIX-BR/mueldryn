@@ -1,0 +1,29 @@
+<div class="box-panel">
+    <div class="box-panel-title"><?= __('My purchases in webshop') ?></div>
+    <div class="box-panel-content">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th><?= __('Item') ?></th>
+                    <th><?= __('Bought at') ?></th>
+                    <th width="10"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($items as $item): ?>
+                    <tr>
+                        <td><?= util('Item')->getFullName($item['item']) ?></td>
+                        <td><?= util('Date')->dateTime($item['create_date']) ?></td>
+                        <td>
+                            <?php if (!$item['in_market']
+                                && $item['recoverable']): ?>
+                                <a data-ajax-action href="<?= url_to('/shop/purchases/recover-item/' . $item['id']) ?>"><?= __('Recover') ?></a>
+                            <?php endif ?>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title"><?= __("Events") ?></h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div style="padding: 10px 30px;">
+                <h4 class="m-t-0 header-title"><b><?= $action == 'add' ? __("Add new event") : "Editar Evento" ?></b></h4>
+
+                <form class="ajax-form m-t-20" action="/admin/events/<?= $action ?><?= $action == 'edit' ? '/' . $event['id'] : '' ?>" method="post">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nome do Evento</label>
+                                <input type="text" name="name" class="form-control" value="<?= $event ? $event['name'] : '' ?>" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Categoria</label>
+                                <select name="category_id" class="form-control" required>
+                                    <option value="">Selecione uma categoria...</option>
+                                    <?php foreach ($categories as $cat): ?>
+                                        <option value="<?= $cat['id'] ?>" <?= ($event && $event['category_id'] == $cat['id']) ? 'selected' : '' ?>><?= $cat['name'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php 
+                        $selectedDays = $event && !empty($event['days']) ? json_decode($event['days'], true) : []; 
+                        if (!is_array($selectedDays)) $selectedDays = [];
+                    ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Dias da Semana <small class="text-muted">(Deixe vazio para Todos os Dias)</small></label>
+                                <div class="m-t-10">
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="0" id="day_0" <?= in_array("0", $selectedDays) ? 'checked' : '' ?>><label for="day_0"><?= __("Sunday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="1" id="day_1" <?= in_array("1", $selectedDays) ? 'checked' : '' ?>><label for="day_1"><?= __("Monday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="2" id="day_2" <?= in_array("2", $selectedDays) ? 'checked' : '' ?>><label for="day_2"><?= __("Tuesday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="3" id="day_3" <?= in_array("3", $selectedDays) ? 'checked' : '' ?>><label for="day_3"><?= __("Wednesday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="4" id="day_4" <?= in_array("4", $selectedDays) ? 'checked' : '' ?>><label for="day_4"><?= __("Thursday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="5" id="day_5" <?= in_array("5", $selectedDays) ? 'checked' : '' ?>><label for="day_5"><?= __("Friday") ?></label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="days[]" value="6" id="day_6" <?= in_array("6", $selectedDays) ? 'checked' : '' ?>><label for="day_6"><?= __("Saturday") ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Horários <small class="text-muted">(Ex: 12:00, 15:30, 20:00 - separados por vírgula)</small></label>
+                                <input type="text" name="times" class="form-control" value="<?= $event ? $event['times'] : '' ?>" placeholder="10:00, 14:00, 18:00" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select name="active" class="form-control">
+                                    <option value="1" <?= $event && $event['active'] == 1 ? 'selected' : '' ?>><?= __("Active") ?></option>
+                                    <option value="0" <?= $event && $event['active'] == 0 ? 'selected' : '' ?>><?= __("Deactivate") ?></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12 text-right m-b-0 m-t-10">
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"><i class="fa fa-save"></i> <?= __("Save") ?></button>
+                            <a href="/admin/events" class="btn btn-default waves-effect waves-light m-l-5"><i class="fa fa-reply"></i> <?= __("Back") ?></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

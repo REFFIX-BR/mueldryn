@@ -1,0 +1,27 @@
+<h1 class="title"><?= $box['name'] ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/lootboxes') ?>" data-ajax><?= __('Loot boxes') ?></a></li>
+    <li><a href="<?= url_to('/lootboxes/' . $box['id']) ?>" data-ajax><?= $box['name'] ?></a></li>
+    <li class="active"><?= __('Send gift') ?></li>
+</ul>
+
+<div class="box-panel">
+    <div class="box-panel-title"><?= __('Send gift') ?></div>
+    <form data-ajax action="<?= url_to('/lootboxes/gift/' . $box['id']) ?>" class="form" method="post">
+        <div class="box-panel-content">
+            <div class="row">
+                <div class="label">
+                    <label for="account"><?= __('Account') ?> <span class="required">*</span></label>
+                </div>
+                <div class="field">
+                    <input type="text" id="account" name="account" maxlength="10" style="width:100%" />
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <input type="submit" class="btn" value="<?= __('Send') ?>">
+        </div>
+    </form>
+</div>

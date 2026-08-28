@@ -1,0 +1,41 @@
+<section class="content-header">
+    <h1>Conquistas <a href="<?= url_to('/admin/achievements/add') ?>" class="btn btn-sm btn-primary pull-right">Adicionar Conquista</a></h1>
+</section>
+
+<section class="content">
+    <div class="box">
+        <div class="box-body no-padding">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Requerido</th>
+                        <th>Status</th>
+                        <th width="150">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($achievements)): ?>
+                        <tr>
+                            <td colspan="5" class="text-center">Nenhuma conquista cadastrada.</td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($achievements as $ach): ?>
+                            <tr>
+                                <td><?= $ach['id'] ?></td>
+                                <td><?= htmlspecialchars($ach['name']) ?></td>
+                                <td><?= $ach['required_amount'] ?></td>
+                                <td><?= $ach['active'] ? '<span class="label label-success">Ativa</span>' : '<span class="label label-danger">Inativa</span>' ?></td>
+                                <td>
+                                    <a href="<?= url_to('/admin/achievements/edit/' . $ach['id']) ?>" class="btn btn-xs btn-default">Editar</a>
+                                    <a href="<?= url_to('/admin/achievements/delete/' . $ach['id']) ?>" class="btn btn-xs btn-danger" data-ajax-action data-confirm="Tem certeza que deseja excluir?">Excluir</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

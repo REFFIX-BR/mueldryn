@@ -1,0 +1,30 @@
+<h4 class="mt-3"><?= __('Social login') ?></h4>
+<?= flash_error_message() ?>
+
+<p class="text-center">
+    <?= __('You can link service accounts and social networks to facilitate your access to %s', [config('server.name')]) ?>
+</p>
+
+<div class="social-connect">
+    <div class="row">
+        <?php foreach (['facebook', 'google'] as $provider): ?>
+            <?php if (config('sn.' . $provider . '.login', false)): ?>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="logo d-flex justify-content-center align-items-center" style="height:100px;">
+                            <img class="img-fluid" style="max-width:90%" alt="<?= $provider ?>" src="<?= asset_to('SocialNetwork./images/' . $provider . '.png') ?>" />
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <?php if (empty($login[$provider . '_id'])): ?>
+                                <a class="btn btn-info" href="<?= url_to('/social/connect/' . $provider) ?>"><?= __('Connect') ?></a>
+                            <?php else: ?>
+                                <a class="btn btn-danger" data-ajax-action data-confirm="<?= __('Are you sure you want to disconnect?') ?>" href="<?= url_to('/social/disconnect/' . $provider) ?>"><?= __('Disconnect') ?></a>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif ?>
+        <?php endforeach ?>
+    </div>
+</div>

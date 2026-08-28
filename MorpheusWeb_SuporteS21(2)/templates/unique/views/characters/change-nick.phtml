@@ -1,0 +1,16 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/change-nick') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-control-label" for="nickname"><?= __('New nickname') ?> <span class="required">*</span></label>
+                <input class="form-control" type="text" id="nickname" name="nickname" maxlength="10" />
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Change') ?>">
+</form>

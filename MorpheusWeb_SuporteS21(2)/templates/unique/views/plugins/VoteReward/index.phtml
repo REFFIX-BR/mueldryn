@@ -1,0 +1,40 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Vote Reward') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+        <li class="breadcrumb-item active"><?= __('Vote Reward') ?></li>
+    </ol>
+
+    <?= flash() ?>
+
+    <div class="form-row">
+        <?php foreach ($providers as $provider): ?>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <?php if (!empty($provider['image'])): ?>
+                            <img src="<?= upload_to('/vote_reward_providers/' . $provider['image']) ?>" title="<?= $provider['name'] ?>" alt="<?= $provider['name'] ?>">
+                        <?php else: ?>
+                            <?= $provider['name'] ?>
+                        <?php endif ?>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a href="<?= url_to('/vote/' . $provider['id']) ?>" class="btn btn-info" target="_blank"><?= __('Vote') ?></a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

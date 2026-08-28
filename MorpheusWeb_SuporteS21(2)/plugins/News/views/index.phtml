@@ -1,0 +1,20 @@
+<h1 class="title"><?= __('News') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('News') ?></li>
+</ul>
+
+<ul class="news">
+    <?php foreach ($news as $n): ?>
+        <li>
+            <?= util('News.News')->newsType($n['type']) ?>
+            <a<?= empty($n['link']) ? ' data-ajax' : ' target="_blank"' ?>  href="<?= url_to('/news/' . $n['slug']) ?>"><?= $n['title'] ?></a>
+            <p class="author-created"><?= __('Posted by') ?> <strong><?= $n['username'] ?></strong> <?= __('in') ?> <strong><?= date('d/m/Y H:i', strtotime($n['create_date'])) ?></strong></p>
+
+            <?php if (config('news.show_preview')): ?>
+                <p class="body"><?= util('Text')->truncate(strip_tags($n['body']), 100) ?></p>
+            <?php endif ?>
+        </li>
+    <?php endforeach ?>
+</ul>

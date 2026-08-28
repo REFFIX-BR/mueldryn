@@ -1,0 +1,222 @@
+<section class="content-header">
+    <h1><?= __('Edit shop') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/shops') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#"><?= __('Shop') ?></a></li>
+            <li><a data-ajax href="<?= url_to('/admin/webshop/categories?shop_id=' . $shop['id']) ?>"><?= __('Categories') ?></a></li>
+        </ul>
+        <div class="tab-content">
+            <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/webshop/shops/edit/' . $shop['id']) ?>" method="post">
+                <div class="box-body">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" value="<?= $shop['name'] ?>" type="text" name="name" id="shops-name" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-slug"><?= __('URL') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" value="<?= $shop['slug'] ?>" type="text" name="slug" id="shops-slug" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-description"><?= __('Description') ?></label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="description" id="shops-description"><?= $shop['description'] ?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-coin"><?= __('Coin') ?> <span class="required">*</span></label>
+
+                            <div class="col-sm-3">
+                                <select class="form-control" name="coin" id="shops-coin">
+                                    <option value=""></option>
+                                    <?php foreach (config('coins', []) as $coin): ?>
+                                        <option<?= $shop['coin'] == $coin['id'] ? ' selected' : '' ?> value="<?= $coin['id'] ?>"><?= $coin['name'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-active"><?= __('Active') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input class="form-control"<?= $shop['active'] ? ' checked' : '' ?> type="checkbox" id="shops-active" value="1" name="active" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><?= __('Configs') ?></legend>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-max-level"><?= __('Item max level') ?></label>
+
+                            <div class="col-sm-2">
+                                <select class="form-control" name="max_level" id="shops-max-level">
+                                    <?php for ($i = 0; $i <= 15; $i++): ?>
+                                        <option<?= $i == $shop['max_level'] ? ' selected="selected"' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                    <?php endfor ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-max-option"><?= __('Item max option') ?></label>
+
+                            <div class="col-sm-2">
+                                <select class="form-control" name="max_option" id="shops-max-option">
+                                    <?php for ($i = 0; $i <= 28; $i+=4): ?>
+                                        <option<?= $i == $shop['max_option'] ? ' selected="selected"' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                    <?php endfor ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-max-excellent"><?= __('Max excellent options') ?></label>
+
+                            <div class="col-sm-2">
+                                <select class="form-control" name="default_max_excellent" id="shops-default-max-excellent">
+                                    <option value=""></option>
+                                    <option value="1"<?= $shop['default_max_excellent'] == 1 ? ' selected' : '' ?>'>1</option>
+                                    <option value="2"<?= $shop['default_max_excellent'] == 2 ? ' selected' : '' ?>>2</option>
+                                    <option value="3"<?= $shop['default_max_excellent'] == 3 ? ' selected' : '' ?>>3</option>
+                                    <option value="4"<?= $shop['default_max_excellent'] == 4 ? ' selected' : '' ?>>4</option>
+                                    <option value="5"<?= $shop['default_max_excellent'] == 5 ? ' selected' : '' ?>>5</option>
+                                    <option value="6"<?= $shop['default_max_excellent'] == 6 ? ' selected' : '' ?>>6</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <?php if ($version > 2): ?>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-default-max-sockets"><?= __('Max socket options') ?></label>
+
+                                <div class="col-sm-2">
+                                    <select class="form-control" name="default_max_sockets" id="shops-default-max-sockets">
+                                        <option value=""></option>
+                                        <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <option value="<?= $i ?>"<?= $i == $shop['default_max_sockets'] ? ' selected' : '' ?>><?= $i ?></option>
+                                        <?php endfor ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-unique-sockets"><?= __('Unique sockets') ?></label>
+
+                                <div class="col-sm-8" style="padding-top:5px">
+                                    <input class="form-control"<?= $shop['unique_sockets'] ? ' checked' : '' ?> type="checkbox" id="shops-unique-sockets" value="1" name="unique_sockets" />
+                                </div>
+                            </div>
+                        <?php endif ?>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><?= __('Default values') ?></legend>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-price-level"><?= __('Price for level') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" value="<?= $shop['default_price_level'] ?>" name="default_price_level" id="shops-default-price-level" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-price-option"><?= __('Price for option') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" value="<?= $shop['default_price_option'] ?>" name="default_price_option" id="shops-default-price-option" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-price-skill"><?= __('Price for skill') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" value="<?= $shop['default_price_skill'] ?>" name="default_price_skill" id="shops-default-price-skill" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-price-luck"><?= __('Price for luck') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" value="<?= $shop['default_price_luck'] ?>" name="default_price_luck" id="shops-default-price-luck" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="shops-default-price-excellent"><?= __('Price for excellent') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" value="<?= $shop['default_price_excellent'] ?>" name="default_price_excellent" id="shops-default-price-excellent" />
+                            </div>
+                        </div>
+
+                        <?php if ($version >= 1.1): ?>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-default-price-ancient"><?= __('Price for ancient') ?></label>
+
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" value="<?= $shop['default_price_ancient'] ?>" name="default_price_ancient" id="shops-default-price-ancient" />
+                                </div>
+                            </div>
+                        <?php endif ?>
+
+                        <?php if ($version > 2): ?>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-default-price-harmony"><?= __('Price for harmony') ?></label>
+
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" value="<?= $shop['default_price_harmony'] ?>" name="default_price_harmony" id="shops-default-price-harmony" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-default-price-refine"><?= __('Price for refine') ?></label>
+
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" value="<?= $shop['default_price_refine'] ?>" name="default_price_refine" id="shops-default-price-refine" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="shops-default-price-socket"><?= __('Price for socket') ?></label>
+
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" value="<?= $shop['default_price_socket'] ?>" name="default_price_socket" id="shops-default-price-socket" />
+                                </div>
+                            </div>
+                        <?php endif ?>
+                    </fieldset>
+
+                </div>
+
+                <div class="box-footer">
+                    <div class="col-sm-offset-2" style="padding-left:5px;">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

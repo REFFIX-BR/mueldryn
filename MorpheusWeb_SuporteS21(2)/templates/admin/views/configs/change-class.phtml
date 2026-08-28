@@ -1,0 +1,38 @@
+<section class="content-header">
+    <h1><?= __('Settings for character class change') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/change-class') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="equalize-points"><?= __('Equalize points') ?></label>
+
+                    <div class="col-sm-10" style="padding-top:5px;padding-bottom:5px;">
+                        <input type="checkbox" id="equalize-points"<?= config('change_class.equalize_points') ? 'checked="checked"' : '' ?> value="1" name="equalize_points" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="classes"><?= __('Class') ?></span></label>
+
+                    <div class="col-sm-10">
+                        <?php foreach (config('characters.classes', []) as $code => $class): ?>
+                            <div style="width:33%;margin-bottom:5px;float:left">
+                                <input<?= in_array($code, config('change_class.classes', [])) ? ' checked' : '' ?> type="checkbox" name="classes[]" id="class-<?= $code ?>" value="<?= $code ?>" /> <label for="class-<?= $code ?>"><?= $class['name'] ?></label>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

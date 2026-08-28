@@ -1,0 +1,76 @@
+<?php View::add('page.title', __('Home')) ?>
+<?php notify('slides', [
+    'live' => false
+]) ?>
+<?php notify('news.featured') ?>
+
+<div class="page-container-home">
+    <?php notify('news.latest') ?>
+
+    <?php /* webshop.offer removido — loja de skins em /skins */ ?>
+ 
+    <?php if (has_castle_siege()): ?>
+        <div class="castle-siege">
+            <div class="title">
+                <div class="t1">
+                    <?= __('CASTLE SIEGE') ?>
+                </div>
+
+                <div class="t2">
+                    <?= __('Show your bravery and dominate the castle') ?>
+                </div>
+            </div>
+
+            <div class="owner">
+                <div>
+                    <div class="text">
+                        <?= __('OWNER') ?>
+                    </div>
+                    <div class="name">
+                        <?= $siege['guild_owner'] ?>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="crown">
+                        <img src="<?= asset_to('/images/coroa.png') ?>" />
+                    </div>
+
+                    <div class="gmark">
+                        <?php if (isset($siege['guild_owner_mark'])): ?>
+                            <?= method_exists('\Morpheus\Util\Guild', 'logo') ? util('Guild')->logo($siege['guild_owner_mark'], 112) : '' ?>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <?php endif ?>
+
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="market-offer">
+                <?= notify('market.offers') ?>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="server-info">
+                <p class="title"><?= __('Info') ?></p>
+
+                <ul>
+                    <li><span class="info"><?= __('Version') ?></span> <span class="text"><?= config('server.version_name') ?></span></li>
+                    <li><span class="info"><?= __('Experience') ?></span> <span class="text"><?= config('server.experience') ?></span></li>
+                    <li><span class="info"><?= __('Drop') ?></span> <span class="text"><?= config('server.drop') ?></span></li>
+                    <li><span class="info"><?= __('Total of accounts') ?></span> <span class="text"><?= util('Number')->format(function_exists('account') ? account()->count() : 0) ?></span></li>
+                    <li><span class="info"><?= __('Total of characters') ?></span> <span class="text"><?= util('Number')->format(function_exists('character') ? character()->count() : 0) ?></span></li> 
+                    <li><span class="info"><?= __('Total of guilds') ?></span> <span class="text"><?= util('Number')->format(function_exists('guild') ? guild()->count() : 0) ?></span></li>
+                </ul>
+
+                <div class="text-center mt-4">
+                    <a data-ajax href="<?= url_to('/info') ?>" class="btn btn-outline-success"><?= __('Info') ?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

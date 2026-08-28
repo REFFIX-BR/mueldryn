@@ -1,0 +1,331 @@
+<script>
+    $(function () {
+        $("#item-id").change(function () {
+            var $this = $(this);
+
+            if ($this.val()) {
+                var $image = $("#item-image");
+                var $name = $("#item-name");
+                var $skill = $("#item-skill");
+                var $ancient = $("#item-ancient");
+                var $refine = $("#item-refine");
+                var $harmony = $("#item-harmony");
+                var $socket = $("#item-socket");
+                var $excellent = $("#item-excellent");
+
+                $.getJSON(prefix + "items/info/" + $this.val(), function (data) {
+                    $image.attr("src", data.image);
+                    $name.html(data.name);
+
+                    if (data.has_skill) {
+                        $skill.show();
+                    } else {
+                        $skill.hide();
+                    }
+
+                    if (data.has_ancient) {
+                        $ancient.show();
+                        var $anc = $ancient.find('#ancient');
+                        $anc.html('<option value="0"></option>');
+                        $.each(data.ancients, function (val, anc) {
+                            $anc.append('<option value="' + val + '">' + anc + '</option>');
+                        })
+                    } else {
+                        $ancient.hide();
+                    }
+
+                    if (data.has_refine) {
+                        $refine.show();
+                    } else {
+                        $refine.hide();
+                    }
+
+                    if (data.has_harmony) {
+                        $harmony.show();
+
+                        var $har = $harmony.find('#harmony');
+                        $har.html('<option value=""></option>');
+
+                        for (var key in data.harmony_options) {
+                            var value = data.harmony_options[key]
+                            var template = []
+                            template.push('<optgroup label="' + value.name + '">')
+
+                            for (var k in value.levels) {
+                                var v = value.levels[k]
+                                template.push('<option value="' + value.index + ',' + v.level + '">+' + v.name + '</option>');
+                            };
+
+                            template.push('</optgroup>');
+
+                            $har.append(template.join(''))
+                        };
+                    } else {
+                        $harmony.hide();
+                    }
+
+                    if (data.has_sockets) {
+                        $socket.show();
+
+                        var $sock = $socket.find('.socket-options');
+                        for (var i = 0; i < data.max_sockets; i++) {
+                            var template = [];
+                            template.push('<div class="socket" style="margin-bottom:3px;"><select class="form-control" name="sockets[' + i + ']"><option value="255">No socket</option><option value="254">Empty</option>');
+
+                            for (var key in data.socket_options) {
+                                var socks = data.socket_options[key];
+
+                                template.push('<optgroup label="' + key + '">');
+
+                                for (var k = 0; k < socks.length; k++) {
+                                    var v = socks[k]
+
+                                    template.push('<option value="' + v.value + '">' + v.name + '</option>');
+                                }
+
+                                template.push('</optgroup>');
+                            }
+
+                            template.push('</select></div>');
+
+                            $sock.append(template.join(''));
+                        }
+                    } else {
+                        $socket.hide();
+                    }
+
+                    if (data.excellent_options.length === 0) {
+                        $excellent.hide();
+                    } else {
+                        $excellent.show();
+
+                        var $exc = $excellent.find('.excellent-options');
+                        $exc.html('');
+                        var index = 0;
+                        $.each(data.excellent_options, function (val, ex) {
+                            $exc.append([
+                                '<div class="exc" style="margin-bottom:3px;">',
+                                '<input type="checkbox" id="exc-' + index + '" value="1" name="excellent[' + index + ']" />',
+                                ' <label for="exc-' + index + '">' + ex + '</label>',
+                                '</div>'
+                            ].join(''));
+
+                            index++
+                        });
+
+                        runCustomCheckbox('.excellent-options');
+                    }
+                });
+
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Auction items') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= admin_url_to('/auctions/items?auction_id=' . $auction['id']) ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= admin_url_to('/auctions/edit/' . $auction['id']) ?>"><?= __('Auction') ?></a></li>
+            <li class="active"><a href="#"><?= __('Items') ?></a></li>
+        </ul>
+        <div class="tab-content" style="<?= empty($requirements) ? '' : 'padding:0' ?>">
+            <form data-ajax data-upload class="form-focus" action="<?= admin_url_to('/auctions/items/add?auction_id=' . $auction['id']) ?>" method="post">
+                <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+                <div class="box-body">
+                    <div class="section">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Basic options') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label class="control-label" for="item-id"><?= __('Item') ?> <span class="required">*</span></label>
+                                            <select class="form-control select2" name="item_id" id="item-id">
+                                                <option value=""><?= __('Search for a item') ?></option>
+                                                <?php foreach ($items as $category => $item): ?>
+                                                    <optgroup label="<?= $category ?>">
+                                                        <?php foreach ($item as $it): ?>
+                                                            <option value="<?= $it['id'] ?>"><?= $it['name'] ?></option>
+                                                        <?php endforeach ?>
+                                                    </optgroup>
+                                                <?php endforeach ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="active"><?= __('Active') ?></label>
+                                            <div>
+                                                <input class="form-control toggle" type="checkbox" id="active" value="1" name="active" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="level"><?= __('Level') ?></label>
+                                            <select class="form-control" id="level" name="level">
+                                                <?php for ($i = 0; $i <= 15; $i++): ?>
+                                                    <option value="<?= $i ?>"><?= $i ?></option>
+                                                <?php endfor ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="options"><?= __('Option') ?></label>
+                                            <select class="form-control" id="level" name="option">
+                                                <?php for ($i = 0; $i <= 28; $i+=4): ?>
+                                                    <option value="<?= $i ?>">+<?= $i ?></option>
+                                                <?php endfor ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="luck"><?= __('Luck') ?></label>
+                                            <div>
+                                                <input class="form-control toggle" type="checkbox" id="luck" value="1" name="luck" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group" id="item-skill" style="display:none">
+                                            <label class="control-label" for="skill"><?= __('Skill') ?></label>
+                                            <div>
+                                                <input class="form-control toggle" type="checkbox" id="skill" value="1" name="skill" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="item-ancient" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Ancient option') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="form-group">
+                                    <select class="form-control" name="ancient" id="ancient"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="item-excellent" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Excellent options') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="excellent-options"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="item-refine" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Refine option') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="form-group">
+                                    <input class="form-control toggle" type="checkbox" id="refine" value="1" name="refine" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="item-harmony" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Harmony option') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="form-group">
+                                    <select class="form-control" name="harmony" id="harmony"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="item-socket" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Socket options') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="socket-options"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <h5><?= __('Bid info') ?></h5>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="coin"><?= __('Coin') ?> <span class="required">*</span></label>
+                                            <select class="form-control" name="coin" id="coin">
+                                                <option value=""></option>
+                                                <?php foreach (config('coins', []) as $coin): ?>
+                                                    <option value="<?= $coin['id'] ?>"><?= $coin['name'] ?></option>
+                                                <?php endforeach ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="initial-bid"><?= __('Initial bid') ?></label>
+                                            <input class="form-control" type="text" name="initial_bid" id="initial-bid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col-sm-offset-3" style="padding-left:15px">
+                            <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

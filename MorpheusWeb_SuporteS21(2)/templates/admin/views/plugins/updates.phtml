@@ -1,0 +1,44 @@
+<section class="content-header">
+    <h1><?= __('Plugins for update') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/plugins') ?>"><?= __('Back') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <?php if (empty($plugins)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No plugins for update found') ?></p>
+        </div>
+    <?php else: ?>
+
+        <div class="box box-default table-responsive">
+            <table data-table class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th width="110"><?= __('Name') ?></th>
+                        <th width="200"><?= __('Author') ?></th>
+                        <th width="100"><?= __('Current Version') ?></th>
+                        <th width="100"><?= __('Latest Version') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+
+                <?php foreach ($plugins as $plugin): ?>
+                    <tr<?= $plugin['active'] ? ' class="success"' : '' ?>>
+                        <td><?= $plugin['name'] ?></td>
+                        <td><a href="<?= $plugin['website'] ?>" target="_blank"><?= $plugin['author'] ?></a></td>
+                        <td><?= $plugin['version'] ?></td>
+                        <td><?= $plugin['update'] ?></td>
+                        <td class="record-actions">
+                            <a data-ajax-action class="btn btn-warning btn-xs" href="<?= url_to('/admin/plugins/update/' . $plugin['name']) ?>"><?= __('Update') ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

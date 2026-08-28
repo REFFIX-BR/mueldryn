@@ -1,0 +1,47 @@
+<table class="table table-sm table-striped">
+    <tr>
+        <td>
+            <?= __('Created at') ?>
+            <span class="badge badge-secondary"><?= util('Date')->date($account['createdAt']) ?></span>
+        </td>
+    </tr>
+    <?php if (config('vip.column_type')): ?>
+        <tr>
+            <td>
+                <?= __('Account type') ?>
+                <span class="badge badge-secondary">
+                    <?= util('Account')->vipName($account['vipType']) ?>
+                </span>
+            </td>
+        </tr>
+        </tr>
+        <tr>
+            <td>
+                <?= __('Maturity') ?>
+                <span class="badge badge-secondary">
+                    <?= util('Date')->date($account['vipExpire']) ?>
+                </span>
+            </td>
+        </tr>
+    <?php endif ?>
+    <tr>
+        <td>
+            <?= __('Credits') ?>
+            <span class="badge badge-secondary">
+                <?= util('Number')->currency($account['credit']) ?>
+            </span>
+        </td>
+    </tr>
+    <?php foreach (config('coins', []) as $id => $coin): ?>
+        <tr>
+            <td>
+                <?= $coin['name'] ?>
+                <span class="badge badge-secondary">
+                    <?= util('Number')->format($account['coins'][$coin['id']]) ?>
+                </span>
+            </td>
+        </tr>
+    <?php endforeach ?>
+</table>
+
+<?php notify('accounts.info', $account) ?>

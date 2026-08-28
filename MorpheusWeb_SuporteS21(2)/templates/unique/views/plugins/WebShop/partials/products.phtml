@@ -1,0 +1,40 @@
+<?php
+    $coinKey = isset($shop['coin']) ? $shop['coin'] : 'wcoinc';
+    $coinName = config('coins.' . $coinKey . '.name', $coinKey);
+?>
+
+<?php if (empty($products)): ?>
+    <div class="md-shop-alert">
+        <i class="fa fa-info-circle"></i>
+        Nenhum item encontrado nesta categoria.
+    </div>
+<?php else: ?>
+    <div class="md-ws-grid">
+        <?php foreach ($products as $product): ?>
+            <?php
+                $catSlug = isset($category) ? $category['slug'] : (isset($product['category_slug']) ? $product['category_slug'] : 'item');
+            ?>
+            <article class="md-ws-item">
+                <div class="md-ws-item__img">
+                    <img src="<?= util('WebShop.WebShop')->image($product) ?>" alt="<?= htmlspecialchars($product['name']) ?>" />
+                </div>
+                <h3 class="md-ws-item__name"><?= htmlspecialchars($product['name']) ?></h3>
+                <div class="md-ws-item__price">
+                    <?= (int) $product['price'] ?> <?= htmlspecialchars($coinName) ?>
+                </div>
+                <div class="md-ws-item__meta">
+                    <?= (int) $product['solds'] ?> <?= __('sold') ?>
+                </div>
+                <div class="md-ws-item__actions">
+                    <?php if (isset($shop['slug'])): ?>
+                        <a data-ajax href="<?= url_to('/shop/' . $shop['slug'] . '/' . $catSlug . '/' . $product['slug']) ?>" class="btn btn-outline-success btn-sm"><?= __('+ details') ?></a>
+                    <?php endif ?>
+                </div>
+            </article>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+
+<?php if (isset($paginator)): ?>
+    <?= partial('paginator', ['paginator' => $paginator]) ?>
+<?php endif ?>

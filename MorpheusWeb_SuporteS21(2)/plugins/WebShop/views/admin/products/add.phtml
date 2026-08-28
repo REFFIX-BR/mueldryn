@@ -1,0 +1,346 @@
+<script>
+    function loadCategories() {
+        var $shop = $("#product-shop");
+        var $category = $("#product-category");
+
+        if ($shop.val() != "") {
+
+            $category.attr("disabled", true);
+
+            $.getJSON(base + "admin/json/webshop/shops/" + $shop.val() + "/categories", function (data) {
+                $category.html('<option value=""></option>');
+                var html = "";
+                for (var j = 0; j < data.length; j++) {
+                    var value = data[j];
+                    html += '<optgroup label="' + value.name + '">';
+
+                    for (var i = 0; i < value.children.length; i++) {
+                        var v = value.children[i];
+                        html += '<option value="' + v.id + '">' + v.name + '</option>';
+                    }
+
+                    html += "</optgroup>";
+                };
+                $category.append(html);
+                $category.attr("disabled", false);
+            });
+        }
+    }
+
+    $(function () {
+        $("#product-shop").change(function () {
+            loadCategories();
+        });
+    });
+
+</script>
+
+<section class="content-header">
+    <h1><?= __('Add product') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/webshop/products') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-upload class="form-horizontal form-focus" action="<?= url_to('/admin/webshop/products/add') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('Product info') ?></legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="name" id="product-name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-section"><?= __('Section') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="section" id="product-section" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-index"><?= __('Index') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="index" id="product-index" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-shop"><?= __('Shop') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="shop" id="product-shop">
+                                <option value=""></option>
+                                <?php foreach ($shops as $shop): ?>
+                                    <option value="<?= $shop['id'] ?>"><?= $shop['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-category"><?= __('Category') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="category_id" id="product-category">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-fix-level"><?= __('Fix level') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="fix_level" id="product-fix-level">
+                                <option value="-1"></option>
+                                <?php for ($i = 0; $i <= 15; $i++): ?>
+                                    <option value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-fix-option"><?= __('Fix option') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="fix_option" id="product-fix-option">
+                                <option value="-1"></option>
+                                <?php for ($i = 0; $i <= 28; $i+=4): ?>
+                                    <option value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-max-excellent"><?= __('Max excellent options') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="max_excellent" id="product-max-excellent">
+                                <option value=""></option>
+                                <?php for ($i = 1; $i <= 6; $i++): ?>
+                                    <option value="<?= $i ?>"><?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <?php if ($version > 2): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-max-sockets"><?= __('Max socket options') ?></label>
+
+                            <div class="col-sm-2">
+                                <select class="form-control" name="max_sockets" id="product-max-sockets">
+                                    <option value=""></option>
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <option value="<?= $i ?>"><?= $i ?></option>
+                                    <?php endfor ?>
+                                </select>
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-luck"><?= __('Luck') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="product-luck" value="1" name="luck" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-skill"><?= __('Skill') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="product-skill" value="1" name="skill" />
+                        </div>
+                    </div>
+
+                    <?php if ($version >= 1.1): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=""><?= __('Ancient') ?></span></label>
+
+                            <div class="col-sm-10" style="padding-top:5px">
+                                <div style="width:33%;margin-bottom:5px;float:left">
+                                    <input type="checkbox" name="ancient[]" id="product-ancient-1" value="1" /> <label for="product-ancient-1">stamina +5</label>
+                                </div>
+                                <div style="width:33%;margin-bottom:5px;float:left">
+                                    <input type="checkbox" name="ancient[]" id="product-ancient-2" value="2" /> <label for="product-ancient-2">stamina +10</label>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($version > 2): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-refine"><?= __('Refine') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input class="form-control" type="checkbox" id="product-refine" value="1" name="refine" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-harmony"><?= __('Harmony') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input class="form-control" type="checkbox" id="product-harmony" value="1" name="harmony" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-sockets"><?= __('Sockets') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input class="form-control" type="checkbox" id="product-sockets" value="1" name="sockets" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-active"><?= __('Active') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="product-active" value="1" name="active" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-offer"><?= __('Offer') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="product-offer" value="1" name="offer" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-image"><?= __('Image') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input data-upload-field class="form-control" type="file" name="image" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="group-access"><?= __('Classes') ?></span></label>
+
+                        <div class="col-sm-10">
+                            <?php foreach (config('characters.classes') as $code => $class): ?>
+                                <div style="width:33%;margin-bottom:5px;float:left">
+                                    <input type="checkbox" name="classes[]" id="product-class-<?= $code ?>" value="<?= $code ?>" /> <label for="product-class-<?= $code ?>"><?= $class['name'] ?></label>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('prices') ?></legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-normal-price"><?= __('Normal price') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price" id="product-normal-price" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-price-level"><?= __('Price of level') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price_level" id="product-price-level" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-price-option"><?= __('Price of option') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price_option" id="product-price-option" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-price-skill"><?= __('Price of skill') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price_skill" id="product-price-skill" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-price-luck"><?= __('Price of luck') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price_luck" id="product-price-luck" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="product-price-excellent"><?= __('Price of excellent') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" name="price_excellent" id="product-price-excellent" />
+                        </div>
+                    </div>
+
+                    <?php if ($version >= 1.1): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-price-ancient"><?= __('Price of ancient') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="price_ancient" id="product-price-ancient" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($version > 2): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-price-harmony"><?= __('Price of harmony') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="price_harmony" id="product-price-harmony" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-price-refine"><?= __('Price of refine') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="price_refine" id="product-price-refine" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="product-price-socket"><?= __('Price of socket') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="price_socket" id="product-price-socket" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

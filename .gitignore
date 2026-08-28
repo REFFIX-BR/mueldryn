@@ -1,0 +1,92 @@
+# =============================================================================
+# MuEldryn — raiz: excluir lixo, legado e artefatos de build
+# =============================================================================
+
+# Legado / referência / não usado no stack MuEldryn
+/Source/
+/backups/
+/Interface*/
+/Mudream.online/
+/publish-rare/
+/website/
+/.kiro/
+
+# Pastas temporárias e previews na raiz
+/_*/
+/__pycache__/
+/*.exe
+/*.sql
+/tmp_*
+/_tmp_*
+/_*.py
+/_*.png
+/*.tga
+/*.OZT
+/MUAssetInspector.slnx
+/_build_*.py
+/_clean_*.py
+/_decode_*.py
+/_export_*.py
+/_inspect_*.py
+/_install_*.py
+/_invasion_*.py
+/_slice_*.py
+
+# Segredos e dumps
+.env
+.env.*
+*.dump
+*.bak
+**/.htpasswd
+
+# =============================================================================
+# OpenMU
+# =============================================================================
+OpenMU/**/[Bb]in/
+OpenMU/**/[Oo]bj/
+OpenMU/**/.vs/
+OpenMU/docker-build*.log
+OpenMU/.data/
+OpenMU/publish/
+
+# =============================================================================
+# MuMain (client)
+# =============================================================================
+MuMain/out/
+MuMain/**/Global Debug/
+MuMain/**/Global Release/
+MuMain/**/.vs/
+MuMain/**/cmake-build-*/
+MuMain/**/CMakeFiles/
+MuMain/**/_deps/
+
+# =============================================================================
+# Launcher
+# =============================================================================
+MUPegasusOldLauncher/**/[Bb]in/
+MUPegasusOldLauncher/**/[Oo]bj/
+MUPegasusOldLauncher/pack/client/
+MUPegasusOldLauncher/UpdateServer/
+
+# =============================================================================
+# MorpheusWeb (site)
+# =============================================================================
+# MorpheusWeb (site) — vendor incluído no repo
+MorpheusWeb_SuporteS21(2)/tmp/
+MorpheusWeb_SuporteS21(2)/install.bak/
+MorpheusWeb_SuporteS21(2)/configs/database.php
+MorpheusWeb_SuporteS21(2)/configs/openmu.php
+
+# Só templates em uso (unique + admin)
+MorpheusWeb_SuporteS21(2)/templates/*
+!MorpheusWeb_SuporteS21(2)/templates/unique/
+!MorpheusWeb_SuporteS21(2)/templates/admin/
+
+# =============================================================================
+# Tools auxiliares
+# =============================================================================
+tools/MUAssetInspector/Workspace/
+tools/MUAssetInspector/**/[Bb]in/
+tools/MUAssetInspector/**/[Oo]bj/
+tools/mu-effect-glow-editor/node_modules/
+tools/_tmp_*

@@ -1,0 +1,77 @@
+<script type="text/javascript">
+    function type () {
+        var $this = $("#type");
+        var $options = $(".custom-options");
+        if ($this.val() === "select") {
+            $options.show();
+        } else {
+            $options.hide();
+        }
+    }
+
+    $(function () {
+        type();
+
+        $("#type").change(function () {
+            type();
+        });
+    })
+</script>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Add custom field') ?></h3>
+</div>
+
+<form data-ajax class="form-horizontal" action="<?= url_to('/admin/configs/register/add_custom_field') ?>" method="post">
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="name"><?= __('Name') ?> <span class="required">*</span></label>
+
+            <div class="col-sm-9">
+               	<input type="text" name="name" class="form-control" id="name" />
+            </div>
+        </div>
+		
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="label"><?= __('Label') ?> <span class="required">*</span></label>
+
+            <div class="col-sm-9">
+               	<input type="text" name="label" class="form-control" id="label" />
+            </div>
+        </div>
+		
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="required"><?= __('Required') ?></label>
+
+            <div class="col-sm-9" style="padding-top:5px">
+                <input class="form-control" type="checkbox" id="required" value="1" name="required" />
+            </div>
+        </div>
+		
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="type"><?= __('Type') ?></label>
+
+            <div class="col-sm-9">
+               	<select name="type" class="form-control" id="type">
+					<option value="text"><?= __('Text') ?></option>
+					<option value="select"><?= __('Select') ?></option>
+					<option value="checkbox"><?= __('Checkbox') ?></option>
+					<option value="textarea"><?= __('Textarea') ?></option>
+				</select>
+            </div>
+        </div>
+		
+        <div class="form-group custom-options">
+            <label class="col-sm-3 control-label" for="options"><?= __('Options') ?></label>
+
+            <div class="col-sm-9" style="padding-top:5px">
+                <textarea class="form-control" type="text" id="options" name="options"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="margin-top:0">
+        <input type="submit" class="btn btn-primary" value="<?= __('Add') ?>" />
+    </div>
+</form>

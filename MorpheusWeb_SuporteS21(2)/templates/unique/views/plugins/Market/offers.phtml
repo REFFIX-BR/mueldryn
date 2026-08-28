@@ -1,0 +1,21 @@
+<div class="text-center mb-4">
+    <img src="<?= asset_to('/images/megafone.png') ?>" />
+</div>
+
+<div class="market-items">
+    <?php foreach ($items as $item): ?>
+        <div class="market-item item-desc">
+            <div class="image" data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $item['item']->getHex()) ?>">
+                <img src="<?= util('Item')->getImage($item['item']) ?>" />
+            </div>
+
+            <div class="name">
+                <?= util('Item')->getFullName($item['item']) ?>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>
+
+<div class="text-center mt-4">
+    <a href="<?= url_to('/market') ?>" class="btn btn-outline-success"><?= __('Market') ?></a>
+</div>

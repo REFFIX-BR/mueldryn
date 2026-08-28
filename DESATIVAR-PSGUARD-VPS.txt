@@ -1,0 +1,13 @@
+﻿# DESATIVAR PSGUARD NA VPS (faca isso agora)
+
+1) Pare o PSGuard (feche o exe / mate o processo PSGG / PSGuard)
+2) NAO inicie o PSGuard ao subir o server
+3) Abra a porta 44406 no Firewall da VPS (TCP) - ConnectServer direto
+4) Confirme que ConnectServer esta rodando na 44406
+5) GameServer continua nas portas 55901 etc.
+
+Client deste PC ja esta sem PS.dll e apontando para:
+  IP: 200.11.121.89
+  Porta: 44406  (ConnectServer, sem passar pelo PS)
+
+Depois de parar o PSGuard na VPS, abra o Main.exe neste PC.

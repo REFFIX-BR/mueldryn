@@ -1,0 +1,35 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Videos') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+        <li class="breadcrumb-item active"><?= __('Vote Reward') ?></li>
+    </ol>
+
+    <div class="videos">
+        <?php foreach ($videos as $index => $video): ?>
+            <?php if ($index > 0): ?>
+                <hr>
+            <?php endif ?>
+            <div class="video">
+                <h2><?= $video['title'] ?></h2>
+                <div class="video-description margin-bottom">
+                    <?= $video['description'] ?>
+                </div>
+
+                <iframe width="555" height="315" src="<?= $video['url'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+<section class="content-header">
+    <h1><?= __('Loot boxes') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/lootboxes/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($boxes)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No loot boxes found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="shops-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                <tr>
+                    <th><?= __('Name') ?></th>
+                    <th><?= __('Expires') ?></th>
+                    <th><?= __('Price') ?></th>
+                    <th width="80"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <?php foreach ($boxes as $box): ?>
+                    <tr class="<?= !$box['active'] ? 'danger' : '' ?>">
+                        <td><?= $box['name'] ?></td>
+                        <td><?= util('Date')->date($box['expire_date']) ?></td>
+                        <td><?= $box['amount'] ?> <?= util('Coin')->name($box['coin']) ?></td>
+                        <td class="record-actions">
+                            <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/lootboxes/edit/' . $box['id']) ?>"><?= __('Edit') ?></a>
+                            <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= url_to('/admin/lootboxes/delete/' . $box['id']) ?>"><?= __('Delete') ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

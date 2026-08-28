@@ -1,0 +1,23 @@
+{
+  "name": "openmu-mumain",
+  "dataRootHint": "Data",
+  "bmdVersions": [10, 12],
+  "ozjHeaderSkip": 24,
+  "oztHeaderSkip": 16,
+  "textureFallbacks": [".ozj", ".OZJ", ".jpg", ".tga", ".ozt", ".OZT"],
+  "effectTables": [
+    "Local/txt/CustomEffect(Static).txt",
+    "Local/txt/CustomEffect(Dynamic).txt",
+    "Local/txt/CSetEffect.txt",
+    "Local/txt/CEffectRenderMesh.txt",
+    "Local/txt/EffectID.txt",
+    "Local/txt/Pets/PetEffectStatic.txt",
+    "Local/txt/Pets/PetEffectDynamic.txt",
+    "Local/txt/Pets/PetGlow.txt"
+  ],
+  "cosmeticCatalog": "MudreamCosmeticCatalog.Generated.cpp",
+  "itemIndexBase": 300,
+  "includeServerOverrides": false,
+  "importIncludePrefixes": ["Item/", "Player/", "Effect/", "Local/", "Skill/"],
+  "importExcludePrefixes": ["World", "Monster/", "InGameShop", "Interface/", "NPC/", "Object/"]
+}

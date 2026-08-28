@@ -1,0 +1,21 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/change-class') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-control-label" for="class"><?= __('Class') ?> <span class="required">*</span></label>
+                <select class="form-control" name="class" id="class">
+                    <option value=""></option>
+                    <?php foreach (config('change_class.classes', []) as $class): ?>
+                        <option value="<?= $class ?>"><?= config('characters.classes')[$class]['name'] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Change') ?>">
+</form>

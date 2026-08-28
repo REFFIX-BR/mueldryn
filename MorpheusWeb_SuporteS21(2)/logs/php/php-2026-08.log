@@ -1,0 +1,608 @@
+[07-Aug-2026 11:00:46 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:01:16 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:02:20 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:07 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:09 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:10 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:18 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:18 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:03:19 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:20 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:03:20 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:20 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:03:27 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:03:27 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:03:30 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:03:38 America/Sao_Paulo] PHP Fatal error:  Call to a member function load() on null in C:\xampp_5.6\htdocs\plugins\Market\controllers\market.php on line 79
+[07-Aug-2026 11:06:36 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:06:49 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:07:18 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[07-Aug-2026 11:08:39 America/Sao_Paulo] PHP Fatal error:  Invalid sql_display_size in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[09-Aug-2026 14:23:50 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:50 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:50 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:50 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:51 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:51 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:51 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:51 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:52 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:52 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:52 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:52 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:52 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:52 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:52 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:52 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:23:59 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:23:59 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:24:00 America/Sao_Paulo] Database connection error [default]: could not find driver
+[09-Aug-2026 14:24:00 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:43
+Stack trace:
+#0 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(43): PDO->__construct('dblib:host=loca...', 'sa', '', Array)
+#1 C:\xampp_5.6\htdocs\vendor\leaseweb\doctrine-pdo-dblib\Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver.php(36): Doctrine\DBAL\Driver\PDOConnection->__construct('dblib:host=loca...', 'sa', '', Array)
+#2 C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(360): Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver->connect(Array, 'sa', '', Array)
+#3 C:\xampp_5.6\htdocs\bootstrap.php(28): Doctrine\DBAL\Connection->connect()
+#4 C:\xampp_5.6\htdocs\index.php(18): require('C:\\xampp_5.6\\ht...')
+#5 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'could not find driver' in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\ in C:\xampp_5.6\htdocs\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 47
+[09-Aug-2026 14:30:25 America/Sao_Paulo] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp_5.6\htdocs\vendor\bryanjhv\slim-session\src\Slim\Middleware\Session.php on line 101
+[09-Aug-2026 15:06:51 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_token() in C:\xampp_5.6\htdocs\templates\godz\views\layouts\default.phtml on line 8
+[09-Aug-2026 15:11:39 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_token() in C:\xampp_5.6\htdocs\templates\godz\views\layouts\default.phtml on line 8
+[09-Aug-2026 15:13:09 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:13:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:27 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:13:27 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:27 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:27 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:13:29 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:12 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:14:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:14 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:18 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:14:18 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:18 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:18 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:20 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:22 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:25 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:28 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:14:28 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:28 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:29 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:14:30 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:15:43 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Server::logo() in C:\xampp_5.6\htdocs\templates\godz\views\partials\footer.phtml on line 13
+[09-Aug-2026 15:16:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:22 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:25 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:16:26 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\godz\views\partials\form-login.phtml on line 9
+[09-Aug-2026 15:43:04 America/Sao_Paulo] PHP Fatal error:  Call to a member function getTitle() on null in C:\xampp_5.6\htdocs\templates\godz\views\plugins\News\view.phtml on line 8
+[09-Aug-2026 15:50:08 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:50:09 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:50:09 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:06 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:06 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:06 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:06 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:08 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:08 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:11 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:14 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:14 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:15 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:17 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:17 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:17 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:19 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:19 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:19 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:20 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:21 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:21 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 15:51:21 America/Sao_Paulo] PHP Fatal error:  Call to undefined function csrf_field() in C:\xampp_5.6\htdocs\templates\crywolf\views\partials\login.phtml on line 23
+[09-Aug-2026 18:40:40 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Guild::logo() in C:\xampp_5.6\htdocs\templates\godz\views\plugins\Perfil\character.phtml on line 52
+[09-Aug-2026 18:40:55 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Morpheus\Util\Guild::logo() in C:\xampp_5.6\htdocs\templates\godz\views\plugins\Perfil\character.phtml on line 52
+[27-Aug-2026 11:08:03 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::exec($statement) should either be compatible with PDO::exec(string $statement): int|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 54
+[27-Aug-2026 11:08:03 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::lastInsertId($name = null) should either be compatible with PDO::lastInsertId(?string $name = null): string|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 121
+[27-Aug-2026 11:08:03 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::prepare($prepareString, $driverOptions = []) should either be compatible with PDO::prepare(string $query, array $options = []): PDOStatement|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 74
+[27-Aug-2026 11:08:03 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::exec($statement) should either be compatible with PDO::exec(string $statement): int|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 54
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::lastInsertId($name = null) should either be compatible with PDO::lastInsertId(?string $name = null): string|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 121
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::prepare($prepareString, $driverOptions = []) should either be compatible with PDO::prepare(string $query, array $options = []): PDOStatement|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 74
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::exec($statement) should either be compatible with PDO::exec(string $statement): int|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 54
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::lastInsertId($name = null) should either be compatible with PDO::lastInsertId(?string $name = null): string|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 121
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::prepare($prepareString, $driverOptions = []) should either be compatible with PDO::prepare(string $query, array $options = []): PDOStatement|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 74
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::exec($statement) should either be compatible with PDO::exec(string $statement): int|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 54
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::lastInsertId($name = null) should either be compatible with PDO::lastInsertId(?string $name = null): string|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 121
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::prepare($prepareString, $driverOptions = []) should either be compatible with PDO::prepare(string $query, array $options = []): PDOStatement|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 74
+[27-Aug-2026 11:09:28 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 11:10:10 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::exec($statement) should either be compatible with PDO::exec(string $statement): int|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 54
+[27-Aug-2026 11:10:10 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::lastInsertId($name = null) should either be compatible with PDO::lastInsertId(?string $name = null): string|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 121
+[27-Aug-2026 11:10:10 America/Sao_Paulo] PHP Deprecated:  Return type of Doctrine\DBAL\Driver\PDOConnection::prepare($prepareString, $driverOptions = []) should either be compatible with PDO::prepare(string $query, array $options = []): PDOStatement|false, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 74
+[27-Aug-2026 11:10:10 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 11:16:36 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A conversão de um tipo de dados nvarchar em um tipo de dados datetime resultou em um valor fora do intervalo. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:105
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php(105): PDOStatement->execute()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(849): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(785): Doctrine\DBAL\Connection->executeQuery()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[27-Aug-2026 11:16:56 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A conversão de um tipo de dados nvarchar em um tipo de dados datetime resultou em um valor fora do intervalo. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:105
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php(105): PDOStatement->execute()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(849): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(785): Doctrine\DBAL\Connection->executeQuery()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A conversão de um tipo de dados nvarchar em um tipo de dados datetime resultou em um valor fora do intervalo. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:105
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php(105): PDOStatement->execute()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(849): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(785): Doctrine\DBAL\Connection->executeQuery()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:32 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:17:49 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A conversão de um tipo de dados nvarchar em um tipo de dados datetime resultou em um valor fora do intervalo. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:105
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php(105): PDOStatement->execute()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(849): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(785): Doctrine\DBAL\Connection->executeQuery()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[27-Aug-2026 11:17:49 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A conversão de um tipo de dados nvarchar em um tipo de dados datetime resultou em um valor fora do intervalo. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:105
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php(105): PDOStatement->execute()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(849): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(785): Doctrine\DBAL\Connection->executeQuery()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[27-Aug-2026 11:19:18 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:19:19 America/Sao_Paulo] PHP Deprecated:  array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\zf1\zend-registry\library\Zend\Registry.php on line 206
+[27-Aug-2026 11:44:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:44:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:44:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:44:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:44:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:45:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 11:45:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 12:26:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php:11
+Stack trace:
+#0 [internal function]: Morpheus\Core\Plugin::{closure}()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\Slim.php(1208): call_user_func_array()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Core\Plugin.php(181): Slim\Slim->applyHook()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(431): Morpheus\Core\Plugin::notify()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\youplay_v3\views\plugins\Perfil\character.phtml(70): notify()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...') in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php on line 11
+[27-Aug-2026 12:26:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php:11
+Stack trace:
+#0 [internal function]: Morpheus\Core\Plugin::{closure}()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\Slim.php(1208): call_user_func_array()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Core\Plugin.php(181): Slim\Slim->applyHook()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(431): Morpheus\Core\Plugin::notify()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\youplay_v3\views\plugins\Perfil\character.phtml(70): notify()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...') in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php on line 11
+[27-Aug-2026 12:29:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\forestplace\views\layouts\default.phtml:834
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\forestplace\views\layouts\default.phtml on line 834
+[27-Aug-2026 12:29:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\forestplace\views\layouts\default.phtml:834
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\forestplace\views\layouts\default.phtml on line 834
+[27-Aug-2026 12:32:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php:11
+Stack trace:
+#0 [internal function]: Morpheus\Core\Plugin::{closure}()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\Slim.php(1208): call_user_func_array()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Core\Plugin.php(181): Slim\Slim->applyHook()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(431): Morpheus\Core\Plugin::notify()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\godz\views\plugins\Perfil\character.phtml(99): notify()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#6 C: in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php on line 11
+[27-Aug-2026 12:34:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php:11
+Stack trace:
+#0 [internal function]: Morpheus\Core\Plugin::{closure}()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\Slim.php(1208): call_user_func_array()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Core\Plugin.php(181): Slim\Slim->applyHook()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(431): Morpheus\Core\Plugin::notify()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\godz\views\plugins\Perfil\character.phtml(99): notify()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#6 C: in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php on line 11
+[27-Aug-2026 12:34:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php:11
+Stack trace:
+#0 [internal function]: Morpheus\Core\Plugin::{closure}()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\Slim.php(1208): call_user_func_array()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Core\Plugin.php(181): Slim\Slim->applyHook()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(431): Morpheus\Core\Plugin::notify()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\godz\views\plugins\Perfil\character.phtml(99): notify()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#6 C: in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\plugins\Market\controllers\market.php on line 11
+[27-Aug-2026 12:39:50 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 13:05:00 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 14:45:05 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 14:45:17 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[27-Aug-2026 14:54:46 America/Sao_Paulo] VaultSync add on buy: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type boolean: ""
+CONTEXT:  unnamed portal parameter $7 = ''
+[27-Aug-2026 15:06:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:06:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml:266
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\bootstrap.p in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\demon\views\layouts\default.phtml on line 266
+[27-Aug-2026 15:16:07 America/Sao_Paulo] bank game list: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 15:16:35 America/Sao_Paulo] bank game list: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 15:22:01 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08006] [7] timeout expired in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\OpenMU\Bridge.php:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\OpenMU\Bridge.php(27): PDO->__construct()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\OpenMU\Bridge.php(43): Morpheus\OpenMU\Bridge::pdo()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\test-vault-list.php(7): Morpheus\OpenMU\Bridge::findAccount()
+#3 {main}
+  thrown in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\OpenMU\Bridge.php on line 27
+[27-Aug-2026 15:30:12 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 15:30:33 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 15:54:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\Pistol\views\layouts\default.phtml:316
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T15592 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\Pistol\views\layouts\default.phtml on line 316
+[27-Aug-2026 15:54:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function _() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\Pistol\views\layouts\default.phtml:316
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(192): Morpheus\Slim\View->render()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(130): Morpheus\Slim\View->renderLayout()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(243): Morpheus\Slim\View->fetch()
+#5 [internal function]: Slim\View->display()
+#6 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T15592 in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\Pistol\views\layouts\default.phtml on line 316
+[27-Aug-2026 16:39:37 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 16:39:47 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 16:39:53 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[27-Aug-2026 16:40:02 America/Sao_Paulo] OpenMU auth error: SQLSTATE[08006] [7] timeout expired
+[28-Aug-2026 08:57:51 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'template'. in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:57
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(57): PDO->exec()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1012): Doctrine\DBAL\Driver\PDOConnection->exec()
+#2 [internal function]: Doctrine\DBAL\Connection->executeUpdate()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\statical\statical\src\BaseProxy.php(60): call_user_func_array()
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\set-template-unique.php(6): Statica in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php on line 131
+[28-Aug-2026 10:04:26 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[28-Aug-2026 10:04:34 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[28-Aug-2026 10:10:33 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[28-Aug-2026 10:10:41 America/Sao_Paulo] PHP Fatal error:  Declaration of Doctrine\DBAL\Driver\PDOConnection::query() must be compatible with PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 86
+[28-Aug-2026 10:14:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Morpheus\Account\User' not found in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\debug-bank-compare.php:25
+Stack trace:
+#0 {main}
+  thrown in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\debug-bank-compare.php on line 25
+[28-Aug-2026 10:14:44 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Morpheus\Util\Item::bankItemView() must be an instance of Morpheus\Item\Item, null given, called in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\debug-wh-parse.php on line 27 and defined in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Util\Item.php:738
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\tools\debug-wh-parse.php(27): Morpheus\Util\Item::bankItemView()
+#1 {main}
+  thrown in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Util\Item.php on line 738
+[28-Aug-2026 12:54:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:13
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(34): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 13
+[28-Aug-2026 12:54:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:13
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(34): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 13
+[28-Aug-2026 12:54:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:13
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(34): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 13
+[28-Aug-2026 12:59:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 12:59:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 13:00:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 13:00:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 13:00:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 13:03:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27
+[28-Aug-2026 13:03:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Morpheus\Util\Number::nvl() in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml:27
+Stack trace:
+#0 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(89): require()
+#1 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\basics.php(282): Morpheus\Slim\View->partial()
+#2 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\view.phtml(43): partial()
+#3 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\JUNIOR...')
+#4 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\src\Slim\View.php(102): Slim\View->render()
+#5 C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\Mor in C:\Users\JUNIOR-DEV\Downloads\MuServer-20260803T155926Z-1-001\MorpheusWeb_SuporteS21(2)\templates\unique\views\plugins\WebShop\partials\products.phtml on line 27

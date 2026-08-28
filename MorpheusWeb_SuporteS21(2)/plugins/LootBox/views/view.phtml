@@ -1,0 +1,99 @@
+<h1 class="title"><?= $box['name'] ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/lootboxes') ?>" data-ajax><?= __('Loot boxes') ?></a></li>
+    <li class="active"><?= $box['name'] ?></li>
+</ul>
+
+<div class="lootbox">
+    <?= $box['description'] ?>
+
+    <div class="box-panel margin-bottom margin-top">
+        <div class="box-panel-title"><?= __('How much?') ?></div>
+        <div class="box-panel-content">
+            <?= $box['amount'] ?> <?= util('Coin')->name($box['coin']) ?>
+        </div>
+    </div>
+
+    <h2 class="title" style="margin-bottom:0"><?= __('Available items') ?></h2>
+
+    <div class="lootbox-items">
+        <?php foreach ($items as $index => $item): ?>
+            <div class="item" id="item-<?= $index ?>">
+                <div class="name"><?= util('Item')->name($item['section'], $item['idx']) ?></div>
+                <div class="image">
+                    <img src="<?= util('Item')->image($item['section'], $item['idx']) ?>" />
+                </div>
+            </div>
+        <?php endforeach ?>
+
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="available-items" style="display:none;">
+        <?php foreach ($items as $item): ?>
+            <img src="<?= resource_to('/item-image.php?section=' . $item['section'] . '&index=' . $item['idx'] . '&width=120&height=120') ?>" />
+        <?php endforeach ?>
+    </div>
+
+    <div class="align-center">
+        <a class="btn open-box" data-confirm="<?= __('Are you sure you want to open this box?') ?>" href="<?= url_to('/lootboxes/open/' . $box['id']) ?>"><?= __('Open this box') ?></a>
+        <a data-ajax class="btn" href="<?= url_to('/lootboxes/gift/' . $box['id']) ?>"><?= __('Give gift') ?></a>
+    </div>
+</div>
+
+<script>
+$(document).off('click', '.open-box').on('click', '.open-box', function(e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        var confirmMsg = $(this).data('confirm');
+        
+        if (confirm(confirmMsg)) {
+            // Cria a tela escura de suspense se ela ainda não existir
+            if ($('#lb-overlay').length === 0) {
+                $('body').append('<div id="lb-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; color:#fff; text-align:center; padding-top:10%;"><h1 id="lb-count" style="font-size:150px; margin:0; text-shadow: 0 0 20px #ff9800;">3</h1><h2 id="lb-result" style="display:none; color:#ff9800; font-size:30px; margin:20px 0; text-shadow: 0 0 10px #000;"></h2><button id="lb-close" style="display:none; margin-top:30px; font-size:20px; padding: 10px 30px; cursor:pointer; color: #333; background: #ff9800; border: none; border-radius: 5px;">Continuar</button></div>');
+                
+                $('#lb-close').on('click', function() {
+                    $('#lb-overlay').fadeOut();
+                });
+            }
+            
+            // Configuração de exibição inicial
+            $('#lb-count').show().text('3');
+            $('#lb-result').hide();
+            $('#lb-close').hide();
+            $('#lb-overlay').fadeIn();
+            
+            var counter = 3;
+            var interval = setInterval(function() {
+                counter--;
+                if (counter > 0) {
+                    $('#lb-count').text(counter);
+                } else {
+                    clearInterval(interval);
+                    $('#lb-count').text('Abrindo...');
+                    
+                    // Faz a solicitação do item e lê o JSON
+                    $.getJSON(url, function(response) {
+                        $('#lb-count').hide();
+                        var prefix = response.success ? 'Parabéns!<br>' : 'Ops!<br>';
+                        var resultHtml = prefix + response.message;
+                        
+                        // Puxa a imagem da lista de itens com base no index que tiramos na caixa
+                        if (response.success && response.index !== undefined) {
+                            var imgHtml = $('#item-' + response.index + ' .image').html();
+                            if (imgHtml) {
+                                resultHtml += '<br><br>' + imgHtml;
+                            }
+                        }
+                        
+                        $('#lb-result').html(resultHtml).fadeIn();
+                        $('#lb-close').fadeIn();
+                    });
+                }
+            }, 1000); // 1000 milissegundos = 1 segundo de intervalo
+        }
+});
+</script>

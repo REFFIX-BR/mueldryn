@@ -1,0 +1,55 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Support') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/support/tickets') ?>" data-ajax><?= __('Support') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Add') ?></li>
+        </ol>
+    </nav>
+
+    <?= config('helpdesk.rules') ?>
+
+    <form data-ajax data-upload action="<?= url_to('/support/tickets/add') ?>" enctype="multipart/form-data" method="POST" class="form form-action">
+        <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+        <div class="form-group">
+            <label class="form-control-label" for="subject"><?= __('Subject') ?> <span class="required">*</span></label>
+            <input class="form-control" type="text" name="subject" id="subject" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="department"><?= __('Department') ?> <span class="required">*</span></label>
+            <select class="form-control" name="department" id="department">
+                <option value=""></option>
+                <?php foreach (config('helpdesk.departments', []) as $department): ?>
+                    <option value="<?= $department ?>"><?= $department ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="images"><?= __('Images') ?></label>
+            <input class="form-control-file" data-upload-field type="file" multiple name="images" id="images" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="message"><?= __('Message') ?> <span class="required">*</span></label>
+            <textarea class="form-control" name="message" id="message"></textarea>
+            <div class="form-text text-muted"><?= __('Max %s characteres', [config('helpdesk.max_char_message', 400)]) ?></div>
+        </div>
+
+        <input type="submit" value="<?= __('Open ticket') ?>" class="btn btn-info" />
+    </form>
+</div>

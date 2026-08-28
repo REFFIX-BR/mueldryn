@@ -1,0 +1,45 @@
+<section class="content-header">
+    <h1><?= __('Auctions') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= admin_url_to('/auctions/config') ?>"><?= __('Config') ?></a>
+        <a data-ajax class="btn btn-success btn-sm" href="<?= admin_url_to('/auctions/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <?php if (empty($auctions)): ?>
+        <div class="callout callout-warning">
+            <h4>Ops!</h4>
+            <p><?= __('No auctions found') ?></p>
+        </div>
+    <?php else: ?>
+        <div class="box box-default table-responsive">
+            <table id="shops-table" class="table table-condensed table-hover table-striped">
+                <thead>
+                <tr>
+                    <th><?= __('Name') ?></th>
+                    <th width="200"><?= __('Start date') ?></th>
+                    <th width="200"><?= __('End date') ?></th>
+                    <th width="80"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <?php foreach ($auctions as $auction): ?>
+                    <tr class="<?= $auction['active'] ? 'border-success' : 'border-error' ?>">
+                        <td><?= $auction['name'] ?></td>
+                        <td><?= util('Date')->date($auction['start_date']) ?></td>
+                        <td><?= util('Date')->date($auction['end_date']) ?></td>
+                        <td class="record-actions">
+                            <a data-ajax class="btn btn-xs btn-default" href="<?= admin_url_to('/auctions/items?auction_id=' . $auction['id']) ?>"><?= __('Items') ?></a>
+                            <a data-ajax class="btn btn-xs btn-default" href="<?= admin_url_to('/auctions/edit/' . $auction['id']) ?>"><?= __('Edit') ?></a>
+                            <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= admin_url_to('/auctions/delete/' . $auction['id']) ?>"><?= __('Delete') ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+</section>

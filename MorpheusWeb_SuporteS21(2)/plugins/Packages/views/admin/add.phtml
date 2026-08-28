@@ -1,0 +1,99 @@
+<section class="content-header">
+    <h1><?= __('Add new package') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/packages') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-upload class="form-horizontal form-action" action="<?= url_to('/admin/packages/add') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('Package') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="packages-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" name="name" id="packages-name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="packages-price"><?= __('Price ($)') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control money" type="text" name="price" id="packages-price" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="package-desc"><?= __('Description') ?></label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="desc" id="package-desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="package-image"><?= __('Image') ?></label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input data-upload-field class="form-control" type="file" name="image" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="package-active"><?= __('Active') ?>?</label>
+
+                        <div class="col-sm-8" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="package-active" value="1" name="active" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Vip') ?></legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="package-viptype"><?= __('Type') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" id="package-viptype" name="viptype">
+                                <option value=""></option>
+                                <?php foreach (config('vip.types', []) as $key => $value): ?>
+                                    <option value="<?= $key ?>"><?= $value ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="package-vipdays"><?= __('Days') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="package-vipdays" name="vipdays" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Coins') ?></legend>
+
+                    <?php foreach (config('coins', []) as $coin): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="package-coin-<?= $coin['column'] ?>"><?= $coin['name'] ?></label>
+
+                            <div class="col-sm-3">
+                                <input class="form-control" type="text" id="package-coin-<?= $coin['column'] ?>" name="coins[<?= $coin['id'] ?>]" />
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

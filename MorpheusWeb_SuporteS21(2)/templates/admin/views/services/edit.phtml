@@ -1,0 +1,137 @@
+<section class="content-header">
+    <h1><?= __('Edit service') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/services') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<div class="modal" id="modal-add-rate"></div>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal" action="<?= url_to('/admin/services/edit/' . $service['id']) ?>" method="post">
+            <div class="box-body">
+                <fielset>
+                    <legend><?= __('Service') ?></legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" value="<?= $service['name'] ?>" type="text" name="name" id="service-name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-service"><?= __('Service') ?></label>
+
+                        <div class="col-sm-3">
+                            <p class="form-control-static"><?= $service['service'] ?></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-url">URL</label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" value="<?= $service['url'] ?>" type="text" name="url" id="service-url" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-parent_id"><?= __('Parent service') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" name="parent_id" id="service-parent_id">
+                                <option value=""></option>
+                                <?php foreach ($services as $ser): ?>
+                                    <option<?= $service['parent_id'] == $ser['id'] ? ' selected' : '' ?> value="<?= $ser['id'] ?>"><?= $ser['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-allowed"><?= __('Free for all') ?>?</label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control"<?= $service['allowed'] ? ' checked' : '' ?> type="checkbox" id="service-allowed" value="1" name="allowed" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"><?= __('Vip') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px;">
+                            <?php foreach (config('vip.types', []) as $id => $name): ?>
+                                <div style="width:20%;float:left">
+                                    <input type="checkbox"<?= array_key_exists($id, $service['viptypes']) ? ' checked' : '' ?> id="services-vip<?= $id ?>" name="viptype[<?= $id ?>]" /> <label style="vertical-align:-2px;padding-left:5px;" for="services-vip<?= $id ?>"><?= $name ?></label>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="service-active"><?= __('Active') ?>?</label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control"<?= $service['active'] ? ' checked' : '' ?> type="checkbox" id="service-active" value="1" name="active" />
+                        </div>
+                    </div>
+                </fielset>
+
+                <fieldset>
+                    <legend style="margin-bottom:0"><?= __('Rates') ?></legend>
+
+                    <?php if (empty($service['rates'])): ?>
+                        <div style="margin:0;margin-top:10px" class="callout callout-warning">
+                            <p><?= __('No rates created') ?></p>
+                        </div>
+                    <?php else: ?>
+                        <table id="services-table" class="table table-condensed table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th><?= __('Type') ?></th>
+                                    <th><?= __('Condition') ?></th>
+                                    <th><?= __('Amount') ?></th>
+                                    <th width="10"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php foreach($service['rates'] as $index => $rate): ?>
+                                    <tr>
+                                        <td>
+                                            <?= __($rate['type']) ?>
+                                            <?php if ($rate['type'] === 'coin'): ?>
+                                                (<?= config('coins')[$rate['coin']]['name'] ?>)
+                                            <?php else: ?>
+                                                (<?= __('Character')?>)
+                                            <?php endif ?>
+                                        </td>
+                                        <td><?= util('Text')->toList(array_map(function ($a) {return config('vip.types')[$a];}, $rate['conditions'])) ?></td>
+                                        <td><?= util('Number')->format($rate['amount']) ?></td>
+                                        <td>
+                                            <a data-ajax-delete class="btn btn-xs btn-danger" href="<?= url_to('/admin/services/delete_rate/' . $service['id'] . '/' . $index) ?>"><?= __('delete') ?></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    <?php endif ?>
+
+                    <div style="text-align:right;margin-top:10px">
+                        <a data-load-with-modal data-modal="modal-add-rate" class="btn btn-xs btn-success" href="<?= url_to('/admin/services/add_rate/' . $service['id']) ?>"><?= __('Add') ?></a>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,106 @@
+<script type="text/javascript">
+    $(function () {
+
+        $(".add-answer").click(function (e) {
+            var $this = $(this);
+            var $container = $this.closest("form").find(".container-add-answer");
+            var index = $container.find(":input").size() + 1;
+            $container.append('<div class="input-group" style="width:100%;margin-top:5px"><input class="form-control" type="text" name="answers[]" /></div>');
+            e.preventDefault();
+        });
+
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Add poll') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/polls') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/polls/add') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-title"><?= __('Title') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" name="title" id="poll-title" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-starts-at"><?= __('Starts at') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-3">
+                        <input data-show-calendar class="form-control" type="text" name="start_at" id="poll-starts-at" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-ends-at"><?= __('Ends at') ?></label>
+
+                    <div class="col-sm-3">
+                        <input data-show-calendar class="form-control" type="text" name="end_at" id="poll-end-at" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-multiple"><?= __('Allow multiple') ?></label>
+
+                    <div class="col-sm-8" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="poll-multiple" value="1" name="multiple" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-allow-ips"><?= __('Allow IPs') ?></label>
+
+                    <div class="col-sm-8" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="poll-allow-ips" value="1" name="allow_ips" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-only-logged-in"><?= __('Only logged in') ?></label>
+
+                    <div class="col-sm-8" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="poll-only-logged-in" value="1" name="only_logged_in" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-active"><?= __('Active') ?></label>
+
+                    <div class="col-sm-8" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="poll-active" value="1" name="active" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="poll-answer"><?= __('Answers') ?></label>
+
+                    <div class="col-sm-10 container-add-answer">
+                        <div class="input-group" style="width:100%;margin-bottom:5px">
+                            <input class="form-control" type="text" name="answers[]" />
+                        </div>
+                    </div>
+
+                </div>
+                <div style="text-align:right;margin-top:-10px">
+                    <a class="btn btn-success btn-xs add-answer" href="javascript:void(0)"><?= __('Add') ?></a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

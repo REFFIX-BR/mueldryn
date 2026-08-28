@@ -1,0 +1,69 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= $post->getTitle() ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/posts') ?>" data-ajax><?= __('Posts') ?></a></li>
+            <li class="breadcrumb-item active"><?= $post->getTitle() ?></li>
+        </ol>
+    </nav>
+
+    <div class="single-news">
+        <?= $post->getBody() ?>
+    </div>
+
+    <?php if (config('news.allow_comments', false) && $post->isAllowedComments()): ?>
+        <h2 class="title"><?= __('Comments') ?></h2>
+        <?php if (!$post->hasComments()): ?>
+            <div class="alert alert-warning"><?= __('No comments found') ?></div>
+        <?php else: ?>
+            <ul class="comments">
+                <?php foreach ($post->getComments() as $comment) : ?>
+                    <li>
+                        <div class="avatar">
+                            <img src="<?= $comment->getAuthor()->getLastCharacter() ? $comment->getAuthor()->getLastCharacter()->getAvatarUrl(asset_to('/images/no-avatar.png')) : asset_to('/images/no-avatar.png') ?>" width="80" height="100" />
+                        </div>
+                        <div class="desc">
+                            <span class="name">
+                                <?php if ($comment->getAuthor()->getLastCharacter()): ?>
+                                    <?php if (plugin_active('Perfil')): ?>
+                                        <a data-ajax href="<?= url_to('/perfil/character/' . $comment->getAuthor()->getLastCharacter()->getName()) ?>"><?= $comment->getAuthor()->getLastCharacter()->getName() ?></a>
+                                    <?php else: ?>
+                                        <?= $comment->getAuthor()->getLastCharacter()->getName() ?>
+                                    <?php endif ?>
+                                <?php else: ?>
+                                    -
+                                <?php endif ?>
+                            </span>
+                            <span class="created"><?= util('Time')->relative($comment->getCreated()) ?></span>
+                            <p class="body"><?= nl2br($comment->getComment()) ?></p>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+
+
+        <h2 class="title"><?= __('Add comment') ?></h2>
+        <form data-ajax action="<?= url_to('/posts/comments/add/' . $post->getId()) ?>" class="form" method="post">
+            <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+            <div class="form-group">
+                <textarea class="form-control" id="comment" name="comment"></textarea>
+            </div>
+
+            <input type="submit" value="<?= __('Send comment') ?>" class="btn bg-orange" />
+        </form>
+    <?php endif ?>
+</div>

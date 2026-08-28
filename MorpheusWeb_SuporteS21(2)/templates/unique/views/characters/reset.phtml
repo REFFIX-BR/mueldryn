@@ -1,0 +1,43 @@
+<?= partial('rates') ?>
+
+<div class="alert alert-warning">
+    <p class="title"><?= __('Requirements') ?></p>
+    <ul>
+        <li><?= __('Needs to be level %d', [$levelRequired]) ?></li>
+        <?php if ($zenRequired > 0): ?>
+            <li><?= __('Must have %d zen', [$zenRequired]) ?></li>
+        <?php endif ?>
+    </ul>
+</div>
+
+<div class="alert alert-warning">
+    <p class="title"><?= __('Before') ?></p>
+    <ul>
+        <li><?= __('Resets') ?>: <strong><?= $character->getResets() ?></strong></li>
+        <li><?= __('Level') ?>: <strong><?= $character->getLevel() ?></strong></li>
+        <li><?= __('Zen') ?>: <strong><?= $character->getMoney() ?></strong></li>
+        <li><?= __('Class') ?>: <strong><?= util('Character')->className($character->getClass()) ?></strong></li>
+    </ul>
+</div>
+
+<div class="alert alert-warning">
+    <p class="title"><?= __('After') ?></p>
+    <ul>
+        <li><?= __('Resets') ?>: <strong><?= $character->getResets() + 1 ?></strong></li>
+        <li><?= __('Level') ?>: <strong><?= $levelAfter ?></strong></li>
+        <li><?= __('Zen') ?>: <strong><?= $character->getMoney() - $zenRequired ?></strong></li>
+        <li><?= __('Class') ?>: <strong><?= $clearQuests ? util('Character')->baseClass($character->getClass())['name'] : util('Character')->className($character->getClass()) ?></strong></li>
+        <li><?= __('Clear magics') ?>: <strong><?= util('Text')->yesNo($clearMagics) ?></strong></li>
+        <li><?= __('Clear items') ?>: <strong><?= util('Text')->yesNo($clearItems) ?></strong></li>
+        <li><?= __('Clear quests') ?>: <strong><?= util('Text')->yesNo($clearQuests) ?></strong></li>
+        <li><?= __('Clear master level') ?>: <strong><?= util('Text')->yesNo($clearMasterLevel) ?></strong></li>
+    </ul>
+</div>
+
+<form data-ajax data-confirmation="<?= __('Are you sure?') ?>" action="<?= url_to('/panel/character/' . $character->getName() . '/reset') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="submit">
+        <input type="submit" class="btn btn-info" value="<?= __('Reset') ?>">
+    </div>
+</form>

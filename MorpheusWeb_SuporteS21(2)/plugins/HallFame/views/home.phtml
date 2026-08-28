@@ -1,0 +1,86 @@
+<h1 class="title"><?= __('Top Rankings') ?></h1>
+
+<div class="grid">
+    <?php if ($max > 1): ?>
+        <?php $i = 0; foreach ($rankings as $id => $ranking): ?>
+            <div class="grid-4">
+                <?php if (!empty($ranking['data'])): ?>
+                    <div class="top-ranking <?= $id ?>">
+                        <div class="type"><?= $ranking['fullname'] ?></div>
+                        <table class="list" style="margin-bottom:10px">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th><?= __('Name') ?></th>
+                                    <th style="text-align:right;"><?= __('Score') ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($ranking['data'] as $r => $data): ?>
+                                    <tr>
+                                        <td style="text-align:left;"><?= $r+1 ?></td>
+                                        <td style="text-align:left;">
+                                            <?php if (strpos('Guild', $id) === false): ?>
+                                                <img src="<?= util('Character')->avatar($data['avatar']) ?>" width="20" />
+                                            <?php else: ?>
+                                                <img src="<?= util('Guild')->logoUrl($data['mark']) ?>" width="20" />
+                                            <?php endif ?>
+
+                                            <?php if (plugin_active('Perfil')): ?>
+                                                <a data-ajax href="<?= url_to('/perfil/' . (strpos('Guild', $id) === false ? 'character' : 'guild') . '/' . $data['name']) ?>"><?= $data['name'] ?></a>
+                                            <?php else: ?>
+                                                <?= $data['name'] ?>
+                                            <?php endif ?>
+                                        </td>
+                                        <td style="text-align:right;"><?= $data['score'] ?></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php else: ?>
+                    <div class="top-ranking <?= $id ?>">
+                        <div class="type"><?= $ranking['fullname'] ?></div>
+                    </div>
+                <?php endif ?>
+            </div>
+            <?php if (++$i % 3 === 0): ?>
+                </div>
+                <div class="grid">
+            <?php endif ?>
+        <?php endforeach ?>
+    <?php else: ?>
+        <?php $i = 0; foreach ($rankings as $id => $ranking): ?>
+            <div class="grid-3">
+                <?php if (!empty($ranking['data'])): ?>
+                    <div class="top-ranking <?= $id ?>">
+                        <p class="type"><?= $ranking['fullname'] ?></p>
+                        <p class="name">
+                            <?php if (plugin_active('Perfil')): ?>
+                                <a data-ajax href="<?= url_to('/perfil/' . (strpos('Guild', $id) === false ? 'character' : 'guild') . '/' . $ranking['data'][0]['name']) ?>"><?= $ranking['data'][0]['name'] ?></a>
+                            <?php else: ?>
+                                <?= $ranking['data'][0]['name'] ?>
+                            <?php endif ?>
+                        </p>
+                        <div class="image">
+                            <?php if (strpos('Guild', $id) === false): ?>
+                                <img src="<?= util('Character')->avatar($ranking['data'][0]['avatar']) ?>" width="60" height="76" />
+                            <?php else: ?>
+                                <img src="<?= util('Guild')->logoUrl($ranking['data'][0]['mark']) ?>" height="76" />
+                            <?php endif ?>
+                        </div>
+                        <p class="score"><?= __('Score') ?>: <?= $ranking['data'][0]['score'] ?></p>
+                    </div>
+                <?php else: ?>
+                    <div class="top-ranking <?= $id ?>">
+                        <p class="type"><?= $ranking['fullname'] ?></p>
+                    </div>
+                <?php endif ?>
+            </div>
+            <?php if (++$i % 4 === 0): ?>
+                </div>
+                <div class="grid">
+            <?php endif ?>
+        <?php endforeach ?>
+    <?php endif ?>
+</div>

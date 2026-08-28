@@ -1,0 +1,36 @@
+<h4><?= __('New payment confirmation') ?></h4>
+<form data-ajax data-upload action="<?= url_to('/orders/payment-confirmations/add') ?>" enctype="multipart/form-data" method="POST" class="form form-action">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-group">
+        <label class="form-control-label" for="class"><?= __('Bank account') ?> <span class="required">*</span></label>
+
+        <select name="bank_account_id" class="form-control" id="bank_account_id">
+            <option value=""></option>
+            <?php foreach ($accounts as $account): ?>
+                <option value="<?= $account['id'] ?>"><?= $account['name'] ?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="form-control-label" for="value"><?= __('Value') ?> <span class="required">*</span></label>
+
+        <input type="text" class="form-control" name="value" id="value" />
+    </div>
+
+    <div class="form-group">
+        <label class="form-control-label" for="class"><?= __('Receipt') ?> <span class="required">*</span></label>
+
+        <input data-upload-field class="form-control-file" type="file" name="images" id="images" />
+    </div>
+
+    <div class="form-group">
+        <label class="form-control-label" for="class"><?= __('Message') ?></label>
+
+        <textarea name="message" class="form-control" id="message"></textarea>
+        <div class="align-right font-small"><?= __('Max %s characteres', [config('helpdesk.max_char_message', 400)]) ?></div>
+    </div>
+
+    <input type="submit" value="<?= __('Confirm') ?>" class="btn bg-orange" />
+</form>

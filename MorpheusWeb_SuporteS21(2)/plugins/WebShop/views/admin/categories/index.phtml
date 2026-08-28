@@ -1,0 +1,74 @@
+<script type="text/javascript">
+    $(function () {
+        $("#categories-table tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            items: ".drag",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/webshop/categories/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Categories') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/webshop/categories/add?shop_id=' . $shop['id']) ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= url_to('/admin/webshop/shops/edit/' . $shop['id']) ?>"><?= __('Shop') ?></a></li>
+            <li class="active"><a href="#"><?= __('Categories') ?></a></li>
+        </ul>
+
+        <div class="tab-content" style="padding:0">
+            <?php if (empty($categories)): ?>
+                <div class="callout callout-warning" style="margin:10px">
+                    <h4>Ops!</h4>
+                    <p><?= __('No categories found') ?></p>
+                </div>
+            <?php else: ?>
+<!--                <div class="box box-info table-responsive">-->
+                    <table id="categories-table" class="table table-condensed table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th><?= __('Category') ?></th>
+                                <th width="10"></th>
+                            </tr>
+                        </thead>
+
+                        <?php foreach ($categories as $root): ?>
+                            <tbody>
+                                <tr class="root <?= !$root['active'] ? 'danger' : '' ?>">
+                                    <td><?= $root['name'] ?></td>
+                                    <td class="record-actions">
+                                        <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/webshop/categories/edit/' . $root['id']) ?>">editar</a>
+                                    </td>
+                                </tr>
+                                <?php foreach ($root['children'] as $category): ?>
+                                    <tr id="sequence_<?= $category['id'] ?>" class="drag <?= !$category['active'] ? 'danger' : '' ?>">
+                                        <td><i class="fa fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?= $category['name'] ?></td>
+                                        <td class="record-actions">
+                                            <a data-ajax class="btn btn-default btn-xs" href="<?= url_to('/admin/webshop/categories/edit/' . $category['id']) ?>">editar</a>
+                                            <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= url_to('/admin/webshop/categories/delete/' . $category['id']) ?>"><?= __('Delete') ?></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        <?php endforeach ?>
+                    </table>
+<!--                </div>-->
+            <?php endif ?>
+        </div>
+    </div>
+</section>

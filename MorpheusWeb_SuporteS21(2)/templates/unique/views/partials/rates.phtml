@@ -1,0 +1,10 @@
+<?php if (!empty($rates)): ?>
+    <div class="alert alert-warning">
+        <p class="title"><?= __('The use of this service will benefit you or cost you') ?>:</p>
+        <ul>
+            <?php foreach ($rates as $rate): ?>
+                <li><?= $rate['amount'] > 0 ? '+' : '' ?><?= util('Number')->format($rate['amount']) ?> <?= $rate['type'] === 'coin' ? config('coins')[$rate['coin']]['name'] : __($rate['type']) ?></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif ?>

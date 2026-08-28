@@ -1,0 +1,60 @@
+<?php View::add('page.title', __('Vip')) ?>
+<?php $shopHubActive = 'vip' ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('VIP') ?></h1>
+            <p class="md-shop-header__lead"><?= __('By making a donation to get VIP, you will be helping the server to keep it stable, free from errors and failures, especially from hackers.') ?></p>
+        </div>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive]) ?>
+
+    <div class="md-vip-grid">
+        <section class="md-shop-info-box">
+            <h3><?= __('What is VIP?') ?></h3>
+            <p><?= __('VIP is a system implemented by the Server, with the objective of raising funds for the maintenance and updates of the Server <br/><br/> The VIP Player, as detailed in the advantages menu, has several facilities throughout the Game, bringing greater entertainment and turning that Player into a Special Player.') ?></p>
+        </section>
+
+        <section class="md-shop-info-box">
+            <h3><?= __('How can I get VIP?') ?></h3>
+            <p><?= __('The most practical way to obtain vip is by buying with Credit.<br/>To find out how to acquire Credit, access the Buy Credit menu or') ?></p>
+            <div class="md-shop-info-box__actions">
+                <a data-ajax class="btn btn-outline-success" href="<?= url_to('/donate') ?>"><?= __('Donation') ?></a>
+                <a data-ajax class="btn btn-outline-success" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+                <a data-ajax class="btn btn-outline-success" href="<?= url_to('/vip/advantages') ?>"><?= __('Advantages') ?></a>
+            </div>
+        </section>
+    </div>
+
+    <?php if (has_vip_system() && logged_in()): ?>
+        <div class="md-shop-balance md-shop-balance--inline">
+            <div>
+                <small><?= __('Account type') ?></small>
+                <strong><?= util('Account')->vipName(user()->getVipType()) ?></strong>
+            </div>
+            <?php if (user()->getVipType()): ?>
+                <div>
+                    <small><?= __('Maturity') ?></small>
+                    <strong><?= user()->getVipExpire() ? user()->getVipExpire()->format('d/m/Y') : '-' ?></strong>
+                </div>
+            <?php endif ?>
+        </div>
+    <?php endif ?>
+
+    <?php if (has_vip_system()): ?>
+        <section class="md-shop-section">
+            <h2 class="md-shop-section__title">Planos VIP</h2>
+            <div class="md-vip-types">
+                <?php foreach (config('vip.types', []) as $code => $type): ?>
+                    <?php if ((int) $code === 0) continue ?>
+                    <div class="md-vip-type" style="--vip-color: <?= htmlspecialchars($type['color']) ?>">
+                        <span class="md-vip-type__name"><?= $type['name'] ?></span>
+                        <a data-ajax class="btn btn-outline-success btn-sm" href="<?= url_to('/packages') ?>"><?= __('Purchase') ?></a>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </section>
+    <?php endif ?>
+</div>

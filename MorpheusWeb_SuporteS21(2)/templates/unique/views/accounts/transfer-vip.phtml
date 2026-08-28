@@ -1,0 +1,27 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/account/transfer-vip') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="form-group">
+        <label for="account"><?= __('Account') ?> <span class="required">*</span></label>
+        <input class="form-control" type="text" id="account" name="account" maxlength="10" style="width:100%" />
+    </div>
+
+    <div class="form-group">
+        <label for="days"><?= __('Days') ?> <span class="required">*</span></label>
+
+        <?php if (!empty($days)): ?>
+            <select class="form-control" name="days" style="width:100%">
+                <option value=""></option>
+                <?php foreach ($days as $id => $value): ?>
+                    <option value="<?= $id ?>"><?= $value ?></option>
+                <?php endforeach ?>
+            </select>
+        <?php else: ?>
+            <input class="form-control" type="text" id="days" name="days" style="width:100%" />
+        <?php endif ?>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Transfer') ?>">
+</form>

@@ -1,0 +1,48 @@
+<section class="content-header">
+    <h1><?= __('Loot boxes') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/lootboxes/items/add?lootbox_id=' . $box['id']) ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= url_to('/admin/lootboxes/edit/' . $box['id']) ?>"><?= __('Loot box') ?></a></li>
+            <li class="active"><a href="#"><?= __('Items') ?></a></li>
+        </ul>
+        <div class="tab-content" style="<?= !empty($items) ? 'padding:0' : '' ?>">
+
+            <?php if (empty($items)): ?>
+                <div class="callout callout-warning" style="margin-bottom:0">
+                    <h4>Ops!</h4>
+                    <p><?= __('No items found') ?></p>
+                </div>
+            <?php else: ?>
+                <table id="shops-table" class="table table-condensed table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th><?= __('Name') ?></th>
+                        <th><?= __('Drop') ?></th>
+                        <th width="80"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <?php foreach ($items as $item): ?>
+                        <tr>
+                            <td><?= util('Item')->name($item['section'], $item['idx']) ?></td>
+                            <td><?= $item['item_percent'] ?>%</td>
+                            <td class="record-actions">
+                                <a data-ajax class="btn btn-xs btn-default" href="<?= url_to('/admin/lootboxes/items/edit/' . $item['id']) ?>"><?= __('Edit') ?></a>
+                                <a data-ajax-delete class="btn btn-danger btn-xs" href="<?= url_to('/admin/lootboxes/items/delete/' . $item['id']) ?>"><?= __('Delete') ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+            <?php endif ?>
+        </div>
+    </div>
+</section>

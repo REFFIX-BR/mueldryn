@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Player in map') ?></h3>
+</div>
+
+<div class="map-character-view">
+    <img src="<?= asset_to('/images/maps/' . $character->getMap() . '.png') ?>" width="512" height="512" />
+    <span class="here" style="top:<?= $character->getPositionX() * 2 - 30 ?>px;left:<?= $character->getPositionY() * 2 ?>px">
+        <i data-toggle="tooltip" title="<?= util('Character')->mapName($character->getMap()) ?> (<?= $character->getPositionX() ?>/<?= $character->getPositionY() ?>)" class="fa fa-map-pin"></i>
+    </span>
+</div>

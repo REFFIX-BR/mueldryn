@@ -1,0 +1,29 @@
+<section class="content-header">
+    <h1><?= __('Install plugin') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/plugins') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-upload class="form-horizontal" action="<?= url_to('/admin/plugins/install') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="category-name">Plugin (ZIP) <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input data-upload-field class="form-control" type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Install') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

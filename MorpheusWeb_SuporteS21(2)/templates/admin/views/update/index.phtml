@@ -1,0 +1,26 @@
+<div class="modal" id="modal-changelog" data-width="512"></div>
+
+<section class="content-header">
+    <h1><?= __('Morpheus MuWeb update') ?></h1>
+</section>
+
+<section class="content">
+    <? if ($status === 1): ?>
+        <div class="callout callout-success">
+            <p>PARABÉNS! Você está utilizando a versão mais recente da Morpheus MuWeb <?= MORPHEUS_VERSION ?>.</p>
+        </div>
+    <? elseif ($status === 2): ?>
+        <div class="callout callout-danger">
+            <p>Não foi possível se conectar aos servidores da Morpheus MuWeb.</p>
+        </div>
+    <? else: ?>
+        <div class="box box-default">
+            <div class="box-body">
+                <p><?= __('Your version: ') ?><strong><?= MORPHEUS_VERSION ?></strong></p>
+                <p><?= __('New version available') ?>: <strong><a data-load-with-modal data-modal="modal-changelog" href="<?= url_to('/admin/update/changelog?versions=' . join(',', $versions)) ?>"><?= $version ?></a></strong></p>
+
+                <a class="btn btn-default" data-ajax-action data-confirm="Tem certeza que deseja atualizar a versão da Morpheus MuWeb" href="<?= url_to('/admin/update/apply') ?>">Atualizar</a>
+            </div>
+        </div>
+    <? endif ?>
+</section>

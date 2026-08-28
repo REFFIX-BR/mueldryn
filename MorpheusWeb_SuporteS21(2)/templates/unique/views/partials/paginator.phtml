@@ -1,0 +1,24 @@
+<?php if ($paginator->getPrevUrl() || $paginator->getNextUrl()): ?>
+    <?php $paginator->setMaxPagesToShow(5) ?>
+    <ul class="pagination">
+        <li class="page-item<?= !$paginator->getPrevUrl() ? ' disabled' : '' ?>">
+            <a data-ajax class="page-link" href="<?= $paginator->getPrevUrl() ?>">&laquo; Previous</a>
+        </li>
+
+        <?php foreach ($paginator->getPages() as $page): ?>
+            <?php if ($page['url']): ?>
+                <li class="page-item<?= $page['isCurrent'] ? ' active' : '' ?>">
+                    <a data-ajax class="page-link" href="<?= $page['url'] ?>"><?= $page['num'] ?></a>
+                </li>
+            <?php else: ?>
+                <li class="page-item disabled">
+                    <a data-ajax class="page-link" href="<?= $page['url'] ?>"><?= $page['num'] ?></a>
+                </li>
+            <?php endif ?>
+        <?php endforeach ?>
+
+        <li class="page-item<?= !$paginator->getNextUrl() ? ' disabled' : '' ?>">
+            <a data-ajax class="page-link" href="<?= $paginator->getNextUrl() ?>">Next &raquo;</a>
+        </li>
+    </ul>
+<?php endif ?>

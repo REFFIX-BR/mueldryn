@@ -1,0 +1,155 @@
+<section class="content-header">
+    <h1><?= __('Ticket') ?> #<?= $ticket->getId() ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/helpdesk/tickets/' . $type) ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-upload class="form-horizontal" action="<?= url_to('/admin/helpdesk/tickets/add_message/' . $ticket->getId()) ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Subject') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getSubject() ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Department') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getDepartment() ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Author') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getAccount() ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Status') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $status[$ticket->getStatus()] ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Created at') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getCreated()->format('d/m/Y H:i') ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Update at') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getUpdated()->format('d/m/Y H:i') ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Message') ?></label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"><?= $ticket->getMessage() ?></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?= __('Images') ?></label>
+
+                    <div class="col-sm-10">
+                        <?php if ($ticket->hasImages()): ?>
+                            <div class="row">
+                                <?php foreach (explode(',', $ticket->getImages()) as $image): ?>
+                                    <a class="col-md-2" href="<?= upload_to('/helpdesk/' . $image) ?>" target="_blank">
+                                        <div class="thumbnail">
+                                            <img src="<?= upload_to('/helpdesk/' . $image) ?>" />
+                                        </div>
+                                    </a>
+                                <?php endforeach ?>
+                            </div>
+                        <?php else: ?>
+                            <p class="form-control-static">-</p>
+                        <?php endif ?>
+                    </div>
+                </div>
+
+                <?php if ($ticket->hasMessages()): ?>
+                    <fieldset>
+                        <legend><?= __('Messages') ?></legend>
+
+                        <ul class="list">
+                            <?php foreach ($ticket->getMessages() as $message): ?>
+                                <li>
+                                    <div class="desc">
+                                        <span class="name"><?= $message->getAuthor() ?></span>
+                                        <span class="created"><?= $message->getCreated()->format('d/m/Y H:i') ?></span>
+                                        <p><?= nl2br($message->getMessage()) ?></p>
+
+                                        <?php if ($message->hasImages()): ?>
+                                            <div class="clear" style="height:20px"></div>
+                                            <div class="row" style="margin:0!important;">
+                                                <?php foreach (explode(',', $message->getImages()) as $image): ?>
+                                                    <a class="col-md-2" href="/uploads/helpdesk/<?= $image ?>" target="_blank">
+                                                        <div class="thumbnail">
+                                                            <img src="<?= upload_to('/helpdesk/' . $image) ?>" />
+                                                        </div>
+                                                    </a>
+                                                <?php endforeach ?>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </fieldset>
+                <?php endif ?>
+
+                <?php if ($ticket->getStatus() != 3): ?>
+                    <fieldset>
+                        <legend><?= __('Add new message') ?></legend>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="ticket-status"><?= __('Status') ?></label>
+
+                            <div class="col-sm-3">
+                                <select class="form-control" id="ticket-status" name="status">
+                                    <?php foreach ($status as $key => $value): ?>
+                                        <option value="<?= $key ?>"<?= $ticket->getStatus() == $key ? ' selected="selected"' : '' ?>><?= $value ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="ticket-message"><?= __('Message') ?></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="message" id="ticket-message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="ticket-images"><?= __('Images') ?></label>
+                            <div class="col-sm-10">
+                                <input data-upload-field type="file" multiple name="images" id="images" />
+                            </div>
+                        </div>
+                    </fieldset>
+                <? endif ?>
+            </div>
+
+            <div class="box-footer">
+                <?php if ($ticket->getStatus() != 3): ?>
+                    <div class="col-sm-offset-2" style="padding-left:5px">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Answer') ?>" />
+                    </div>
+                <?php endif ?>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Tracker') ?> - <?= $tracker['title'] ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/my-trackers') ?>" data-ajax><?= __('My trackers') ?></a></li>
+            <li class="breadcrumb-item active"><?= $tracker['title'] ?></li>
+        </ol>
+    </nav>
+
+    <div class="tracker">
+        <?= nl2br($tracker['description']) ?>
+
+        <?php if (!empty($tracker['images'])): ?>
+            <div class="images">
+                <?php foreach (explode(',', $tracker['images']) as $image): ?>
+                    <a class="col-md-2" href="<?= upload_to('/trackers/' . $image) ?>" target="_blank">
+                        <div class="thumbnail">
+                            <img src="<?= upload_to('/trackers/' . $image) ?>" />
+                        </div>
+                    </a>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+
+        <h2 class="title mt-3"><?= __('How to reproduce') ?></h2>
+        <?= nl2br($tracker['reproduce']) ?>
+
+        <h2 class="title mt-3"><?= __('Comments') ?></h2>
+        <?php if (empty($comments)): ?>
+            <div class="msg"><?= __('No comments found') ?></div>
+        <?php else: ?>
+            <ul class="comments">
+                <?php foreach ($comments as $comment) : ?>
+                    <li>
+                        <div class="desc">
+                            <span class="name">
+                                <?= $comment['author'] ?>
+                            </span>
+                            <?php if ($comment['admin']): ?>
+                                <span class="admin"><?= __('Administration') ?></span>
+                            <?php endif ?>
+                            <span class="created"><?= util('Time')->relative($comment['create_date']) ?></span>
+                            <p class="body"><?= nl2br($comment['comment']) ?></p>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+
+        <?php if (!$tracker['closed']): ?>
+            <h2 class="title mt-3"><?= __('Add comment') ?></h2>
+            <form data-ajax action="<?= url_to('/trackers/comments/add/' . $tracker['id']) ?>" class="form" method="post">
+                <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="comment" name="comment"></textarea>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="<?= __('Send comment') ?>" class="btn btn-info" />
+                </div>
+            </form>
+        <?php endif ?>
+    </div>
+</div>

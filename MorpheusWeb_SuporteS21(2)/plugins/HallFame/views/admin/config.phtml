@@ -1,0 +1,69 @@
+<section class="content-header">
+    <h1><?= __('Settings plugin HallFame') ?></h1>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/hallfame/config') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('General') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="max-results"><?= __('Max result') ?></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="max-results" value="<?= config('hallfame.max_results', 1) ?>" name="max_results" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Rankings') ?></legend>
+
+                    <table id="hallfame-table" class="table table-condensed table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th width="10"></th>
+                                <th><?= __('Name') ?></th>
+                                <th width="60" style="text-align:center"><?= __('Daily') ?></th>
+                                <th width="60" style="text-align:center"><?= __('Weekly') ?></th>
+                                <th width="60" style="text-align:center"><?= __('Monthly') ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($rankings as $id => $ranking): ?>
+                            <?php if (!$ranking['active']) continue; ?>
+                            <?php $hallfame = config('hallfame.rankings.' . $id, null) ? config('hallfame.rankings.' . $id) : null ?>
+                            <tr class="drag">
+                                <td style="vertical-align:middle">
+                                    <input<?= $hallfame && isset($hallfame['active']) && $hallfame['active'] ? ' checked' : '' ?> type="checkbox" name="hallfame[<?= $id ?>][active]" value="1" />
+                                </td>
+                                <td style="vertical-align:bottom"><input type="text" name="hallfame[<?= $id ?>][name]" value="<?= $hallfame ? $hallfame['name'] : $ranking['name'] ?>" class="form-control" /></td>
+                                <td style="vertical-align:middle;text-align:center">
+                                    <?php if (isset($ranking['configs']['daily'])): ?>
+                                        <input<?= $hallfame['daily'] ? ' checked' : '' ?> type="checkbox" name="hallfame[<?= $id ?>][daily]" value="1" />
+                                    <?php endif ?>
+                                </td>
+                                <td style="vertical-align:middle;text-align:center">
+                                    <?php if (isset($ranking['configs']['weekly'])): ?>
+                                        <input<?= $hallfame['weekly'] ? ' checked' : '' ?> type="checkbox" name="hallfame[<?= $id ?>][weekly]" value="1" />
+                                    <?php endif ?>
+                                </td>
+                                <td style="vertical-align:middle;text-align:center">
+                                    <?php if (isset($ranking['configs']['monthly'])): ?>
+                                        <input<?= $hallfame['monthly'] ? ' checked' : '' ?> type="checkbox" name="hallfame[<?= $id ?>][monthly]" value="1" />
+                                    <?php endif ?>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+            </div>
+        </form>
+    </div>
+</section>

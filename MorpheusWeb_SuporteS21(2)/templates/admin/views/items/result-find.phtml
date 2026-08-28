@@ -1,0 +1,13 @@
+<?php if ($account === null): ?>
+    <div class="callout callout-warning">
+        <h4>Ops!</h4>
+        <p><?= __('No found item') ?></p>
+    </div>
+<?php else: ?>
+    <div class="callout callout-success">
+        <h4>:)</h4>
+        <p><?= __('Item found in the %s warehouse', ['<a data-ajax href="' . url_to('/admin/accounts/edit/' . $account->getUsername()) . '">' . $account->getUsername() . '</a>']) ?></p>
+        <a class="btn btn-primary btn-sm" href="<?= url_to('/admin/accounts/warehouse/' . $account->getUsername() . '?serial=' . $serial) ?>" data-load-with-modal data-modal="modal-vault"><?= __('View') ?></a>
+    </div>
+    <div id="modal-vault" data-width="258" class="modal"></div>
+<?php endif ?>

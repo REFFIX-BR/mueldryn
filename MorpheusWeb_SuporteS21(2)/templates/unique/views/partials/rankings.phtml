@@ -1,0 +1,7 @@
+<div class="text-center mb-4">
+<?php foreach (config('rankings', []) as $id => $ranking): ?>
+    <?php if ($ranking['active']): ?>
+        <a data-ajax class="btn btn-outline-info mb-2 btn-sm<?= isset($current) && $current['id'] == $id ? ' active' : '' ?>" href="<?= url_to('/rankings/' . util('Inflector')->dasherize($id)) ?>"><?= isset($ranking['name']) ? $ranking['name'] : $id  ?></a>
+    <?php endif ?>
+<?php endforeach ?>
+</div>

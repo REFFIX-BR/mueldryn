@@ -1,0 +1,208 @@
+<style>
+    .event-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .event-filters .btn {
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 13px;
+        transition: all 0.2s ease;
+        background: #f4f8fb;
+        color: #555;
+        border: 1px solid #e3eaef;
+    }
+    .event-filters .btn:hover {
+        background: #e3eaef;
+    }
+    .event-filters .btn.active {
+        background: #fff;
+        color: #333;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .event-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .event-card {
+        background: #fff;
+        border: 1px solid #e3eaef;
+        border-radius: 4px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: relative;
+        overflow: hidden;
+    }
+    .event-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .event-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .event-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        color: #333;
+    }
+    .event-category-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 3px;
+        color: #fff;
+        display: inline-block;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .event-time-container {
+        text-align: right;
+    }
+    .event-time-label {
+        font-size: 11px;
+        color: #98a6ad;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+    }
+    .event-countdown {
+        font-size: 22px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 1px;
+    }
+    .text-success { color: #10c469 !important; }
+    .text-danger { color: #ff5b5b !important; }
+    .pulse-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #10c469;
+        margin-right: 8px;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 196, 105, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 196, 105, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 196, 105, 0); }
+    }
+    @media (max-width: 768px) {
+        .event-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .event-time-container {
+            text-align: left;
+            width: 100%;
+            background: #f4f8fb;
+            padding: 12px;
+            border-radius: 4px;
+        }
+    }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-calendar-check-o"></i> Cronograma de Eventos</h3>
+    </div>
+    <div class="panel-body">
+        
+        <div class="event-filters">
+            <button class="btn filter-category active" data-category="all" style="border-bottom: 3px solid #3bafda;">Todos</button>
+            <?php foreach ($categories as $cat): ?>
+                <button class="btn filter-category" data-category="<?= $cat['id'] ?>" style="border-bottom: 3px solid <?= !empty($cat['color']) ? $cat['color'] : '#ccc' ?>;"><?= $cat['name'] ?></button>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="event-list">
+            <?php if (empty($events)): ?>
+                <div class="text-center text-muted" style="padding: 40px 0;">
+                    <i class="fa fa-calendar-times-o fa-3x"></i><br><br>
+                    Nenhum evento programado no momento.
+                </div>
+            <?php else: ?>
+                <?php foreach ($events as $event): ?>
+                    <?php $eventColor = !empty($event['category_color']) ? $event['category_color'] : '#3bafda'; ?>
+                    <div class="event-card event-row" data-category="<?= $event['category_id'] ?>">
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background-color: <?= $eventColor ?>;"></div>
+                        
+                        <div class="event-details">
+                            <h4 class="event-name" style="color: <?= $eventColor ?>;"><?= $event['name'] ?></h4>
+                            <div><span class="event-category-badge" style="background-color: <?= $eventColor ?>;"><?= $event['category_name'] ?></span></div>
+                        </div>
+
+                        <div class="event-time-container">
+                            <span class="event-time-label"><i class="fa fa-clock-o"></i> Próximo Evento</span>
+                            <div class="event-countdown" data-timestamp="<?= $event['next_timestamp'] ?>">Calculando...</div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    // Compensa e ajusta a diferença caso a hora do computador do jogador esteja incorreta
+    var serverTime = <?= time() ?>;
+    var localTime = Math.floor(Date.now() / 1000);
+    var timeOffset = serverTime - localTime;
+
+    $('.filter-category').click(function() {
+        $('.filter-category').removeClass('active');
+        $(this).addClass('active');
+        
+        var cat = $(this).data('category');
+        if (cat == 'all') {
+            $('.event-row').fadeIn(200);
+        } else {
+            $('.event-row').hide();
+            $('.event-row[data-category="'+cat+'"]').fadeIn(200);
+        }
+    });
+
+    setInterval(function() {
+        $('.event-countdown').each(function() {
+            var ts = $(this).data('timestamp');
+            if (!ts) {
+                $(this).text('Indisponível').addClass('text-muted');
+                return;
+            }
+            var now = Math.floor(Date.now() / 1000) + timeOffset;
+            var diff = ts - now;
+            
+            if (diff <= 0) {
+                $(this).html('<span class="pulse-dot"></span>Ocorrendo!').removeClass('text-danger').addClass('text-success');
+            } else {
+                var d = Math.floor(diff / 86400);
+                var h = Math.floor((diff % 86400) / 3600);
+                var m = Math.floor((diff % 3600) / 60);
+                var s = diff % 60;
+                
+                var text = '';
+                if (d > 0) text += d + 'd ';
+                if (h > 0 || d > 0) text += h + 'h ';
+                text += (m < 10 ? '0'+m : m) + 'm ' + (s < 10 ? '0'+s : s) + 's';
+                
+                $(this).text(text).removeClass('text-success').addClass('text-danger');
+            }
+        });
+    }, 1000);
+});
+</script>

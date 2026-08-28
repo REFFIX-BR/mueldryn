@@ -1,0 +1,28 @@
+<?php if (!empty($poll)): ?>
+    <div class="last-poll">
+        <div class="title"><?= $poll['title'] ?></div>
+        <div class="poll-container">
+            <?php if ($voted): ?>
+                <?= partial('Poll.result', ['poll' => $poll]) ?>
+            <?php else: ?>
+                <form class="poll-vote-form" data-loader=".last-poll" method="post" action="<?= url_to('/polls/vote/' . $poll['id']) ?>">
+                    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+                    <?php foreach ($poll['answers'] as $answer): ?>
+                        <div class="answer">
+                            <input class="styled-<?= $poll['allow_multiple'] ? 'checkbox' : 'radio' ?>" type="<?= $poll['allow_multiple'] ? 'checkbox' : 'radio' ?>" name="answer<?= $poll['allow_multiple'] ? '[]' : '' ?>" id="answer-<?= $answer['id'] ?>" value="<?= $answer['id'] ?>" />
+                            <label for="answer-<?= $answer['id'] ?>"><?= $answer['answer'] ?></label>
+                        </div>
+                    <?php endforeach ?>
+
+                    <div class="poll-actions">
+                        <input class="btn btn-sm btn-info" type="submit" value="<?= __('Vote') ?>" />
+                        <a class="poll-show-result" href="<?= url_to('/polls/result/' . $poll['id']) ?>"><?= __('Result') ?></a>
+                    </div>
+                </form>
+            <?php endif ?>
+
+            <div class="last-poll-result"></div>
+        </div>
+    </div>
+<?php endif ?>

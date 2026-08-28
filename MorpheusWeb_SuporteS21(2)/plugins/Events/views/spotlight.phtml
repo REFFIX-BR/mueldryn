@@ -1,0 +1,25 @@
+<div class="space"></div>
+<p class="title"><?= __('Events') ?></p>
+<div class="box">
+    <div class="p2">
+        <?php if (count($categories) > 0): ?>
+            <select class="margin-bottom event-spotlight-category" style="width:100%">
+                <option value="*"><?= __('All') ?></option>
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                <?php endforeach ?>
+            </select>
+
+            <?php foreach ($categories as $category): ?>
+                <div class="events-spotlight events-spotlight-<?= $category['id'] ?>"></div>
+            <?php endforeach ?>
+        <?php else: ?>
+            <div class="events-spotlight"></div>
+        <?php endif ?>
+
+        <div class="text-center margin-top">
+            <a data-ajax href="<?= url_to('/events') ?>" class="btn"><?= __('All events') ?></a>
+        </div>
+    </div>
+</div>
+<div class="box-bottom"></div>

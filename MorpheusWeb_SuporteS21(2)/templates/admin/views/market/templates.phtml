@@ -1,0 +1,51 @@
+<section class="content-header">
+    <h1>
+        <?= __('Market') ?>
+        <small><?= __('Templates') ?></small>
+    </h1>
+</section>
+
+<section class="content">
+    <div class="row row docs-premium-template">
+        <?php foreach ($templates as $template): ?>
+            <div class="col-xs-6">
+                <div class="box box-solid" style="margin-bottom:20px;">
+                    <div class="box-body">
+                        <h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+                            <?= $template['name'] ?>
+                        </h4>
+
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="<?= MORPHEUS_WEBSITE ?>files/Themes/image/<?= $template['image'] ?>" alt="<?= $template['name'] ?>" class="media-object" style="width:auto;height:100px;border-radius: 4px;box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+                            </div>
+                            <div class="media-body">
+                                <div class="clearfix">
+                                    <h4 style="margin-top: 0"><?= __('Price') ?> ─ <?= $template['purchasable'] ? util('Number')->currency($template['price']) : 'FREE' ?></h4>
+
+                                    <p><?= util('Text')->truncate($template['description'], 50, ' ') ?></p>
+                                    <p>
+                                        <i class="fa fa-user margin-r5"></i> <?= $template['author'] ?>
+                                    </p>
+
+                                    <div class="margin-top">
+                                        <?php if ($template['purchasable']): ?>
+                                            <a href="<?= $template['website'] ?>" target="_blank" class="btn btn-success btn-sm"><?= __('Buy') ?></a>
+                                        <?php else: ?>
+                                            <a href="<?= $template['download'] ?>" target="_blank" class="btn btn-primary btn-sm"><?= __('Download') ?></a>
+                                        <?php endif ?>
+
+                                        <?php if (!empty($template['preview'])): ?>
+                                            <a href="<?= $template['preview'] ?>" target="_blank" class="btn btn-primary btn-sm"><?= __('Preview') ?></a>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        <?php endforeach ?>
+    </div>
+</section>

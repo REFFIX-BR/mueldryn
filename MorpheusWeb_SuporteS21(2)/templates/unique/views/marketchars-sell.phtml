@@ -1,0 +1,190 @@
+<div class="panel-heading"><i class="fa fa-tag"></i> Vender Personagem</div>
+<div class="panel-body">
+    <div class="alert alert-warning">
+        <i class="fa fa-exclamation-triangle"></i> <b>Atenção:</b> Ao colocar um personagem à venda, ele será bloqueado e você não poderá acessá-lo no jogo até que a venda seja cancelada ou concluída.
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <form action="/panel/marketchars/sell" method="POST" class="ajax-form">
+                <div class="form-group">
+                    <label><i class="fa fa-user"></i> Escolha o Personagem</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <select id="charSelect" name="character_name" class="form-control input-lg" required>
+                            <option value="" data-class="" data-level="0" data-resets="0" data-mresets="0">-- Selecione o personagem da sua conta --</option>
+                            <?php foreach ($myChars as $char): ?>
+                                <option value="<?= $char['Name'] ?>" 
+                                        data-class="<?= util('Character')->className($char['Class']) ?>"
+                                        data-icon="<?= util('Character')->classIconUrl($char['Class']) ?>"
+                                        data-level="<?= $char['cLevel'] ?>" 
+                                        data-resets="<?= $char['ResetCount'] ?>" 
+                                        data-mresets="<?= $char['MasterResetCount'] ?>"
+                                        data-str="<?= $char['Strength'] ?>"
+                                        data-agi="<?= $char['Dexterity'] ?>"
+                                        data-vit="<?= $char['Vitality'] ?>"
+                                        data-ene="<?= $char['Energy'] ?>"
+                                        data-cmd="<?= $char['Leadership'] ?>">
+                                    <?= $char['Name'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><i class="fa fa-money"></i> Valor em Moeda <small class="text-muted">(opcional)</small></label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+                                <input type="number" id="priceInput" name="price" class="form-control input-lg" min="0" value="0" placeholder="Ex: 500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><i class="fa fa-database"></i> Moeda de Troca</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-diamond"></i></span>
+                                <select id="coinSelect" name="coin_id" class="form-control input-lg">
+                                    <option value="" data-name="">-- Sem moeda (só joias) --</option>
+                                    <?php foreach ($coins as $id => $coin): ?>
+                                        <option value="<?= $id ?>" data-name="<?= $coin['name'] ?>"><?= $coin['name'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa fa-diamond"></i> Preço em Joias <small class="text-muted">(pode combinar várias)</small></label>
+                    <div class="row" style="margin:0 -5px;">
+                        <?php foreach ($jewelCatalog as $code => $meta): ?>
+                            <div class="col-xs-6 col-sm-4" style="padding:5px;">
+                                <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:10px; text-align:center;">
+                                    <img src="<?= resource_to('/images/items/' . $meta['image']) ?>" alt="" style="width:32px;height:32px;object-fit:contain;">
+                                    <div style="font-size:11px; color:rgba(255,255,255,0.65); margin:4px 0 6px;"><?= htmlspecialchars($meta['name']) ?></div>
+                                    <input type="number" min="0" value="0" name="price_<?= $code ?>" class="form-control jewel-price-input" data-code="<?= $code ?>" data-name="<?= htmlspecialchars($meta['short']) ?>" placeholder="0">
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <p class="help-block" style="margin-top:8px;">Ex.: 50 Bless + 50 Soul + 50 Chaos. O comprador precisa ter todas no banco de joias.</p>
+                </div>
+                
+                <hr>
+                
+                <div class="text-right">
+                    <a href="/panel/marketchars" class="btn btn-default btn-lg"><i class="fa fa-arrow-left"></i> Voltar</a>
+                    <button type="submit" class="btn btn-success btn-lg"><i class="fa fa-check"></i> Anunciar Personagem</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-5">
+            <label><i class="fa fa-eye"></i> Pré-visualização do Anúncio</label>
+            <div class="panel panel-default" style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(168,140,255,0.18); margin-top: 5px; background: linear-gradient(180deg, rgba(28,18,48,0.96), rgba(12,8,24,0.98));">
+                <div style="height:180px; display:flex; align-items:flex-end; justify-content:center; background: radial-gradient(ellipse at 50% 80%, rgba(90,40,160,0.45), transparent 70%), linear-gradient(160deg,#1a1030,#0a0614 70%); position:relative;">
+                    <span id="previewClass" style="position:absolute; top:12px; left:12px; padding:4px 10px; border-radius:999px; font-size:11px; color:#f3e9ff; background:rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.18);">Classe</span>
+                    <img id="previewAvatar" src="<?= asset_to('/images/classes/dw.png') ?>" alt="Classe" style="max-height:170px; max-width:90%; object-fit:contain; filter:drop-shadow(0 8px 18px rgba(0,0,0,0.65));">
+                </div>
+                <div class="panel-body" style="padding: 15px; background: transparent; color:#fff;">
+                    <h4 id="previewName" style="margin: 0 0 12px; color: #fff; font-weight: 700; font-size: 18px; text-align:center;">Nome do Char</h4>
+                    <div style="display:flex; gap:8px; margin-bottom:12px;">
+                        <div style="flex:1; text-align:center; padding:8px; border-radius:8px; background:rgba(255,255,255,0.04);"><div style="font-size:10px; color:rgba(255,255,255,0.45);">Level</div><strong id="previewLevel">0</strong></div>
+                        <div style="flex:1; text-align:center; padding:8px; border-radius:8px; background:rgba(255,255,255,0.04);"><div style="font-size:10px; color:rgba(255,255,255,0.45);">Resets</div><strong id="previewResets" style="color:#ffb347;">0</strong></div>
+                        <div style="flex:1; text-align:center; padding:8px; border-radius:8px; background:rgba(255,255,255,0.04);"><div style="font-size:10px; color:rgba(255,255,255,0.45);">M.Resets</div><strong id="previewMResets" style="color:#ff6b6b;">0</strong></div>
+                    </div>
+                    <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);"><span>Força</span><strong id="previewStr" style="color:#fff;">0</strong></div>
+                        <div style="display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);"><span>Agilidade</span><strong id="previewAgi" style="color:#fff;">0</strong></div>
+                        <div style="display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);"><span>Vitalidade</span><strong id="previewVit" style="color:#fff;">0</strong></div>
+                        <div style="display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);"><span>Energia</span><strong id="previewEne" style="color:#fff;">0</strong></div>
+                        <div id="previewCmdRow" style="display:none; justify-content:space-between; padding:3px 0;"><span>Comando</span><strong id="previewCmd" style="color:#fff;">0</strong></div>
+                    </div>
+                    <div style="text-align:center; margin-bottom:12px; padding:10px; border-radius:10px; background:rgba(46,204,113,0.08); border:1px solid rgba(46,204,113,0.25);">
+                        <span style="font-size:10px; color:rgba(255,255,255,0.45); text-transform:uppercase;">Preço de Venda</span>
+                        <h3 style="margin: 2px 0 8px; color: #3ddc84; font-weight: 800; font-size: 20px;">
+                            <span id="previewPrice">0</span>
+                            <small id="previewCoin" style="color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 500;">Moeda</small>
+                        </h3>
+                        <div id="previewJewels" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;"></div>
+                    </div>
+                    <div style="text-align:center; margin-bottom:12px; font-size:12px; color:rgba(255,255,255,0.5);">
+                        <i class="fa fa-user"></i> Vendedor: <strong style="color:rgba(255,255,255,0.85);">Você</strong>
+                    </div>
+                    <button type="button" class="btn btn-success btn-block disabled" style="border-radius: 10px; font-size: 12px; font-weight: bold; text-transform: uppercase; opacity: 0.6; cursor: not-allowed;"><i class="fa fa-shopping-cart"></i> Comprar (Exemplo)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    function updatePreview() {
+        var selectedChar = $('#charSelect option:selected');
+        var name = selectedChar.val();
+        
+        if (name) {
+            $('#previewName').text(name);
+            var icon = selectedChar.data('icon');
+            $('#previewAvatar').attr('src', icon || '<?= asset_to('/images/classes/dw.png') ?>');
+            $('#previewClass').text(selectedChar.data('class'));
+            $('#previewLevel').text(selectedChar.data('level'));
+            $('#previewResets').text(selectedChar.data('resets'));
+            $('#previewMResets').text(selectedChar.data('mresets'));
+            
+            $('#previewStr').text(selectedChar.data('str'));
+            $('#previewAgi').text(selectedChar.data('agi'));
+            $('#previewVit').text(selectedChar.data('vit'));
+            $('#previewEne').text(selectedChar.data('ene'));
+            
+            if (selectedChar.data('cmd') > 0) {
+                $('#previewCmdRow').css('display', 'flex').show();
+                $('#previewCmd').text(selectedChar.data('cmd'));
+            } else {
+                $('#previewCmdRow').hide();
+            }
+        } else {
+            $('#previewName').text('Nome do Char');
+            $('#previewAvatar').attr('src', '<?= asset_to('/images/classes/dw.png') ?>');
+            $('#previewClass').text('Classe');
+            $('#previewLevel').text('0');
+            $('#previewResets').text('0');
+            $('#previewMResets').text('0');
+            $('#previewStr').text('0');
+            $('#previewAgi').text('0');
+            $('#previewVit').text('0');
+            $('#previewEne').text('0');
+            $('#previewCmdRow').hide();
+        }
+
+        var price = $('#priceInput').val();
+        var coinName = $('#coinSelect option:selected').data('name');
+        if (price && Number(price) > 0 && coinName) {
+            $('#previewPrice').text(Number(price).toLocaleString('pt-BR'));
+            $('#previewCoin').text(coinName).show();
+        } else {
+            $('#previewPrice').text('');
+            $('#previewCoin').text('').hide();
+        }
+
+        var jewelsHtml = '';
+        $('.jewel-price-input').each(function() {
+            var v = parseInt($(this).val(), 10) || 0;
+            if (v > 0) {
+                var img = $(this).closest('div').find('img').attr('src');
+                jewelsHtml += '<div style="text-align:center;min-width:36px;"><img src="'+img+'" style="width:26px;height:26px;"><div style="color:#ffb84d;font-size:11px;font-weight:700;">'+v+'</div></div>';
+            }
+        });
+        $('#previewJewels').html(jewelsHtml || '<span style="color:rgba(255,255,255,0.4);font-size:12px;">Sem joias</span>');
+    }
+
+    $('#charSelect, #priceInput, #coinSelect, .jewel-price-input').on('change keyup input', updatePreview);
+    updatePreview();
+});
+</script>

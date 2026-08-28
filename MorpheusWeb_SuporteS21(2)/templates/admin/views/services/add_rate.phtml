@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    $(function () {
+        $("#rate-type").change(function () {
+            var $this = $(this);
+            var $coins = $(".coins");
+            if ($this.val() === "coin") {
+                $coins.show();
+            } else {
+                $coins.hide();
+            }
+        });
+    })
+</script>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><?= __('Add rate') ?></h3>
+</div>
+
+<form data-ajax class="form-horizontal" action="<?= url_to('/admin/services/add_rate/' . $service['id']) ?>" method="post">
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><?= __('Condition') ?></label>
+
+            <div class="col-sm-9" style="padding-top:5px;">
+                <?php foreach (config('vip.types', []) as $id => $name): ?>
+                    <div>
+                        <input type="checkbox" id="rate-vip<?= $id ?>" name="conditions[<?= $id ?>]" /> <label style="vertical-align:-2px;padding-left:5px;" for="rate-vip<?= $id ?>"><?= $name ?></label>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="rate-type"><?= __('Type') ?></label>
+
+            <div class="col-sm-9" style="padding-top:5px">
+                <select class="form-control" id="rate-type" name="type">
+                    <option value="zen"><?= __('Zen') ?></option>
+                    <option value="coin"><?= __('Coin') ?></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group coins" style="display:none">
+            <label class="col-sm-3 control-label" for="rate-coin"><?= __('Coin') ?></label>
+
+            <div class="col-sm-9" style="padding-top:5px">
+                <select class="form-control" id="rate-coin" name="coin">
+                    <?php foreach (config('coins', []) as $coin): ?>
+                        <option value="<?= $coin['id'] ?>"><?= $coin['name'] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="type-amount"><?= __('Amount') ?></label>
+
+            <div class="col-sm-9">
+                <input class="form-control" type="text" name="amount" id="type-amount" />
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="margin-top:0">
+        <input type="submit" class="btn btn-primary" value="<?= __('Add') ?>" />
+    </div>
+</form>

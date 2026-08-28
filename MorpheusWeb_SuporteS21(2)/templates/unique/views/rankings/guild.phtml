@@ -1,0 +1,55 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Ranking') ?></h1>
+            <h2><?= $ranking['name'] ?></h2>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/rankings') ?>" data-ajax><?= __('Rankings') ?></a></li>
+            <li class="breadcrumb-item active"><?= $ranking['name'] ?></li>
+        </ol>
+    </nav>
+
+    <?= partial('rankings', ['current' => $ranking]) ?>
+
+    <div class="rankings">
+        <?= partial('rankings-frequency', ['ranking' => $ranking]) ?>
+
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th><?= __('Guild') ?></th>
+                    <th><?= __('Guild Master') ?></th>
+                    <th><?= __('Membros') ?></th>
+                    <th><?= __('Score') ?></th>
+                    <th width="10"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $guild): ?>
+                    <tr class="top-<?= $guild['rownum'] ?>">
+                        <td><?= $guild['rownum'] ?></td>
+                        <td>
+                            <img style="vertical-align: text-bottom;" src="<?= util('Guild')->logoUrl($guild['mark'], 16) ?>" /> <?= plugin_active('Perfil') ? '<a data-ajax href="' . url_to('/perfil/guild/' . $guild['name']) . '">' . $guild['name'] . '</a>' : $guild['name'] ?>
+                        </td>
+                        <td><?= plugin_active('Profile') ? '<a data-ajax href="' . url_to('/profile/character/' . $guild['master']) . '">' . $guild['master'] . '</a>' : $guild['master'] ?></td>
+                        <td><?= $guild['members'] ?></td>
+                        <td><?= $guild['score'] ?></td>
+                        <td><?= util('Ranking')->position($guild['rank']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

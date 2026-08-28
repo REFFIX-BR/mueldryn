@@ -1,0 +1,46 @@
+<div class="content-title flex-s-c">
+    <h1 class="title"><?= __('Guias e Tutoriais') ?></h1>
+</div>
+<div class="content-page">
+        <?php if(empty($categories)): ?>
+            <p class="text-center text-muted">Nenhum guia disponível no momento.</p>
+        <?php else: ?>
+            <div class="panel-group" id="accordion-guias">
+                <?php foreach($categories as $index => $category): ?>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion-guias" href="#collapse-<?= $category['id'] ?>">
+                                    <?= htmlspecialchars($category['name']) ?>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-<?= $category['id'] ?>" class="panel-collapse collapse <?= $index === 0 ? 'in' : '' ?>">
+                            <div class="panel-body">
+                                <ul class="list-group" style="margin-bottom: 0;">
+                                    <?php 
+                                    $hasGuides = false;
+                                    foreach($guides as $guide): 
+                                        if($guide['category_id'] == $category['id']):
+                                            $hasGuides = true;
+                                    ?>
+                                        <li class="list-group-item">
+                                            <a href="/guias/ler/<?= $guide['id'] ?>" data-ajax>
+                                                <i class="fa fa-arrow-right"></i> <?= htmlspecialchars($guide['title']) ?>
+                                            </a>
+                                        </li>
+                                    <?php 
+                                        endif;
+                                    endforeach; 
+                                    if(!$hasGuides): 
+                                    ?>
+                                        <li class="list-group-item text-muted">Nenhum guia nesta categoria ainda.</li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>

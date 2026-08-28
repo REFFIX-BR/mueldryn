@@ -1,0 +1,19 @@
+<?= partial('rates') ?>
+
+<p style="margin-bottom:2px;"><span class="off">*</span> <?= __('The image can not exceed the limit %skb', config('avatar.filesize', 100)) ?></p>
+<p style="margin-bottom:2px;"><span class="off">*</span> <?= __('No offensive or pornographic images') ?></p>
+<p style="margin-bottom:10px;"><span class="off">*</span> <?= __('Only %s files are accepted', util('Text')->toList($extensions)) ?></p>
+
+<form data-ajax data-upload action="<?= url_to('/panel/character/' . $character->getName() . '/change-avatar') ?>" class="form" method="post">
+    <div class="box-panel">
+        <div class="box-panel-title"><?= __('Change avatar') ?></div>
+        <div class="box-panel-content">
+            <div class="row">
+                <input data-upload-field type="file" name="avatar" id="avatar" />
+            </div>
+        </div>
+        <div class="submit">
+            <input type="submit" class="btn" value="<?= __('Change') ?>">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+<h1 class="title"><?= __('Auctions') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Auctions') ?></li>
+</ul>
+
+<?php if (!empty($auctions)): ?>
+    <table class="list">
+        <thead>
+            <tr>
+                <th><?= __('Name') ?></th>
+                <th width="10"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($auctions as $auction): ?>
+                <tr>
+                    <td><?= $auction['name'] ?></td>
+                    <td>
+                        <a data-ajax class="btn" href="<?= url_to('/auctions/items/' . $auction['id']) ?>"><?= __('Enter') ?></a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <div class="alert alert-warning"><?= __('No auction currently open') ?></div>
+<?php endif ?>

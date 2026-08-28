@@ -1,0 +1,169 @@
+<?php View::add('page.title', __('Register')) ?>
+
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Register') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Register') ?></li>
+        </ol>
+    </nav>
+
+    <form data-ajax action="<?= url_to('/register') ?>" method="POST">
+        <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="name"><?= __('Name') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" name="name" value="<?= isset($data['firstName']) ? $data['firstName'] . ' ' . $data['lastName'] : '' ?>" id="name" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="username"><?= __('Username') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" name="username" maxlength="10" id="username" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="password"><?= __('Password') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="password" name="password" maxlength="10" id="password" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="repassword"><?= __('Repeat password') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="password" name="repassword" maxlength="10" id="repassword" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="pid"><?= __('Personal ID') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" name="pid" id="pid" maxlength="7" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="email"><?= __('E-mail') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" name="email" value="<?= isset($data['email']) ? $data['email'] : '' ?>" id="email" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="reemail"><?= __('Repeat e-mail') ?> <span class="required">*</span></label>
+                    <input class="form-control" type="text" name="reemail" value="<?= isset($data['email']) ? $data['email'] : '' ?>" id="reemail" />
+                </div>
+            </div>
+        </div>
+
+        <?php if (config('register.secret_questions', [])): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="secret_question"><?= __('Secret question') ?> <span class="required">*</span></label>
+
+                        <select class="form-control" name="secret_question" id="secret_question">
+                            <option value=""></option>
+                            <?php foreach (config('register.secret_questions', []) as $question): ?>
+                                <option value="<?= $question ?>"><?= $question ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="secret_answer"><?= __('Secret answer') ?> <span class="required">*</span></label>
+                        <input class="form-control" type="text" name="secret_answer" id="secret_answer" />
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <div class="row">
+            <?php if (config('register.countries_flag_column', null)): ?>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="country"><?= __('Contry') ?> <span class="required">*</span></label>
+                        <select class="form-control" name="country" id="country">
+                            <option value=""></option>
+                            <?php foreach (countries() as $id => $country): ?>
+                                <option value="<?= $id ?>"><?= $country ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php foreach (config('register.custom_fields', []) as $field): ?>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <?php if ($field['type'] == 'text'): ?>
+                            <label class="form-control-label" for="<?= $field['name'] ?>"><?= $field['label'] ?> <?= $field['required'] ? '<span class="required">*</span>' : '' ?></label>
+                            <input class="form-control" type="text" name="<?= $field['name'] ?>" id="<?= $field['name'] ?>" />
+                        <?php elseif ($field['type'] == 'select'): ?>
+                            <label class="form-control-label" for="<?= $field['name'] ?>"><?= $field['label'] ?> <?= $field['required'] ? '<span class="required">*</span>' : '' ?></label>
+                            <select class="form-control" name="<?= $field['name'] ?>">
+                                <option value=""></option>
+                                <?php foreach ($field['options'] as $id => $option): ?>
+                                    <option value="<?= $id ?>"><?= $option ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        <?php elseif ($field['type'] == 'checkbox'): ?>
+                            <input class="styled-checkbox" type="checkbox" name="<?= $option['name'] ?>" value="1"  />
+                            <label for="<?= $field['name'] ?>"><?= $field['label'] ?></label>
+                        <?php elseif ($field['type'] == 'textarea'): ?>
+                            <label class="form-control-label" for="<?= $field['name'] ?>"><?= $field['label'] ?> <?= $field['required'] ? '<span class="required">*</span>' : '' ?></label>
+                            <textarea class="form-control" name="<?= $field['name'] ?>" id="<?= $field['name'] ?>"></textarea>
+                        <?php endif ?>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+
+        <div class="form-group">
+            <div class="captcha">
+                <div class="img">
+                    <img src="<?= url_to('/captcha?t=' . time()) ?>" height="70" width="200" />
+                    <a href="#" tabindex="-1" class="reload-captcha">
+                        <i class="fa fa-sync"></i>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                <input class="form-control" type="text" name="captcha" id="captcha" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="terms"><?= __('Terms') ?> <span class="required">*</span></label>
+            <div class="field checkbox">
+                <input class="styled-checkbox" type="checkbox" name="terms" id="terms" />
+                <label for="terms"><a href="#" data-collapse="#terms-container"><?= __('I agree to the terms of use.') ?></a></label>
+                <div id="terms-container" style="display:none"><?= config('register.terms') ?></div>
+            </div>
+        </div>
+
+        <input type="submit" value="<?= __('Register') ?>" class="btn btn-info" />
+    </form>
+</div>

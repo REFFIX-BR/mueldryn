@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?= htmlspecialchars($guide['title']) ?>
+            <span class="pull-right badge" style="background-color: #337ab7;"><?= htmlspecialchars($guide['category_name']) ?></span>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="guide-content" style="min-height: 200px;">
+            <?= $guide['content'] ?>
+        </div>
+    </div>
+    <div class="panel-footer text-right">
+        <a href="/guias" data-ajax class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar para a lista</a>
+    </div>
+</div>

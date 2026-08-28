@@ -1,0 +1,23 @@
+<?php if (!empty($logs)): ?>
+    <fieldset>
+        <legend style="margin-bottom:0"><?= __('Credit shop logs') ?></legend>
+
+        <table class="table table-condensed table-hover table-striped">
+            <thead>
+                <tr>
+                    <th width="120"><?= __('Date') ?></th>
+                    <th><?= __('Log') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($logs as $log): ?>
+                    <tr>
+                        <td><?= date('d/m/Y H:i', strtotime($log['create_date'])) ?></td>
+                        <td><?= $log['log'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+
+    </fieldset>
+<?php endif ?>

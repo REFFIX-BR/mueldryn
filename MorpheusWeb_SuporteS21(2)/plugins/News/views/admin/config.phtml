@@ -1,0 +1,77 @@
+<script type="text/javascript">
+    $(function () {
+
+        $(".add-news-type").click(function (e) {
+            var $this = $(this);
+            var $container = $this.closest("form").find(".container-add-news-type");
+            var index = ($container.find(":input").size() / 2) + 1;
+            $container.append('<div class="input-group" style="width:100%;margin-top:5px"><input class="form-control" type="text" placeholder="Nome" name="news_types[' + index + '][name]" style="width:63%;margin-right:2%;" /><input class="form-control" type="text" placeholder="Cor" name="news_types[' + index + '][color]" style="width:35%" /></div>');
+            e.preventDefault();
+        });
+
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Settings plugin news') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/news/config') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-limit"><?= __('News limit') ?></label>
+
+                    <div class="col-sm-3">
+                        <input class="form-control" type="text" value="<?= config('news.limit') ?>" name="news_limit" id="config-limit" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-types"><?= __('Categories') ?></label>
+
+                    <div class="col-sm-10 container-add-news-type">
+                        <?php foreach (config('news.types', []) as $index => $type): ?>
+                            <div class="input-group" style="width:100%;margin-bottom:5px">
+                                <input class="form-control" type="text" value="<?= $type['name'] ?>" name="news_types[<?= $index - 1 ?>][name]" style="width:63%;margin-right:2%" />
+                                <input class="form-control" type="text" value="<?= $type['color'] ?>" name="news_types[<?= $index - 1 ?>][color]" style="width:35%;" />
+                            </div>
+                        <?php endforeach ?>
+                        <div class="input-group" style="width:100%">
+                            <input class="form-control" type="text" placeholder="<?= __('Name') ?>" name="news_types[<?= count(config('news.types', [])) + 1 ?>][name]" style="width:63%;margin-right:2%" />
+                            <input class="form-control" type="text" placeholder="<?= __('Color') ?>" name="news_types[<?= count(config('news.types', [])) + 1 ?>][color]" style="width:35%" />
+                        </div>
+                    </div>
+
+                </div>
+                <div style="text-align:right;margin-top:-10px">
+                    <a class="btn btn-success btn-xs add-news-type" href="javascript:void(0)"><?= __('Add') ?></a>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-allow-comments"><?= __('Allow comments') ?>?</label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="config-allow-comments"<?= config('news.allow_comments', false) ? 'checked="checked"' : '' ?> value="1" name="allow_comments" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-show-preview"><?= __('Show preview') ?>?</label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="config-show-preview"<?= config('news.show_preview', false) ? 'checked="checked"' : '' ?> value="1" name="show_preview" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

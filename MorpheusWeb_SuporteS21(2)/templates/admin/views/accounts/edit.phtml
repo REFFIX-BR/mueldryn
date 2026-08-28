@@ -1,0 +1,205 @@
+<section class="content-header">
+    <h1><?= __('Edit account') ?></h1>
+
+    <div class="actions">
+        <a class="btn btn-default btn-sm" href="<?= url_to('/admin/accounts/logs/' . $account['username']) ?>" data-load-with-modal data-modal="modal-logs"><?= __('Logs') ?></a>
+        <a class="btn btn-default btn-sm" href="<?= url_to('/admin/accounts/warehouse/' . $account['username']) ?>" data-load-with-modal data-modal="modal-warehouse"><?= __('Warehouse') ?></a>
+        <?php if ($account['blocked']): ?>
+            <a data-ajax-action data-confirm="<?= __('Are you sure you want to unban this account?') ?>" class="btn btn-default btn-sm" href="<?= url_to('/admin/accounts/unban/' . $account['username']) ?>"><?= __('unban') ?></a>
+        <?php else: ?>
+            <a data-load-with-modal data-modal="modal-ban" class="btn btn-danger btn-sm" href="<?= url_to('/admin/accounts/ban/' . $account['username']) ?>"><?= __('Ban') ?></a>
+        <?php endif ?>
+    </div>
+</section>
+
+
+<div id="modal-warehouse" data-width="<?= config('warehouse.extended') ? 517 : 258 ?>" class="modal"></div>
+<div id="modal-ban" data-width="400" class="modal"></div>
+<div id="modal-logs" data-width="700" class="modal"></div>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" method="post" action="<?= url_to('/admin/accounts/edit/' . $account['username']) ?>">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('account') ?>
+                        <?php if ($account['blocked']): ?>
+                            <span class="label label-danger" style="font-size:12px;vertical-align:3px;"><?= strtoupper(__('Blocked')) ?></span>
+                        <?php endif ?>
+                    </legend>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-name"><?= __('Name') ?> <span class="required">*</span></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" value="<?= $account['name'] ?>" name="name" id="account-<?= $account['name'] ?>-name" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><?= __('Username') ?></label>
+
+                                <div class="col-sm-9">
+                                    <p class="form-control-static"><?= $account['username'] ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-secret-question"><?= __('Secret question') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" value="<?= $account['secretQuestion'] ?>" name="secret_question" id="account-<?= $account['name'] ?>-secret-question" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-email"><?= __('Email') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" value="<?= $account['email'] ?>" id="account-<?= $account['name'] ?>-email" name="email" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><?= __('Status') ?></label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-static"><?= strtoupper($account['blocked'] ? __('Blocked') : __('Free')) ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><?= __('Created at') ?></label>
+
+                                <div class="col-sm-9">
+                                    <p class="form-control-static"><?= date('d/m/Y', strtotime($account['createdAt'])) ?></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><?= __('Online') ?></label>
+
+                                <div class="col-sm-9">
+                                    <p class="form-control-static"><?= util('Character')->status($account['connected']) ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-password"><?= __('Password') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="password" value="" id="account-<?= $account['name'] ?>-password" name="password" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-secret-answer"><?= __('Secret answer') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" id="account-<?= $account['name'] ?>-secret-answer" value="<?= $account['secretAnswer'] ?>" name="secret_answer" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-confirm-email"><?= __('Confirmed email?') ?></label>
+
+                                <div class="col-sm-9" style="padding-top:5px;padding-bottom:5px">
+                                    <input class="form-control" type="checkbox" id="account-<?= $account['name'] ?>-confirm_email"<?= $account['confirmedEmail'] ? ' checked="checked"' : '' ?> value="1" name="confirmed_email" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-pid"><?= __('Personal id') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" id="account-<?= $account['name'] ?>-pid" value="<?= $account['personalId'] ?>" name="pid" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-credit"><?= __('Credits ($)') ?></label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control money" type="text" value="<?= util('Number')->format($account['credit'], 2, ',') ?>" id="account-<?= $account['name'] ?>-credit" name="credit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="row">
+                    <?php if (config('vip.table')): ?>
+                        <div class="col-sm-6">
+                            <fieldset>
+                                <legend><?= __('Vip') ?></legend>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-vip-type"><?= __('Vip') ?></label>
+
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="account-<?= $account['name'] ?>-vip-type" name="vip_type">
+                                            <option value=""></option>
+                                            <?php foreach (config('vip.types', []) as $code => $name): ?>
+                                                <option value="<?= $code ?>"<?= $code == $account['vipType'] ? ' selected="selected"' : '' ?>><?= $name ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-vip-expire"><?= __('Maturity') ?></label>
+
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" data-show-calendar id="account-<?= $account['name'] ?>-vip-expire" value="<?= util('Date')->date($account['vipExpire']) ?>" name="vip_expire" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if (count(config('coins', [])) > 0): ?>
+                        <div class="col-sm-6">
+                            <fieldset>
+                                <legend><?= __('Coins') ?></legend>
+                                <?php foreach (config('coins', []) as $coin): ?>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="account-<?= $account['name'] ?>-coin-<?= $coin['id'] ?>"><?= $coin['name'] ?></label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" id="account-<?= $account['name'] ?>-coin-<?= $coin['id'] ?>" value="<?= $account['coins'][$coin['id']] ?>" name="coin_<?= $coin['id'] ?>" />
+                                        </div>
+                                    </div>
+                                <?php endforeach ?>
+                            </fieldset>
+                        </div>
+                    <?php endif ?>
+                </div>
+
+                <?php if (!empty($account['bans'])): ?>
+                    <fieldset style="margin-bottom:10px">
+                        <legend style="margin-bottom:0"><?= __('Blocking history') ?></legend>
+
+                        <table class="table table-condensed table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="240"><?= __('Period') ?></th>
+                                    <th><?= __('cause') ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($account['bans'] as $ban): ?>
+                                    <tr>
+                                        <td><?= date('d/m/Y H:i', strtotime($ban['block_date'])) ?> - <?= date('d/m/Y H:i', strtotime($ban['unblock_date'])) ?></td>
+                                        <td><?= nl2br($ban['cause']) ?></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                <?php endif ?>
+
+                <?php notify('admin.accounts.edit.render', $account) ?>
+            </div>
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-offset-3" style="padding-left:8px">
+                            <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

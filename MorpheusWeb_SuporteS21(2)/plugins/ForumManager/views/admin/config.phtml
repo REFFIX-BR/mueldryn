@@ -1,0 +1,74 @@
+<section class="content-header">
+    <h1><?= __('Settings plugin news forum') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/forum/config') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-type"><?= __('Forum type') ?></label>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="forum_type" for="forum-type">
+                            <?php foreach ($types as $name => $forum): ?>
+                                <option value="<?= $name ?>"<?= config('forum.news.type', 'phpbb') === $name ? ' selected' : '' ?>><?= $forum ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-conn"><?= __('Connection') ?></label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="forum_conn" for="forum-conn">
+                            <?php foreach (config('conn') as $conn => $options): ?>
+                                <option value="<?= $conn ?>"<?= config('forum.conn', 'forum') === $conn ? ' selected' : '' ?>><?= $conn ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-limit"><?= __('Topics limit') ?></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" value="<?= config('forum.news.limit', 10) ?>" name="forum_limit" id="forum-limit" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-topic-url"><?= __('Topic url') ?></label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" value="<?= config('forum.news.topic_url') ?>" name="forum_topic_url" id="forum-topic-url" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-base"><?= __('Base forum') ?></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" value="<?= config('forum.news.base_forum') ?>" name="forum_base" id="forum-base" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="forum-auto-register"><?= __('Auto register') ?>?</label>
+
+                    <div class="col-sm-10" style="padding-top:5px">
+                        <input class="form-control" type="checkbox" id="forum-auto-register"<?= config('forum.auto_register', false) ? 'checked="checked"' : '' ?> value="1" name="forum_auto_register" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

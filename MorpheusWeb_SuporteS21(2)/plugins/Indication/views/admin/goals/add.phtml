@@ -1,0 +1,57 @@
+<section class="content-header">
+    <h1><?= __('Add indication goal') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/indication/goals') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/indication/goals/add') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="goal"><?= __('Meta') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="goal" id="goal" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="coin"><?= __('Coin') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-4">
+                        <select class="form-control" name="coin" id="coin">
+                            <option value=""></option>
+                            <?php foreach (config('coins', []) as $id => $coin): ?>
+                                <option value="<?= $id ?>"><?= $coin['name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="amount"><?= __('Query SQL') ?> <span class="required">*</span></label>
+
+                    <div class="col-sm-10">
+                        <textarea class="form-control" type="text" style="height:300px" name="amount" id="amount"></textarea>
+                        <p class="help-block">
+                            <strong><?= __('Guide') ?>:</strong> <?= __('The query must return the reward amount when the condition is met. Use <code>?</code> for: 1st parameter = referrer account, 2nd parameter = referred account.') ?><br>
+                            <strong><?= __('Example') ?> (<?= __('Referred reaches level 400') ?>):</strong><br>
+                            <code>SELECT 100 FROM Character WHERE AccountID = ? AND cLevel &gt;= 400</code>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px;">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

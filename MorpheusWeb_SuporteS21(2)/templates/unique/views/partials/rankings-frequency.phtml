@@ -1,0 +1,28 @@
+<?php $configs = isset($ranking['configs']) ? $ranking['configs'] : [] ?>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a data-ajax class="nav-link<?= empty($ranking['type']) ? ' active' : '' ?>" href="<?= url_to('/rankings/' . util('Inflector')->dasherize($ranking['id'])) ?>"><?= __('Real time') ?></a>
+    </li>
+
+    <?php if (isset($ranking['has_frequency'])
+            && $ranking['has_frequency']): ?>
+
+        <?php if (isset($configs['daily'])): ?>
+            <li class="nav-item">
+                <a data-ajax class="nav-link<?= $ranking['type'] == 'daily' ? ' active' : '' ?>" href="<?= url_to('/rankings/' . util('Inflector')->dasherize($ranking['id'])) ?>:daily"><?= __('Daily') ?></a>
+            </li>
+        <?php endif ?>
+
+        <?php if (isset($configs['weekly'])): ?>
+            <li class="nav-item">
+                <a data-ajax class="nav-link<?= $ranking['type'] == 'weekly' ? ' active' : '' ?>" href="<?= url_to('/rankings/' . util('Inflector')->dasherize($ranking['id'])) ?>:weekly"><?= __('Weekly') ?></a>
+            </li>
+        <?php endif ?>
+
+        <?php if (isset($configs['monthly'])): ?>
+            <li class="nav-item">
+                <a data-ajax class="nav-link<?= $ranking['type'] == 'monthly' ? ' active' : '' ?>" href="<?= url_to('/rankings/' . util('Inflector')->dasherize($ranking['id'])) ?>:monthly"><?= __('Monthly') ?></a>
+            </li>
+        <?php endif ?>
+    <?php endif ?>
+</ul>

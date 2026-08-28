@@ -1,0 +1,11 @@
+<?= partial('rates') ?>
+
+<p style="margin-bottom:2px;"><span class="off">*</span> <strong>CUIDADO!</strong> este comando irá limpar sua árvore de skill!</p>
+
+<form style="margin-top:10px" data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/rebuild-master-skill') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <div class="submit">
+        <input type="submit" class="btn btn-info" value="<?= __('Rebuild') ?>">
+    </div>
+</form>

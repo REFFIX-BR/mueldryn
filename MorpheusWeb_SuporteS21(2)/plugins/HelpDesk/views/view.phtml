@@ -1,0 +1,85 @@
+<h1 class="title"><?= __('Ticket') ?> #<?= $ticket->getId() ?> - <?= $ticket->getDepartment() ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/support/tickets') ?>" data-ajax><?= __('Support') ?></a></li>
+    <li class="active"><?= __('Ticket') ?> #<?= $ticket->getId() ?></li>
+</ul>
+
+<?= nl2br($ticket->getMessage()) ?>
+
+<?php if ($ticket->hasImages()): ?>
+    <ul class="helpdesk-images">
+        <?php foreach (explode(',', $ticket->getImages()) as $image): ?>
+            <li>
+                <a href="<?= upload_to('/helpdesk/' . $image) ?>" target="_blank">
+                    <img src="<?= upload_to('/helpdesk/' . $image) ?>" width="50" />
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+
+    <div class="clear"></div>
+<?php endif ?>
+
+<?php if ($ticket->hasMessages()): ?>
+    
+    <h2 class="title margin-top"><?= __('Messages') ?></h2>
+    <div class="box">
+        <ul class="helpdesk-messages">
+            <?php foreach ($ticket->getMessages() as $message): ?>
+                <li>
+                    <div class="desc">
+                        <span class="name"><?= $message->getAuthor() ?></span>
+                        <?php if ($message->isAdmin()): ?>
+                            <span class="admin-message"><?= __('Administration') ?></span>
+                        <?php endif ?>
+                        <span class="created"><?= util('Time')->relative($message->getCreated()) ?></span>
+                        <p><?= nl2br($message->getMessage()) ?></p>
+                        <?php if ($message->hasImages()): ?>
+                            <ul class="helpdesk-images">
+                                <?php foreach (explode(',', $message->getImages()) as $image): ?>
+                                    <li>
+                                        <a href="<?= upload_to('/helpdesk/' . $image) ?>" target="_blank">
+                                            <img src="<?= upload_to('/helpdesk/' . $image) ?>" width="50" />
+                                        </a>
+                                    </li>
+                                <?php endforeach ?>
+                            </ul>
+
+                            <div class="clear"></div>
+                        <?php endif ?>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif ?>
+
+<?php if ($ticket->getStatus() != 3): ?>
+
+    <div class="box-panel margin-top">
+        <div class="box-panel-title"><?= __('Add message') ?></div>
+        <form data-ajax data-upload action="<?= url_to('/support/tickets/add_message/' . $ticket->getId()) ?>" enctype="multipart/form-data" method="post" class="form">
+            <?= csrf_field() ?>
+            <div class="box-panel-content">
+                <div class="row">
+                    <div class="field block">
+                        <textarea id="ticket-message" name="message"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field block">
+                        <input data-upload-field type="file" multiple name="images" id="images" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="submit" value="<?= __('Send message') ?>" class="btn" />
+            </div>
+        </form>
+    </div>
+    
+<?php endif ?>

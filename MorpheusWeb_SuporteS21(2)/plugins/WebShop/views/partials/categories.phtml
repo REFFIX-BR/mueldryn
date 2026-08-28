@@ -1,0 +1,15 @@
+<form action="<?= url_to('/shop/' . $shop['slug'] . '/search') ?>" type="get">
+    <input type="text" value="<?= isset($q) ? $q : '' ?>" name="q" placeholder="<?= __('Search') ?>" />
+</form>
+
+<?php foreach ($categories as $root): ?>
+    <div class="category">
+        <p class="title"><?= $root['name'] ?></p>
+
+        <ul class="">
+            <?php foreach ($root['children'] as $cat): ?>
+                <li><a data-ajax href="<?= url_to('/shop/' . $shop['slug'] . '/' . $cat['slug']) ?>"><?= $cat['name'] ?></a></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endforeach ?>

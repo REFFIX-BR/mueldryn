@@ -1,0 +1,352 @@
+<section class="content-header">
+    <h1><?= __('General settings') ?></h1>
+</section>
+
+<section class="content">
+    <form data-ajax data-upload class="form-horizontal form-focus" action="<?= url_to('/admin/configs/general') ?>" method="post">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#server" data-toggle="tab"><?= __('Server') ?></a></li>
+                <li><a href="#servers" data-toggle="tab"><?= __('Servers') ?></a></li>
+                <li><a href="#site" data-toggle="tab"><?= __('Website') ?></a></li>
+                <li><a href="#smtp" data-toggle="tab"><?= __('SMTP') ?></a></li>
+                <?php if (server()->hasCastleSiege()): ?>
+                    <li><a href="#castle-siege" data-toggle="tab"><?= __('Castle Siege') ?></a></li>
+                <?php endif ?>
+                <li><a href="#connect-server" data-toggle="tab"><?= __('Connect server') ?></a></li>
+                <li><a href="#join-server" data-toggle="tab"><?= __('Join server') ?></a></li>
+                <li><a href="#items" data-toggle="tab"><?= __('Items') ?></a></li>
+                <li><a href="#warehouse" data-toggle="tab"><?= __('Warehouse') ?></a></li>
+                <li><a href="#morpheus" data-toggle="tab">Morpheus</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="server">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-team"><?= __('Team') ?></label>
+
+                        <div class="col-sm-4">
+                            <select class="form-control" id="config-server-team" name="server_team">
+                                <?php foreach ($teams as $team => $name): ?>
+                                    <option<?= $team == config('server.team', '') ? ' selected' : '' ?> value="<?= $team ?>"><?= $name ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-name"><?= __('Name') ?></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="config-server-name" value="<?= config('server.name') ?>" name="server_name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-version-name"><?= __('Version name') ?></label>
+
+                        <div class="col-sm-3">
+                            <select class="form-control" id="config-server-version-name" name="server_version_name">
+                                <?php $currentVersion = config('server.version_name', 'Season 20') ?>
+                                <?php $currentVersion = is_scalar($currentVersion) ? trim((string) $currentVersion) : 'Season 20' ?>
+                                <?php foreach (array('97d', 'Season 0', 'Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6', 'Season 7', 'Season 8', 'Season 9', 'Season 10', 'Season 11', 'Season 12', 'Season 13', 'Season 14', 'Season 15', 'Season 16', 'Season 17', 'Season 18', 'Season 19', 'Season 20', 'Season 21') as $version): ?>
+                                    <option<?= $version === $currentVersion ? ' selected' : '' ?> value="<?= $version ?>"><?= $version ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-experience"><?= __('Experience') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-server-experience" value="<?= config('server.experience') ?>" name="server_experience" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-drop"><?= __('Drop') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-server-drop" value="<?= config('server.drop') ?>" name="server_drop" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-max-level"><?= __('Max level') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-server-max-level" value="<?= config('server.max_level') ?>" name="server_max_level" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-max-status"><?= __('Max status') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-server-max-status" value="<?= config('server.max_status') ?>" name="server_max_status" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="servers">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-server-max-status"><?= __('Servers') ?></label>
+                        <div class="col-sm-10 container-add-server">
+                            <?php $i = 0; foreach (config('servers', []) as $name => $server): ?>
+                                <div class="input-group" style="width:100%;margin-bottom:5px;">
+                                    <input class="form-control" value="<?= $name ?>" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('Server') ?>" name="servers[<?= $i ?>][server]" />
+                                    <input class="form-control" value="<?= $server['name'] ?>" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('Name') ?>" name="servers[<?= $i ?>][name]" />
+                                    <input class="form-control" value="<?= isset($server['ip']) ? $server['ip'] : '' ?>" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('IP') ?>" name="servers[<?= $i ?>][ip]" />
+                                    <input class="form-control" value="<?= isset($server['port']) ? $server['port'] : '' ?>" style="width:15%;margin-right:2%" type="text" placeholder="<?= __('Port') ?>" name="servers[<?= $i ?>][port]" />
+                                    <input class="form-control" value="<?= $server['max'] ?>" style="width:11%" type="text" placeholder="<?= __('Max users') ?>" name="servers[<?= $i ?>][max]" />
+                                </div>
+                                <?php $i++; endforeach ?>
+                            <div class="input-group" style="width:100%">
+                                <input class="form-control" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('Server') ?>" name="servers[<?= $i ?>][server]" />
+                                <input class="form-control" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('Name') ?>" name="servers[<?= $i ?>][name]" />
+                                <input class="form-control" style="width:22%;margin-right:2%" type="text" placeholder="<?= __('Ip') ?>" name="servers[<?= $i ?>][ip]" />
+                                <input class="form-control" style="width:15%;margin-right:2%" type="text" placeholder="<?= __('Port') ?>" name="servers[<?= $i ?>][port]" />
+                                <input class="form-control" style="width:11%" type="text" placeholder="<?= __('Max users') ?>" name="servers[<?= $i ?>][max]" />
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:right;margin-top:-10px">
+                        <a class="btn btn-xs btn-success add-server" href="javascript:void(0)"><?= __('Add') ?></a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="site">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-site-title"><?= __('Title') ?></label>
+
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" id="config-site-title" value="<?= config('site.title') ?>" name="site_title" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="smtp">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-host"><?= __('Server') ?></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="config-smtp-host" value="<?= config('smtp.host') ?>" name="smtp_host" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-username"><?= __('Username') ?></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="config-smtp-username" value="<?= config('smtp.username') ?>" name="smtp_username" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-password"><?= __('Password') ?></label>
+
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="config-smtp-password" value="<?= config('smtp.password') ?>" name="smtp_password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-port"><?= __('Port') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-smtp-port" value="<?= config('smtp.port') ?>" name="smtp_port" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-secure">SSL</label>
+
+                        <div class="col-sm-10" style="padding-top:5px;padding-bottom:5px;">
+                            <input type="checkbox" id="config-smtp-secure"<?= config('smtp.secure') ? 'checked="checked"' : '' ?> value="1" name="smtp_secure" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-smtp-from">From</label>
+
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" id="config-smtp-from" value="<?= config('smtp.from') ?>" name="smtp_from" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="castle-siege">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-cs-next-confrontation"><?= __('Next confrontation') ?></label>
+
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" id="config-cs-next-confrontation" value="<?= config('castlesiege.next_confrontation') ?>" name="cs_next_confrontation" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="connect-server">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-connect-host"><?= __('Server') ?></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="config-connect-host" value="<?= config('connectserver.host') ?>" name="connect_host" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-connect-port"><?= __('Port') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-connect-port" value="<?= config('connectserver.port') ?>" name="connect_port" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="join-server">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-join-host"><?= __('Server') ?></label>
+
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="config-join-host" value="<?= config('joinserver.host') ?>" name="join_host" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-join-port"><?= __('Port') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-join-port" value="<?= config('joinserver.port') ?>" name="join_port" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="items">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-db-version"><?= __('Item DbVersion') ?></label>Use 3 for S6 | Use 5 for S20/S21
+
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="config-db-version" value="<?= config('item.db_version') ?>" name="item_db_version" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-item-kor"><?= __('ItemKor file') ?></label>
+
+                        <div class="col-sm-10">
+                            <input data-upload-field class="form-control" type="file" id="item-kor" name="itemkor" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="item-converter">Conversor XML</label>
+                        <div class="col-sm-10">
+                            <a href="/conversor.php" id="item-converter" target="_blank" class="btn btn-default">Abrir conversor de Item.xml</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="warehouse">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-warehouse-extended"><?= __('Warehouse extended') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px;padding-bottom:5px;">
+                            <input type="checkbox" id="config-warehouse-extended"<?= config('warehouse.extended') ? 'checked="checked"' : '' ?> value="1" name="warehouse_extended" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-warehouse-ext"><?= __('Ext Warehouse') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px;padding-bottom:5px;">
+                            <input type="checkbox" id="config-warehouse-ext"<?= config('warehouse.ext.active') ? 'checked="checked"' : '' ?> value="1" name="ext_active" />
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend><?= __('Ext Warehouse config') ?></legend>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="config-ext-table"><?= __('Table') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="config-ext-table" value="<?= config('warehouse.ext.table', 'ExtWarehouse') ?>" name="ext_table" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="config-ext-column-account"><?= __('Account column') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="config-ext-column-account" value="<?= config('warehouse.ext.column_account', 'AccountID') ?>" name="ext_column_account" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="config-ext-column-items"><?= __('Items column') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="config-ext-column-items" value="<?= config('warehouse.ext.column_items', 'Items') ?>" name="ext_column_items" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="config-ext-column-number"><?= __('Column number') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="config-ext-column-number" value="<?= config('warehouse.ext.column_number', 'Number') ?>" name="ext_column_number" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="config-ext-column-money"><?= __('Column money') ?></label>
+
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="config-ext-column-money" value="<?= config('warehouse.ext.column_money', 'Money') ?>" name="ext_column_money" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="tab-pane" id="morpheus">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-language"><?= __('Language') ?></label>
+
+                        <div class="col-sm-4">
+                            <select class="form-control" name="language" id="config-language">
+                                <?php foreach ($languages as $key => $language): ?>
+                                    <option<?= $key == config('locale', 'pt_BR') ? ' selected' : '' ?> value="<?= $key ?>"><?= $language ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-maintenance"><?= __('Maintenance') ?></label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="config-maintenance"<?= config('maintenance') ? 'checked="checked"' : '' ?> value="1" name="maintenance" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-debug">Debug</label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="config-debug"<?= config('debug') ? 'checked="checked"' : '' ?> value="1" name="debug" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="config-rewrite">URL Rewrite</label>
+
+                        <div class="col-sm-10" style="padding-top:5px">
+                            <input class="form-control" type="checkbox" id="config-rewrite"<?= config('url_rewrite') ? 'checked="checked"' : '' ?> value="1" name="url_rewrite" />
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-left:5px;" class="col-sm-offset-2">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

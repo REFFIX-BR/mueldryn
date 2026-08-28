@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    $(function () {
+        $(document).on("click", ".add-department", function (e) {
+            var $this = $(this);
+            var $container = $this.closest("form").find(".container-add-department");
+            var index = $container.find(":input").size() + 1;
+            $container.append('<input class="form-control" type="text" style="margin-top:3px;" name="helpdesk_department[]" />');
+            e.preventDefault();
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Settings plugin helpdesk') ?></h1>
+</section>
+
+<section class="content">
+
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/helpdesk/config') ?>" method="post">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-news-limit"><?= __('Departments') ?></label>
+
+                    <div class="col-sm-10 container-add-department">
+                        <?php foreach ($config['departments'] as $department): ?>
+                            <input class="form-control" type="text" style="margin-bottom:3px;" value="<?= $department ?>" name="helpdesk_department[]" />
+                        <?php endforeach ?>
+                        <input class="form-control" type="text" name="helpdesk_department[]" />
+                    </div>
+                </div>
+
+                <div style="text-align:right;margin-top:-10px;margin-bottom:10px;">
+                    <a class="btn btn-success btn-xs add-department" href="javascript:void(0)"><?= __('Add') ?></a>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-helpdesk-rules"><?= __('Rules') ?></label>
+
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="config-helpdesk-rules" style="height:200px" name="helpdesk_rules"><?= $config['rules'] ?></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-helpdesk-max-char-message"><?= __('Max characters') ?></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" value="<?= $config['max_char_message'] ?>" name="helpdesk_max_char_message" id="config-helpdesk-max-char-message" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="config-helpdesk-timeout"><?= __('Timeout') ?></label>
+
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" value="<?= $config['timeout'] ?>" name="helpdesk_timeout" id="config-helpdesk-timeout" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-sm-offset-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

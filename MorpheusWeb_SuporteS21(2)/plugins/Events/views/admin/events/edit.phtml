@@ -1,0 +1,126 @@
+<script>
+    $(function () {
+        $(".add-hours").click(function (e) {
+            var $this = $(this);
+            var $container = $this.closest("form").find(".container-add-hours");
+            var index = ($container.find(":input").size() / 2) + 1;
+            // $container.append('<div class="input-group" style="width:100%;margin-top:5px;"><input class="form-control" type="text" placeholder="Nome" name="links[' + index + '][name]" style="width:40%;margin-right:2%" /><input class="form-control" type="text" placeholder="Link" name="links[' + index + '][link]" style="width:58%" />');
+
+            $container.append(['<div style="display:flex;margin-top:10px">',
+                '<select class="form-control" style="width:25%;margin-right:2%" name="days[]">',
+                '<option value=""><?= __('Day') ?></option>',
+                '<option value="*"><?= __('All days') ?></option>',
+                '<option value="1"><?= __('Sunday') ?></option>',
+                '<option value="2"><?= __('Monday') ?></option>',
+                '<option value="3"><?= __('Tuesday') ?></option>',
+                '<option value="4"><?= __('Wednesday') ?></option>',
+                '<option value="5"><?= __('Thursday') ?></option>',
+                '<option value="6"><?= __('Friday') ?></option>',
+                '<option value="7"><?= __('Saturday') ?></option>',
+                '</select>',
+                '<input class="form-control" style="width:73%" type="text" placeholder="<?= __('Hours') ?>" name="hours[]" />',
+                '</div>'].join(''));
+
+            e.preventDefault();
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Edit event') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= admin_url_to('/events') ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-focus" action="<?= admin_url_to('/events/edit/' . $event['id']) ?>" method="post">
+            <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+            <div class="box-body">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <h5><?= __('Event') ?></h5>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name"><?= __('Name') ?> <span class="required">*</span></label>
+                                        <input class="form-control" type="text" value="<?= $event['name'] ?>" name="name" id="name" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="category-id"><?= __('Category') ?></label>
+                                        <select class="form-control" type="text" name="category_id" id="category-id">
+                                            <option value=""></option>
+                                            <?php foreach ($categories as $category): ?>
+                                                <option<?= $category['id'] == $event['category_id'] ? ' selected' : '' ?> value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label" for="featured"><?= __('Featured') ?>?</label>
+                                        <div>
+                                            <input class="form-control toggle"<?= $event['featured'] ? ' checked' : '' ?> type="checkbox" id="featured" value="1" name="featured" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <h5><?= __('Times') ?></h5>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                            <div class="container-add-hours">
+                                <?php foreach ($times as $day => $time): ?>
+                                    <div style="display:flex;margin-top:10px">
+                                        <select class="form-control" style="width:25%;margin-right:2%" name="days[]">
+                                            <option value=""><?= __('Day') ?></option>
+                                            <option value="*"<?= $day == '*' ? ' selected' : '' ?>><?= __('All days') ?></option>
+                                            <option value="1"<?= $day == '1' ? ' selected' : '' ?>><?= __('Sunday') ?></option>
+                                            <option value="2"<?= $day == '2' ? ' selected' : '' ?>><?= __('Monday') ?></option>
+                                            <option value="3"<?= $day == '3' ? ' selected' : '' ?>><?= __('Tuesday') ?></option>
+                                            <option value="4"<?= $day == '4' ? ' selected' : '' ?>><?= __('Wednesday') ?></option>
+                                            <option value="5"<?= $day == '5' ? ' selected' : '' ?>><?= __('Thursday') ?></option>
+                                            <option value="6"<?= $day == '6' ? ' selected' : '' ?>><?= __('Friday') ?></option>
+                                            <option value="7"<?= $day == '7' ? ' selected' : '' ?>><?= __('Saturday') ?></option>
+                                        </select>
+                                        <input class="form-control" value="<?= $time ?>" style="width:73%" type="text" placeholder="<?= __('Hours') ?>" name="hours[]" />
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+
+                            <div style="text-align:right;margin-top:10px">
+                                <a class="btn btn-xs btn-success add-hours" href="javascript:void(0)"><?= __('Add') ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-sm-offset-3" style="padding-left:15px">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

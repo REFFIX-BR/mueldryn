@@ -1,0 +1,31 @@
+<div class="box-panel margin-top">
+    <div class="box-panel-title"><?= __('Indication program') ?></div>
+    <div class="box-panel-content">
+        <?php if (empty($code)): ?>
+            <a class="btn" data-ajax-action href="<?= url_to('/indication/participate') ?>"><?= __('Participate') ?></a>
+        <?php else: ?>
+            <table class="list panel">
+                <tr>
+                    <td><?= __('Link for indication') ?></td>
+                    <td><?= url_to('/i-' . $code, true) ?></td>
+                </tr>
+                <tr>
+                    <td><?= __('Indications') ?></td>
+                    <td><?= $indications ?></td>
+                </tr>
+                <?php foreach ($rewards as $reward): ?>
+                    <tr>
+                        <td><?= util('Coin')->name($reward['coin']) ?></td>
+                        <td><?= $reward['total'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+            <?php if (!empty($rewards)): ?>
+                <div class="margin-top">
+                    <a class="btn" data-ajax-action href="<?= url_to('/indication/rescue') ?>"><?= __('Rescue') ?></a>
+                </div>
+            <?php endif ?>
+        <?php endif ?>
+    </div>
+</div>

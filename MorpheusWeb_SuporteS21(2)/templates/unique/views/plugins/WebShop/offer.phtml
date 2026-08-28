@@ -1,0 +1,23 @@
+<div class="webshop-offer">
+    <div class="title">
+        <i class="fa fa-cart-plus"></i> <?= __('Webshop') ?>
+    </div>
+
+    <div class="webshop-offer-products">
+        <?php foreach ($products as $product): ?>
+            <div class="webshop-offer-product">
+                <div class="name">
+                    <a data-ajax href="<?= url_to('/shop/' . $product['shop_slug'] . '/' . $product['category_slug'] . '/' . $product['slug']) ?>"><?= $product['name'] ?></a>
+                </div>
+                <div class="image">
+                    <img src="<?= util('WebShop.WebShop')->image($product) ?>" />
+                </div>
+                <div class="price"><?= __('%d %s', [$product['price'], util('Coin')->name($product['coin'])]) ?></div>
+
+                <div class="action">
+                    <a data-ajax href="<?= url_to('/shop/' . $product['shop_slug'] . '/' . $product['category_slug'] . '/' . $product['slug']) ?>" class="btn btn-block btn-outline-success"><?= __('Purchase') ?></a>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

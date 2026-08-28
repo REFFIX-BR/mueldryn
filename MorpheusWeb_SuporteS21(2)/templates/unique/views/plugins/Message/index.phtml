@@ -1,0 +1,46 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Messages') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Messages') ?></li>
+        </ol>
+    </nav>
+
+    <table class="table table-sm table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th><?= __('Title') ?></th>
+                <th width="90"><?= __('Created at') ?></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php if (empty($messages)): ?>
+                <tr>
+                    <td colspan="2"><?= __('No messages found') ?></td>
+                </tr>
+            <?php else: ?>
+                <?php foreach ($messages as $message): ?>
+                    <tr>
+                        <td>
+                            <a style="<?= $message['visualized'] ?: 'font-weight:bold' ?>" data-ajax href="<?= url_to('/message/' . $message['id']) ?>"><?= $message['title'] ?></a>
+                        </td>
+                        <td><?= util('Date')->date($message['create_date']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            <?php endif ?>
+        </tbody>
+    </table>
+</div>

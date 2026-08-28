@@ -1,0 +1,56 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Support') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Support') ?></li>
+        </ol>
+    </nav>
+
+    <table class="table table-sm table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th width="10"></th>
+                <th><?= __('Subject') ?></th>
+                <th width="90"><?= __('Department') ?></th>
+                <th class="text-center" width="130"><?= __('Created at') ?></th>
+                <th class="text-center" width="130"><?= __('Updated at') ?></th>
+                <th class="text-center" width="100"><?= __('Status') ?></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php if (empty($tickets)): ?>
+                <tr>
+                    <td colspan="6"><?= __('No support tickets found') ?></td>
+                </tr>
+            <?php else: ?>
+                <?php foreach ($tickets as $ticket): ?>
+                    <tr>
+                        <td><a data-ajax href="<?= url_to('/support/tickets/view/' . $ticket['id']) ?>">#<?= $ticket['id'] ?></a></td>
+                        <td><a data-ajax href="<?= url_to('/support/tickets/view/' . $ticket['id']) ?>"><?= $ticket['subject'] ?></a></td>
+                        <td><?= $ticket['department'] ?></td>
+                        <td style="text-align:center;"><?= util('Date')->dateTime($ticket['create_date']) ?></td>
+                        <td style="text-align:center;"><?= empty($ticket['update_date']) ? '' : util('Date')->dateTime($ticket['create_date']) ?></td>
+                        <td style="text-align:center;"><?= util('HelpDesk.HelpDesk')->ticketStatus($ticket['status']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            <?php endif ?>
+        </tbody>
+    </table>
+
+    <div style="margin-top:10px">
+        <a data-ajax href="<?= url_to('/support/tickets/add') ?>" class="btn btn-info"><?= __('Open new ticket') ?></a>
+    </div>
+</div>

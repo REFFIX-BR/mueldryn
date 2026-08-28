@@ -1,0 +1,30 @@
+<?php View::add('page.title', __('WebShop') . ' — ' . $q) ?>
+<?php $shopHubActive = 'shops' ?>
+<?php $coinName = config('coins.' . $shop['coin'] . '.name', $shop['coin']) ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= __('Search') ?>: <?= htmlspecialchars($q) ?></h1>
+            <p class="md-shop-header__lead"><?= $shop['name'] ?> — <?= $coinName ?></p>
+        </div>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <div class="md-ws-layout">
+        <aside class="md-ws-sidebar">
+            <?= partial('WebShop.categories', [
+                'categories' => $categories,
+                'shop' => $shop,
+                'q' => $q
+            ]) ?>
+        </aside>
+        <div class="md-ws-content">
+            <?= partial('WebShop.products', [
+                'products' => $products,
+                'shop' => $shop
+            ]) ?>
+        </div>
+    </div>
+</div>

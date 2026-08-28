@@ -1,0 +1,245 @@
+<script>
+    $(function () {
+
+        $("[data-select-all]").click(function (e) {
+            var $this = $(this);
+            var category = $this.data("select-all");
+            var check = $this.attr("checked");
+
+
+            if (!check) {
+                $("[data-category=" + category + "]").icheck('checked');
+                $this.attr("checked", true);
+            } else {
+                $("[data-category=" + category + "]").icheck('unchecked');
+                $this.attr("checked", false);
+            }
+
+            e.preventDefault();
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Settings plugin workshop') ?></h1>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/workshop/config') ?>" method="post">
+            <div class="box-body">
+                <fieldset>
+                    <legend><?= __('Configs') ?></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="shops-max-level"><?= __('Item max level') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="max_level" id="shops-max-level">
+                                <?php for ($i = 0; $i <= 15; $i++): ?>
+                                    <option<?= config('workshop.max_level') == $i ? ' selected="selected"' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="shops-max-option"><?= __('Item max option') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="max_option" id="shops-max-option">
+                                <?php for ($i = 0; $i <= 28; $i+=4): ?>
+                                    <option<?= config('workshop.max_option') == $i ? ' selected="selected"' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="max-excellent"><?= __('Max excellent options') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="max_excellent" id="max-excellent">
+                                <option value=""></option>
+
+                                <?php for ($i = 1; $i <= 6; $i++): ?>
+                                    <option<?= config('workshop.max_excellent') == $i ? ' selected="selected"' : '' ?> value="<?= $i ?>"><?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <?php if ($version >= 1.1): ?>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="allow-ancient"><?= __('Allow ancient') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input<?= config('workshop.allow_ancient', 0) ? ' checked="checked"' : '' ?> class="form-control" type="checkbox" id="allow-ancient" value="1" name="allow_ancient" />
+                            </div>
+                        </div>
+
+                    <?php endif ?>
+
+                    <?php if ($version > 2): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="allow-refine"><?= __('Allow refine') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input<?= config('workshop.allow_refine', 0) ? ' checked="checked"' : '' ?> class="form-control" type="checkbox" id="allow-refine" value="1" name="allow_refine" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="allow-harmony"><?= __('Allow harmony') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input<?= config('workshop.allow_harmony', 0) ? ' checked="checked"' : '' ?> class="form-control" type="checkbox" id="allow-harmony" value="1" name="allow_harmony" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="allow-sockets"><?= __('Allow sockets') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input<?= config('workshop.allow_sockets', 0) ? ' checked="checked"' : '' ?> class="form-control" type="checkbox" id="allow-sockets" value="1" name="allow_sockets" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="max-sockets"><?= __('Max socket options') ?></label>
+
+                            <div class="col-sm-2">
+                                <select class="form-control" name="max_sockets" id="max-sockets">
+                                    <option value=""></option>
+
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <option<?= config('workshop.max_sockets') == $i ? ' selected="selected"' : '' ?> value="<?= $i ?>"><?= $i ?></option>
+                                    <?php endfor ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="unique-sockets"><?= __('Unique sockets') ?></label>
+
+                            <div class="col-sm-8" style="padding-top:5px">
+                                <input<?= config('workshop.unique_sockets', 0) ? ' checked="checked"' : '' ?> class="form-control" type="checkbox" id="unique-sockets" value="1" name="unique_sockets" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="coin"><?= __('Coin') ?></label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" name="coin" id="coin">
+                                <?php foreach (config('coins', []) as $coin): ?>
+                                    <option<?= config('workshop.coin') == $coin['id'] ? ' selected' : '' ?> value="<?= $coin['id'] ?>"><?= $coin['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Prices') ?></legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="price-level"><?= __('Price for level') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= config('workshop.prices.level', 0) ?>" type="text" name="price_level" id="price-level" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="price-option"><?= __('Price for option') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= config('workshop.prices.option', 0) ?>" type="text" name="price_option" id="price-option" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="price-skill"><?= __('Price for skill') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= config('workshop.prices.skill', 0) ?>" type="text" name="price_skill" id="price-skill" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="price-luck"><?= __('Price for luck') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= config('workshop.prices.luck', 0) ?>" type="text" name="price_luck" id="price-luck" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="price-excellent"><?= __('Price for excellent') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= config('workshop.prices.excellent', 0) ?>" type="text" name="price_excellent" id="price-excellent" />
+                        </div>
+                    </div>
+
+                    <?php if ($version >= 1.1): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="price-ancient"><?= __('Price for ancient') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" value="<?= config('workshop.prices.ancient', 0) ?>" type="text" name="price_ancient" id="price-ancient" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($version > 2): ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="price-harmony"><?= __('Price for harmony') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" value="<?= config('workshop.prices.harmony', 0) ?>" type="text" name="price_harmony" id="price-harmony" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="price-refine"><?= __('Price for refine') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" value="<?= config('workshop.prices.refine', 0) ?>" type="text" name="price_refine" id="price-refine" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="price-socket"><?= __('Price for socket') ?></label>
+
+                            <div class="col-sm-2">
+                                <input class="form-control" value="<?= config('workshop.prices.socket', 0) ?>" type="text" name="price_socket" id="price-socket" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+                </fieldset>
+
+                <fieldset>
+                    <legend><?= __('Blocked items') ?></legend>
+                    <?php foreach (Morpheus\Item\Item::getStorage()->getItems() as $index => $items): ?>
+                        <p class="title">
+                            <a data-select-all="<?= $index ?>" href="#"><?= config('item.categories', [])[$index] ?></a>
+                        </p>
+                        <?php foreach ($items as $iindex => $item): ?>
+                            <div style="width:33%;margin-bottom:5px;float:left">
+                                <input<?= in_array($index . '-' . $iindex, $blockeds) ? ' checked="checked"' : '' ?> type="checkbox" data-category="<?= $index ?>" name="blocked[]" id="grous-access-<?= str_replace(['.', ' '], '-', $item['name']) ?>" value="<?= $index ?>-<?= $iindex ?>" /> <label for="grous-access-<?= str_replace(['.', ' '], '-', $item['name']) ?>"><?= $item['name'] ?></label>
+                            </div>
+                        <?php endforeach ?>
+                        <div class="clearfix"></div>
+                    <?php endforeach ?>
+                </fieldset>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+            </div>
+        </form>
+    </div>
+</section>

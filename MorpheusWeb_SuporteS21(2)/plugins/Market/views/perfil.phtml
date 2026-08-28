@@ -1,0 +1,21 @@
+<?php if (!empty($items)): ?>
+    <h2 class="title margin-top"><?= __('Items for sale') ?></h2>
+    <div class="market-perfil">
+        <?php foreach ($items as $item): ?>
+            <div class="item">
+                <div class="name"><?= util('Item')->getFullName($item['item']) ?></div>
+                <div class="image" data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $item['item']->getHex()) ?>">
+                    <img src="<?= util('Item')->image($item['item']->getSection(), $item['item']->getIndex()) ?>" />
+                </div>
+                <div class="info">
+                    <?= $item['price'] ?> <?= util('Market.Market')->paymentName($item['payment_type'], $item['coin']) ?>
+                </div>
+                <?php if (logged_in() && $item['account'] !== user()->getUsername()): ?>
+                    <div class="buy">
+                        <a data-ajax-action href="<?= url_to('/market/buy/' . $item['id']) ?>" class="btn"><?= __('Buy') ?></a>
+                    </div>
+                <?php endif ?>
+            </div>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>

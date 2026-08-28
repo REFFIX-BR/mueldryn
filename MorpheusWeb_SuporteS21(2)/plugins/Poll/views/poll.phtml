@@ -1,0 +1,34 @@
+<?php if (!empty($poll)): ?>
+    <div class="space"></div>
+
+    <p class="title"><?= __('Poll') ?></p>
+    <div class="box">
+        <div class="last-poll">
+            <p><?= $poll['title'] ?></p>
+            <div class="poll-container">
+                <?php if ($voted): ?>
+                    <?= partial('Poll.result', ['poll' => $poll]) ?>
+                <?php else: ?>
+                    <form class="poll-vote-form" data-loader=".last-poll" method="post" action="<?= url_to('/polls/vote/' . $poll['id']) ?>">
+                        <?php foreach ($poll['answers'] as $answer): ?>
+                            <div class="answer">
+                                <label for="answer-<?= $answer['id'] ?>">
+                                    <input type="<?= $poll['allow_multiple'] ? 'checkbox' : 'radio' ?>" name="answer<?= $poll['allow_multiple'] ? '[]' : '' ?>" id="answer-<?= $answer['id'] ?>" value="<?= $answer['id'] ?>" />
+                                    <?= $answer['answer'] ?>
+                                </label>
+                            </div>
+                        <?php endforeach ?>
+
+                        <div class="poll-actions">
+                            <input type="submit" value="<?= __('Vote') ?>" />
+                            <a class="poll-show-result" href="<?= url_to('/polls/result/' . $poll['id']) ?>"><?= __('Result') ?></a>
+                        </div>
+                    </form>
+                <?php endif ?>
+
+                <div class="last-poll-result"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box-bottom"></div>
+<?php endif ?>

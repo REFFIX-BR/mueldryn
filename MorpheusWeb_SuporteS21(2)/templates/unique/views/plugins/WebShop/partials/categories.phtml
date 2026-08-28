@@ -1,0 +1,29 @@
+<form class="md-ws-search" action="<?= url_to('/shop/' . $shop['slug'] . '/search') ?>" method="get">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+    <input class="form-control" type="text" value="<?= isset($q) ? htmlspecialchars($q) : '' ?>" name="q" placeholder="<?= __('Search') ?>" />
+    <button type="submit" class="btn btn-outline-success btn-sm"><i class="fa fa-search"></i></button>
+</form>
+
+<div class="md-ws-cats">
+    <a data-ajax class="md-ws-cat<?= !isset($category) ? ' is-active' : '' ?>" href="<?= url_to('/shop/' . $shop['slug']) ?>">
+        <?= __('All') ?>
+    </a>
+
+    <?php foreach ($categories as $root): ?>
+        <?php $children = isset($root['children']) ? $root['children'] : [] ?>
+        <?php if (empty($children)): ?>
+            <a data-ajax class="md-ws-cat<?= isset($category) && $category['id'] == $root['id'] ? ' is-active' : '' ?>" href="<?= url_to('/shop/' . $shop['slug'] . '/' . $root['slug']) ?>">
+                <?= $root['name'] ?>
+            </a>
+        <?php else: ?>
+            <div class="md-ws-cat-group">
+                <div class="md-ws-cat-group__title"><?= $root['name'] ?></div>
+                <?php foreach ($children as $cat): ?>
+                    <a data-ajax class="md-ws-cat<?= isset($category) && $category['id'] == $cat['id'] ? ' is-active' : '' ?>" href="<?= url_to('/shop/' . $shop['slug'] . '/' . $cat['slug']) ?>">
+                        <?= $cat['name'] ?>
+                    </a>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+    <?php endforeach ?>
+</div>

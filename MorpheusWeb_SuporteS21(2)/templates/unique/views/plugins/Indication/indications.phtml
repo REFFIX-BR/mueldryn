@@ -1,0 +1,57 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Indications') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/panel/account/info') ?>" data-ajax><?= __('My account') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Indications') ?></li>
+        </ol>
+    </nav>
+
+    <table class="table table-sm table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th><?= __('Character') ?></th>
+                <?php if (plugin_active('Patents')): ?>
+                    <th><?= __('Patent') ?></th>
+                <?php endif ?>
+                <th width="80" style="text-align:center"><?= __('Level') ?></th>
+                <?php if (config('columns.resets', false)): ?>
+                    <th width="80" style="text-align:center"><?= __('Resets') ?></th>
+                <?php endif ?>
+                <?php if (config('columns.master_resets', false)): ?>
+                    <th width="120" style="text-align:center"><?= __('Master Resets') ?></th>
+                <?php endif ?>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach ($indications as $indication): ?>
+                <tr>
+                    <td><?= $indication['name'] ?></td>
+                    <?php if (plugin_active('Patents')): ?>
+                        <td><?= $indication['patentTitle'] ?></td>
+                    <?php endif ?>
+                    <td class="text-center"><?= $indication['level'] ?></td>
+                    <?php if (config('columns.resets', false)): ?>
+                        <td class="text-center"><?= $indication['resets'] ?></td>
+                    <?php endif ?>
+                    <?php if (config('columns.master_resets', false)): ?>
+                        <td class="text-center"><?= $indication['masterResets'] ?></td>
+                    <?php endif ?>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>

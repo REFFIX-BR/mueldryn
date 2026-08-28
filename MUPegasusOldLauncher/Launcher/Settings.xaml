@@ -1,0 +1,649 @@
+<Window
+	x:Class="Launcher.Options" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Cursor="Arrow"
+	ResizeMode="NoResize"
+	WindowStartupLocation="CenterScreen"
+	WindowStyle="None"
+	AllowsTransparency="True"
+	Title="Window1"
+	Height="552"
+	Width="402.667"
+	Icon="Resources/ico.ico" xmlns:launcher="clr-namespace:Launcher"
+	Background="{x:Null}">
+	<Grid
+		Width="400"
+		Height="550"
+		Loaded="Grid_Loaded">
+		<Panel.Background>
+			<ImageBrush
+				ImageSource="Resources/settings_bg.bmp" />
+		</Panel.Background>
+		<Button
+			Name="Close"
+			HorizontalAlignment="Left"
+			Margin="176,500,0,0"
+			VerticalAlignment="Top"
+			Width="108"
+			Height="40"
+			BorderThickness="0"
+			RenderTransformOrigin="-0.775,8.675"
+			Background="{x:Null}"
+			PreviewMouseLeftButtonUp="Close_PreviewMouseLeftButtonUp">
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<StackPanel>
+						<Image
+							Name="Close2"
+							Source="Resources/Cancel.bmp"
+							Stretch="Fill"
+							Visibility="Collapsed" />
+						<Image
+							Name="Close1"
+							Source="Resources/Cancel.bmp"
+							Stretch="Fill"
+							Visibility="Visible" />
+					</StackPanel>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Close2"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								TargetName="Close1"
+								Property="Visibility"
+								Value="Collapsed" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Control.Template>
+		</Button>
+		<CheckBox
+			Name="Music"
+			Width="16"
+			Height="16"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,304,104,0"
+			BorderThickness="0"
+			Background="#00FFFFFF">
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<Grid>
+						<Border
+							Name="Border"
+							CornerRadius="2"
+							Background="#00FFFFFF"
+							BorderBrush="#FFFFFFFF"
+							BorderThickness="1" />
+						<Viewbox
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+							<Path
+								Name="CheckMark"
+								Data="M0,5 L2,7 L7,0"
+								Stroke="#FFFFFFFF"
+								StrokeThickness="2"
+								Visibility="Collapsed" />
+						</Viewbox>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="CheckMark"
+								Property="Visibility"
+								Value="Visible" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FFD3D3D3" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Control.Template>
+		</CheckBox>
+		<CheckBox
+			Name="WinMode"
+			Width="16"
+			Height="15"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="178,196,0,0"
+			BorderThickness="0">
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<Grid>
+						<Border
+							Name="Border"
+							CornerRadius="2"
+							Background="#00FFFFFF"
+							BorderBrush="#FFFFFFFF"
+							BorderThickness="1" />
+						<Viewbox
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+							<Path
+								Name="CheckMark"
+								Data="M0,5 L2,7 L7,0"
+								Stroke="#FFFFFFFF"
+								StrokeThickness="2"
+								Visibility="Collapsed" />
+						</Viewbox>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="CheckMark"
+								Property="Visibility"
+								Value="Visible" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FFD3D3D3" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Control.Template>
+		</CheckBox>
+		<CheckBox
+			Name="Effects"
+			Width="16"
+			Height="15"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="172,304,0,0"
+			BorderThickness="0"
+			Background="#00FFFFFF">
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<Grid>
+						<Border
+							Name="Border"
+							CornerRadius="2"
+							Background="#00FFFFFF"
+							BorderBrush="#FFFFFFFF"
+							BorderThickness="1" />
+						<Viewbox
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+							<Path
+								Name="CheckMark"
+								Data="M0,5 L2,7 L7,0"
+								Stroke="#FFFFFFFF"
+								StrokeThickness="2"
+								Visibility="Collapsed" />
+						</Viewbox>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="CheckMark"
+								Property="Visibility"
+								Value="Visible" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FFD3D3D3" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Control.Template>
+		</CheckBox>
+		<Button
+			Name="Save"
+			HorizontalAlignment="Left"
+			Margin="298,500,0,0"
+			VerticalAlignment="Top"
+			Width="83"
+			Height="40"
+			BorderThickness="0"
+			Background="{x:Null}"
+			Click="Save_Click">
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<StackPanel>
+						<Image
+							Name="Save2"
+							Source="Resources/Ok.bmp"
+							Stretch="Fill"
+							Visibility="Collapsed"
+							Height="36"
+							Margin="0,0,0,0" />
+						<Image
+							Name="Save1"
+							Source="Resources/Ok.bmp"
+							Stretch="Fill"
+							Visibility="Visible"
+							Height="36"
+							Margin="0,0,0,0" />
+					</StackPanel>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Save2"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								TargetName="Save1"
+								Property="Visibility"
+								Value="Collapsed" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Control.Template>
+		</Button>
+		<ComboBox
+			Name="Resolution"
+			Width="190"
+			Height="23"
+			Margin="187,149,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			IsEditable="True"
+			Foreground="#FFFFFFFF"
+			Background="#00FFFFFF"
+			BorderThickness="0"
+			FocusVisualStyle="{x:Null}">
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Style
+						TargetType="{x:Type TextBox}"
+						x:Key="TransparentTextBox">
+						<Setter
+							Property="Background"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="Foreground"
+							Value="#FFFFFFFF" />
+						<Setter
+							Property="BorderThickness"
+							Value="0" />
+						<Setter
+							Property="TextBoxBase.CaretBrush"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="TextBoxBase.IsReadOnly"
+							Value="True" />
+						<Setter
+							Property="Focusable"
+							Value="False" />
+					</Style>
+					<Style
+						TargetType="{x:Type ToggleButton}"
+						x:Key="TransparentToggleButton">
+						<Setter
+							Property="Background"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="BorderThickness"
+							Value="0" />
+						<Setter
+							Property="FrameworkElement.OverridesDefaultStyle"
+							Value="True" />
+						<Setter
+							Property="Focusable"
+							Value="False" />
+						<Setter
+							Property="Template">
+							<Setter.Value>
+								<ControlTemplate
+									TargetType="{x:Type ToggleButton}">
+									<Grid
+										Background="#00FFFFFF">
+										<Path
+											Name="Arrow"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Data="M0,0 L4,4 L8,0"
+											Fill="#FFFFFFFF" />
+									</Grid>
+									<ControlTemplate.Triggers>
+										<Trigger
+											Property="UIElement.IsMouseOver"
+											Value="True">
+											<Setter
+												TargetName="Arrow"
+												Property="Fill"
+												Value="#FFFFFFFF" />
+										</Trigger>
+										<Trigger
+											Property="IsPressed"
+											Value="True">
+											<Setter
+												TargetName="Arrow"
+												Property="Fill"
+												Value="#FFFFFFFF" />
+										</Trigger>
+									</ControlTemplate.Triggers>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type ComboBox}">
+					<Grid>
+						<TextBox
+							Name="PART_EditableTextBox"
+							Style="{StaticResource TransparentTextBox}"
+							Text="{TemplateBinding Text}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Center" />
+						<ToggleButton
+							Name="ToggleButton"
+							Style="{StaticResource TransparentToggleButton}"
+							HorizontalAlignment="Right"
+							Width="20"
+							IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" />
+						<Popup
+							Name="Popup"
+							Placement="Bottom"
+							IsOpen="{TemplateBinding IsDropDownOpen}"
+							AllowsTransparency="True"
+							Focusable="False"
+							PopupAnimation="Slide">
+							<Border
+								Background="#222"
+								BorderBrush="#FFFFFFFF"
+								BorderThickness="1"
+								CornerRadius="4"
+								Width="180">
+								<ScrollViewer
+									Margin="0"
+									SnapsToDevicePixels="True">
+									<StackPanel
+										IsItemsHost="True"
+										KeyboardNavigation.DirectionalNavigation="Contained" />
+								</ScrollViewer>
+							</Border>
+						</Popup>
+					</Grid>
+				</ControlTemplate>
+			</Control.Template>
+		</ComboBox>
+		<Canvas>
+			<CheckBox
+				Name="Color16bit"
+				Width="16"
+				Height="16"
+				Canvas.Left="172"
+				Canvas.Top="246"
+				Background="#00FFFFFF"
+				Content="16bit"
+				Checked="Color16bit_Checked">
+				<Control.Template>
+					<ControlTemplate
+						TargetType="{x:Type CheckBox}">
+						<Grid>
+							<Border
+								Name="Border"
+								CornerRadius="2"
+								Background="#00FFFFFF"
+								BorderBrush="#FFFFFFFF"
+								BorderThickness="1" />
+							<Viewbox
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center">
+								<Path
+									Name="CheckMark"
+									Data="M0,5 L2,7 L7,0"
+									Stroke="#FFFFFFFF"
+									StrokeThickness="2"
+									Visibility="Collapsed" />
+							</Viewbox>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger
+								Property="ToggleButton.IsChecked"
+								Value="True">
+								<Setter
+									TargetName="CheckMark"
+									Property="Visibility"
+									Value="Visible" />
+							</Trigger>
+							<Trigger
+								Property="UIElement.IsMouseOver"
+								Value="True">
+								<Setter
+									TargetName="Border"
+									Property="BorderBrush"
+									Value="#FFD3D3D3" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Control.Template>
+			</CheckBox>
+			<CheckBox
+				Name="Color32bit"
+				Width="16"
+				Height="16"
+				Canvas.Left="280"
+				Canvas.Top="246"
+				Background="#00FFFFFF"
+				Content="32bit"
+				Checked="Color32bit_Checked">
+				<Control.Template>
+					<ControlTemplate
+						TargetType="{x:Type CheckBox}">
+						<Grid>
+							<Border
+								Name="Border"
+								CornerRadius="2"
+								Background="#00FFFFFF"
+								BorderBrush="#FFFFFFFF"
+								BorderThickness="1" />
+							<Viewbox
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center">
+								<Path
+									Name="CheckMark"
+									Data="M0,5 L2,7 L7,0"
+									Stroke="#FFFFFFFF"
+									StrokeThickness="2"
+									Visibility="Collapsed" />
+							</Viewbox>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger
+								Property="ToggleButton.IsChecked"
+								Value="True">
+								<Setter
+									TargetName="CheckMark"
+									Property="Visibility"
+									Value="Visible" />
+							</Trigger>
+							<Trigger
+								Property="UIElement.IsMouseOver"
+								Value="True">
+								<Setter
+									TargetName="Border"
+									Property="BorderBrush"
+									Value="#FFD3D3D3" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Control.Template>
+			</CheckBox>
+		</Canvas>
+		<TextBox
+			Name="AccountBox"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Width="180"
+			Height="23"
+			Margin="187,104,0,0"
+			Text="account"
+			Background="#00FFFFFF"
+			Foreground="#FFFFFFFF"
+			BorderThickness="0"
+			CaretBrush="#FFFFFFFF"
+			FontSize="14"
+			FontWeight="Normal" />
+		<ComboBox
+			Name="Language"
+			Width="85"
+			Height="25"
+			Margin="289,364,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			IsEditable="True"
+			Foreground="#FFFFFFFF"
+			Background="#00FFFFFF"
+			BorderThickness="0"
+			FocusVisualStyle="{x:Null}">
+			<ComboBoxItem
+				Content="VNE" />
+			<ComboBoxItem
+				Content="ENG" />
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Style
+						TargetType="{x:Type TextBox}"
+						x:Key="TransparentTextBox">
+						<Setter
+							Property="Background"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="Foreground"
+							Value="#FFFFFFFF" />
+						<Setter
+							Property="BorderThickness"
+							Value="0" />
+						<Setter
+							Property="TextBoxBase.CaretBrush"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="TextBoxBase.IsReadOnly"
+							Value="True" />
+						<Setter
+							Property="Focusable"
+							Value="False" />
+					</Style>
+					<Style
+						TargetType="{x:Type ToggleButton}"
+						x:Key="TransparentToggleButton">
+						<Setter
+							Property="Background"
+							Value="#00FFFFFF" />
+						<Setter
+							Property="BorderThickness"
+							Value="0" />
+						<Setter
+							Property="FrameworkElement.OverridesDefaultStyle"
+							Value="True" />
+						<Setter
+							Property="Focusable"
+							Value="False" />
+						<Setter
+							Property="Template">
+							<Setter.Value>
+								<ControlTemplate
+									TargetType="{x:Type ToggleButton}">
+									<Grid
+										Background="#00FFFFFF">
+										<Path
+											Name="Arrow"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Data="M0,0 L4,4 L8,0"
+											Fill="#FFFFFFFF" />
+									</Grid>
+									<ControlTemplate.Triggers>
+										<Trigger
+											Property="UIElement.IsMouseOver"
+											Value="True">
+											<Setter
+												TargetName="Arrow"
+												Property="Fill"
+												Value="#FFFFFFFF" />
+										</Trigger>
+										<Trigger
+											Property="IsPressed"
+											Value="True">
+											<Setter
+												TargetName="Arrow"
+												Property="Fill"
+												Value="#FFFFFFFF" />
+										</Trigger>
+									</ControlTemplate.Triggers>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+			<Control.Template>
+				<ControlTemplate
+					TargetType="{x:Type ComboBox}">
+					<Grid>
+						<TextBox
+							Name="PART_EditableTextBox"
+							Style="{StaticResource TransparentTextBox}"
+							Text="{TemplateBinding Text}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Center" />
+						<ToggleButton
+							Name="ToggleButton"
+							Style="{StaticResource TransparentToggleButton}"
+							HorizontalAlignment="Right"
+							Width="20"
+							IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" />
+						<Popup
+							Name="Popup"
+							Placement="Bottom"
+							IsOpen="{TemplateBinding IsDropDownOpen}"
+							AllowsTransparency="True"
+							Focusable="False"
+							PopupAnimation="Slide">
+							<Border
+								Background="#222"
+								BorderBrush="#FFFFFFFF"
+								BorderThickness="1"
+								CornerRadius="4"
+								Width="80">
+								<ScrollViewer
+									Margin="0"
+									SnapsToDevicePixels="True">
+									<StackPanel
+										IsItemsHost="True"
+										KeyboardNavigation.DirectionalNavigation="Contained" />
+								</ScrollViewer>
+							</Border>
+						</Popup>
+					</Grid>
+				</ControlTemplate>
+			</Control.Template>
+		</ComboBox>
+	</Grid>
+</Window>
+
+

@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    $(function () {
+        $("#rankings-table tbody").sortable({
+            opacity: 0.6,
+            cursor: "move",
+            placeholder: "placeholder",
+            helper: fixHelper,
+            axis: "y",
+            items: ".drag",
+            update: function() {
+                var order = $(this).sortable("serialize");
+                $.post(base + "admin/configs/rankings/reorder", order, function(data) {
+                });
+            }
+        });
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Resets settings') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-success btn-sm" href="<?= url_to('/admin/configs/rankings/add') ?>"><?= __('Add') ?></a>
+    </div>
+</section>
+
+<div class="modal" id="modal-edit" data-width="400"></div>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax class="form-horizontal form-focus" action="<?= url_to('/admin/configs/rankings') ?>" method="post">
+            <div class="box-body">
+                <table id="rankings-table" class="table table-condensed table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th width="60"></th>
+                            <th><?= __('Ranking') ?></th>
+                            <th width="10"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($rankings as $ranking): ?>
+                            <?php $r = isset(config('rankings')[$ranking]) ? config('rankings')[$ranking] : null ?>
+                            <tr id="sequence_<?= $ranking ?>" class="drag">
+                                <td style="vertical-align:middle">
+                                    <i style="margin-right:10px" class="fa fa-bars"></i> <input<?= $r && $r['active'] ? ' checked' : '' ?> type="checkbox" name="rankings[<?= $ranking ?>][active]" value="1" />
+                                </td>
+                                <td style="vertical-align:bottom"><input type="text" name="rankings[<?= $ranking ?>][name]" value="<?= isset($r['name']) ? $r['name'] : $ranking ?>" class="form-control" /></td>
+                                <td style="vertical-align:middle;white-space:nowrap;text-align:right">
+                                    <?php $configs = Morpheus\Ranking\Ranking::factory($ranking, ['name' => $ranking])->getConfigs() ?>
+                                    <?php if (!empty($configs)): ?>
+                                        <a data-load-with-modal data-modal="modal-edit" class="btn btn-xs btn-default" href="<?= url_to('/admin/configs/rankings/' . $ranking) ?>"><?= __('Config') ?></a>
+                                    <?php endif ?>
+                                    <?php if ($r && isset($r['custom']) && $r['custom']): ?>
+                                        <a data-ajax-delete class="btn btn-xs btn-danger" href="<?= url_to('/admin/configs/rankings/delete/' . $ranking) ?>"><?= __('Delete') ?></a>
+                                    <?php endif ?>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+            </div>
+        </form>
+    </div>
+</section>

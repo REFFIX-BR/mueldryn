@@ -1,0 +1,26 @@
+<h4><?= __('My payment confirmations') ?></h4>
+<table class="table table-sm table-hover table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th width="40"><?= __('ID') ?></th>
+        <th><?= __('Date') ?></th>
+        <th><?= __('Value') ?></th>
+        <th width="50"><?= __('Status') ?></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach ($confirmations as $confirmation): ?>
+            <tr>
+                <td><a data-ajax href="<?= url_to('/orders/payment-confirmations/' . $confirmation['id']) ?>">#<?= $confirmation['id'] ?></a></td>
+                <td><?= util('Date')->date($confirmation['create_date']) ?></td>
+                <td><?= util('Number')->currency($confirmation['value']) ?></td>
+                <td><?= util('Donate.PaymentConfirmation')->paymentStatus($confirmation['status']) ?></td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+
+<div style="margin-top:10px">
+    <a data-ajax href="<?= url_to('/orders/payment-confirmations/add') ?>" class="btn bg-orange"><?= __('New payment confirmation') ?></a>
+</div>

@@ -1,0 +1,15 @@
+<div class="slider-container" data-live="<?= isset($options['live']) ?>">
+    <ul id="slider">
+        <?php foreach ($slides as $slide): ?>
+            <li>
+                <?php if (empty($slide['url'])): ?>
+                    <img alt="<?= $slide['title'] ?>" src="<?= upload_to('/slides/' . $slide['image']) ?>" />
+                <?php else: ?>
+                    <a target="_blank" href="<?= $slide['url'] ?>">
+                        <img alt="<?= $slide['title'] ?>" src="<?= upload_to('/slides/' . $slide['image']) ?>" />
+                    </a>
+                <?php endif ?>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

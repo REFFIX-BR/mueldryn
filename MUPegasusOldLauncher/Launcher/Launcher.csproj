@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA6B60A5-75CC-471E-B48D-22581EB37150}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Launcher</RootNamespace>
+    <AssemblyName>Launcher</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Launcher.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Crc32.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="SecureStringManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ico.ico" />
+    <Resource Include="image1.png" />
+    <Resource Include="resources\background.png" />
+    <Resource Include="resources\cancel.bmp" />
+    <Resource Include="resources\cansel.bmp" />
+    <Resource Include="resources\cansel_hover.bmp" />
+    <Resource Include="resources\checkbox.bmp" />
+    <Resource Include="resources\checkbox_selected.bmp" />
+    <Resource Include="resources\close.bmp" />
+    <Resource Include="resources\close_hover.bmp" />
+    <Resource Include="resources\discord40x45.png" />
+    <Resource Include="resources\facebook.png" />
+    <Resource Include="resources\facebook_hover.png" />
+    <Resource Include="resources\forum.png" />
+    <Resource Include="resources\forum_hover.png" />
+    <Resource Include="resources\gamestart.bmp" />
+    <Resource Include="resources\gamestart_hover.bmp" />
+    <Resource Include="resources\gamestart_no.bmp" />
+    <Resource Include="resources\home.png" />
+    <Resource Include="resources\home_hover.png" />
+    <Resource Include="resources\ico.ico" />
+    <Resource Include="resources\image\discord40x45-hover.png" />
+    <Resource Include="resources\image\discord40x45.png" />
+    <Resource Include="resources\image\image1.png" />
+    <Resource Include="resources\minimaze.bmp" />
+    <Resource Include="resources\minimaze_hover.bmp" />
+    <Resource Include="resources\news.png" />
+    <Resource Include="resources\ok.bmp" />
+    <Resource Include="resources\progressbar_1.bmp" />
+    <Resource Include="resources\progressbar_2.bmp" />
+    <Resource Include="resources\save.bmp" />
+    <Resource Include="resources\save_hover.bmp" />
+    <Resource Include="resources\settings.bmp" />
+    <Resource Include="resources\settings_bg.bmp" />
+    <Resource Include="resources\settings_hover.bmp" />
+    <Resource Include="resources\socials\discord.png" />
+    <Resource Include="resources\socials\discord_hover.png" />
+    <Resource Include="resources\socials\facebook.png" />
+    <Resource Include="resources\socials\facebook_hover.png" />
+    <Resource Include="resources\socials\instagram.png" />
+    <Resource Include="resources\socials\instagram_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ok_button.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

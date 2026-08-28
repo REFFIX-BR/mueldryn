@@ -1,0 +1,126 @@
+<?php View::add('page.title', __('Downloads')) ?>
+
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Downloads') ?></h1>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item active"><?= __('Download') ?></li>
+        </ol>
+    </nav>
+
+    <h2 class="title"><?= __('Files') ?></h2>
+    <table class="table table-sm table-hover table-striped table-center">
+        <thead class="thead-dark">
+            <tr>
+                <th width="120"><?= __('File') ?></th>
+                <th><?= __('Description') ?></th>
+                <th style="text-align:center"><?= __('Size') ?></th>
+                <th style="text-align:center" width="10"><?= __('Links') ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach (config('downloads', []) as $download): ?>
+                <tr>
+                    <td><?= $download['name'] ?></td>
+                    <td><?= $download['desc'] ?></td>
+                    <td style="text-align:center"><?= $download['size'] ?></td>
+                    <td style="text-align:center;white-space:nowrap">
+                        <?php foreach ($download['links'] as $name => $url): ?>
+                            <a data-toggle="tooltip" data-placement="bottom" title="<?= $name ?>" class="btn btn-sm btn-info" href="<?= $url ?>" target="_blank"><i class="fa fa-download"></i></a>
+                        <?php endforeach ?>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+
+    <h2 class="title"><?= __('Additional downloads (not required)') ?></h2>
+    <table class="table table-sm table-hover table-striped table-center">
+        <thead class="thead-dark">
+            <tr>
+                <th><?= __('File') ?></th>
+                <th width="2%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DirectX End-User Runtime Web Installer</td>
+                <td><a class="btn btn-sm btn-info" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=2da43d38-db71-4c1b-bc6a-9b6652cd92a3&amp;DisplayLang=en" target="_blank"><i class="fa fa-download"></i></i></a></td>
+            </tr>
+            <tr>
+                <td>Microsoft Visual C++ 2008 Package(x86)</td>
+                <td><a class="btn btn-sm btn-info" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf&amp;displaylang=en" target="_blank"><i class="fa fa-download"></i></a></td>
+            </tr>
+            <tr>
+                <td>Visual Basic 6.0 Run-time Files</td>
+                <td><a class="btn btn-sm btn-info" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=ba9d7924-4122-44af-8ab4-7c039d9bf629&amp;DisplayLang=en" target="_blank"><i class="fa fa-download"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="title"><?= __('Requirements') ?></h2>
+    <table class="table table-sm table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th><?= __('Minimum required') ?></th>
+                <th><?= __('Recommended') ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CPU</td>
+                <td>Pentium II - 300 MHz</td>
+                <td>Pentium III - 500 MHz+</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>32MB</td>
+                <td>64MB+</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>Win9x</td>
+                <td>Win2000/XP</td>
+            </tr>
+            <tr>
+                <td>VIDEO</td>
+                <td>8MB</td>
+                <td>16MB with DirectX</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="title"><?= __('Drivers of video') ?></h2>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr style="text-align: center;">
+            <td>
+                <a href="http://support.amd.com/us/gpudownload/pages/index.aspx"><img src="<?= asset_to('/images/drivers/ati.gif') ?>" /></a>
+            </td>
+            <td>
+                <a href="http://downloadcenter.intel.com/default.aspx"><img src="<?= asset_to('/images/drivers/intel.gif') ?>" /></a>
+            </td>
+            <td>
+                <a href="http://www.matrox.com/graphics/en/corpo/support/drivers/home.php"><img src="<?= asset_to('/images/drivers/matrox.gif') ?>" /></a>
+            </td>
+            <td>
+                <a href="http://www.nvidia.com/download/index.aspx?lang=br"><img src="<?= asset_to('/images/drivers/nvidia.gif') ?>" /></a>
+            </td>
+            <td>
+                <a href="http://www.sis.com/download/"><img src="<?= asset_to('/images/drivers/sis.gif') ?>" /></a>
+            </td>
+        </tr>
+    </table>
+</div>

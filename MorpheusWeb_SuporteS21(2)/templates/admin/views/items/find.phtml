@@ -1,0 +1,22 @@
+<section class="content-header">
+    <h1><?= __('Find item by serial') ?></h1>
+</section>
+
+<section class="content">
+    <div class="box box-default">
+        <form data-ajax data-content="#find-item" class="form-horizontal form-focus" action="<?= url_to('/admin/items/find') ?>" method="post">
+            <div class="box-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="serial" />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary btn-flat"><?= __('Search') ?></button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="find-item" style="margin-top: 20px;">
+
+    </div>
+</section>

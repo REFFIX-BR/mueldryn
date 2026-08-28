@@ -1,0 +1,11 @@
+<h1 class="title"><?= __('Workshop') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Workshop') ?></li>
+</ul>
+
+<div class="align-center">
+    <a data-ajax href="<?= url_to('/workshop/inventory' . (count(user()->getCharacters()) ? '/' . user()->getCharacters()[0]->getName() : '')) ?>" class="btn"><?= __('Inventory') ?></a>
+    <a data-ajax href="<?= url_to('/workshop/warehouse') ?>" class="btn"><?= __('Warehouse') ?></a>
+</div>

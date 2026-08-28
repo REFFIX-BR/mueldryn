@@ -1,0 +1,169 @@
+<?php if ($blocked): ?>
+    <?= __('Item blocked for upgrade') ?>
+<?php else: ?>
+    <form class="form form-action" data-ajax action="<?= url_to($base . $slot . '/upgrade' . (isset($extended) && $extended !== null ? '?extended' : '')) ?>">
+        <div id="workshop-item">
+            <div class="box-panel">
+                <div class="box-panel-title"><?= $item->getName() ?></div>
+
+                <div class="box-panel-content">
+                    <div class="row">
+                        <div class="label">
+                            <label for="product-level"><?= __('Level') ?></label>
+                        </div>
+                        <div class="field align-right">
+                            <select data-default="<?= $item->getLevel() ?>" data-price="<?= config('workshop.prices.level', 0) ?>" name="level" id="item-level">
+                                <?php $maxLevel = config('workshop.max_level', 0) ?>
+                                <?php for ($i = 0; $i <= ($item->getLevel() > $maxLevel ? $item->getLevel() : $maxLevel); $i++): ?>
+                                    <option<?= $item->getLevel() > $i ? ' disabled' : '' ?><?= $item->getLevel() === $i ? ' selected' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">
+                            <label for="product-option"><?= __('Option') ?></label>
+                        </div>
+                        <div class="field align-right">
+                            <select data-default="<?= $item->getOption() ?>" data-price="<?= config('workshop.prices.option', 0) ?>" name="option" id="item-option">
+                                <?php $maxOption = config('workshop.max_option', 0) ?>
+                                <?php for ($i = 0; $i <= ($item->getOption() > $maxOption ? $item->getOption() : $maxOption); $i+=4): ?>
+                                    <option<?= $item->getOption() > $i ? ' disabled' : '' ?><?= $item->getOption() === $i ? ' selected' : '' ?> value="<?= $i ?>">+<?= $i ?></option>
+                                <?php endfor ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <?php if (config('workshop.allow_ancient', 0) && $item->getAncient()->exists()): ?>
+                        <div class="row">
+                            <div class="label">
+                                <label for="item-ancient"><?= __('Ancient') ?></label>
+                            </div>
+                            <div class="field align-right">
+                                <select data-default="<?= $item->getAncient()->get() ?>" data-price="<?= config('workshop.prices.ancient', 0) ?>" name="ancient" id="item-ancient">
+                                    <option value="0"></option>
+                                    <?php foreach ($item->getAncient()->available() as $index => $name): ?>
+                                        <option<?= $item->getAncient()->is($index) ? ' selected="selected"' : '' ?> value="<?= $index ?>"><?= $name ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($item->getDefinitions()->hasSkill()): ?>
+                        <div class="row">
+                            <div class="label">
+                                <label for="item-skill"><?= __('Skill') ?></label>
+                            </div>
+                            <div class="field checkbox align-right">
+                                <input<?= $item->hasSkill() ? ' disabled checked' : '' ?> data-default="<?= $item->hasSkill() ? 1 : 0 ?>" data-price="<?= config('workshop.prices.skill', 0) ?>" type="checkbox" id="item-skill" value="1" name="skill" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+
+                    <?php if ($item->getDefinitions()->hasLuck()): ?>
+                        <div class="row">
+                            <div class="label">
+                                <label for="item-luck"><?= __('Luck') ?></label>
+                            </div>
+                            <div class="field checkbox align-right">
+                                <input<?= $item->hasLuck() ? ' disabled checked' : '' ?> data-default="<?= $item->hasLuck() ? 1 : 0 ?>" data-price="<?= config('workshop.prices.luck', 0) ?>" type="checkbox" id="item-luck" value="1" name="luck" />
+                            </div>
+                        </div>
+                    <?php endif ?>
+                </div>
+            </div>
+
+            <?php if ($item->getDefinitions()->hasExcellentOptions()): ?>
+                <div class="box-panel margin-top">
+                    <div class="box-panel-title"><?= __('Excelent options') ?></div>
+
+                    <div class="box-panel-content">
+                        <ul class="excellent-options">
+                            <?php foreach ($item->getDefinitions()->getExcellentOptions() as $index => $name): ?>
+                                <li>
+                                    <label for="item-excellent-<?= $index ?>"><?= $name ?></label>
+                                    <div class="check">
+                                        <input<?= $item->getExcellent($index) ? ' disabled checked' : '' ?> data-default="<?= $item->getExcellent($index) ? 1 : 0 ?>" data-price="<?= config('workshop.prices.excellent', 0) ?>" type="checkbox" id="item-excellent-<?= $index ?>" value="1" name="excellent[<?= $index ?>]" />
+                                    </div>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if (config('workshop.allow_refine', 0) && $item->getDefinitions()->hasRefine()): ?>
+                <div class="box-panel margin-top">
+                    <div class="box-panel-title"><?= __('Level 380 option') ?></div>
+
+                    <div class="box-panel-content">
+                        <div class="row">
+                            <div class="label">
+                                <label for="item-refine"><?= __('Refine') ?></label>
+                            </div>
+                            <div class="field checkbox align-right">
+                                <input<?= $item->isRefine() ? ' disabled checked' : '' ?> data-default="<?= $item->isRefine() ? 1 : 0 ?>" data-price="<?= config('workshop.prices.refine', 0) ?>" type="checkbox" id="item-refine" value="1" name="refine" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if (config('workshop.allow_harmony', 0) && $item->getDefinitions()->hasHarmony()): ?>
+                <div class="box-panel margin-top">
+                    <div class="box-panel-title"><?= __('Harmony options') ?></div>
+
+                    <div class="box-panel-content">
+                        <select data-default="<?= $item->getHarmony()->getType() > 0 ? ($item->getHarmony()->getType() . ',' . $item->getHarmony()->getLevel()) : '' ?>" data-price="<?= config('workshop.prices.harmony', 0) ?>" id="item-harmony" name="harmony" style="width:100%">
+                            <option value=""></option>
+                            <?php foreach ($item->getHarmony()->available() as $harmony):  ?>
+                                <optgroup label="<?= substr($harmony['name'], 0, strlen($harmony['name']) - 3) ?>">
+                                    <?php foreach ($harmony['levels'] as $level): ?>
+                                        <option<?= $item->getHarmony()->getType() === $harmony['index'] && $item->getHarmony()->getLevel() === $level['level'] ? ' selected="selected"' : '' ?> value="<?= $harmony['index'] ?>,<?= $level['level'] ?>"><?= sprintf($harmony['name'], $level['name']) ?></option>
+                                    <?php endforeach ?>
+                                </optgroup>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if (config('workshop.allow_sockets') && $item->getDefinitions()->hasSockets()): ?>
+                <div class="box-panel margin-top">
+                    <div class="box-panel-title"><?= __('Socket options') ?></div>
+
+                    <div class="box-panel-content">
+
+                        <?php for ($i = 0; $i < $item->getDefinitions()->getMaxSockets(); $i++): ?>
+                            <?php $socket = $item->getSocket($i) ?>
+                            <div class="label">
+                                <label for="item-socket-<?= $i ?>"><?= __('Socket #%d', $i+1) ?></label>
+                            </div>
+                            <div class="field align-right">
+                                <select data-default="<?= $socket->get() ?>" data-price="<?= config('workshop.prices.socket', 0) ?>" id="item-socket-<?= $i ?>" name="socket[<?= $i ?>]" style="width:100%">
+                                    <option<?= $socket->get() === $socket->getNoValue() ? ' selected="selected"' : '' ?>  value="<?= $socket->getNoValue() ?>"><?= __('No socket') ?></option>
+                                    <option<?= $socket->get() === $socket->getEmptyValue() ? ' selected="selected"' : '' ?> value="<?= $socket->getEmptyValue() ?>"><?= __('Empty socket') ?></option>
+                                    <?php foreach ($item->getDefinitions()->getSockets() as $type => $socks):  ?>
+                                        <optgroup label="<?= __($type) ?>">
+                                            <?php foreach ($socks as $sock): ?>
+                                                <option<?= $socket->get() === $sock['value'] ? ' selected="selected"' : '' ?> value="<?= $sock['value'] ?>"><?= $sock['name'] ?></option>
+                                            <?php endforeach ?>
+                                        </optgroup>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        <?php endfor ?>
+                    </div>
+                </div>
+            <?php endif ?>
+        </div>
+
+        <div class="workshop-upgrade-price">Total <span id="upgrade-price"></span> <?= util('Coin')->name(config('workshop.coin')) ?></div>
+
+        <div class="submit">
+            <input type="submit" class="btn" value="<?= __('Upgrade') ?>" />
+        </div>
+    </form>
+<?php endif ?>

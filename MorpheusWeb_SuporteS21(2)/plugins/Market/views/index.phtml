@@ -1,0 +1,80 @@
+<h1 class="title"><?= __('Market') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Market') ?></li>
+</ul>
+
+<?php if (!empty($myitems)): ?>
+    <div class="box-panel">
+        <div class="box-panel-title"><?= __('My items') ?></div>
+        <div class="box-panel-content">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th><?= __('Name') ?></th>
+                        <th><?= __('Price') ?></th>
+                        <th><?= __('Bought date') ?></th>
+                        <th width="10"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($myitems as $item): ?>
+                        <?php if (empty($item['item'])) continue; ?>
+                        <tr>
+                            <td><?= util('Item')->getFullName($item['item']) ?></td>
+                            <td><?= $item['price'] ?> <?= util('Market.Market')->paymentName($item['payment_type'], $item['coin']) ?></td>
+                            <td><?= util('Date')->date($item['bought_date']) ?></td>
+                            <td>
+                                <?php if (empty($item['bought_date'])): ?>
+                                    <a data-ajax-action href="<?= url_to('/market/remove/' . $item['id']) ?>"><?= __('remove') ?></a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php endif ?>
+
+<div class="margin-top">
+    <a data-ajax class="btn" href="<?= url_to('/market/sell') ?>"><?= __('Sell item') ?></a>
+</div>
+
+<hr />
+
+<div class="market-search">
+    <form action="<?= url_to('/market') ?>" type="get">
+        <input type="text" value="<?= isset($q) ? $q : '' ?>" name="q" placeholder="<?= __('Search') ?>" />
+    </form>
+
+    <p class="title"><?= __('Category') ?></p>
+    <ul>
+        <?php foreach (config('item.categories') as $index => $category): ?>
+            <li><a data-ajax href="<?= url_to('/market?category=' . $index) ?>"><?= $category ?></a></li>
+        <?php endforeach ?>
+    </ul>
+</div>
+
+<div class="market-itens">
+    <?php foreach ($items as $item): ?>
+	<?php if (empty($item['item'])) continue; ?>
+        <div class="item">
+            <div class="name"><?= util('Item')->getFullName($item['item']) ?></div>
+            <div class="image" data-tooltip data-tooltip-url="<?= resource_to('/item.php?hex=' . $item['item']->getHex()) ?>">
+                <img src="<?= util('Item')->getImage($item['item']) ?>" />
+            </div>
+            <div class="info">
+                <?= $item['price'] ?> <?= util('Market.Market')->paymentName($item['payment_type'], $item['coin']) ?>
+            </div>
+            <div class="buy">
+                <a data-ajax-action href="<?= url_to('/market/buy/' . $item['id']) ?>" class="btn"><?= __('Buy') ?></a>
+            </div>
+        </div>
+    <?php endforeach ?>
+
+    <div class="clear"></div>
+
+    <?= $paginator->toHtml() ?>
+</div>

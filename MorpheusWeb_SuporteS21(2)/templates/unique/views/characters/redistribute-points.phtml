@@ -1,0 +1,42 @@
+<?= partial('rates') ?>
+
+<form data-ajax action="<?= url_to('/panel/character/' . $character->getName() . '/redistribute-points') ?>" class="form" method="post">
+    <?= function_exists('csrf_field') ? csrf_field() : '' ?>
+
+    <table class="table table-sm table-striped">
+        <tbody>
+            <tr>
+                <td><?= __('Points') ?></td>
+                <td class="text-right"><?= util('Number')->format($character->getPoints()) ?></td>
+            </tr>
+            <tr>
+                <td><?= __('Strength') ?></td>
+                <td class="text-right"><?= util('Number')->format($character->getStrength()) ?></td>
+            </tr>
+            <tr>
+                <td><?= __('Agility') ?></td>
+                <td class="text-right"><?= util('Number')->format($character->getAgility()) ?></td>
+            </tr>
+            <tr>
+                <td><?= __('Vitality') ?></td>
+                <td class="text-right"><?= util('Number')->format($character->getVitality()) ?></td>
+            </tr>
+            <tr>
+                <td><?= __('Energy') ?></td>
+                <td class="text-right"><?= util('Number')->format($character->getEnergy()) ?></td>
+            </tr>
+            <?php if (util('Character')->isClass($character->getClass(), ['DL', 'LE'])): ?>
+                <tr>
+                    <td><?= __('Leadership') ?></td>
+                    <td class="text-right"><?= util('Number')->format($character->getCommand()) ?></td>
+                </tr>
+            <?php endif ?>
+            <tr>
+                <td><?= __('Total points') ?></td>
+                <td class="text-right"><?= util('Number')->format($totalPoints) ?></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input type="submit" class="btn btn-info" value="<?= __('Redistribute') ?>">
+</form>

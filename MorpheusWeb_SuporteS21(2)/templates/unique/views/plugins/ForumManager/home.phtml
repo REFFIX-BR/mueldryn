@@ -1,0 +1,9 @@
+<h1 class="title">
+    <?= __('Latest news') ?>
+</h1>
+
+<ul class="news">
+    <?php foreach ($topics as $topic): ?>
+        <li><a target="_blank" href="<?= str_replace(['{topic_id}', '{forum_id}'], [$topic['topic_id'], $topic['forum_id']], config('forum.news.topic_url')) ?>"><?= $topic['title'] ?></a></li>
+    <?php endforeach ?>
+</ul>

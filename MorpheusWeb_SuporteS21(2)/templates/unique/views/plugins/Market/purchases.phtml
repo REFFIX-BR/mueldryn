@@ -1,0 +1,18 @@
+<h2 class="title"><?= __('My purchases in market') ?></h2>
+<table class="table table-sm table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th><?= __('Item') ?></th>
+            <th class="text-center" width="120"><?= __('Bought at') ?></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach ($items as $item): ?>
+            <tr>
+                <td><?= util('Item')->getFullName($item['item']) ?></td>
+                <td class="text-center"><?= util('Date')->date($item['bought_date']) ?></td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>

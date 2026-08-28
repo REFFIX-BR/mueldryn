@@ -1,0 +1,77 @@
+<div class="tops-rankings">
+    <p class="title">
+        <?= __('Top players') ?>
+
+        <a class="more" data-ajax href="<?= url_to('/rankings') ?>">
+            <i class="fa fa-plus"></i>
+        </a>
+    </p>
+
+    <select class="form-control form-control-sm" id="change-top-ranking">
+        <?php $index = 0; foreach ($rankings as $ranking): ?>
+            <?php foreach ($ranking['data'] as $type => $data): ?>
+                <?php if ($type === 'realtime'): ?>
+                    <option value="<?= $index ?>"><?= $ranking['name'] ?></option>
+                <?php else: ?>
+                    <option value="<?= $index ?>">-- <?= __($type) ?></option>
+                <?php endif ?>
+                <?php $index++ ?>
+            <?php endforeach ?>
+        <?php endforeach ?>
+    </select>
+
+    <?php $index = 0; foreach ($rankings as $ranking): ?>
+        <?php foreach ($ranking['data'] as $type => $data): ?>
+            <div class="top-ranking-home top-ranking-single" id="<?= $index ?>" style="display:<?= $index === 0 ? 'block' : 'none' ?>">
+                <div class="top-ranking">
+                    <?php foreach ($data as $rank => $record): ?>
+                        <?php if ($rank === 0): ?>
+                            <div class="top-1">
+                                <img src="<?= asset_to('/images/top-1.png') ?>" />
+                            </div>
+
+                            <div class="image">
+                                <?php if ($ranking['is_guild']): ?>
+                                    <div class="avatar">
+                                        <?= util('Guild')->logo($record['mark'], 96) ?>
+                                    </div>
+                                <?php else: ?>
+                                    <img class="avatar" src="<?= util('Character')->avatar($record['avatar']) ?>" />
+                                    <img class="class" src="<?= asset_to('/images/class/' . strtolower(util('Character')->baseClass($record['class'])['short_name']) . '.png') ?>" />
+                                <?php endif ?>
+                            </div>
+
+                            <div class="name">
+                                <?= $record['name'] ?>
+                            </div>
+
+                            <div class="score">
+                                <?= __('Score') ?>: <?= $record['score'] ?>
+                            </div>
+                        <?php else: ?>
+                            <?php if ($rank === 1): ?>
+                                <div class="table-n">
+                            <?php endif ?>
+                            <div class="top-n top-<?= $rank + 1 ?>">
+                                <div class="r" style="width:30px"><strong><?= $rank + 1 ?>&deg;</strong></div>
+                                <div class="n"><?= $record['name'] ?></div>
+                                <div class="s"><?= $record['score'] ?></div>
+                                <div class="c" style="width:30px">
+                                    <?php if ($ranking['is_guild']): ?>
+                                        <?= util('Guild')->logo($record['mark'], 32) ?>
+                                    <?php else: ?>
+                                        <img class="class" src="<?= asset_to('/images/class/' . strtolower(util('Character')->baseClass($record['class'])['short_name']) . '.png') ?>" />
+                                    <?php endif ?>
+                                </div>
+                            </div>
+                            <?php if ($rank + 1 === count($data)): ?>
+                                </div>
+                            <?php endif ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php $index++ ?>
+        <?php endforeach ?>
+    <?php endforeach ?>
+</div>

@@ -1,0 +1,46 @@
+<h1 class="title"><?= __('Donate') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li class="active"><?= __('Donate') ?></li>
+</ul>
+
+<div class="gateways align-center">
+    <?php foreach (config('gateways', []) as $gateway => $config): ?>
+        <?php if ($config['active']): ?>
+            <a data-ajax href="<?= url_to('/donate/' . $gateway) ?>">
+                <img src="<?= asset_to('PaymentsGateways./images/logo-' . $gateway . '.png') ?>" height="55" />
+            </a>
+        <?php endif ?>
+    <?php endforeach ?>
+</div>
+
+<?php if (!empty($orders)): ?>
+    <div class="box-panel margin-top">
+        <div class="box-panel-title"><?= __('My orders') ?></div>
+        <div class="box-panel-content">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th><?= __('Gateway') ?></th>
+                        <th><?= __('Value') ?></th>
+                        <th width="120"><?= __('Created at') ?></th>
+                        <th width="100" style="text-align:right"><?= __('Status') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($orders as $order): ?>
+                        <tr>
+                            <td><?= $order['id'] ?></td>
+                            <td><?= $order['gateway'] ?></td>
+                            <td><?= util('Number')->currency($order['value'], ['currency' => $order['currency']]) ?></td>
+                            <td><?= util('Date')->dateTime($order['create_date']) ?></td>
+                            <td style="text-align:right"><?= util('PaymentsGateways.Gateway')->simplePaymentStatus($order['status']) ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php endif ?>

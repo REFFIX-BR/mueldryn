@@ -1,0 +1,52 @@
+<h1 class="title"><?= __('Donate') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/donate') ?>" data-ajax><?= __('Donate') ?></a></li>
+    <li class="active"><?= $gateway ?></li>
+</ul>
+
+<div class="box-panel">
+    <div class="box-panel-title"><?= __('Donate via %s', [$gateway]) ?></div>
+    <form data-ajax action="<?= url_to('/donate/' . $gateway) ?>" class="form" method="post">
+        <div class="box-panel-content">
+            <div class="row">
+                <div class="label">
+                    <label for="amount"><?= __('Value') ?> <span class="required">*</span></label>
+                </div>
+                <div class="field">
+                    <input type="text" id="amount" name="amount" style="width:150px" />,00
+                </div>
+            </div>
+
+            <?php if (isset($config['require_cpf']) && $config['require_cpf']): ?>
+                <div class="row">
+                    <div class="label">
+                        <label for="amount"><?= __('CPF') ?> <span class="required">*</span></label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="cpf" name="cpf" style="width:150px" />
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if (isset($config['currency']) && $config['currency']): ?>
+                <div class="row">
+                    <div class="label">
+                        <label for="currency"><?= __('Currency') ?> <span class="required">*</span></label>
+                    </div>
+                    <div class="field">
+                        <select id="currency" name="currency">
+                            <?php foreach ($currencies as $code => $currency): ?>
+                                <option value="<?= $code ?>"><?= $currency ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+        </div>
+        <div class="submit">
+            <input type="submit" class="btn" value="<?= __('Continue') ?>">
+        </div>
+    </form>
+</div>

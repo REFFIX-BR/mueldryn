@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title><?= config('site.title') ?> - <?= fetch('page.title') ?></title>
+
+        <meta name="csrf-token" content="<?= function_exists('csrf_token') ? csrf_token() : '' ?>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="<?= htmlspecialchars(config('server.name', 'MuEldryn')) ?> — Servidor privado Mu Online Season 6">
+        <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content="MuEldryn, Mu Online, MuOnline, MuServer, Season 6, servidor privado">
+        <meta property="og:title" content="<?= htmlspecialchars(config('site.title', 'MuEldryn')) ?>" />
+        <meta property="og:description" content="<?= htmlspecialchars(config('server.name', 'MuEldryn')) ?> — Servidor privado Mu Online" />
+
+        <link rel="icon" href="<?= asset_to('/favicon.ico') ?>" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+        <link rel="stylesheet" href="<?= resource_to('/css/morpheus.min.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/vendor/bootstrap/css/bootstrap.min.css') ?>" />
+        <link rel="stylesheet" href="<?= asset_to('/css/unique.css') ?>" />
+
+        <?= fetch('css') ?>
+    </head>
+
+    <body>
+        
+ 
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <div id="navbar" class="navbar-collapse collapse justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a data-ajax class="nav-link" href="<?= url_to('/') ?>"><?= __('Home') ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-ajax class="nav-link" href="<?= url_to('/downloads') ?>"><?= __('Downloads') ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-ajax class="nav-link" href="<?= url_to('/register') ?>"><?= __('Register') ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <?php $ranking = method_exists('\Morpheus\Util\Ranking', 'first') ? \Morpheus\Util\Ranking::first() : null ?>
+                            <a data-ajax class="nav-link" href="<?= url_to('/rankings' . ($ranking ? '/' . util('Inflector')->dasherize($ranking) : '')) ?>"><?= __('Rankings') ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-ajax class="nav-link" href="<?= url_to('/info') ?>"><?= __('Info') ?></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                <?= __('Donation') ?>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a data-ajax class="dropdown-item" href="<?= url_to('/donate') ?>"><?= __('Donation') ?></a>
+                                <a data-ajax class="dropdown-item" href="<?= url_to('/packages') ?>"><?= __('Buy Vip/Coin') ?></a>
+                                <a data-ajax class="dropdown-item" href="<?= url_to('/skins') ?>">Pacotes de skins</a>
+                                <?php if (has_vip_system()): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/vip') ?>"><?= __('VIP') ?></a>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/vip/advantages') ?>"><?= __('Advantages') ?></a>
+                                <?php endif ?>
+                            </div>
+                        </li>
+                        <?php if (plugin_active('Market')): ?>
+                            <li class="nav-item">
+                                <a data-ajax class="nav-link" href="<?= url_to('/market') ?>"><?= __('Market') ?></a>
+                            </li>
+                        <?php endif ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                <?= __('More') ?>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <?php if (plugin_active('Market')): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/market') ?>"><?= __('Market') ?></a>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/market/sell') ?>">Vender item</a>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/market/bank') ?>">Banco da Conta</a>
+                                <?php endif ?>
+                                <?php if (plugin_active('CharMarket')): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/panel/marketchars') ?>">Mercado de Personagens</a>
+                                <?php endif ?>
+                                <?php if (plugin_active('Guides')): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/guides') ?>"><?= __('Guides') ?></a>
+                                <?php endif ?>
+
+                                <?php if (plugin_active('Tracker')): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/trackers') ?>"><?= __('Trackers') ?></a>
+                                <?php endif ?>
+
+                                <?php if (plugin_active('Video')): ?>
+                                    <a data-ajax class="dropdown-item" href="<?= url_to('/videos') ?>"><?= __('Video') ?></a>
+                                <?php endif ?>
+                                <a class="dropdown-item" href="https://chat.whatsapp.com/LIVHB1pi8GwBS0CYaj7Liq" target="_blank" rel="noopener"><?= __('Whatsapp') ?></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="language text-center">
+                    <?php foreach ($languages as $key => $value): ?>
+                        <?php if (isset($languages)): ?>
+                            <a class="ml-2 <?= $key === $locale ? 'active' : '' ?>" href="<?= url_to('/lang/' . $key) ?>"><img src="<?= asset_to('/images/flags/' . $key . '.png') ?>" height="15" /></a>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        </nav>
+
+        <section class="header">
+            <div class="container" style="position:relative">
+                <a data-ajax class="brand" href="<?= url_to('/') ?>"> 
+                    <img src="<?= asset_to('/images/logo-header.png') ?>" alt="<?= config('server.name') ?>" />
+                </a>
+
+                <?php notify('countdowns') ?>
+            </div>
+        </section>
+
+        <section class="main">
+            <div class="container">
+                <div class="main-container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-9 col-sm-12">
+                            <div class="mw-content ajax-container">
+                                <?= $content ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="sidebar">
+                                <div class="form-row">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="partial-login">
+                                            <?= partial('login') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="servers">
+                                            <?php foreach (config('servers', []) as $server): ?>
+                                                <div class="server">
+                                                    <div class="status">
+                                                        <img src="<?= asset_to('/images/' . (server_status($server['server']) ? 'on' : 'off') . '.png') ?>" />
+                                                    </div>
+                                                    <div class="name"><?= $server['name'] ?></div>
+                                                    <div class="total">
+                                                        <?php if (config('players-online.show_type', 'all') !== 'none'): ?>
+                                                            <?php $max = array_sum(util('Hash')->extract(config('servers', []), '{s}.max')); $total = count(function_exists('server') ? server()->getCharactersOnline() : []); ?>
+                                                            <?php if (config('players-online.show_type', 'all') === 'all'): ?>
+                                                                <a data-ajax href="<?= url_to('/players-online') ?>"><?= $total ?></a>
+                                                            <?php else: ?>
+                                                                <?= $total ?>
+                                                            <?php endif ?>
+                                                            <i class="fa fa-users"></i>
+                                                        <?php endif ?>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach ?>
+                                        </div>
+
+                                        <div class="register">
+                                            <i class="fa fa-user-plus"></i>
+                                            <p class="my-3"><?= __('Register') ?></p>
+                                            <p class="description"><?= __('Come and be part of an exciting adventure that is') ?> <?= config('server.name') ?></p>
+
+                                            <a class="btn btn-block" data-ajax href="<?= url_to('/register') ?>"><?= __('New account') ?></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-12">
+                                        <?php notify('top-players') ?>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-12">
+                                        <?php notify('events.spotlight') ?>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-12">
+                                        <div class="team">
+                                            <div class="title"><?= __('Team') ?></div>
+
+                                            <ul>
+                                                <?php foreach (function_exists('server') ? server()->getMembersTeam() : [] as $char): ?>
+                                                    <li><?= $char['name'] ?> <span><?= util('Character')->status($char['status']) ?></span></li>
+                                                <?php endforeach ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-md-6 col-lg-12">
+                                        <?= notify('poll.last-active-poll') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="logo">
+                    <a href="<?= url_to('/') ?>">
+                        <img src="<?= asset_to('/images/logo-header.png') ?>" alt="<?= htmlspecialchars(config('server.name', 'MuEldryn')) ?>" />
+                    </a>
+                </div>
+
+                <div>
+                    <?= htmlspecialchars(config('server.name', 'MuEldryn')) ?> v.<?= MORPHEUS_VERSION ?><br />
+                    © Copyright <?= date('Y') ?> | <?= htmlspecialchars(config('server.name', 'MuEldryn')) ?>. All rights reserved.
+                </div>
+
+                <div class="social-icons">
+                    <span><?= __('Follow us') ?></span>
+                    <div class="icons-social-link">
+                        <a href="https://chat.whatsapp.com/LIVHB1pi8GwBS0CYaj7Liq" target="_blank" rel="noopener" title="WhatsApp"></a>
+                        <a href="<?= url_to('/') ?>" title="Site"></a>
+                        <a href="<?= url_to('/downloads') ?>" title="Downloads"></a>
+                        <a href="<?= url_to('/register') ?>" title="Registrar"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+        
+        <?= notify('modal') ?>
+
+        <script type="text/javascript" src="<?= resource_to('/js/jquery.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= resource_to('/js/morpheus.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/popper.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= asset_to('/js/unique.js') ?>"></script>
+
+        <script>
+            $(function () {
+                $.morpheus.base_path = '<?= url_to('/') ?>';
+                $.morpheus.use_bootstrap = true; 
+                $.morpheus.overlay.template = '<div class="preloader"><div class="loader"></div></div>';
+                $.morpheus.logo = '<?= asset_to('/images/logo-header.png') ?>';
+                $.morpheus.server_name = '<?= config('server.name') ?>';
+            });
+        </script>
+
+        <?= fetch('script') ?>
+    </body>
+</html>

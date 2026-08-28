@@ -1,0 +1,58 @@
+<h1 class="title"><?= $news->getTitle() ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/news') ?>" data-ajax><?= __('News') ?></a></li>
+    <li class="active"><?= $news->getTitle() ?></li>
+</ul>
+
+<div class="single-news">
+    <?php if ($news->hasImageCover()): ?>
+        <div class="image-cover">
+            <img src="<?= upload_to('/news/' . $news->getImageCover()) ?>" />
+        </div>
+    <?php endif ?>
+
+    <?= $news->getBody() ?>
+
+    <div class="clear"></div>
+</div>
+
+<?php if (config('news.allow_comments', false) && $news->isAllowedComments()): ?>
+    <h2 class="title"><?= __('Comments') ?></h2>
+    <?php if (!$news->hasComments()): ?>
+        <div class="msg"><?= __('No comments found') ?></div>
+    <?php else: ?>
+        <ul class="comments">
+            <?php foreach ($news->getComments() as $comment) : ?>
+                <li>
+                    <div class="desc">
+                        <span class="name">
+                            <?= $comment->getAuthor()->getName() ?>
+                        </span>
+                        <span class="created"><?= util('Time')->relative($comment->getCreated()) ?></span>
+                        <p class="body"><?= nl2br($comment->getComment()) ?></p>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    <?php endif ?>
+
+
+    <div class="box-panel margin-top">
+        <div class="box-panel-title"><?= __('Add comment') ?></div>
+        <form data-ajax action="<?= url_to('/news/comments/add/' . $news->getId()) ?>" class="form" method="post">
+            <div class="box-panel-content">
+                <div class="row">
+                    <div class="field block">
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="submit" value="<?= __('Send comment') ?>" class="btn" />
+            </div>
+        </form>
+    </div>
+<?php endif ?>

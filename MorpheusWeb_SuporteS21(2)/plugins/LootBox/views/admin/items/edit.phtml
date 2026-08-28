@@ -1,0 +1,277 @@
+<script>
+    function changeItem() {
+        var $section = $("#section");
+        var $idx = $("#idx");
+
+        if ($section.val() != ""
+            && $idx.val() != "") {
+
+            var $image = $("#item-image");
+            var $name = $("#item-name");
+            var $skill = $("#item-skill");
+            var $ancient = $("#item-ancient");
+            var $refine = $("#item-refine");
+            var $harmony = $("#item-harmony");
+            var $socket = $("#item-socket");
+            var $excellent = $("#item-excellent");
+
+            $.getJSON(base + "admin/json/lootboxes/item-info/" + $section.val() + "/" + $idx.val(), function (data) {
+                $image.attr("src", data.image);
+                $name.html(data.name);
+
+                if (data.has_skill) {
+                    $skill.show();
+                } else {
+                    $skill.hide();
+                }
+
+                if (data.is_ancient) {
+                    $ancient.show();
+                } else {
+                    $ancient.hide();
+                }
+
+                if (data.has_refine) {
+                    $refine.show();
+                } else {
+                    $refine.hide();
+                }
+
+                if (data.has_harmony) {
+                    $harmony.show();
+                } else {
+                    $harmony.hide();
+                }
+
+                if (data.has_sockets) {
+                    $socket.show();
+                } else {
+                    $socket.hide();
+                }
+
+                if (data.excellents.length === 0) {
+                    $excellent.hide();
+                } else {
+                    $excellent.show();
+                }
+
+                var index = 0;
+                $.each(data.excellents, function (val, ex) {
+
+                    index++;
+
+                    var $exn = $("#item-exe-name-" + index);
+                    var $ext = $(".item-exe-" + index);
+
+                    $ext.show();
+                    $exn.html(ex);
+                });
+
+                console.log(index);
+
+                if (index < 6) {
+                    for (var i = index + 1; i <= 6; i++) {
+                        $(".item-exe-" + i).hide();
+                    }
+                }
+            });
+
+        }
+    }
+
+    $(function () {
+        $("#section,#idx").change(function () {
+            changeItem();
+        });
+
+        changeItem();
+    });
+</script>
+
+<section class="content-header">
+    <h1><?= __('Loot boxes') ?></h1>
+
+    <div class="actions">
+        <a data-ajax class="btn btn-default btn-sm" href="<?= url_to('/admin/lootboxes/items?lootbox_id=' . $box['id']) ?>"><?= __('List') ?></a>
+    </div>
+</section>
+
+<section class="content">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li><a data-ajax href="<?= url_to('/admin/lootboxes/edit/' . $box['id']) ?>"><?= __('Loot box') ?></a></li>
+            <li data-ajax class="active"><a href="<?= url_to('/admin/lootboxes/items?lootbox_id=' . $box['id']) ?>"><?= __('Items') ?></a></li>
+        </ul>
+        <div class="tab-content">
+            <form data-ajax data-upload class="form-horizontal form-focus" action="<?= url_to('/admin/lootboxes/items/edit/' . $item['id']) ?>" method="post">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="section"><?= __('Item section') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['section'] ?>" type="text" name="section" id="section" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="idx"><?= __('Item index') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['idx'] ?>" type="text" name="idx" id="idx" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="item-percent"><?= __('Item') ?></label>
+                        <div class="col-sm-2">
+                            <div id="item-name"></div>
+                            <img class="img-thumbnail" id="item-image" src="<?= util('Item')->image(null, null) ?>" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="item-percent"><?= __('Item percent') ?> <span class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['item_percent'] ?>" type="text" name="item_percent" id="item-percent" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="percent-level"><?= __('Percent level') ?></label>
+
+                        <div class="col-sm-10">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <?php for ($i = 1; $i <= 15; $i++): ?>
+                                            <th class="text-center">+<?= $i ?></th>
+                                        <?php endfor ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $levels = json_decode($item['percent_levels'], true) ?>
+                                    <?php for ($i = 1; $i <= 15; $i++): ?>
+                                        <td><input class="form-control" value="<?= isset($levels[$i]) && !empty($levels[$i]) ? $levels[$i] : '' ?>" type="text" name="percent_levels[<?= $i ?>]" /></td>
+                                    <?php endfor ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="percent-options"><?= __('Percent option') ?></label>
+
+                        <div class="col-sm-10">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <?php for ($i = 4; $i <= 28; $i+=4): ?>
+                                            <th class="text-center">+<?= $i ?></th>
+                                        <?php endfor ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $options = json_decode($item['percent_options'], true) ?>
+                                    <?php for ($i = 4; $i <= 28; $i+=4): ?>
+                                        <td><input class="form-control" value="<?= isset($options[$i]) && !empty($options[$i]) ? $options[$i] : '' ?>" type="text" name="percent_options[<?= $i ?>]" /></td>
+                                    <?php endfor ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="percent-luck"><?= __('Percent luck') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['percent_luck'] ?>" type="text" name="percent_luck" id="item-luck" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-skill" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-skill"><?= __('Percent skill') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['percent_skill'] ?>" type="text" name="percent_skill" id="item-skill" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-ancient" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-ancient"><?= __('Percent ancient') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['percent_ancient'] ?>" type="text" name="percent_ancient" id="item-ancient" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-excellent" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-exc"><?= __('Percent excellent') ?></label>
+
+                        <div class="col-sm-10">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <?php for ($i = 1; $i <= 6; $i++): ?>
+                                            <th class="text-center" class="item-exe-<?= $i ?>"><span id="item-exe-name-<?= $i ?>"></span></span></th>
+                                        <?php endfor ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $excellents = json_decode($item['percent_exc'], true) ?>
+                                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                                        <td class="item-exe-<?= $i ?>"><input class="form-control" value="<?= isset($excellents[$i]) && !empty($excellents[$i]) ? $excellents[$i] : '' ?>" type="text" name="percent_exc[<?= $i ?>]" /></td>
+                                    <?php endfor ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-refine" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-refine"><?= __('Percent refine') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['percent_refine'] ?>" type="text" name="percent_refine" id="item-refine" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-harmony" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-harmony"><?= __('Percent harmony') ?></label>
+
+                        <div class="col-sm-2">
+                            <input class="form-control" value="<?= $item['percent_harmony'] ?>" type="text" name="percent_harmony" id="item-harmony" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="item-socket" style="display:none">
+                        <label class="col-sm-2 control-label" for="percent-socket"><?= __('Percent socket') ?></label>
+
+                        <div class="col-sm-10">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <th class="text-center">#<?= $i ?></th>
+                                        <?php endfor ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $sockets = json_decode($item['percent_sockets'], true) ?>
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <td><input class="form-control" type="text" value="<?= isset($sockets[$i]) && !empty($sockets[$i]) ? $sockets[$i] : '' ?>" name="percent_sockets[<?= $i ?>]" /></td>
+                                    <?php endfor ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <div class="col-sm-offset-2" style="padding-left:5px;">
+                        <input type="submit" class="btn btn-primary" value="<?= __('Save') ?>" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

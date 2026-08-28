@@ -1,0 +1,101 @@
+<div class="page-container">
+    <div class="page-title">
+        <div class="t1">
+
+        </div>
+        <div class="t2">
+            <h1><?= __('Ranking') ?></h1>
+            <h2><?= $ranking['name'] ?></h2>
+        </div>
+        <div class="t3">
+
+        </div>
+    </div>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+            <li class="breadcrumb-item"><a href="<?= url_to('/rankings') ?>" data-ajax><?= __('Rankings') ?></a></li>
+            <li class="breadcrumb-item active"><?= $ranking['name'] ?></li>
+        </ol>
+    </nav>
+
+    <?= partial('rankings', ['current' => $ranking]) ?>
+
+    <div class="rankings">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a data-ajax class="nav-link<?= empty($ranking['type']) ? ' active' : '' ?>" href="<?= url_to('/rankings/gens') ?>"><?= __('Duprian') ?></a>
+            </li>
+
+            <li class="nav-item">
+                <a data-ajax class="nav-link<?= $ranking['type'] === 'vanert' ? ' active' : '' ?>" href="<?= url_to('/rankings/gens:vanert') ?>"><?= __('Vanert') ?></a>
+            </li>
+        </ul>
+
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th><?= __('Character') ?></th>
+                <th><?= __('Gen') ?></th>
+                <th><?= __('Class') ?>
+                    <?php if (plugin_active('Patents')): ?>
+                <th class="text-center"><?= __('Patent') ?></th>
+                <?php endif ?>
+                <th><?= __('Guild') ?></th>
+                <th><?= __('Score') ?></th>
+                <th width="10"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($data as $character): ?>
+                <tr class="top-<?= $character['rownum'] ?> class-<?= strtolower(util('Character')->baseClass($character['class'])['short_name']) ?>">
+                    <td width="40">
+                        <div class="rank">
+                            <?php if ($character['rownum'] <= 3): ?>
+                                <img src="<?= asset_to('/images/ranking/top-' . $character['rownum'] . '.png') ?>" />
+                            <?php else: ?>
+                                <img src="<?= asset_to('/images/ranking/top-n.png') ?>" />
+                            <?php endif ?>
+
+                            <span class="r"><?= $character['rownum'] ?>#</span>
+                        </div>
+                    </td>
+                    <td>
+                        <?= $character['name'] ?>
+                        <?php if (config('register.countries_flag_column', null)): ?>
+                            <img title="<?= country_name($character['country']) ?>" src="<?= resource_to('/images/flags/' . strtolower($character['country']) . '.gif') ?>" height="15" />
+                        <?php endif ?>
+                        <?php if ($character['vipType'] > 0): ?>
+                            <span class="badge badge-primary"><?= util('Account')->vipName($character['vipType']) ?></span>
+                        <?php endif ?>
+                        <?php if ($character['status']): ?>
+                            <span class="badge badge-success">ON</span>
+                        <?php endif ?>
+                    </td>
+                    <td>
+                        <div>
+                            <img src="<?= resource_to('/images/gens/' . strtolower(util('Gens')->familyName($character['family'])) . '/' . (isset($character['graduation']) ? $character['graduation'] : util('Gens')->getGraduationFromContribution($character['contribution'], $character['rank'])) . '.png') ?>" width="25" />
+                            <?= util('Gens')->graduationName(isset($character['graduation']) ? $character['graduation'] : util('Gens')->getGraduationFromContribution($character['contribution'], $character['rank'])) ?>
+                        </div>
+                    </td>
+                    <td><?= util('Character')->className($character['class']) ?></td>
+                    <?php if (plugin_active('Patents')): ?>
+                        <td class="text-center">
+                            <?php if (empty($character['patentImage'])): ?>
+                                <span class="badge badge-primary"><?= $character['patentTitle'] ?></span>
+                            <?php else: ?>
+                                <img data-toggle="tooltip" title="<?= $character['patentTitle'] ?>" src="<?= upload_to('/patents/' . $character['patentImage']) ?>" height="20" />
+                            <?php endif ?>
+                        </td>
+                    <?php endif ?>
+                    <td><?= $character['guild'] ?></td>
+                    <td><?= $character['contribution'] ?></td>
+                    <td><?= util('Ranking')->position($character['rank']) ?></td>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

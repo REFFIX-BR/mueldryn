@@ -1,0 +1,36 @@
+<h1 class="title"><?= __('Workshop - Warehouse') ?></h1>
+
+<ul class="breadcrumber">
+    <li><a href="<?= url_to('/') ?>" data-ajax><?= __('Home') ?></a></li>
+    <li><a href="<?= url_to('/workshop') ?>" data-ajax><?= __('Workshop') ?></a></li>
+    <li class="active"><?= __('Warehouse') ?></li>
+</ul>
+
+<div class="warehouse-extended">
+    <?php if (config('warehouse.extended')): ?>
+        <?php if ($extended === null): ?>
+            <a data-ajax class="btn" href="<?= url_to('/workshop/warehouse?extended') ?>"><?= __('Extended') ?></a>
+        <?php else: ?>
+            <a data-ajax class="btn" href="<?= url_to('/workshop/warehouse') ?>"><?= __('Normal') ?></a>
+        <?php endif ?>
+    <?php endif ?>
+</div>
+
+<div class="morpheus-warehouse">
+    <?= $warehouse->getRenderer()
+        ->setItemUrl('/workshop/warehouse/{slot}' . ($extended === null ? '' : '?extended'))
+        ->setActiveItem($item, $slot)
+        ->render($extended === null ? 1 : 2) ?>
+</div>
+
+<div class="workshop-item">
+    <?php if ($item != null): ?>
+        <?= partial('Workshop.item', [
+            'item' => $item,
+            'coin' => $coin,
+            'slot' => $slot,
+            'base' => '/workshop/warehouse/',
+            'extended' => $extended
+        ]) ?>
+    <?php endif ?>
+</div>

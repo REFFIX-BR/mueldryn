@@ -1,0 +1,49 @@
+<?php View::add('page.title', $shop['name'] . ' — ' . $category['name']) ?>
+<?php $shopHubActive = 'shops' ?>
+<?php $coinName = config('coins.' . $shop['coin'] . '.name', $shop['coin']) ?>
+
+<div class="page-container md-shop-page">
+    <div class="md-shop-header">
+        <div>
+            <h1 class="md-shop-header__title"><?= $category['name'] ?></h1>
+            <p class="md-shop-header__lead"><?= $shop['name'] ?> — <?= $coinName ?></p>
+        </div>
+        <?php if (logged_in()): ?>
+            <div class="md-shop-balance">
+                <small><?= $coinName ?></small>
+                <strong><?= util('Number')->format(user()->getCoin($shop['coin'])) ?></strong>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <?= partial('shop-hub-nav', ['shopHubActive' => $shopHubActive, 'shopHubCompact' => true]) ?>
+
+    <nav class="md-shop-breadcrumb">
+        <a data-ajax href="<?= url_to('/') ?>"><?= __('Home') ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shops') ?>"><?= __('WebShops') ?></a>
+        <span>/</span>
+        <a data-ajax href="<?= url_to('/shop/' . $shop['slug']) ?>"><?= $shop['name'] ?></a>
+        <span>/</span>
+        <strong><?= $category['name'] ?></strong>
+    </nav>
+
+    <div class="md-ws-layout">
+        <aside class="md-ws-sidebar">
+            <?= partial('WebShop.categories', [
+                'categories' => $categories,
+                'category' => $category,
+                'shop' => $shop
+            ]) ?>
+        </aside>
+
+        <div class="md-ws-content">
+            <?= partial('WebShop.products', [
+                'products' => $products,
+                'category' => $category,
+                'paginator' => $paginator,
+                'shop' => $shop
+            ]) ?>
+        </div>
+    </div>
+</div>
