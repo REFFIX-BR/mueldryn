@@ -88,12 +88,11 @@ docker images | grep openmu-rare
 
 ## Fase 3 — Stack Swarm (sem nginx, sem Postgres no compose)
 
-Arquivos em `OpenMU/deploy/swarm-vps/`:
+Arquivos em `deploy/swarm-vps/`:
 
 ```bash
 mkdir -p /opt/mueldryn/stack
-# copie docker-compose.stack.yml e .env
-cd /opt/mueldryn/stack
+cd ~/mueldryn/deploy/swarm-vps
 cp .env.example .env
 nano .env   # senha postgres, domínios Traefik
 ```

@@ -1,0 +1,101 @@
+# MuEldryn — OpenMU no Swarm com Postgres e Traefik EXTERNOS
+# Uso: docker stack deploy -c docker-compose.stack.yml openmu
+#
+# Pré-requisitos na VPS:
+# - Rede overlay "proxy" (a mesma do Traefik)
+# - Postgres instalado (host ou container) com database "openmu"
+# - Dump local restaurado (ver DEPLOY-VPS-MUELDRYN.md)
+# - Imagem openmu-rare:local carregada no node (docker load)
+
+services:
+  openmu:
+    image: ${OPENMU_IMAGE:-openmu-rare:local}
+    hostname: openmu
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_ADMIN_USER: ${DB_ADMIN_USER:-postgres}
+      DB_ADMIN_PW: ${DB_ADMIN_PW}
+      Database__AssumeExternallyProvisioned: "true"
+      RESOLVE_IP: ${RESOLVE_IP:-170.80.224.11}
+      ASPNETCORE_URLS: http://+:8080
+    networks:
+      - proxy
+    ports:
+      - target: 44406
+        published: 44406
+        protocol: tcp
+        mode: host
+      - target: 44405
+        published: 44405
+        protocol: tcp
+        mode: host
+      - target: 55901
+        published: 55901
+        protocol: tcp
+        mode: host
+      - target: 55902
+        published: 55902
+        protocol: tcp
+        mode: host
+      - target: 55903
+        published: 55903
+        protocol: tcp
+        mode: host
+      - target: 55904
+        published: 55904
+        protocol: tcp
+        mode: host
+      - target: 55905
+        published: 55905
+        protocol: tcp
+        mode: host
+      - target: 55906
+        published: 55906
+        protocol: tcp
+        mode: host
+      - target: 55980
+        published: 55980
+        protocol: tcp
+        mode: host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+      placement:
+        constraints:
+          - node.role == manager
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.routers.openmu-admin.rule=Host(`${OPENMU_ADMIN_HOST}`)
+      - traefik.http.routers.openmu-admin.entrypoints=websecure
+      - traefik.http.routers.openmu-admin.tls=true
+      - traefik.http.routers.openmu-admin.tls.certresolver=letsencrypt
+      - traefik.http.services.openmu-admin.loadbalancer.server.port=8080
+
+  update:
+    image: nginx:alpine
+    volumes:
+      - ${UPDATE_ROOT:-/opt/mueldryn/www}:/usr/share/nginx/html:ro
+    networks:
+      - proxy
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.routers.mueldryn-update.rule=Host(`${UPDATE_HOST}`) && PathPrefix(`/update`)
+      - traefik.http.routers.mueldryn-update.entrypoints=websecure
+      - traefik.http.routers.mueldryn-update.tls=true
+      - traefik.http.routers.mueldryn-update.tls.certresolver=letsencrypt
+      - traefik.http.services.mueldryn-update.loadbalancer.server.port=80
+
+networks:
+  proxy:
+    external: true
