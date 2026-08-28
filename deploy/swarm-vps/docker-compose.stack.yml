@@ -2,7 +2,7 @@
 # Uso: docker stack deploy -c docker-compose.stack.yml openmu
 #
 # Pré-requisitos na VPS:
-# - Rede overlay "proxy" (a mesma do Traefik)
+# - Rede overlay do Traefik (ex.: reffix na VPS Soneca)
 # - Postgres instalado (host ou container) com database "openmu"
 # - Dump local restaurado (ver DEPLOY-VPS-MUELDRYN.md)
 # - Imagem openmu-rare:local carregada no node (docker load)
@@ -69,7 +69,7 @@ services:
           - node.role == manager
     labels:
       - traefik.enable=true
-      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
+      - traefik.docker.network=${TRAEFIK_NETWORK:-reffix}
       - traefik.http.routers.openmu-admin.rule=Host(`${OPENMU_ADMIN_HOST}`)
       - traefik.http.routers.openmu-admin.entrypoints=websecure
       - traefik.http.routers.openmu-admin.tls=true
@@ -89,7 +89,7 @@ services:
           - node.role == manager
     labels:
       - traefik.enable=true
-      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
+      - traefik.docker.network=${TRAEFIK_NETWORK:-reffix}
       - traefik.http.routers.mueldryn-update.rule=Host(`${UPDATE_HOST}`) && PathPrefix(`/update`)
       - traefik.http.routers.mueldryn-update.entrypoints=websecure
       - traefik.http.routers.mueldryn-update.tls=true
@@ -99,4 +99,4 @@ services:
 networks:
   proxy:
     external: true
-    name: ${TRAEFIK_NETWORK:-proxy}
+    name: ${TRAEFIK_NETWORK:-reffix}

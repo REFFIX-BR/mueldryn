@@ -97,11 +97,12 @@ cp env.example .env
 nano .env   # senha postgres, domínios Traefik
 ```
 
-Rede `proxy` (mesma do Traefik):
+Rede overlay do Traefik (VPS Soneca: **`reffix`**):
 
 ```bash
-docker network ls | grep proxy
-# se não existir: docker network create --driver overlay --attachable proxy
+docker network ls --filter driver=overlay
+docker service inspect traefik_traefik --format '{{range .Spec.TaskTemplate.Networks}}{{.Target}}{{"\n"}}{{end}}'
+# No .env: TRAEFIK_NETWORK=reffix
 ```
 
 Deploy:
