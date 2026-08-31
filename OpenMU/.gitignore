@@ -323,3 +323,6 @@ src/AdminPanel/wwwroot/content/js/app.js.map
 
 # AI
 .opencode/
+# Cash shop data required by GameServer csproj (CopyToOutputDirectory)
+!src/GameServer/Data/InGameShop/IBSProduct.txt
+!src/GameServer/Data/InGameShop/IBSPackage.txt
