@@ -1,0 +1,123 @@
+{
+    "BtnCloseWindowClick": {
+        "x": 401,
+        "y": 890,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowHover": {
+        "x": 314,
+        "y": 890,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowNormal": {
+        "x": 372,
+        "y": 890,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnNormal": {
+        "x": 0,
+        "y": 890,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnHover": {
+        "x": 157,
+        "y": 849,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnClick": {
+        "x": 0,
+        "y": 849,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnDisable": {
+        "x": 157,
+        "y": 890,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "PreviewWindow": {
+        "x": 0,
+        "y": 0,
+        "w": 532,
+        "h": 848,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CameraInfo": {
+        "x": 533,
+        "y": 0,
+        "w": 193,
+        "h": 17,
+        "ox": 46,
+        "oy": 720,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindow": {
+        "x": 343,
+        "y": 890,
+        "w": 28,
+        "h": 28,
+        "ox": 480,
+        "oy": 23,
+        "points": {
+            
+        }
+    },
+    "CloseBtn": {
+        "x": 314,
+        "y": 849,
+        "w": 156,
+        "h": 40,
+        "ox": 336,
+        "oy": 771,
+        "points": {
+            
+        }
+    }
+}

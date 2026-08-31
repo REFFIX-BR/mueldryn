@@ -1,0 +1,26 @@
+﻿[
+    {
+        "path":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\MU.exe",
+        "size":  21945856,
+        "ascii_total":  82373,
+        "utf16_total":  5907,
+        "keyword_hits":  813,
+        "out_txt":  "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_client_analysis\\strings_MU.exe_Reborn.txt"
+    },
+    {
+        "path":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\MU.exe",
+        "size":  16008704,
+        "ascii_total":  65889,
+        "utf16_total":  638,
+        "keyword_hits":  425,
+        "out_txt":  "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_client_analysis\\strings_MU.exe_x64.txt"
+    },
+    {
+        "path":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\PlayMudream.exe",
+        "size":  4759552,
+        "ascii_total":  85485,
+        "utf16_total":  396,
+        "keyword_hits":  56,
+        "out_txt":  "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_client_analysis\\strings_PlayMudream.exe_Mudream.online.txt"
+    }
+]

@@ -1,0 +1,13 @@
+{
+  "source": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Data\\Interface",
+  "outputs": [
+    "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export",
+    "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Data\\Interface\\_decrypted"
+  ],
+  "raw_fallback": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_raw",
+  "dds_found": 64,
+  "converted_success": 64,
+  "skipped_existing": 4,
+  "failed_count": 0,
+  "failed": []
+}

@@ -1,0 +1,981 @@
+{
+    "BtnCloseWindowClick": {
+        "x": 617,
+        "y": 1886,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowHover": {
+        "x": 617,
+        "y": 1828,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowNormal": {
+        "x": 617,
+        "y": 1799,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "PreviewWindow": {
+        "x": 1011,
+        "y": 0,
+        "w": 532,
+        "h": 848,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "PreviewWindowOld": {
+        "x": 1544,
+        "y": 0,
+        "w": 520,
+        "h": 704,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ColorIconRed": {
+        "x": 2050,
+        "y": 757,
+        "w": 12,
+        "h": 12,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ColorIconGreen": {
+        "x": 2050,
+        "y": 744,
+        "w": 12,
+        "h": 12,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ColorIconBlue": {
+        "x": 2050,
+        "y": 731,
+        "w": 12,
+        "h": 12,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ColorIconInput": {
+        "x": 2133,
+        "y": 1050,
+        "w": 92,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestionIconHover": {
+        "x": 1305,
+        "y": 2153,
+        "w": 40,
+        "h": 39,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestionIconNormal": {
+        "x": 1118,
+        "y": 2169,
+        "w": 40,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnNormal": {
+        "x": 2033,
+        "y": 1000,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnHover": {
+        "x": 2065,
+        "y": 796,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnClick": {
+        "x": 2065,
+        "y": 755,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseBtnDisable": {
+        "x": 961,
+        "y": 2169,
+        "w": 156,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ConfirmBtnNormal": {
+        "x": 1223,
+        "y": 2079,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ConfirmBtnHover": {
+        "x": 1880,
+        "y": 1000,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ConfirmBtnClick": {
+        "x": 1223,
+        "y": 1783,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ConfirmBtnDisable": {
+        "x": 1223,
+        "y": 1894,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetBtnNormal": {
+        "x": 1223,
+        "y": 2005,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetBtnHover": {
+        "x": 1223,
+        "y": 1968,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetBtnClick": {
+        "x": 1223,
+        "y": 1931,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetBtnDisable": {
+        "x": 1223,
+        "y": 1857,
+        "w": 136,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MenuBtnNormal": {
+        "x": 1797,
+        "y": 774,
+        "w": 252,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MenuBtnHover": {
+        "x": 1797,
+        "y": 705,
+        "w": 252,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MenuBtnClick": {
+        "x": 1544,
+        "y": 705,
+        "w": 252,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MenuBtnDisable": {
+        "x": 961,
+        "y": 2100,
+        "w": 252,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Background": {
+        "x": 0,
+        "y": 0,
+        "w": 1010,
+        "h": 848,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ConfirmBtn": {
+        "x": 1223,
+        "y": 1820,
+        "w": 136,
+        "h": 36,
+        "ox": 774,
+        "oy": 656,
+        "points": {
+            
+        }
+    },
+    "ZenBackground": {
+        "x": 1485,
+        "y": 1328,
+        "w": 282,
+        "h": 48,
+        "ox": 361,
+        "oy": 650,
+        "points": {
+            
+        }
+    },
+    "ZenInfoBackground": {
+        "x": 0,
+        "y": 2150,
+        "w": 616,
+        "h": 76,
+        "ox": 334,
+        "oy": 635,
+        "points": {
+            
+        }
+    },
+    "ColorControlColorPreview": {
+        "x": 1360,
+        "y": 1783,
+        "w": 119,
+        "h": 36,
+        "ox": 655,
+        "oy": 571,
+        "points": {
+            
+        }
+    },
+    "RandomColorBtn": {
+        "x": 1223,
+        "y": 2116,
+        "w": 136,
+        "h": 36,
+        "ox": 511,
+        "oy": 571,
+        "points": {
+            
+        }
+    },
+    "ResetBtn": {
+        "x": 1223,
+        "y": 2042,
+        "w": 136,
+        "h": 36,
+        "ox": 367,
+        "oy": 571,
+        "points": {
+            
+        }
+    },
+    "ColorControlBackground": {
+        "x": 1485,
+        "y": 1251,
+        "w": 616,
+        "h": 76,
+        "ox": 334,
+        "oy": 549,
+        "points": {
+            
+        }
+    },
+    "ColorRed": {
+        "x": 2050,
+        "y": 718,
+        "w": 12,
+        "h": 12,
+        "ox": 351,
+        "oy": 400,
+        "points": {
+            
+        }
+    },
+    "ColorGreen": {
+        "x": 2050,
+        "y": 705,
+        "w": 12,
+        "h": 12,
+        "ox": 351,
+        "oy": 448,
+        "points": {
+            
+        }
+    },
+    "ColorBlue": {
+        "x": 2050,
+        "y": 774,
+        "w": 12,
+        "h": 12,
+        "ox": 351,
+        "oy": 496,
+        "points": {
+            
+        }
+    },
+    "SelectorBackground": {
+        "x": 1263,
+        "y": 1050,
+        "w": 616,
+        "h": 170,
+        "ox": 334,
+        "oy": 370,
+        "points": {
+            
+        }
+    },
+    "DyeQuestionItemIcon": {
+        "x": 1264,
+        "y": 2153,
+        "w": 40,
+        "h": 40,
+        "ox": 483,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "DyeQuestionDyeIcon": {
+        "x": 1223,
+        "y": 2194,
+        "w": 40,
+        "h": 40,
+        "ox": 858,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "Magnifier": {
+        "x": 1159,
+        "y": 2169,
+        "w": 40,
+        "h": 40,
+        "ox": 371,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "DyeingItemName": {
+        "x": 1223,
+        "y": 1750,
+        "w": 184,
+        "h": 32,
+        "ox": 355,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "DyeingDyeName": {
+        "x": 1223,
+        "y": 1552,
+        "w": 184,
+        "h": 32,
+        "ox": 730,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "DyeingItemSlot": {
+        "x": 2033,
+        "y": 849,
+        "w": 152,
+        "h": 150,
+        "ox": 371,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "DyeingDyeSlot": {
+        "x": 2065,
+        "y": 302,
+        "w": 152,
+        "h": 150,
+        "ox": 746,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "DyeingBackground": {
+        "x": 646,
+        "y": 849,
+        "w": 616,
+        "h": 200,
+        "ox": 334,
+        "oy": 161,
+        "points": {
+            
+        }
+    },
+    "DyeingBackgroundImage": {
+        "x": 0,
+        "y": 1799,
+        "w": 616,
+        "h": 350,
+        "ox": 327,
+        "oy": 165,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResultMagnifier": {
+        "x": 1264,
+        "y": 2194,
+        "w": 40,
+        "h": 40,
+        "ox": 690,
+        "oy": 398,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResultSlot": {
+        "x": 646,
+        "y": 1491,
+        "w": 314,
+        "h": 239,
+        "ox": 484,
+        "oy": 373,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResultSlotEffect": {
+        "x": 961,
+        "y": 1251,
+        "w": 261,
+        "h": 259,
+        "ox": 511,
+        "oy": 361,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult2Magnifier": {
+        "x": 2190,
+        "y": 1000,
+        "w": 40,
+        "h": 40,
+        "ox": 836,
+        "oy": 398,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult2Slot": {
+        "x": 646,
+        "y": 1251,
+        "w": 314,
+        "h": 239,
+        "ox": 630,
+        "oy": 373,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult2SlotEffect": {
+        "x": 961,
+        "y": 1511,
+        "w": 261,
+        "h": 259,
+        "ox": 657,
+        "oy": 361,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult1Magnifier": {
+        "x": 2186,
+        "y": 849,
+        "w": 40,
+        "h": 40,
+        "ox": 534,
+        "oy": 398,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult1Slot": {
+        "x": 646,
+        "y": 1731,
+        "w": 314,
+        "h": 239,
+        "ox": 328,
+        "oy": 373,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyResult1SlotEffect": {
+        "x": 1223,
+        "y": 1251,
+        "w": 261,
+        "h": 259,
+        "ox": 355,
+        "oy": 361,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot3Question": {
+        "x": 2186,
+        "y": 931,
+        "w": 40,
+        "h": 40,
+        "ox": 881,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot2Question": {
+        "x": 2186,
+        "y": 890,
+        "w": 40,
+        "h": 40,
+        "ox": 678,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot1Question": {
+        "x": 2190,
+        "y": 1119,
+        "w": 40,
+        "h": 40,
+        "ox": 475,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot3Name": {
+        "x": 1223,
+        "y": 1684,
+        "w": 184,
+        "h": 32,
+        "ox": 753,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot2Name": {
+        "x": 1223,
+        "y": 1651,
+        "w": 184,
+        "h": 32,
+        "ox": 550,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot1Name": {
+        "x": 1223,
+        "y": 1618,
+        "w": 184,
+        "h": 32,
+        "ox": 347,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot3": {
+        "x": 1880,
+        "y": 849,
+        "w": 152,
+        "h": 150,
+        "ox": 769,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot2": {
+        "x": 2065,
+        "y": 0,
+        "w": 152,
+        "h": 150,
+        "ox": 566,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifySlot1": {
+        "x": 2065,
+        "y": 151,
+        "w": 152,
+        "h": 150,
+        "ox": 363,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyPlus2": {
+        "x": 2133,
+        "y": 1119,
+        "w": 56,
+        "h": 56,
+        "ox": 716,
+        "oy": 251,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyPlus1": {
+        "x": 2133,
+        "y": 1176,
+        "w": 56,
+        "h": 56,
+        "ox": 512,
+        "oy": 251,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyBackground": {
+        "x": 1263,
+        "y": 849,
+        "w": 616,
+        "h": 200,
+        "ox": 334,
+        "oy": 161,
+        "points": {
+            
+        }
+    },
+    "TransmogrifyBackgroundImage": {
+        "x": 0,
+        "y": 1324,
+        "w": 645,
+        "h": 474,
+        "ox": 313,
+        "oy": 161,
+        "points": {
+            
+        }
+    },
+    "SealingResultMagnifier": {
+        "x": 2190,
+        "y": 1176,
+        "w": 40,
+        "h": 40,
+        "ox": 690,
+        "oy": 398,
+        "points": {
+            
+        }
+    },
+    "SealingResultSlot": {
+        "x": 646,
+        "y": 1971,
+        "w": 314,
+        "h": 239,
+        "ox": 484,
+        "oy": 373,
+        "points": {
+            
+        }
+    },
+    "SealingResultSlotEffect": {
+        "x": 961,
+        "y": 1771,
+        "w": 261,
+        "h": 259,
+        "ox": 511,
+        "oy": 361,
+        "points": {
+            
+        }
+    },
+    "SealingQuestionItemIcon": {
+        "x": 1380,
+        "y": 1511,
+        "w": 40,
+        "h": 40,
+        "ox": 483,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "SealingQuestionItem2Icon": {
+        "x": 1421,
+        "y": 1511,
+        "w": 40,
+        "h": 40,
+        "ox": 858,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "SealingMagnifier": {
+        "x": 1223,
+        "y": 2153,
+        "w": 40,
+        "h": 40,
+        "ox": 371,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "SealingItemName": {
+        "x": 1223,
+        "y": 1585,
+        "w": 184,
+        "h": 32,
+        "ox": 355,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "SealingItem2Name": {
+        "x": 1223,
+        "y": 1717,
+        "w": 184,
+        "h": 32,
+        "ox": 730,
+        "oy": 171,
+        "points": {
+            
+        }
+    },
+    "SealingItemSlot": {
+        "x": 2065,
+        "y": 453,
+        "w": 152,
+        "h": 150,
+        "ox": 371,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "SealingItem2Slot": {
+        "x": 2065,
+        "y": 604,
+        "w": 152,
+        "h": 150,
+        "ox": 746,
+        "oy": 203,
+        "points": {
+            
+        }
+    },
+    "SealingBackground": {
+        "x": 646,
+        "y": 1050,
+        "w": 616,
+        "h": 200,
+        "ox": 334,
+        "oy": 161,
+        "points": {
+            
+        }
+    },
+    "SealingTextBackground": {
+        "x": 1880,
+        "y": 1188,
+        "w": 250,
+        "h": 36,
+        "ox": 518,
+        "oy": 599,
+        "points": {
+            
+        }
+    },
+    "SealingBackgroundImage": {
+        "x": 0,
+        "y": 849,
+        "w": 645,
+        "h": 474,
+        "ox": 313,
+        "oy": 161,
+        "points": {
+            
+        }
+    },
+    "MenuBtn1": {
+        "x": 1880,
+        "y": 1050,
+        "w": 252,
+        "h": 68,
+        "ox": 54,
+        "oy": 156,
+        "points": {
+            
+        }
+    },
+    "MenuBtn2": {
+        "x": 961,
+        "y": 2031,
+        "w": 252,
+        "h": 68,
+        "ox": 54,
+        "oy": 224,
+        "points": {
+            
+        }
+    },
+    "MenuBtn3": {
+        "x": 1880,
+        "y": 1119,
+        "w": 252,
+        "h": 68,
+        "ox": 54,
+        "oy": 292,
+        "points": {
+            
+        }
+    },
+    "MenuBtn4": {
+        "x": 1544,
+        "y": 774,
+        "w": 252,
+        "h": 68,
+        "ox": 54,
+        "oy": 360,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindow": {
+        "x": 617,
+        "y": 1857,
+        "w": 28,
+        "h": 28,
+        "ox": 957,
+        "oy": 28,
+        "points": {
+            
+        }
+    },
+    "CloseBtn": {
+        "x": 1223,
+        "y": 1511,
+        "w": 156,
+        "h": 40,
+        "ox": 768,
+        "oy": 772,
+        "points": {
+            
+        }
+    }
+}

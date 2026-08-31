@@ -1,0 +1,4370 @@
+﻿[
+    {
+        "Group":  0,
+        "Number":  300,
+        "Name":  "Fallen Angel Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  301,
+        "Name":  "Fallen Angel Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  302,
+        "Name":  "Fallen Angel Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  303,
+        "Name":  "Fallen Angel Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  304,
+        "Name":  "Devil Majestyc Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  305,
+        "Name":  "Devil Majestyc Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  306,
+        "Name":  "Devil Majestyc Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  307,
+        "Name":  "Arcanor Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  308,
+        "Name":  "Arcanor Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  309,
+        "Name":  "Arcanor Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  310,
+        "Name":  "Aurion Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  311,
+        "Name":  "Aurion Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  312,
+        "Name":  "Aurion Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  313,
+        "Name":  "Aurion Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  314,
+        "Name":  "Carnival Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  315,
+        "Name":  "Carnival Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  316,
+        "Name":  "Carnival Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  317,
+        "Name":  "Druid Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  318,
+        "Name":  "Druid Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  319,
+        "Name":  "Druid Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  320,
+        "Name":  "Hellshade Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  321,
+        "Name":  "Hellshade Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  322,
+        "Name":  "Hellshade Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  323,
+        "Name":  "Icefrost Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  324,
+        "Name":  "Icefrost Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  326,
+        "Name":  "Icefrost Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  327,
+        "Name":  "Magma Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  328,
+        "Name":  "Magma Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  329,
+        "Name":  "Magma Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  330,
+        "Name":  "Magma Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  331,
+        "Name":  "Nightfire Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  332,
+        "Name":  "Nightfire Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  333,
+        "Name":  "Nightfire Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  334,
+        "Name":  "Pumpkin Lord Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  335,
+        "Name":  "Pumpkin Lord Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  336,
+        "Name":  "Pumpkin Lord Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  337,
+        "Name":  "Wraith Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  338,
+        "Name":  "Wraith Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  339,
+        "Name":  "Wraith Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  340,
+        "Name":  "Abbadon Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  341,
+        "Name":  "Abbadon Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  342,
+        "Name":  "Abbadon Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  343,
+        "Name":  "Death Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  344,
+        "Name":  "Death Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  345,
+        "Name":  "Death Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  346,
+        "Name":  "Abbadon Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  347,
+        "Name":  "Death Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  348,
+        "Name":  "Death Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  349,
+        "Name":  "Blackray Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  350,
+        "Name":  "Blackray Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  351,
+        "Name":  "Blackray Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  352,
+        "Name":  "Blackray Hammer",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  353,
+        "Name":  "Blackray Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  354,
+        "Name":  "Bloodbound Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  355,
+        "Name":  "Bloodbound Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  356,
+        "Name":  "Bloodbound Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  357,
+        "Name":  "Bloodbound Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  358,
+        "Name":  "Darkness Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  359,
+        "Name":  "Darkness Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  360,
+        "Name":  "Darkness Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  361,
+        "Name":  "Darkness Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  362,
+        "Name":  "Elegance Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  363,
+        "Name":  "Elegance Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  364,
+        "Name":  "Elegance Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  365,
+        "Name":  "Elegance Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  366,
+        "Name":  "Santablue Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  367,
+        "Name":  "Santablue Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  368,
+        "Name":  "Santablue Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  369,
+        "Name":  "Santagreen Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  370,
+        "Name":  "Santagreen Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  371,
+        "Name":  "Santagreen Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  372,
+        "Name":  "Santagreen Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  373,
+        "Name":  "Dark Bunny Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  374,
+        "Name":  "Dark Bunny Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  375,
+        "Name":  "Dark Bunny Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  376,
+        "Name":  "Dark Bunny Axe",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  377,
+        "Name":  "Dark Bunny Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  378,
+        "Name":  "Abyssal Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  379,
+        "Name":  "Abyssal Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  380,
+        "Name":  "Abyssal Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  381,
+        "Name":  "Abyssal Axe",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  382,
+        "Name":  "Abyssal Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  383,
+        "Name":  "Abyssal Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  384,
+        "Name":  "Black Pumpkin Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  385,
+        "Name":  "Black Pumpkin Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  386,
+        "Name":  "Black Pumpkin Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  387,
+        "Name":  "Black Pumpkin Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  388,
+        "Name":  "Bloody Soldier Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  389,
+        "Name":  "Bloody Soldier Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  390,
+        "Name":  "Bloody Soldier Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  391,
+        "Name":  "Bloody Soldier Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  392,
+        "Name":  "Evil Rabbit Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  393,
+        "Name":  "Evil Rabbit Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  394,
+        "Name":  "Evil Rabbit Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  395,
+        "Name":  "Evil Rabbit Dagger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  396,
+        "Name":  "Evil Rabbit Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  397,
+        "Name":  "Hellfire Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  398,
+        "Name":  "Hellfire Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  399,
+        "Name":  "Hellfire Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  400,
+        "Name":  "Hellfire Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  401,
+        "Name":  "Macabre Sword",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  402,
+        "Name":  "Macabre Two-Hand Blade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  403,
+        "Name":  "Macabre Claw",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  404,
+        "Name":  "Macabre Spear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  0,
+        "Number":  405,
+        "Name":  "Macabre Hammer",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  300,
+        "Name":  "Fallen Angel Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  301,
+        "Name":  "Devil Majestyc Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  302,
+        "Name":  "Arcanor Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  303,
+        "Name":  "Aurion Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  304,
+        "Name":  "Carnival Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  305,
+        "Name":  "Druid Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  306,
+        "Name":  "Hellshade Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  307,
+        "Name":  "Icefrost Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  308,
+        "Name":  "Magma Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  309,
+        "Name":  "Nightfire Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  310,
+        "Name":  "Pumpkin Lord Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  311,
+        "Name":  "Wraith Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  312,
+        "Name":  "Abbadon Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  313,
+        "Name":  "Death Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  314,
+        "Name":  "Blackray Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  315,
+        "Name":  "Bloodbound Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  316,
+        "Name":  "Darkness Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  317,
+        "Name":  "Elegance Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  318,
+        "Name":  "Santablue Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  319,
+        "Name":  "Santagreen Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  320,
+        "Name":  "Dark Bunny Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  321,
+        "Name":  "Abyssal Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  322,
+        "Name":  "Black Pumpkin Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  323,
+        "Name":  "Bloody Soldier Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  324,
+        "Name":  "Evil Rabbit Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  325,
+        "Name":  "Hellfire Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  2,
+        "Number":  326,
+        "Name":  "Macabre Scepter",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  300,
+        "Name":  "Fallen Angel Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  301,
+        "Name":  "Fallen Angel Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  302,
+        "Name":  "Devil Majestyc Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  303,
+        "Name":  "Devil Majestyc Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  304,
+        "Name":  "Arcanor Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  305,
+        "Name":  "Arcanor Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  306,
+        "Name":  "Aurion Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  307,
+        "Name":  "Aurion Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  308,
+        "Name":  "Carnival Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  309,
+        "Name":  "Carnival Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  310,
+        "Name":  "Druid Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  311,
+        "Name":  "Druid Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  312,
+        "Name":  "Hellshade Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  313,
+        "Name":  "Hellshade Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  314,
+        "Name":  "Icefrost Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  315,
+        "Name":  "Icefrost Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  316,
+        "Name":  "Magma Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  317,
+        "Name":  "Magma Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  318,
+        "Name":  "Nightfire Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  319,
+        "Name":  "Nightfire Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  322,
+        "Name":  "Wraith Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  323,
+        "Name":  "Wraith Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  324,
+        "Name":  "Abbadon Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  325,
+        "Name":  "Abbadon Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  326,
+        "Name":  "Death Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  327,
+        "Name":  "Death Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  328,
+        "Name":  "Blackray Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  329,
+        "Name":  "Blackray Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  330,
+        "Name":  "Bloodbound Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  331,
+        "Name":  "Bloodbound Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  332,
+        "Name":  "Darkness Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  333,
+        "Name":  "Darkness Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  334,
+        "Name":  "Elegance Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  335,
+        "Name":  "Elegance Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  336,
+        "Name":  "Santablue Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  337,
+        "Name":  "Santablue Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  338,
+        "Name":  "Santagreen Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  339,
+        "Name":  "Santagreen Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  340,
+        "Name":  "Dark Bunny Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  341,
+        "Name":  "Dark Bunny Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  342,
+        "Name":  "Abyssal Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  343,
+        "Name":  "Abyssal Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  344,
+        "Name":  "Black Pumpkin Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  345,
+        "Name":  "Black Pumpkin Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  346,
+        "Name":  "Bloody Soldier Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  347,
+        "Name":  "Bloody Soldier Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  348,
+        "Name":  "Evil Rabbit Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  349,
+        "Name":  "Evil Rabbit Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  350,
+        "Name":  "Hellfire Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  351,
+        "Name":  "Hellfire Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  352,
+        "Name":  "Macabre Bow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  4,
+        "Number":  353,
+        "Name":  "Macabre Crossbow",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  300,
+        "Name":  "Fallen Angel Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  301,
+        "Name":  "Fallen Angel Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  302,
+        "Name":  "Devil Majestyc Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  303,
+        "Name":  "Devil Majestyc Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  304,
+        "Name":  "Arcanor Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  305,
+        "Name":  "Arcanor Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  306,
+        "Name":  "Aurion Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  307,
+        "Name":  "Aurion Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  308,
+        "Name":  "Carnival Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  309,
+        "Name":  "Carnival Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  310,
+        "Name":  "Druid Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  311,
+        "Name":  "Druid Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  312,
+        "Name":  "Hellshade Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  313,
+        "Name":  "Hellshade Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  314,
+        "Name":  "Icefrost Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  315,
+        "Name":  "Icefrost Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  316,
+        "Name":  "Magma Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  317,
+        "Name":  "Magma Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  318,
+        "Name":  "Nightfire Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  319,
+        "Name":  "Nightfire Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  322,
+        "Name":  "Wraith Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  323,
+        "Name":  "Wraith Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  324,
+        "Name":  "Abbadon Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  325,
+        "Name":  "Abbadon Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  326,
+        "Name":  "Death Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  327,
+        "Name":  "Death Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  328,
+        "Name":  "Blackray Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  329,
+        "Name":  "Blackray Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  330,
+        "Name":  "Bloodbound Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  331,
+        "Name":  "Bloodbound Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  332,
+        "Name":  "Darkness Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  333,
+        "Name":  "Darkness Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  334,
+        "Name":  "Elegance Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  335,
+        "Name":  "Elegance Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  336,
+        "Name":  "Santablue Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  337,
+        "Name":  "Santablue Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  338,
+        "Name":  "Santagreen Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  339,
+        "Name":  "Santagreen Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  340,
+        "Name":  "Dark Bunny Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  341,
+        "Name":  "Dark Bunny Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  342,
+        "Name":  "Abyssal Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  343,
+        "Name":  "Abyssal Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  344,
+        "Name":  "Black Pumpkin Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  345,
+        "Name":  "Black Pumpkin Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  346,
+        "Name":  "Bloody Soldier Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  347,
+        "Name":  "Bloody Soldier Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  348,
+        "Name":  "Evil Rabbit Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  349,
+        "Name":  "Evil Rabbit Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  350,
+        "Name":  "Hellfire Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  351,
+        "Name":  "Hellfire Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  352,
+        "Name":  "Macabre Staff",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  5,
+        "Number":  353,
+        "Name":  "Macabre Stick",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  300,
+        "Name":  "Fallen Angel Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  301,
+        "Name":  "Devil Majestyc Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  302,
+        "Name":  "Arcanor Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  303,
+        "Name":  "Aurion Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  304,
+        "Name":  "Carnival Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  305,
+        "Name":  "Druid Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  306,
+        "Name":  "Hellshade Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  307,
+        "Name":  "Icefrost Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  308,
+        "Name":  "Magma Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  309,
+        "Name":  "Nightfire Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  310,
+        "Name":  "Pumpkin Lord Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  311,
+        "Name":  "Wraith Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  312,
+        "Name":  "Abbadon Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  313,
+        "Name":  "Death Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  314,
+        "Name":  "Blackray Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  315,
+        "Name":  "Bloodbound Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  316,
+        "Name":  "Darkness Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  317,
+        "Name":  "Elegance Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  318,
+        "Name":  "Santablue Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  319,
+        "Name":  "Santagreen Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  320,
+        "Name":  "Dark Bunny Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  321,
+        "Name":  "Abyssal Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  322,
+        "Name":  "Black Pumpkin Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  323,
+        "Name":  "Bloody Soldier Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  324,
+        "Name":  "Evil Rabbit Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  325,
+        "Name":  "Hellfire Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  6,
+        "Number":  326,
+        "Name":  "Macabre Shield",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  300,
+        "Name":  "Fallen Angel Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  301,
+        "Name":  "Fallen Angel Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  302,
+        "Name":  "Devil Majestyc Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  303,
+        "Name":  "Devil Majestyc Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  304,
+        "Name":  "Arcanor Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  305,
+        "Name":  "Arcanor Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  306,
+        "Name":  "Aurion Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  307,
+        "Name":  "Aurion Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  308,
+        "Name":  "Carnival Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  309,
+        "Name":  "Carnival Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  310,
+        "Name":  "Druid Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  311,
+        "Name":  "Druid Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  312,
+        "Name":  "Hellshade Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  313,
+        "Name":  "Hellshade Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  314,
+        "Name":  "Icefrost Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  315,
+        "Name":  "Icefrost Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  316,
+        "Name":  "Magma Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  317,
+        "Name":  "Magma Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  318,
+        "Name":  "Nightfire Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  319,
+        "Name":  "Nightfire Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  322,
+        "Name":  "Wraith Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  323,
+        "Name":  "Wraith Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  324,
+        "Name":  "Abbadon Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  325,
+        "Name":  "Abbadon Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  326,
+        "Name":  "Death Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  327,
+        "Name":  "Death Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  328,
+        "Name":  "Blackray Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  329,
+        "Name":  "Blackray Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  330,
+        "Name":  "Bloodbound Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  331,
+        "Name":  "Bloodbound Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  332,
+        "Name":  "Darkness Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  333,
+        "Name":  "Darkness Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  334,
+        "Name":  "Elegance Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  335,
+        "Name":  "Elegance Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  336,
+        "Name":  "Santablue Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  337,
+        "Name":  "Santablue Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  338,
+        "Name":  "Santagreen Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  339,
+        "Name":  "Santagreen Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  340,
+        "Name":  "Dark Bunny Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  341,
+        "Name":  "Dark Bunny Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  342,
+        "Name":  "Abyssal Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  343,
+        "Name":  "Abyssal Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  344,
+        "Name":  "Black Pumpkin Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  345,
+        "Name":  "Black Pumpkin Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  346,
+        "Name":  "Bloody Soldier Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  347,
+        "Name":  "Bloody Soldier Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  348,
+        "Name":  "Evil Rabbit Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  349,
+        "Name":  "Evil Rabbit Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  350,
+        "Name":  "Hellfire Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  351,
+        "Name":  "Hellfire Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  352,
+        "Name":  "Macabre Helm M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  7,
+        "Number":  353,
+        "Name":  "Macabre Helm F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  300,
+        "Name":  "Fallen Angel Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  301,
+        "Name":  "Fallen Angel Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  302,
+        "Name":  "Devil Majestyc Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  303,
+        "Name":  "Devil Majestyc Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  304,
+        "Name":  "Arcanor Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  305,
+        "Name":  "Arcanor Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  306,
+        "Name":  "Aurion Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  307,
+        "Name":  "Aurion Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  308,
+        "Name":  "Carnival Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  309,
+        "Name":  "Carnival Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  310,
+        "Name":  "Druid Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  311,
+        "Name":  "Druid Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  312,
+        "Name":  "Hellshade Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  313,
+        "Name":  "Hellshade Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  314,
+        "Name":  "Icefrost Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  315,
+        "Name":  "Icefrost Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  316,
+        "Name":  "Magma Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  317,
+        "Name":  "Magma Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  318,
+        "Name":  "Nightfire Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  319,
+        "Name":  "Nightfire Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  322,
+        "Name":  "Wraith Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  323,
+        "Name":  "Wraith Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  324,
+        "Name":  "Abbadon Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  325,
+        "Name":  "Abbadon Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  326,
+        "Name":  "Death Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  327,
+        "Name":  "Death Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  328,
+        "Name":  "Blackray Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  329,
+        "Name":  "Blackray Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  330,
+        "Name":  "Bloodbound Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  331,
+        "Name":  "Bloodbound Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  332,
+        "Name":  "Darkness Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  333,
+        "Name":  "Darkness Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  334,
+        "Name":  "Elegance Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  335,
+        "Name":  "Elegance Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  336,
+        "Name":  "Santablue Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  337,
+        "Name":  "Santablue Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  338,
+        "Name":  "Santagreen Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  339,
+        "Name":  "Santagreen Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  340,
+        "Name":  "Dark Bunny Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  341,
+        "Name":  "Dark Bunny Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  342,
+        "Name":  "Abyssal Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  343,
+        "Name":  "Abyssal Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  344,
+        "Name":  "Black Pumpkin Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  345,
+        "Name":  "Black Pumpkin Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  346,
+        "Name":  "Bloody Soldier Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  347,
+        "Name":  "Bloody Soldier Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  348,
+        "Name":  "Evil Rabbit Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  349,
+        "Name":  "Evil Rabbit Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  350,
+        "Name":  "Hellfire Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  351,
+        "Name":  "Hellfire Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  352,
+        "Name":  "Macabre Armor M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  8,
+        "Number":  353,
+        "Name":  "Macabre Armor F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  300,
+        "Name":  "Fallen Angel Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  301,
+        "Name":  "Fallen Angel Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  302,
+        "Name":  "Devil Majestyc Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  303,
+        "Name":  "Devil Majestyc Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  304,
+        "Name":  "Arcanor Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  305,
+        "Name":  "Arcanor Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  306,
+        "Name":  "Aurion Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  307,
+        "Name":  "Aurion Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  308,
+        "Name":  "Carnival Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  309,
+        "Name":  "Carnival Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  310,
+        "Name":  "Druid Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  311,
+        "Name":  "Druid Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  312,
+        "Name":  "Hellshade Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  313,
+        "Name":  "Hellshade Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  314,
+        "Name":  "Icefrost Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  315,
+        "Name":  "Icefrost Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  316,
+        "Name":  "Magma Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  317,
+        "Name":  "Magma Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  318,
+        "Name":  "Nightfire Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  319,
+        "Name":  "Nightfire Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  322,
+        "Name":  "Wraith Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  323,
+        "Name":  "Wraith Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  324,
+        "Name":  "Abbadon Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  325,
+        "Name":  "Abbadon Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  326,
+        "Name":  "Death Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  327,
+        "Name":  "Death Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  328,
+        "Name":  "Blackray Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  329,
+        "Name":  "Blackray Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  330,
+        "Name":  "Bloodbound Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  331,
+        "Name":  "Bloodbound Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  332,
+        "Name":  "Darkness Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  333,
+        "Name":  "Darkness Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  334,
+        "Name":  "Elegance Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  335,
+        "Name":  "Elegance Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  336,
+        "Name":  "Santablue Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  337,
+        "Name":  "Santablue Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  338,
+        "Name":  "Santagreen Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  339,
+        "Name":  "Santagreen Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  340,
+        "Name":  "Dark Bunny Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  341,
+        "Name":  "Dark Bunny Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  342,
+        "Name":  "Abyssal Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  343,
+        "Name":  "Abyssal Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  344,
+        "Name":  "Black Pumpkin Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  345,
+        "Name":  "Black Pumpkin Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  346,
+        "Name":  "Bloody Soldier Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  347,
+        "Name":  "Bloody Soldier Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  348,
+        "Name":  "Evil Rabbit Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  349,
+        "Name":  "Evil Rabbit Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  350,
+        "Name":  "Hellfire Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  351,
+        "Name":  "Hellfire Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  352,
+        "Name":  "Macabre Pants M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  9,
+        "Number":  353,
+        "Name":  "Macabre Pants F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  300,
+        "Name":  "Fallen Angel Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  301,
+        "Name":  "Fallen Angel Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  302,
+        "Name":  "Devil Majestyc Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  303,
+        "Name":  "Devil Majestyc Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  304,
+        "Name":  "Arcanor Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  305,
+        "Name":  "Arcanor Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  306,
+        "Name":  "Aurion Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  307,
+        "Name":  "Aurion Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  308,
+        "Name":  "Carnival Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  309,
+        "Name":  "Carnival Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  310,
+        "Name":  "Druid Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  311,
+        "Name":  "Druid Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  312,
+        "Name":  "Hellshade Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  313,
+        "Name":  "Hellshade Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  314,
+        "Name":  "Icefrost Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  315,
+        "Name":  "Icefrost Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  316,
+        "Name":  "Magma Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  317,
+        "Name":  "Magma Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  318,
+        "Name":  "Nightfire Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  319,
+        "Name":  "Nightfire Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  322,
+        "Name":  "Wraith Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  323,
+        "Name":  "Wraith Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  324,
+        "Name":  "Abbadon Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  325,
+        "Name":  "Abbadon Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  326,
+        "Name":  "Death Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  327,
+        "Name":  "Death Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  328,
+        "Name":  "Blackray Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  329,
+        "Name":  "Blackray Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  330,
+        "Name":  "Bloodbound Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  331,
+        "Name":  "Bloodbound Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  332,
+        "Name":  "Darkness Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  333,
+        "Name":  "Darkness Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  334,
+        "Name":  "Elegance Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  335,
+        "Name":  "Elegance Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  336,
+        "Name":  "Santablue Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  337,
+        "Name":  "Santablue Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  338,
+        "Name":  "Santagreen Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  339,
+        "Name":  "Santagreen Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  340,
+        "Name":  "Dark Bunny Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  341,
+        "Name":  "Dark Bunny Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  342,
+        "Name":  "Abyssal Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  343,
+        "Name":  "Abyssal Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  344,
+        "Name":  "Black Pumpkin Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  345,
+        "Name":  "Black Pumpkin Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  346,
+        "Name":  "Bloody Soldier Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  347,
+        "Name":  "Bloody Soldier Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  348,
+        "Name":  "Evil Rabbit Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  349,
+        "Name":  "Evil Rabbit Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  350,
+        "Name":  "Hellfire Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  351,
+        "Name":  "Hellfire Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  352,
+        "Name":  "Macabre Gloves M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  10,
+        "Number":  353,
+        "Name":  "Macabre Gloves F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  300,
+        "Name":  "Fallen Angel Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  301,
+        "Name":  "Fallen Angel Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  302,
+        "Name":  "Devil Majestyc Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  303,
+        "Name":  "Devil Majestyc Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  304,
+        "Name":  "Arcanor Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  305,
+        "Name":  "Arcanor Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  306,
+        "Name":  "Aurion Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  307,
+        "Name":  "Aurion Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  308,
+        "Name":  "Carnival Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  309,
+        "Name":  "Carnival Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  310,
+        "Name":  "Druid Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  311,
+        "Name":  "Druid Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  312,
+        "Name":  "Hellshade Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  313,
+        "Name":  "Hellshade Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  314,
+        "Name":  "Icefrost Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  315,
+        "Name":  "Icefrost Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  316,
+        "Name":  "Magma Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  317,
+        "Name":  "Magma Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  318,
+        "Name":  "Nightfire Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  319,
+        "Name":  "Nightfire Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  322,
+        "Name":  "Wraith Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  323,
+        "Name":  "Wraith Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  324,
+        "Name":  "Abbadon Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  325,
+        "Name":  "Abbadon Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  326,
+        "Name":  "Death Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  327,
+        "Name":  "Death Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  328,
+        "Name":  "Blackray Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  329,
+        "Name":  "Blackray Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  330,
+        "Name":  "Bloodbound Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  331,
+        "Name":  "Bloodbound Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  332,
+        "Name":  "Darkness Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  333,
+        "Name":  "Darkness Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  334,
+        "Name":  "Elegance Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  335,
+        "Name":  "Elegance Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  336,
+        "Name":  "Santablue Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  337,
+        "Name":  "Santablue Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  338,
+        "Name":  "Santagreen Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  339,
+        "Name":  "Santagreen Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  340,
+        "Name":  "Dark Bunny Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  341,
+        "Name":  "Dark Bunny Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  342,
+        "Name":  "Abyssal Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  343,
+        "Name":  "Abyssal Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  344,
+        "Name":  "Black Pumpkin Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  345,
+        "Name":  "Black Pumpkin Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  346,
+        "Name":  "Bloody Soldier Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  347,
+        "Name":  "Bloody Soldier Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  348,
+        "Name":  "Evil Rabbit Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  349,
+        "Name":  "Evil Rabbit Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  350,
+        "Name":  "Hellfire Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  351,
+        "Name":  "Hellfire Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  352,
+        "Name":  "Macabre Boots M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  11,
+        "Number":  353,
+        "Name":  "Macabre Boots F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  300,
+        "Name":  "Cloak of Fallen Angel",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  301,
+        "Name":  "Cloak of Devil Majestyc",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  302,
+        "Name":  "Cloak of Arcanor",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  303,
+        "Name":  "Cloak of Aurion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  304,
+        "Name":  "Cloak of Carnival",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  305,
+        "Name":  "Cloak of Druid",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  306,
+        "Name":  "Cloak of Hellshade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  307,
+        "Name":  "Cloak of Icefrost",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  308,
+        "Name":  "Cloak of Magma",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  309,
+        "Name":  "Cloak of Nightfire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  310,
+        "Name":  "Wing of Fallen Angel",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  311,
+        "Name":  "Wing of Devil Majestyc",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  312,
+        "Name":  "Wing of Arcanor",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  313,
+        "Name":  "Wing of Aurion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  314,
+        "Name":  "Wing of Carnival",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  315,
+        "Name":  "Wing of Druid M",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  316,
+        "Name":  "Wing of Druid F",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  317,
+        "Name":  "Wing of Hellshade",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  318,
+        "Name":  "Wing of Icefrost",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  319,
+        "Name":  "Wing of Magma",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  320,
+        "Name":  "Wing of Nightfire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  321,
+        "Name":  "Cloak of Pumpkin Lord",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  322,
+        "Name":  "Wing of Pumpkin Lord",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  323,
+        "Name":  "Cloak of Wraith",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  324,
+        "Name":  "Wing of Wraith",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  325,
+        "Name":  "Cloak of Abbadon",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  326,
+        "Name":  "Wing of Abbadon",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  327,
+        "Name":  "Cloak of Death",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  328,
+        "Name":  "Wing of Death",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  329,
+        "Name":  "Cloak of Blackray",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  330,
+        "Name":  "Wing of Blackray",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  331,
+        "Name":  "Cloak of Bloodbound",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  332,
+        "Name":  "Wing of Bloodbound",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  333,
+        "Name":  "Cloak of Darkness",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  334,
+        "Name":  "Wing of Darkness",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  335,
+        "Name":  "Cloak of Elegance",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  336,
+        "Name":  "Wing of Elegance",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  337,
+        "Name":  "Cloak of Santablue",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  338,
+        "Name":  "Wing of Santablue",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  339,
+        "Name":  "Cloak of Santagreen",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  340,
+        "Name":  "Wing of Santagreen",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  341,
+        "Name":  "Cloak of Dark Bunny",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  342,
+        "Name":  "Wing of Dark Bunny",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  343,
+        "Name":  "Cloak of Abyssal",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  344,
+        "Name":  "Wing of Abyssal",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  345,
+        "Name":  "Cloak of Black Pumpkin",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  346,
+        "Name":  "Wing of Black Pumpkin",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  347,
+        "Name":  "Cloak of Bloody Soldier",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  348,
+        "Name":  "Wing of Bloody Soldier",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  349,
+        "Name":  "Cloak of Evil Rabbit",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  350,
+        "Name":  "Wing of Evil Rabbit",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  351,
+        "Name":  "Cloak of Hellfire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  352,
+        "Name":  "Wing of Hellfire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  353,
+        "Name":  "Cloak of Macabre",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  12,
+        "Number":  354,
+        "Name":  "Wing of Macabre",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  300,
+        "Name":  "Fallen Angel Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  301,
+        "Name":  "Carnival Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  302,
+        "Name":  "Hellshade Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  303,
+        "Name":  "Magma Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  304,
+        "Name":  "Nightfire Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  305,
+        "Name":  "Devil Majestyc Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  306,
+        "Name":  "Aurion Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  307,
+        "Name":  "Icefrost Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  308,
+        "Name":  "Berserk Fenrir Red",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  309,
+        "Name":  "Berserk Fenrir Green",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  310,
+        "Name":  "Berserk Fenrir Gold",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  311,
+        "Name":  "Berserk Fenrir White",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  312,
+        "Name":  "Berserk Fenrir Black",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  313,
+        "Name":  "Berserk Fenrir Blue",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  314,
+        "Name":  "Holly Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  315,
+        "Name":  "Holly Fenrir Blue",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  316,
+        "Name":  "Holly Fenrir Gold",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  317,
+        "Name":  "Holly Fenrir Black",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  318,
+        "Name":  "Black Bear",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  319,
+        "Name":  "Eclipsebound Panther",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  320,
+        "Name":  "Celestial Tiger",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  321,
+        "Name":  "Celestial Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  322,
+        "Name":  "Celestial Fenrir Green",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  323,
+        "Name":  "Celestial Fenrir Rose",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  324,
+        "Name":  "Infernosaur",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  325,
+        "Name":  "Volcarnox",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  326,
+        "Name":  "Green Lion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  327,
+        "Name":  "Lion Angel",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  328,
+        "Name":  "Lion Demon",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  329,
+        "Name":  "Purple Lion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  330,
+        "Name":  "Celestial Demonic",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  331,
+        "Name":  "Dragon Heart Blue",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  332,
+        "Name":  "Dragon Heart Fire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  333,
+        "Name":  "Dragon Heart Gold",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  334,
+        "Name":  "Dragon Heart Green",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  335,
+        "Name":  "Dragon Heart Purple",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  336,
+        "Name":  "Juggernaut",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  337,
+        "Name":  "Oblivion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  338,
+        "Name":  "Sunscale",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  339,
+        "Name":  "Wyrm Dragon",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  340,
+        "Name":  "Emberhoof Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  341,
+        "Name":  "Ashborn Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  342,
+        "Name":  "Cryohex Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  343,
+        "Name":  "Underground Hyena",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  344,
+        "Name":  "Lion Fire",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  345,
+        "Name":  "Drake Illusion",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  346,
+        "Name":  "Crimson Mane",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  347,
+        "Name":  "Iron Roar",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  348,
+        "Name":  "Royal Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  349,
+        "Name":  "Glacius Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  350,
+        "Name":  "Hellroar Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  351,
+        "Name":  "Emberhorn Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  352,
+        "Name":  "Blazefury Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  353,
+        "Name":  "Toxic Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  354,
+        "Name":  "Hellmaul Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  355,
+        "Name":  "Infernal Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  356,
+        "Name":  "Frostmaw Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  357,
+        "Name":  "Volcanis Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  358,
+        "Name":  "Dreadflame Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  359,
+        "Name":  "Azureclaw Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  360,
+        "Name":  "Stormhowl Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  361,
+        "Name":  "Crystalhide Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  362,
+        "Name":  "Frostbane Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  363,
+        "Name":  "Moonmane Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  364,
+        "Name":  "Ebonveil Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  365,
+        "Name":  "Imperius Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  366,
+        "Name":  "Cerberus Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  367,
+        "Name":  "Draconis Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  368,
+        "Name":  "Celesthorn Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  369,
+        "Name":  "Warthorn Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  370,
+        "Name":  "Soulreaver Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  371,
+        "Name":  "Sunmane Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  372,
+        "Name":  "Bamboo Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  373,
+        "Name":  "Voidclaw Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  374,
+        "Name":  "Skyflare Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  375,
+        "Name":  "Inferlion Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  376,
+        "Name":  "Abyssal Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  377,
+        "Name":  "Aetherwing Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  378,
+        "Name":  "Solaris Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  379,
+        "Name":  "Flarethorn Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  380,
+        "Name":  "Doomspike Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  381,
+        "Name":  "Glaciermaw Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  382,
+        "Name":  "Voidstorm Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  383,
+        "Name":  "Hydragore Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  384,
+        "Name":  "Ironfang Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  385,
+        "Name":  "Frostveil Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  386,
+        "Name":  "Aurelion Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  387,
+        "Name":  "Inferno Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  388,
+        "Name":  "Stormhorn Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  389,
+        "Name":  "Duskhart Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  390,
+        "Name":  "Dracohatch Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  391,
+        "Name":  "Frostwing Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  392,
+        "Name":  "Imperial Dragon Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  393,
+        "Name":  "Azurelight Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  394,
+        "Name":  "Glacier Antler Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  395,
+        "Name":  "Voidmane Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  396,
+        "Name":  "Abbadon Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  397,
+        "Name":  "Death Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  398,
+        "Name":  "Blackray Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  399,
+        "Name":  "Blackray Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  400,
+        "Name":  "Bloodbound Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  401,
+        "Name":  "Elegance Uniria",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  402,
+        "Name":  "Santablue Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  403,
+        "Name":  "Santagreen Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  404,
+        "Name":  "Abyssal Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  405,
+        "Name":  "Black Pumpkin Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  406,
+        "Name":  "Evil Rabbit Fenrir",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  407,
+        "Name":  "Hellfire Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  408,
+        "Name":  "Macabre Horse",
+        "Cosmetic":  true
+    },
+    {
+        "Group":  13,
+        "Number":  450,
+        "Name":  "Dragon Spirit Red",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  13,
+        "Number":  451,
+        "Name":  "Dragon Spirit Blue",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  13,
+        "Number":  452,
+        "Name":  "Dragon Spirit Gold",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  13,
+        "Number":  453,
+        "Name":  "Dragon Spirit Green",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  13,
+        "Number":  454,
+        "Name":  "DragonSpirit Green",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  300,
+        "Name":  "Blightshard Core",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  301,
+        "Name":  "Emberfang Core",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  302,
+        "Name":  "Scorchbrand Gem",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  303,
+        "Name":  "Infernal Ember",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  304,
+        "Name":  "Crimsonflare Shard",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  305,
+        "Name":  "Solarshard Crystal",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  306,
+        "Name":  "Radiant Fragment",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  307,
+        "Name":  "Lumenite Core",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  308,
+        "Name":  "Moltencore Shard",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  309,
+        "Name":  "Flameheart Gem",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  310,
+        "Name":  "Frostveil Crystal",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  311,
+        "Name":  "Abyssal Tear",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  312,
+        "Name":  "Twilight Crystal",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  313,
+        "Name":  "Voidspire Shard",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  314,
+        "Name":  "Jewel of Water",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  315,
+        "Name":  "Jewel of Fire",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  316,
+        "Name":  "Jewel of Lightning",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  317,
+        "Name":  "Jewel of Wind",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  318,
+        "Name":  "Jewel of Earth",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  320,
+        "Name":  "Special Dragon Egg",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  321,
+        "Name":  "Guardian Spirit",
+        "Cosmetic":  false
+    },
+    {
+        "Group":  14,
+        "Number":  330,
+        "Name":  "Halloween Potion",
+        "Cosmetic":  false
+    }
+]

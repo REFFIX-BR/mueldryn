@@ -1,0 +1,5570 @@
+﻿[
+    {
+        "Group":  0,
+        "Number":  300,
+        "Name":  "Fallen Angel Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_dagger",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  0,
+        "Number":  301,
+        "Name":  "Fallen Angel Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_sword",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  0,
+        "Number":  302,
+        "Name":  "Fallen Angel Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_blade",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  0,
+        "Number":  303,
+        "Name":  "Fallen Angel Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_claw",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  0,
+        "Number":  304,
+        "Name":  "Devil Majestyc Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_sword",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  0,
+        "Number":  305,
+        "Name":  "Devil Majestyc Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_blade",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  0,
+        "Number":  306,
+        "Name":  "Devil Majestyc Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_claw",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  0,
+        "Number":  307,
+        "Name":  "Arcanor Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_sword",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  0,
+        "Number":  308,
+        "Name":  "Arcanor Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_blade",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  0,
+        "Number":  309,
+        "Name":  "Arcanor Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_claw",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  0,
+        "Number":  310,
+        "Name":  "Aurion Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_dagger",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  0,
+        "Number":  311,
+        "Name":  "Aurion Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_sword",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  0,
+        "Number":  312,
+        "Name":  "Aurion Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_blade",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  0,
+        "Number":  313,
+        "Name":  "Aurion Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_claw",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  0,
+        "Number":  314,
+        "Name":  "Carnival Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_sword",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  0,
+        "Number":  315,
+        "Name":  "Carnival Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_blade",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  0,
+        "Number":  316,
+        "Name":  "Carnival Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_claw",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  0,
+        "Number":  317,
+        "Name":  "Druid Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_sword",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  0,
+        "Number":  318,
+        "Name":  "Druid Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_blade",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  0,
+        "Number":  319,
+        "Name":  "Druid Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_claw",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  0,
+        "Number":  320,
+        "Name":  "Hellshade Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_sword",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  0,
+        "Number":  321,
+        "Name":  "Hellshade Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_blade",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  0,
+        "Number":  322,
+        "Name":  "Hellshade Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_claw",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  0,
+        "Number":  323,
+        "Name":  "Icefrost Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_sword",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  0,
+        "Number":  324,
+        "Name":  "Icefrost Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_blade",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  0,
+        "Number":  326,
+        "Name":  "Icefrost Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_claw",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  0,
+        "Number":  327,
+        "Name":  "Magma Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_sword",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  0,
+        "Number":  328,
+        "Name":  "Magma Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_sword",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  0,
+        "Number":  329,
+        "Name":  "Magma Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_blade",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  0,
+        "Number":  330,
+        "Name":  "Magma Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_claw",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  0,
+        "Number":  331,
+        "Name":  "Nightfire Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_sword",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  0,
+        "Number":  332,
+        "Name":  "Nightfire Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_blade",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  0,
+        "Number":  333,
+        "Name":  "Nightfire Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_claw",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  0,
+        "Number":  334,
+        "Name":  "Pumpkin Lord Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_sword",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  0,
+        "Number":  335,
+        "Name":  "Pumpkin Lord Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_blade",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  0,
+        "Number":  336,
+        "Name":  "Pumpkin Lord Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_claw",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  0,
+        "Number":  337,
+        "Name":  "Wraith Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_sword",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  0,
+        "Number":  338,
+        "Name":  "Wraith Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_blade",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  0,
+        "Number":  339,
+        "Name":  "Wraith Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_claw",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  0,
+        "Number":  340,
+        "Name":  "Abbadon Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_sword",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  0,
+        "Number":  341,
+        "Name":  "Abbadon Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_blade",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  0,
+        "Number":  342,
+        "Name":  "Abbadon Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_claw",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  0,
+        "Number":  343,
+        "Name":  "Death Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_sword",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  0,
+        "Number":  344,
+        "Name":  "Death Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_blade",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  0,
+        "Number":  345,
+        "Name":  "Death Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_claw",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  0,
+        "Number":  346,
+        "Name":  "Abbadon Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_spear",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  0,
+        "Number":  347,
+        "Name":  "Death Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_dagger",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  0,
+        "Number":  348,
+        "Name":  "Death Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_spear",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  0,
+        "Number":  349,
+        "Name":  "Blackray Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_sword",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  0,
+        "Number":  350,
+        "Name":  "Blackray Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_blade",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  0,
+        "Number":  351,
+        "Name":  "Blackray Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_claw",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  0,
+        "Number":  352,
+        "Name":  "Blackray Hammer",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_sword",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  0,
+        "Number":  353,
+        "Name":  "Blackray Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_dagger",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  0,
+        "Number":  354,
+        "Name":  "Bloodbound Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_sword",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  0,
+        "Number":  355,
+        "Name":  "Bloodbound Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_blade",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  0,
+        "Number":  356,
+        "Name":  "Bloodbound Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_claw",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  0,
+        "Number":  357,
+        "Name":  "Bloodbound Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_spear",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  0,
+        "Number":  358,
+        "Name":  "Darkness Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_sword",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  0,
+        "Number":  359,
+        "Name":  "Darkness Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_blade",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  0,
+        "Number":  360,
+        "Name":  "Darkness Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_claw",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  0,
+        "Number":  361,
+        "Name":  "Darkness Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_spear",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  0,
+        "Number":  362,
+        "Name":  "Elegance Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_sword",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  0,
+        "Number":  363,
+        "Name":  "Elegance Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_blade",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  0,
+        "Number":  364,
+        "Name":  "Elegance Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_claw",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  0,
+        "Number":  365,
+        "Name":  "Elegance Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_spear",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  0,
+        "Number":  366,
+        "Name":  "Santablue Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_sword",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  0,
+        "Number":  367,
+        "Name":  "Santablue Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_blade",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  0,
+        "Number":  368,
+        "Name":  "Santablue Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_claw",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  0,
+        "Number":  369,
+        "Name":  "Santagreen Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_sword",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  0,
+        "Number":  370,
+        "Name":  "Santagreen Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_blade",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  0,
+        "Number":  371,
+        "Name":  "Santagreen Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_claw",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  0,
+        "Number":  372,
+        "Name":  "Santagreen Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_spear",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  0,
+        "Number":  373,
+        "Name":  "Dark Bunny Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_sword",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  0,
+        "Number":  374,
+        "Name":  "Dark Bunny Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_blade",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  0,
+        "Number":  375,
+        "Name":  "Dark Bunny Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_claw",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  0,
+        "Number":  376,
+        "Name":  "Dark Bunny Axe",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_axe",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  0,
+        "Number":  377,
+        "Name":  "Dark Bunny Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_dagger",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  0,
+        "Number":  378,
+        "Name":  "Abyssal Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_sword",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  379,
+        "Name":  "Abyssal Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_blade",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  380,
+        "Name":  "Abyssal Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_claw",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  381,
+        "Name":  "Abyssal Axe",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_axe",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  382,
+        "Name":  "Abyssal Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_dagger",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  383,
+        "Name":  "Abyssal Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_spear",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  0,
+        "Number":  384,
+        "Name":  "Black Pumpkin Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_sword",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  0,
+        "Number":  385,
+        "Name":  "Black Pumpkin Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_blade",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  0,
+        "Number":  386,
+        "Name":  "Black Pumpkin Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_claw",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  0,
+        "Number":  387,
+        "Name":  "Black Pumpkin Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_spear",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  0,
+        "Number":  388,
+        "Name":  "Bloody Soldier Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\bloodysoldier\\\\",
+        "File":  "Bloody_soldier_sword",
+        "Skin":  "bloodysoldier"
+    },
+    {
+        "Group":  0,
+        "Number":  389,
+        "Name":  "Bloody Soldier Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\bloodysoldier\\\\",
+        "File":  "Bloody_soldier_blade",
+        "Skin":  "bloodysoldier"
+    },
+    {
+        "Group":  0,
+        "Number":  390,
+        "Name":  "Bloody Soldier Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\bloodysoldier\\\\",
+        "File":  "Bloody_soldier_claw",
+        "Skin":  "bloodysoldier"
+    },
+    {
+        "Group":  0,
+        "Number":  391,
+        "Name":  "Bloody Soldier Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\bloodysoldier\\\\",
+        "File":  "Bloody_soldier_dagger",
+        "Skin":  "bloodysoldier"
+    },
+    {
+        "Group":  0,
+        "Number":  392,
+        "Name":  "Evil Rabbit Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_sword",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  0,
+        "Number":  393,
+        "Name":  "Evil Rabbit Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_blade",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  0,
+        "Number":  394,
+        "Name":  "Evil Rabbit Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_claw",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  0,
+        "Number":  395,
+        "Name":  "Evil Rabbit Dagger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_dagger",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  0,
+        "Number":  396,
+        "Name":  "Evil Rabbit Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_spear",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  0,
+        "Number":  397,
+        "Name":  "Hellfire Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_sword",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  0,
+        "Number":  398,
+        "Name":  "Hellfire Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_blade",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  0,
+        "Number":  399,
+        "Name":  "Hellfire Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_claw",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  0,
+        "Number":  400,
+        "Name":  "Hellfire Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_spear",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  0,
+        "Number":  401,
+        "Name":  "Macabre Sword",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_sword",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  0,
+        "Number":  402,
+        "Name":  "Macabre Two-Hand Blade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_blade",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  0,
+        "Number":  403,
+        "Name":  "Macabre Claw",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_claw",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  0,
+        "Number":  404,
+        "Name":  "Macabre Spear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_spear",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  0,
+        "Number":  405,
+        "Name":  "Macabre Hammer",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_sword",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  2,
+        "Number":  300,
+        "Name":  "Fallen Angel Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_scepter",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  2,
+        "Number":  301,
+        "Name":  "Devil Majestyc Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_scepter",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  2,
+        "Number":  302,
+        "Name":  "Arcanor Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_scepter",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  2,
+        "Number":  303,
+        "Name":  "Aurion Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_scepter",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  2,
+        "Number":  304,
+        "Name":  "Carnival Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_scepter",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  2,
+        "Number":  305,
+        "Name":  "Druid Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_scepter",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  2,
+        "Number":  306,
+        "Name":  "Hellshade Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_scepter",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  2,
+        "Number":  307,
+        "Name":  "Icefrost Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_scepter",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  2,
+        "Number":  308,
+        "Name":  "Magma Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_scepter",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  2,
+        "Number":  309,
+        "Name":  "Nightfire Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_scepter",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  2,
+        "Number":  310,
+        "Name":  "Pumpkin Lord Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_scepter",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  2,
+        "Number":  311,
+        "Name":  "Wraith Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_scepter",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  2,
+        "Number":  312,
+        "Name":  "Abbadon Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_scepter",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  2,
+        "Number":  313,
+        "Name":  "Death Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_scepter",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  2,
+        "Number":  314,
+        "Name":  "Blackray Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_scepter",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  2,
+        "Number":  315,
+        "Name":  "Bloodbound Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_scepter",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  2,
+        "Number":  316,
+        "Name":  "Darkness Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_scepter",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  2,
+        "Number":  317,
+        "Name":  "Elegance Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_scepter",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  2,
+        "Number":  318,
+        "Name":  "Santablue Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_scepter",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  2,
+        "Number":  319,
+        "Name":  "Santagreen Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_scepter",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  2,
+        "Number":  320,
+        "Name":  "Dark Bunny Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_scepter",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  2,
+        "Number":  321,
+        "Name":  "Abyssal Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_scepter",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  2,
+        "Number":  322,
+        "Name":  "Black Pumpkin Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_scepter",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  2,
+        "Number":  323,
+        "Name":  "Bloody Soldier Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\bloodysoldier\\\\",
+        "File":  "Bloody_soldier_scepter",
+        "Skin":  "bloodysoldier"
+    },
+    {
+        "Group":  2,
+        "Number":  324,
+        "Name":  "Evil Rabbit Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_scepter",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  2,
+        "Number":  325,
+        "Name":  "Hellfire Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_scepter",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  2,
+        "Number":  326,
+        "Name":  "Macabre Scepter",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_scepter",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  4,
+        "Number":  300,
+        "Name":  "Fallen Angel Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_bow",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  4,
+        "Number":  301,
+        "Name":  "Fallen Angel Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_crossbow",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  4,
+        "Number":  302,
+        "Name":  "Devil Majestyc Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_bow",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  4,
+        "Number":  303,
+        "Name":  "Devil Majestyc Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_crossbow",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  4,
+        "Number":  304,
+        "Name":  "Arcanor Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_bow",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  4,
+        "Number":  305,
+        "Name":  "Arcanor Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_crossbow",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  4,
+        "Number":  306,
+        "Name":  "Aurion Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_bow",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  4,
+        "Number":  307,
+        "Name":  "Aurion Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_crossbow",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  4,
+        "Number":  308,
+        "Name":  "Carnival Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_bow",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  4,
+        "Number":  309,
+        "Name":  "Carnival Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_crossbow",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  4,
+        "Number":  310,
+        "Name":  "Druid Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_bow",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  4,
+        "Number":  311,
+        "Name":  "Druid Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_crossbow",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  4,
+        "Number":  312,
+        "Name":  "Hellshade Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_bow",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  4,
+        "Number":  313,
+        "Name":  "Hellshade Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_crossbow",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  4,
+        "Number":  314,
+        "Name":  "Icefrost Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_bow",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  4,
+        "Number":  315,
+        "Name":  "Icefrost Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_crossbow",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  4,
+        "Number":  316,
+        "Name":  "Magma Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_bow",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  4,
+        "Number":  317,
+        "Name":  "Magma Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_crossbow",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  4,
+        "Number":  318,
+        "Name":  "Nightfire Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_bow",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  4,
+        "Number":  319,
+        "Name":  "Nightfire Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_crossbow",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  4,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_bow",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  4,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_crossbow",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  4,
+        "Number":  322,
+        "Name":  "Wraith Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_bow",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  4,
+        "Number":  323,
+        "Name":  "Wraith Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_crossbow",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  4,
+        "Number":  324,
+        "Name":  "Abbadon Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_bow",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  4,
+        "Number":  325,
+        "Name":  "Abbadon Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_crossbow",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  4,
+        "Number":  326,
+        "Name":  "Death Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_bow",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  4,
+        "Number":  327,
+        "Name":  "Death Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_crossbow",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  4,
+        "Number":  328,
+        "Name":  "Blackray Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_bow",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  4,
+        "Number":  329,
+        "Name":  "Blackray Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_crossbow",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  4,
+        "Number":  330,
+        "Name":  "Bloodbound Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_bow",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  4,
+        "Number":  331,
+        "Name":  "Bloodbound Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_crossbow",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  4,
+        "Number":  332,
+        "Name":  "Darkness Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_bow",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  4,
+        "Number":  333,
+        "Name":  "Darkness Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_crossbow",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  4,
+        "Number":  334,
+        "Name":  "Elegance Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_bow",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  4,
+        "Number":  335,
+        "Name":  "Elegance Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_crossbow",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  4,
+        "Number":  336,
+        "Name":  "Santablue Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_bow",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  4,
+        "Number":  337,
+        "Name":  "Santablue Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_crossbow",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  4,
+        "Number":  338,
+        "Name":  "Santagreen Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_bow",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  4,
+        "Number":  339,
+        "Name":  "Santagreen Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_crossbow",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  4,
+        "Number":  340,
+        "Name":  "Dark Bunny Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_bow",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  4,
+        "Number":  341,
+        "Name":  "Dark Bunny Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_crossbow",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  4,
+        "Number":  342,
+        "Name":  "Abyssal Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_bow",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  4,
+        "Number":  343,
+        "Name":  "Abyssal Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_crossbow",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  4,
+        "Number":  344,
+        "Name":  "Black Pumpkin Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_bow",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  4,
+        "Number":  345,
+        "Name":  "Black Pumpkin Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_crossbow",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  4,
+        "Number":  346,
+        "Name":  "Bloody Soldier Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_bow",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  4,
+        "Number":  347,
+        "Name":  "Bloody Soldier Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_crossbow",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  4,
+        "Number":  348,
+        "Name":  "Evil Rabbit Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_bow",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  4,
+        "Number":  349,
+        "Name":  "Evil Rabbit Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_crossbow",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  4,
+        "Number":  350,
+        "Name":  "Hellfire Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_bow",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  4,
+        "Number":  351,
+        "Name":  "Hellfire Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_crossbow",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  4,
+        "Number":  352,
+        "Name":  "Macabre Bow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_bow",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  4,
+        "Number":  353,
+        "Name":  "Macabre Crossbow",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_crossbow",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  5,
+        "Number":  300,
+        "Name":  "Fallen Angel Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_staff",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  5,
+        "Number":  301,
+        "Name":  "Fallen Angel Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_stick",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  5,
+        "Number":  302,
+        "Name":  "Devil Majestyc Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_staff",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  5,
+        "Number":  303,
+        "Name":  "Devil Majestyc Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_stick",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  5,
+        "Number":  304,
+        "Name":  "Arcanor Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_staff",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  5,
+        "Number":  305,
+        "Name":  "Arcanor Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_stick",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  5,
+        "Number":  306,
+        "Name":  "Aurion Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_staff",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  5,
+        "Number":  307,
+        "Name":  "Aurion Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_stick",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  5,
+        "Number":  308,
+        "Name":  "Carnival Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_staff",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  5,
+        "Number":  309,
+        "Name":  "Carnival Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_stick",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  5,
+        "Number":  310,
+        "Name":  "Druid Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_staff",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  5,
+        "Number":  311,
+        "Name":  "Druid Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_stick",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  5,
+        "Number":  312,
+        "Name":  "Hellshade Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_staff",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  5,
+        "Number":  313,
+        "Name":  "Hellshade Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_stick",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  5,
+        "Number":  314,
+        "Name":  "Icefrost Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_staff",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  5,
+        "Number":  315,
+        "Name":  "Icefrost Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_stick",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  5,
+        "Number":  316,
+        "Name":  "Magma Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_staff",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  5,
+        "Number":  317,
+        "Name":  "Magma Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_stick",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  5,
+        "Number":  318,
+        "Name":  "Nightfire Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_staff",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  5,
+        "Number":  319,
+        "Name":  "Nightfire Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_stick",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  5,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_staff",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  5,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_stick",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  5,
+        "Number":  322,
+        "Name":  "Wraith Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_staff",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  5,
+        "Number":  323,
+        "Name":  "Wraith Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_stick",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  5,
+        "Number":  324,
+        "Name":  "Abbadon Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_staff",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  5,
+        "Number":  325,
+        "Name":  "Abbadon Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_stick",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  5,
+        "Number":  326,
+        "Name":  "Death Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_staff",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  5,
+        "Number":  327,
+        "Name":  "Death Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_stick",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  5,
+        "Number":  328,
+        "Name":  "Blackray Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_staff",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  5,
+        "Number":  329,
+        "Name":  "Blackray Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_stick",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  5,
+        "Number":  330,
+        "Name":  "Bloodbound Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_staff",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  5,
+        "Number":  331,
+        "Name":  "Bloodbound Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_stick",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  5,
+        "Number":  332,
+        "Name":  "Darkness Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_staff",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  5,
+        "Number":  333,
+        "Name":  "Darkness Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_stick",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  5,
+        "Number":  334,
+        "Name":  "Elegance Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_staff",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  5,
+        "Number":  335,
+        "Name":  "Elegance Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_stick",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  5,
+        "Number":  336,
+        "Name":  "Santablue Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_staff",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  5,
+        "Number":  337,
+        "Name":  "Santablue Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_stick",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  5,
+        "Number":  338,
+        "Name":  "Santagreen Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_staff",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  5,
+        "Number":  339,
+        "Name":  "Santagreen Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_stick",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  5,
+        "Number":  340,
+        "Name":  "Dark Bunny Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_staff",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  5,
+        "Number":  341,
+        "Name":  "Dark Bunny Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_stick",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  5,
+        "Number":  342,
+        "Name":  "Abyssal Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_staff",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  5,
+        "Number":  343,
+        "Name":  "Abyssal Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_stick",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  5,
+        "Number":  344,
+        "Name":  "Black Pumpkin Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_staff",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  5,
+        "Number":  345,
+        "Name":  "Black Pumpkin Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_stick",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  5,
+        "Number":  346,
+        "Name":  "Bloody Soldier Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_staff",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  5,
+        "Number":  347,
+        "Name":  "Bloody Soldier Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_stick",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  5,
+        "Number":  348,
+        "Name":  "Evil Rabbit Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_staff",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  5,
+        "Number":  349,
+        "Name":  "Evil Rabbit Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_stick",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  5,
+        "Number":  350,
+        "Name":  "Hellfire Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_staff",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  5,
+        "Number":  351,
+        "Name":  "Hellfire Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_stick",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  5,
+        "Number":  352,
+        "Name":  "Macabre Staff",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_staff",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  5,
+        "Number":  353,
+        "Name":  "Macabre Stick",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_stick",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  6,
+        "Number":  300,
+        "Name":  "Fallen Angel Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_shield",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  6,
+        "Number":  301,
+        "Name":  "Devil Majestyc Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_shield",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  6,
+        "Number":  302,
+        "Name":  "Arcanor Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_shield",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  6,
+        "Number":  303,
+        "Name":  "Aurion Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_shield",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  6,
+        "Number":  304,
+        "Name":  "Carnival Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_shield",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  6,
+        "Number":  305,
+        "Name":  "Druid Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_shield",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  6,
+        "Number":  306,
+        "Name":  "Hellshade Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_shield",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  6,
+        "Number":  307,
+        "Name":  "Icefrost Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_shield",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  6,
+        "Number":  308,
+        "Name":  "Magma Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_shield",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  6,
+        "Number":  309,
+        "Name":  "Nightfire Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_shield",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  6,
+        "Number":  310,
+        "Name":  "Pumpkin Lord Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_shield",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  6,
+        "Number":  311,
+        "Name":  "Wraith Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_shield",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  6,
+        "Number":  312,
+        "Name":  "Abbadon Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_shield",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  6,
+        "Number":  313,
+        "Name":  "Death Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_shield",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  6,
+        "Number":  314,
+        "Name":  "Blackray Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_shield",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  6,
+        "Number":  315,
+        "Name":  "Bloodbound Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_shield",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  6,
+        "Number":  316,
+        "Name":  "Darkness Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_shield",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  6,
+        "Number":  317,
+        "Name":  "Elegance Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_shield",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  6,
+        "Number":  318,
+        "Name":  "Santablue Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_shield",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  6,
+        "Number":  319,
+        "Name":  "Santagreen Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_shield",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  6,
+        "Number":  320,
+        "Name":  "Dark Bunny Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_shield",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  6,
+        "Number":  321,
+        "Name":  "Abyssal Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_shield",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  6,
+        "Number":  322,
+        "Name":  "Black Pumpkin Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_shield",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  6,
+        "Number":  323,
+        "Name":  "Bloody Soldier Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_shield",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  6,
+        "Number":  324,
+        "Name":  "Evil Rabbit Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_shield",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  6,
+        "Number":  325,
+        "Name":  "Hellfire Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_shield",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  6,
+        "Number":  326,
+        "Name":  "Macabre Shield",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_shield",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  7,
+        "Number":  300,
+        "Name":  "Fallen Angel Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_helm_m",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  7,
+        "Number":  301,
+        "Name":  "Fallen Angel Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_helm_f",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  7,
+        "Number":  302,
+        "Name":  "Devil Majestyc Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_helm_m",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  7,
+        "Number":  303,
+        "Name":  "Devil Majestyc Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_helm_f",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  7,
+        "Number":  304,
+        "Name":  "Arcanor Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_helm_m",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  7,
+        "Number":  305,
+        "Name":  "Arcanor Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_helm_f",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  7,
+        "Number":  306,
+        "Name":  "Aurion Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_helm_m",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  7,
+        "Number":  307,
+        "Name":  "Aurion Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_helm_f",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  7,
+        "Number":  308,
+        "Name":  "Carnival Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_helm_m",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  7,
+        "Number":  309,
+        "Name":  "Carnival Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_helm_f",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  7,
+        "Number":  310,
+        "Name":  "Druid Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_helm_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  7,
+        "Number":  311,
+        "Name":  "Druid Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_helm_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  7,
+        "Number":  312,
+        "Name":  "Hellshade Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_helm_m",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  7,
+        "Number":  313,
+        "Name":  "Hellshade Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_helm_f",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  7,
+        "Number":  314,
+        "Name":  "Icefrost Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_helm_m",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  7,
+        "Number":  315,
+        "Name":  "Icefrost Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_helm_f",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  7,
+        "Number":  316,
+        "Name":  "Magma Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_helm_m",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  7,
+        "Number":  317,
+        "Name":  "Magma Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_helm_f",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  7,
+        "Number":  318,
+        "Name":  "Nightfire Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_helm_m",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  7,
+        "Number":  319,
+        "Name":  "Nightfire Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_helm_f",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  7,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_helm_m",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  7,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_helm_f",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  7,
+        "Number":  322,
+        "Name":  "Wraith Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_helm_m",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  7,
+        "Number":  323,
+        "Name":  "Wraith Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_helm_f",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  7,
+        "Number":  324,
+        "Name":  "Abbadon Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_helm_bk",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  7,
+        "Number":  325,
+        "Name":  "Abbadon Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_helm_bk",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  7,
+        "Number":  326,
+        "Name":  "Death Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_helm_bk",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  7,
+        "Number":  327,
+        "Name":  "Death Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_helm_bk",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  7,
+        "Number":  328,
+        "Name":  "Blackray Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_helm_bk",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  7,
+        "Number":  329,
+        "Name":  "Blackray Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_helm_bk",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  7,
+        "Number":  330,
+        "Name":  "Bloodbound Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_helm_bk",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  7,
+        "Number":  331,
+        "Name":  "Bloodbound Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_helm_bk",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  7,
+        "Number":  332,
+        "Name":  "Darkness Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_helm_bk",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  7,
+        "Number":  333,
+        "Name":  "Darkness Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_helm_bk",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  7,
+        "Number":  334,
+        "Name":  "Elegance Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_helm_bk",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  7,
+        "Number":  335,
+        "Name":  "Elegance Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_helm_bk",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  7,
+        "Number":  336,
+        "Name":  "Santablue Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_helm_bk",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  7,
+        "Number":  337,
+        "Name":  "Santablue Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_helm_bk",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  7,
+        "Number":  338,
+        "Name":  "Santagreen Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_helm_bk",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  7,
+        "Number":  339,
+        "Name":  "Santagreen Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_helm_bk",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  7,
+        "Number":  340,
+        "Name":  "Dark Bunny Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_helm_bk",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  7,
+        "Number":  341,
+        "Name":  "Dark Bunny Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_helm_bk",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  7,
+        "Number":  342,
+        "Name":  "Abyssal Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_helm_bk",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  7,
+        "Number":  343,
+        "Name":  "Abyssal Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_helm_bk",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  7,
+        "Number":  344,
+        "Name":  "Black Pumpkin Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_bow",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  7,
+        "Number":  345,
+        "Name":  "Black Pumpkin Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_bow",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  7,
+        "Number":  346,
+        "Name":  "Bloody Soldier Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_helm_bk",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  7,
+        "Number":  347,
+        "Name":  "Bloody Soldier Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_helm_bk",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  7,
+        "Number":  348,
+        "Name":  "Evil Rabbit Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_bow",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  7,
+        "Number":  349,
+        "Name":  "Evil Rabbit Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_bow",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  7,
+        "Number":  350,
+        "Name":  "Hellfire Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_bow",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  7,
+        "Number":  351,
+        "Name":  "Hellfire Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_bow",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  7,
+        "Number":  352,
+        "Name":  "Macabre Helm M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_box",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  7,
+        "Number":  353,
+        "Name":  "Macabre Helm F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_box",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  8,
+        "Number":  300,
+        "Name":  "Fallen Angel Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_armor_m",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  8,
+        "Number":  301,
+        "Name":  "Fallen Angel Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_armor_f",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  8,
+        "Number":  302,
+        "Name":  "Devil Majestyc Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_armor_m",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  8,
+        "Number":  303,
+        "Name":  "Devil Majestyc Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_armor_f",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  8,
+        "Number":  304,
+        "Name":  "Arcanor Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_armor_m",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  8,
+        "Number":  305,
+        "Name":  "Arcanor Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_armor_f",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  8,
+        "Number":  306,
+        "Name":  "Aurion Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_armor_m",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  8,
+        "Number":  307,
+        "Name":  "Aurion Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_armor_f",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  8,
+        "Number":  308,
+        "Name":  "Carnival Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_armor_m",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  8,
+        "Number":  309,
+        "Name":  "Carnival Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_armor_f",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  8,
+        "Number":  310,
+        "Name":  "Druid Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_armor_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  8,
+        "Number":  311,
+        "Name":  "Druid Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_armor_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  8,
+        "Number":  312,
+        "Name":  "Hellshade Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_armor_m",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  8,
+        "Number":  313,
+        "Name":  "Hellshade Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_armor_f",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  8,
+        "Number":  314,
+        "Name":  "Icefrost Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_armor_m",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  8,
+        "Number":  315,
+        "Name":  "Icefrost Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_armor_f",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  8,
+        "Number":  316,
+        "Name":  "Magma Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_armor_m",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  8,
+        "Number":  317,
+        "Name":  "Magma Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_armor_f",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  8,
+        "Number":  318,
+        "Name":  "Nightfire Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_armor_m",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  8,
+        "Number":  319,
+        "Name":  "Nightfire Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_armor_f",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  8,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_armor_m",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  8,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_armor_f",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  8,
+        "Number":  322,
+        "Name":  "Wraith Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_armor_m",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  8,
+        "Number":  323,
+        "Name":  "Wraith Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_armor_f",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  8,
+        "Number":  324,
+        "Name":  "Abbadon Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_armor_m",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  8,
+        "Number":  325,
+        "Name":  "Abbadon Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_armor_f",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  8,
+        "Number":  326,
+        "Name":  "Death Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_armor_m",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  8,
+        "Number":  327,
+        "Name":  "Death Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_armor_f",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  8,
+        "Number":  328,
+        "Name":  "Blackray Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_armor_m",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  8,
+        "Number":  329,
+        "Name":  "Blackray Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_armor_f",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  8,
+        "Number":  330,
+        "Name":  "Bloodbound Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_armor_m",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  8,
+        "Number":  331,
+        "Name":  "Bloodbound Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_armor_f",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  8,
+        "Number":  332,
+        "Name":  "Darkness Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_armor_m",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  8,
+        "Number":  333,
+        "Name":  "Darkness Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_armor_f",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  8,
+        "Number":  334,
+        "Name":  "Elegance Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_armor_m",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  8,
+        "Number":  335,
+        "Name":  "Elegance Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_armor_f",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  8,
+        "Number":  336,
+        "Name":  "Santablue Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_armor_m",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  8,
+        "Number":  337,
+        "Name":  "Santablue Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_armor_f",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  8,
+        "Number":  338,
+        "Name":  "Santagreen Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_armor_m",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  8,
+        "Number":  339,
+        "Name":  "Santagreen Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_armor_f",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  8,
+        "Number":  340,
+        "Name":  "Dark Bunny Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_armor_m",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  8,
+        "Number":  341,
+        "Name":  "Dark Bunny Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_armor_f",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  8,
+        "Number":  342,
+        "Name":  "Abyssal Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_armor_m",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  8,
+        "Number":  343,
+        "Name":  "Abyssal Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_armor_f",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  8,
+        "Number":  344,
+        "Name":  "Black Pumpkin Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_armor_m",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  8,
+        "Number":  345,
+        "Name":  "Black Pumpkin Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_armor_f",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  8,
+        "Number":  346,
+        "Name":  "Bloody Soldier Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_armor_m",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  8,
+        "Number":  347,
+        "Name":  "Bloody Soldier Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_armor_f",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  8,
+        "Number":  348,
+        "Name":  "Evil Rabbit Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_armor_m",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  8,
+        "Number":  349,
+        "Name":  "Evil Rabbit Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_armor_f",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  8,
+        "Number":  350,
+        "Name":  "Hellfire Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_armor_m",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  8,
+        "Number":  351,
+        "Name":  "Hellfire Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_armor_f",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  8,
+        "Number":  352,
+        "Name":  "Macabre Armor M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_armor_m",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  8,
+        "Number":  353,
+        "Name":  "Macabre Armor F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_armor_f",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  9,
+        "Number":  300,
+        "Name":  "Fallen Angel Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_pants_m",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  9,
+        "Number":  301,
+        "Name":  "Fallen Angel Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_pants_f",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  9,
+        "Number":  302,
+        "Name":  "Devil Majestyc Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_pants_m",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  9,
+        "Number":  303,
+        "Name":  "Devil Majestyc Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_pants_f",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  9,
+        "Number":  304,
+        "Name":  "Arcanor Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_pants_m",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  9,
+        "Number":  305,
+        "Name":  "Arcanor Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_pants_f",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  9,
+        "Number":  306,
+        "Name":  "Aurion Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_pants_m",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  9,
+        "Number":  307,
+        "Name":  "Aurion Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_pants_f",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  9,
+        "Number":  308,
+        "Name":  "Carnival Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_pants_m",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  9,
+        "Number":  309,
+        "Name":  "Carnival Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_pants_f",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  9,
+        "Number":  310,
+        "Name":  "Druid Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_pants_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  9,
+        "Number":  311,
+        "Name":  "Druid Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_pants_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  9,
+        "Number":  312,
+        "Name":  "Hellshade Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_pants_m",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  9,
+        "Number":  313,
+        "Name":  "Hellshade Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_pants_f",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  9,
+        "Number":  314,
+        "Name":  "Icefrost Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_pants_m",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  9,
+        "Number":  315,
+        "Name":  "Icefrost Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_pants_f",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  9,
+        "Number":  316,
+        "Name":  "Magma Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_pants_m",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  9,
+        "Number":  317,
+        "Name":  "Magma Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_pants_f",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  9,
+        "Number":  318,
+        "Name":  "Nightfire Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_pants_m",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  9,
+        "Number":  319,
+        "Name":  "Nightfire Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_pants_f",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  9,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_pants_m",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  9,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_pants_f",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  9,
+        "Number":  322,
+        "Name":  "Wraith Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_pants_m",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  9,
+        "Number":  323,
+        "Name":  "Wraith Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_pants_f",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  9,
+        "Number":  324,
+        "Name":  "Abbadon Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_pants_m",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  9,
+        "Number":  325,
+        "Name":  "Abbadon Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_pants_f",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  9,
+        "Number":  326,
+        "Name":  "Death Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_pants_m",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  9,
+        "Number":  327,
+        "Name":  "Death Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_pants_f",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  9,
+        "Number":  328,
+        "Name":  "Blackray Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_pants_m",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  9,
+        "Number":  329,
+        "Name":  "Blackray Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_pants_f",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  9,
+        "Number":  330,
+        "Name":  "Bloodbound Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_pants_m",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  9,
+        "Number":  331,
+        "Name":  "Bloodbound Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_pants_f",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  9,
+        "Number":  332,
+        "Name":  "Darkness Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_pants_m",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  9,
+        "Number":  333,
+        "Name":  "Darkness Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_pants_f",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  9,
+        "Number":  334,
+        "Name":  "Elegance Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_pants_m",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  9,
+        "Number":  335,
+        "Name":  "Elegance Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_pants_f",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  9,
+        "Number":  336,
+        "Name":  "Santablue Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_pants_m",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  9,
+        "Number":  337,
+        "Name":  "Santablue Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_pants_f",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  9,
+        "Number":  338,
+        "Name":  "Santagreen Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_pants_m",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  9,
+        "Number":  339,
+        "Name":  "Santagreen Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_pants_f",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  9,
+        "Number":  340,
+        "Name":  "Dark Bunny Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_pants_m",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  9,
+        "Number":  341,
+        "Name":  "Dark Bunny Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_pants_f",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  9,
+        "Number":  342,
+        "Name":  "Abyssal Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_pants_m",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  9,
+        "Number":  343,
+        "Name":  "Abyssal Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_pants_f",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  9,
+        "Number":  344,
+        "Name":  "Black Pumpkin Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_pants_m",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  9,
+        "Number":  345,
+        "Name":  "Black Pumpkin Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_pants_f",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  9,
+        "Number":  346,
+        "Name":  "Bloody Soldier Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_pants_m",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  9,
+        "Number":  347,
+        "Name":  "Bloody Soldier Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_pants_f",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  9,
+        "Number":  348,
+        "Name":  "Evil Rabbit Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_pants_m",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  9,
+        "Number":  349,
+        "Name":  "Evil Rabbit Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_pants_f",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  9,
+        "Number":  350,
+        "Name":  "Hellfire Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_pants_m",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  9,
+        "Number":  351,
+        "Name":  "Hellfire Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_pants_f",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  9,
+        "Number":  352,
+        "Name":  "Macabre Pants M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_pants_m",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  9,
+        "Number":  353,
+        "Name":  "Macabre Pants F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_pants_f",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  10,
+        "Number":  300,
+        "Name":  "Fallen Angel Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_gloves_m",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  10,
+        "Number":  301,
+        "Name":  "Fallen Angel Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_gloves_f",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  10,
+        "Number":  302,
+        "Name":  "Devil Majestyc Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_gloves_m",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  10,
+        "Number":  303,
+        "Name":  "Devil Majestyc Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_gloves_f",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  10,
+        "Number":  304,
+        "Name":  "Arcanor Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_gloves_m",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  10,
+        "Number":  305,
+        "Name":  "Arcanor Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_gloves_f",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  10,
+        "Number":  306,
+        "Name":  "Aurion Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_gloves_m",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  10,
+        "Number":  307,
+        "Name":  "Aurion Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_gloves_f",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  10,
+        "Number":  308,
+        "Name":  "Carnival Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_gloves_m",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  10,
+        "Number":  309,
+        "Name":  "Carnival Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_gloves_f",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  10,
+        "Number":  310,
+        "Name":  "Druid Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_gloves_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  10,
+        "Number":  311,
+        "Name":  "Druid Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_gloves_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  10,
+        "Number":  312,
+        "Name":  "Hellshade Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_gloves_m",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  10,
+        "Number":  313,
+        "Name":  "Hellshade Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_gloves_f",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  10,
+        "Number":  314,
+        "Name":  "Icefrost Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_gloves_m",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  10,
+        "Number":  315,
+        "Name":  "Icefrost Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_gloves_f",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  10,
+        "Number":  316,
+        "Name":  "Magma Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_gloves_m",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  10,
+        "Number":  317,
+        "Name":  "Magma Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_gloves_f",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  10,
+        "Number":  318,
+        "Name":  "Nightfire Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_gloves_m",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  10,
+        "Number":  319,
+        "Name":  "Nightfire Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_gloves_f",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  10,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_gloves_m",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  10,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_gloves_f",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  10,
+        "Number":  322,
+        "Name":  "Wraith Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_gloves_m",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  10,
+        "Number":  323,
+        "Name":  "Wraith Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_gloves_f",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  10,
+        "Number":  324,
+        "Name":  "Abbadon Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_gloves_m",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  10,
+        "Number":  325,
+        "Name":  "Abbadon Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_gloves_f",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  10,
+        "Number":  326,
+        "Name":  "Death Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_gloves_m",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  10,
+        "Number":  327,
+        "Name":  "Death Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_gloves_f",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  10,
+        "Number":  328,
+        "Name":  "Blackray Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_gloves_m",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  10,
+        "Number":  329,
+        "Name":  "Blackray Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_gloves_f",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  10,
+        "Number":  330,
+        "Name":  "Bloodbound Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_gloves_m",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  10,
+        "Number":  331,
+        "Name":  "Bloodbound Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_gloves_f",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  10,
+        "Number":  332,
+        "Name":  "Darkness Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_gloves_m",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  10,
+        "Number":  333,
+        "Name":  "Darkness Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_gloves_f",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  10,
+        "Number":  334,
+        "Name":  "Elegance Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_gloves_m",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  10,
+        "Number":  335,
+        "Name":  "Elegance Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_gloves_f",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  10,
+        "Number":  336,
+        "Name":  "Santablue Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_gloves_m",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  10,
+        "Number":  337,
+        "Name":  "Santablue Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_gloves_f",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  10,
+        "Number":  338,
+        "Name":  "Santagreen Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_gloves_m",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  10,
+        "Number":  339,
+        "Name":  "Santagreen Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_gloves_f",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  10,
+        "Number":  340,
+        "Name":  "Dark Bunny Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_gloves_m",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  10,
+        "Number":  341,
+        "Name":  "Dark Bunny Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_gloves_f",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  10,
+        "Number":  342,
+        "Name":  "Abyssal Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_gloves_m",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  10,
+        "Number":  343,
+        "Name":  "Abyssal Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_gloves_f",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  10,
+        "Number":  344,
+        "Name":  "Black Pumpkin Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_gloves_m",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  10,
+        "Number":  345,
+        "Name":  "Black Pumpkin Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_gloves_f",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  10,
+        "Number":  346,
+        "Name":  "Bloody Soldier Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_gloves_m",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  10,
+        "Number":  347,
+        "Name":  "Bloody Soldier Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_gloves_f",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  10,
+        "Number":  348,
+        "Name":  "Evil Rabbit Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_gloves_m",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  10,
+        "Number":  349,
+        "Name":  "Evil Rabbit Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_gloves_f",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  10,
+        "Number":  350,
+        "Name":  "Hellfire Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_gloves_m",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  10,
+        "Number":  351,
+        "Name":  "Hellfire Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_gloves_f",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  10,
+        "Number":  352,
+        "Name":  "Macabre Gloves M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_gloves_m",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  10,
+        "Number":  353,
+        "Name":  "Macabre Gloves F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_gloves_f",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  11,
+        "Number":  300,
+        "Name":  "Fallen Angel Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_boots_m",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  11,
+        "Number":  301,
+        "Name":  "Fallen Angel Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_boots_f",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  11,
+        "Number":  302,
+        "Name":  "Devil Majestyc Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_boots_m",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  11,
+        "Number":  303,
+        "Name":  "Devil Majestyc Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_boots_f",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  11,
+        "Number":  304,
+        "Name":  "Arcanor Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_boots_m",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  11,
+        "Number":  305,
+        "Name":  "Arcanor Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_boots_f",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  11,
+        "Number":  306,
+        "Name":  "Aurion Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_boots_m",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  11,
+        "Number":  307,
+        "Name":  "Aurion Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_boots_f",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  11,
+        "Number":  308,
+        "Name":  "Carnival Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_boots_m",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  11,
+        "Number":  309,
+        "Name":  "Carnival Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_boots_f",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  11,
+        "Number":  310,
+        "Name":  "Druid Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_boots_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  11,
+        "Number":  311,
+        "Name":  "Druid Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_boots_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  11,
+        "Number":  312,
+        "Name":  "Hellshade Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_boots_m",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  11,
+        "Number":  313,
+        "Name":  "Hellshade Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_boots_f",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  11,
+        "Number":  314,
+        "Name":  "Icefrost Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_boots_m",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  11,
+        "Number":  315,
+        "Name":  "Icefrost Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_boots_f",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  11,
+        "Number":  316,
+        "Name":  "Magma Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_boots_m",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  11,
+        "Number":  317,
+        "Name":  "Magma Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_boots_f",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  11,
+        "Number":  318,
+        "Name":  "Nightfire Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_boots_m",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  11,
+        "Number":  319,
+        "Name":  "Nightfire Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_boots_f",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  11,
+        "Number":  320,
+        "Name":  "Pumpkin Lord Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_boots_m",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  11,
+        "Number":  321,
+        "Name":  "Pumpkin Lord Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_boots_f",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  11,
+        "Number":  322,
+        "Name":  "Wraith Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_boots_m",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  11,
+        "Number":  323,
+        "Name":  "Wraith Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_boots_f",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  11,
+        "Number":  324,
+        "Name":  "Abbadon Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_boots_m",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  11,
+        "Number":  325,
+        "Name":  "Abbadon Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_boots_f",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  11,
+        "Number":  326,
+        "Name":  "Death Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_boots_m",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  11,
+        "Number":  327,
+        "Name":  "Death Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_boots_f",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  11,
+        "Number":  328,
+        "Name":  "Blackray Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_boots_m",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  11,
+        "Number":  329,
+        "Name":  "Blackray Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_boots_f",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  11,
+        "Number":  330,
+        "Name":  "Bloodbound Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_boots_m",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  11,
+        "Number":  331,
+        "Name":  "Bloodbound Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_boots_f",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  11,
+        "Number":  332,
+        "Name":  "Darkness Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_boots_m",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  11,
+        "Number":  333,
+        "Name":  "Darkness Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_boots_f",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  11,
+        "Number":  334,
+        "Name":  "Elegance Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_boots_m",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  11,
+        "Number":  335,
+        "Name":  "Elegance Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_boots_f",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  11,
+        "Number":  336,
+        "Name":  "Santablue Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_boots_m",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  11,
+        "Number":  337,
+        "Name":  "Santablue Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_boots_f",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  11,
+        "Number":  338,
+        "Name":  "Santagreen Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_boots_m",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  11,
+        "Number":  339,
+        "Name":  "Santagreen Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_boots_f",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  11,
+        "Number":  340,
+        "Name":  "Dark Bunny Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_boots_m",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  11,
+        "Number":  341,
+        "Name":  "Dark Bunny Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_boots_f",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  11,
+        "Number":  342,
+        "Name":  "Abyssal Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_boots_m",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  11,
+        "Number":  343,
+        "Name":  "Abyssal Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_boots_f",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  11,
+        "Number":  344,
+        "Name":  "Black Pumpkin Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_boots_m",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  11,
+        "Number":  345,
+        "Name":  "Black Pumpkin Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_boots_f",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  11,
+        "Number":  346,
+        "Name":  "Bloody Soldier Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_boots_m",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  11,
+        "Number":  347,
+        "Name":  "Bloody Soldier Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_boots_f",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  11,
+        "Number":  348,
+        "Name":  "Evil Rabbit Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_boots_m",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  11,
+        "Number":  349,
+        "Name":  "Evil Rabbit Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_boots_f",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  11,
+        "Number":  350,
+        "Name":  "Hellfire Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_boots_m",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  11,
+        "Number":  351,
+        "Name":  "Hellfire Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_boots_f",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  11,
+        "Number":  352,
+        "Name":  "Macabre Boots M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_boots_m",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  11,
+        "Number":  353,
+        "Name":  "Macabre Boots F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_boots_f",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  12,
+        "Number":  300,
+        "Name":  "Cloak of Fallen Angel",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_cape",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  12,
+        "Number":  301,
+        "Name":  "Cloak of Devil Majestyc",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_cape",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  12,
+        "Number":  302,
+        "Name":  "Cloak of Arcanor",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_cape",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  12,
+        "Number":  303,
+        "Name":  "Cloak of Aurion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_cape",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  12,
+        "Number":  304,
+        "Name":  "Cloak of Carnival",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_cape",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  12,
+        "Number":  305,
+        "Name":  "Cloak of Druid",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_cape",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  12,
+        "Number":  306,
+        "Name":  "Cloak of Hellshade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_cape",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  12,
+        "Number":  307,
+        "Name":  "Cloak of Icefrost",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_cape",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  12,
+        "Number":  308,
+        "Name":  "Cloak of Magma",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_cape",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  12,
+        "Number":  309,
+        "Name":  "Cloak of Nightfire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_cape",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  12,
+        "Number":  310,
+        "Name":  "Wing of Fallen Angel",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fallen_Angel\\\\",
+        "File":  "Fallen_angel_wing",
+        "Skin":  "Fallen_Angel"
+    },
+    {
+        "Group":  12,
+        "Number":  311,
+        "Name":  "Wing of Devil Majestyc",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_wing",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  12,
+        "Number":  312,
+        "Name":  "Wing of Arcanor",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Arcanor\\\\",
+        "File":  "Arcanor_wing",
+        "Skin":  "Arcanor"
+    },
+    {
+        "Group":  12,
+        "Number":  313,
+        "Name":  "Wing of Aurion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_wing",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  12,
+        "Number":  314,
+        "Name":  "Wing of Carnival",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_wing",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  12,
+        "Number":  315,
+        "Name":  "Wing of Druid M",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_wing_m",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  12,
+        "Number":  316,
+        "Name":  "Wing of Druid F",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Druid\\\\",
+        "File":  "Druid_wing_f",
+        "Skin":  "Druid"
+    },
+    {
+        "Group":  12,
+        "Number":  317,
+        "Name":  "Wing of Hellshade",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_wing",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  12,
+        "Number":  318,
+        "Name":  "Wing of Icefrost",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_wing",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  12,
+        "Number":  319,
+        "Name":  "Wing of Magma",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_wing",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  12,
+        "Number":  320,
+        "Name":  "Wing of Nightfire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_wing",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  12,
+        "Number":  321,
+        "Name":  "Cloak of Pumpkin Lord",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_cape",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  12,
+        "Number":  322,
+        "Name":  "Wing of Pumpkin Lord",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hallow\\\\",
+        "File":  "Hallow_wing",
+        "Skin":  "Hallow"
+    },
+    {
+        "Group":  12,
+        "Number":  323,
+        "Name":  "Cloak of Wraith",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_cape",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  12,
+        "Number":  324,
+        "Name":  "Wing of Wraith",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wraith\\\\",
+        "File":  "Wraith_wing",
+        "Skin":  "Wraith"
+    },
+    {
+        "Group":  12,
+        "Number":  325,
+        "Name":  "Cloak of Abbadon",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_cape",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  12,
+        "Number":  326,
+        "Name":  "Wing of Abbadon",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_wing",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  12,
+        "Number":  327,
+        "Name":  "Cloak of Death",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_cape",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  12,
+        "Number":  328,
+        "Name":  "Wing of Death",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_wing",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  12,
+        "Number":  329,
+        "Name":  "Cloak of Blackray",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_cape",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  12,
+        "Number":  330,
+        "Name":  "Wing of Blackray",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackray\\\\",
+        "File":  "Blackray_wing",
+        "Skin":  "Blackray"
+    },
+    {
+        "Group":  12,
+        "Number":  331,
+        "Name":  "Cloak of Bloodbound",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_cape",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  12,
+        "Number":  332,
+        "Name":  "Wing of Bloodbound",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_wing",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  12,
+        "Number":  333,
+        "Name":  "Cloak of Darkness",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_cape",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  12,
+        "Number":  334,
+        "Name":  "Wing of Darkness",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkness\\\\",
+        "File":  "Darkness_wing",
+        "Skin":  "Darkness"
+    },
+    {
+        "Group":  12,
+        "Number":  335,
+        "Name":  "Cloak of Elegance",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_cape",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  12,
+        "Number":  336,
+        "Name":  "Wing of Elegance",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_wing",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  12,
+        "Number":  337,
+        "Name":  "Cloak of Santablue",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_cape",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  12,
+        "Number":  338,
+        "Name":  "Wing of Santablue",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_wing",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  12,
+        "Number":  339,
+        "Name":  "Cloak of Santagreen",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_cape",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  12,
+        "Number":  340,
+        "Name":  "Wing of Santagreen",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_wing",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  12,
+        "Number":  341,
+        "Name":  "Cloak of Dark Bunny",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_cape",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  12,
+        "Number":  342,
+        "Name":  "Wing of Dark Bunny",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Darkbunny\\\\",
+        "File":  "Darkbunny_wing",
+        "Skin":  "Darkbunny"
+    },
+    {
+        "Group":  12,
+        "Number":  343,
+        "Name":  "Cloak of Abyssal",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_cape",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  12,
+        "Number":  344,
+        "Name":  "Wing of Abyssal",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_wing",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  12,
+        "Number":  345,
+        "Name":  "Cloak of Black Pumpkin",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_cape",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  12,
+        "Number":  346,
+        "Name":  "Wing of Black Pumpkin",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_wing",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  12,
+        "Number":  347,
+        "Name":  "Cloak of Bloody Soldier",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_cape",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  12,
+        "Number":  348,
+        "Name":  "Wing of Bloody Soldier",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodysoldier\\\\",
+        "File":  "Bloody_soldier_wing",
+        "Skin":  "Bloodysoldier"
+    },
+    {
+        "Group":  12,
+        "Number":  349,
+        "Name":  "Cloak of Evil Rabbit",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_cape",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  12,
+        "Number":  350,
+        "Name":  "Wing of Evil Rabbit",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_wing",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  12,
+        "Number":  351,
+        "Name":  "Cloak of Hellfire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_cape",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  12,
+        "Number":  352,
+        "Name":  "Wing of Hellfire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_wing",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  12,
+        "Number":  353,
+        "Name":  "Cloak of Macabre",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_cape",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  12,
+        "Number":  354,
+        "Name":  "Wing of Macabre",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_wing",
+        "Skin":  "Macabre"
+    },
+    {
+        "Group":  13,
+        "Number":  301,
+        "Name":  "Carnival Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Carnival\\\\",
+        "File":  "Carnival_fenrir",
+        "Skin":  "Carnival"
+    },
+    {
+        "Group":  13,
+        "Number":  302,
+        "Name":  "Hellshade Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellshade\\\\",
+        "File":  "Hellshade_fenrir",
+        "Skin":  "Hellshade"
+    },
+    {
+        "Group":  13,
+        "Number":  303,
+        "Name":  "Magma Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Magma\\\\",
+        "File":  "Magma_fenrir",
+        "Skin":  "Magma"
+    },
+    {
+        "Group":  13,
+        "Number":  304,
+        "Name":  "Nightfire Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Nightfire\\\\",
+        "File":  "Nightfire_fenrir",
+        "Skin":  "Nightfire"
+    },
+    {
+        "Group":  13,
+        "Number":  305,
+        "Name":  "Devil Majestyc Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Devil_Majestyc\\\\",
+        "File":  "Devil_majestyc_horse",
+        "Skin":  "Devil_Majestyc"
+    },
+    {
+        "Group":  13,
+        "Number":  306,
+        "Name":  "Aurion Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Aurion\\\\",
+        "File":  "Aurion_horse",
+        "Skin":  "Aurion"
+    },
+    {
+        "Group":  13,
+        "Number":  307,
+        "Name":  "Icefrost Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Icefrost\\\\",
+        "File":  "Icefrost_horse",
+        "Skin":  "Icefrost"
+    },
+    {
+        "Group":  13,
+        "Number":  308,
+        "Name":  "Berserk Fenrir Red",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Berserk\\\\",
+        "File":  "fenrir",
+        "Skin":  "Fenrir_Berserk"
+    },
+    {
+        "Group":  13,
+        "Number":  309,
+        "Name":  "Berserk Fenrir Green",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Berserk\\\\",
+        "File":  "fenrir",
+        "Skin":  "Fenrir_Berserk"
+    },
+    {
+        "Group":  13,
+        "Number":  311,
+        "Name":  "Berserk Fenrir White",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Berserk\\\\",
+        "File":  "fenrir",
+        "Skin":  "Fenrir_Berserk"
+    },
+    {
+        "Group":  13,
+        "Number":  312,
+        "Name":  "Berserk Fenrir Black",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Berserk\\\\",
+        "File":  "fenrir",
+        "Skin":  "Fenrir_Berserk"
+    },
+    {
+        "Group":  13,
+        "Number":  313,
+        "Name":  "Berserk Fenrir Blue",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Berserk\\\\",
+        "File":  "fenrir",
+        "Skin":  "Fenrir_Berserk"
+    },
+    {
+        "Group":  13,
+        "Number":  314,
+        "Name":  "Holly Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Holly\\\\",
+        "File":  "hollyfenrir",
+        "Skin":  "Fenrir_Holly"
+    },
+    {
+        "Group":  13,
+        "Number":  315,
+        "Name":  "Holly Fenrir Blue",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Holly\\\\",
+        "File":  "hollyfenrir",
+        "Skin":  "Fenrir_Holly"
+    },
+    {
+        "Group":  13,
+        "Number":  316,
+        "Name":  "Holly Fenrir Gold",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Holly\\\\",
+        "File":  "hollyfenrir",
+        "Skin":  "Fenrir_Holly"
+    },
+    {
+        "Group":  13,
+        "Number":  317,
+        "Name":  "Holly Fenrir Black",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Fenrir_Holly\\\\",
+        "File":  "hollyfenrir",
+        "Skin":  "Fenrir_Holly"
+    },
+    {
+        "Group":  13,
+        "Number":  318,
+        "Name":  "Black Bear",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Black_Bear\\\\",
+        "File":  "Black_Bear",
+        "Skin":  "Black_Bear"
+    },
+    {
+        "Group":  13,
+        "Number":  319,
+        "Name":  "Eclipsebound Panther",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Eclipsebound_Panther\\\\",
+        "File":  "Eclipsebound_panther",
+        "Skin":  "Eclipsebound_Panther"
+    },
+    {
+        "Group":  13,
+        "Number":  320,
+        "Name":  "Celestial Tiger",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Celestial_Tiger\\\\",
+        "File":  "Celestial_Tiger",
+        "Skin":  "Celestial_Tiger"
+    },
+    {
+        "Group":  13,
+        "Number":  321,
+        "Name":  "Celestial Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Celestial_fenrir\\\\",
+        "File":  "Celestial_fenrir",
+        "Skin":  "Celestial_fenrir"
+    },
+    {
+        "Group":  13,
+        "Number":  322,
+        "Name":  "Celestial Fenrir Green",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Celestial_fenrir\\\\",
+        "File":  "Celestial_fenrir",
+        "Skin":  "Celestial_fenrir"
+    },
+    {
+        "Group":  13,
+        "Number":  323,
+        "Name":  "Celestial Fenrir Rose",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Celestial_fenrir\\\\",
+        "File":  "Celestial_fenrir",
+        "Skin":  "Celestial_fenrir"
+    },
+    {
+        "Group":  13,
+        "Number":  324,
+        "Name":  "Infernosaur",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dinosaur\\\\",
+        "File":  "Volcarnox",
+        "Skin":  "Dinosaur"
+    },
+    {
+        "Group":  13,
+        "Number":  325,
+        "Name":  "Volcarnox",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dinosaur\\\\",
+        "File":  "Volcarnox",
+        "Skin":  "Dinosaur"
+    },
+    {
+        "Group":  13,
+        "Number":  326,
+        "Name":  "Green Lion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Green_Lion\\\\",
+        "File":  "GreenLion",
+        "Skin":  "Green_Lion"
+    },
+    {
+        "Group":  13,
+        "Number":  327,
+        "Name":  "Lion Angel",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Lions\\\\",
+        "File":  "Lion_Demon",
+        "Skin":  "Lions"
+    },
+    {
+        "Group":  13,
+        "Number":  328,
+        "Name":  "Lion Demon",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Lions\\\\",
+        "File":  "Lion_Demon",
+        "Skin":  "Lions"
+    },
+    {
+        "Group":  13,
+        "Number":  329,
+        "Name":  "Purple Lion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Purple_Lions\\\\",
+        "File":  "Purple_Lions",
+        "Skin":  "Purple_Lions"
+    },
+    {
+        "Group":  13,
+        "Number":  330,
+        "Name":  "Celestial Demonic",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Celestial_Tiger\\\\",
+        "File":  "Celestial_Tiger",
+        "Skin":  "Celestial_Tiger"
+    },
+    {
+        "Group":  13,
+        "Number":  331,
+        "Name":  "Dragon Heart Blue",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dragon_Heart\\\\",
+        "File":  "Dragon_heart_gold",
+        "Skin":  "Dragon_Heart"
+    },
+    {
+        "Group":  13,
+        "Number":  332,
+        "Name":  "Dragon Heart Fire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dragon_Heart\\\\",
+        "File":  "Dragon_heart_gold",
+        "Skin":  "Dragon_Heart"
+    },
+    {
+        "Group":  13,
+        "Number":  333,
+        "Name":  "Dragon Heart Gold",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dragon_Heart\\\\",
+        "File":  "Dragon_heart_gold",
+        "Skin":  "Dragon_Heart"
+    },
+    {
+        "Group":  13,
+        "Number":  334,
+        "Name":  "Dragon Heart Green",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dragon_Heart\\\\",
+        "File":  "Dragon_heart_gold",
+        "Skin":  "Dragon_Heart"
+    },
+    {
+        "Group":  13,
+        "Number":  335,
+        "Name":  "Dragon Heart Purple",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Dragon_Heart\\\\",
+        "File":  "Dragon_heart_gold",
+        "Skin":  "Dragon_Heart"
+    },
+    {
+        "Group":  13,
+        "Number":  337,
+        "Name":  "Oblivion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Oblivion\\\\",
+        "File":  "Oblivion",
+        "Skin":  "Oblivion"
+    },
+    {
+        "Group":  13,
+        "Number":  338,
+        "Name":  "Sunscale",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Sunscale\\\\",
+        "File":  "Sunscale",
+        "Skin":  "Sunscale"
+    },
+    {
+        "Group":  13,
+        "Number":  339,
+        "Name":  "Wyrm Dragon",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Wyrm_Dragon\\\\",
+        "File":  "Wyrm_Dragon",
+        "Skin":  "Wyrm_Dragon"
+    },
+    {
+        "Group":  13,
+        "Number":  340,
+        "Name":  "Emberhoof Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Emberhoof\\\\",
+        "File":  "Emberhoof",
+        "Skin":  "Emberhoof"
+    },
+    {
+        "Group":  13,
+        "Number":  341,
+        "Name":  "Ashborn Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Ashborn\\\\",
+        "File":  "Ashborn",
+        "Skin":  "Ashborn"
+    },
+    {
+        "Group":  13,
+        "Number":  342,
+        "Name":  "Cryohex Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Cryohex\\\\",
+        "File":  "Cryohex",
+        "Skin":  "Cryohex"
+    },
+    {
+        "Group":  13,
+        "Number":  343,
+        "Name":  "Underground Hyena",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Underground_Hyena\\\\",
+        "File":  "Underground_Hyena",
+        "Skin":  "Underground_Hyena"
+    },
+    {
+        "Group":  13,
+        "Number":  344,
+        "Name":  "Lion Fire",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Leon_Fire\\\\",
+        "File":  "Leon_Fire",
+        "Skin":  "Leon_Fire"
+    },
+    {
+        "Group":  13,
+        "Number":  345,
+        "Name":  "Drake Illusion",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Drake_Illusion\\\\",
+        "File":  "Drake_Illusion",
+        "Skin":  "Drake_Illusion"
+    },
+    {
+        "Group":  13,
+        "Number":  346,
+        "Name":  "Crimson Mane",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Crimson_Mane\\\\",
+        "File":  "Crimson_Mane",
+        "Skin":  "Crimson_Mane"
+    },
+    {
+        "Group":  13,
+        "Number":  347,
+        "Name":  "Iron Roar",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Iron_Roar\\\\",
+        "File":  "Iron_Roar",
+        "Skin":  "Iron_Roar"
+    },
+    {
+        "Group":  13,
+        "Number":  348,
+        "Name":  "Royal Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  349,
+        "Name":  "Glacius Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  350,
+        "Name":  "Hellroar Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  351,
+        "Name":  "Emberhorn Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  352,
+        "Name":  "Blazefury Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  353,
+        "Name":  "Toxic Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  354,
+        "Name":  "Hellmaul Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  355,
+        "Name":  "Infernal Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  356,
+        "Name":  "Frostmaw Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  357,
+        "Name":  "Volcanis Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  358,
+        "Name":  "Dreadflame Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  359,
+        "Name":  "Azureclaw Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  360,
+        "Name":  "Stormhowl Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  361,
+        "Name":  "Crystalhide Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  362,
+        "Name":  "Frostbane Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  363,
+        "Name":  "Moonmane Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  364,
+        "Name":  "Ebonveil Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  365,
+        "Name":  "Imperius Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  366,
+        "Name":  "Cerberus Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  367,
+        "Name":  "Draconis Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  368,
+        "Name":  "Celesthorn Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  369,
+        "Name":  "Warthorn Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  370,
+        "Name":  "Soulreaver Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  371,
+        "Name":  "Sunmane Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  372,
+        "Name":  "Bamboo Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  373,
+        "Name":  "Voidclaw Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  374,
+        "Name":  "Skyflare Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  375,
+        "Name":  "Inferlion Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  376,
+        "Name":  "Abyssal Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  377,
+        "Name":  "Aetherwing Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  378,
+        "Name":  "Solaris Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  379,
+        "Name":  "Flarethorn Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  380,
+        "Name":  "Doomspike Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  381,
+        "Name":  "Glaciermaw Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  382,
+        "Name":  "Voidstorm Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  383,
+        "Name":  "Hydragore Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  384,
+        "Name":  "Ironfang Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  385,
+        "Name":  "Frostveil Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  386,
+        "Name":  "Aurelion Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  387,
+        "Name":  "Inferno Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  388,
+        "Name":  "Stormhorn Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  389,
+        "Name":  "Duskhart Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  390,
+        "Name":  "Dracohatch Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  391,
+        "Name":  "Frostwing Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  392,
+        "Name":  "Imperial Dragon Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  393,
+        "Name":  "Azurelight Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  394,
+        "Name":  "Glacier Antler Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  395,
+        "Name":  "Voidmane Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Mounts\\\\",
+        "File":  "Mount36",
+        "Skin":  "Mounts"
+    },
+    {
+        "Group":  13,
+        "Number":  396,
+        "Name":  "Abbadon Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abbadon\\\\",
+        "File":  "Abbadon_horse",
+        "Skin":  "Abbadon"
+    },
+    {
+        "Group":  13,
+        "Number":  397,
+        "Name":  "Death Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Death\\\\",
+        "File":  "Death_horse",
+        "Skin":  "Death"
+    },
+    {
+        "Group":  13,
+        "Number":  400,
+        "Name":  "Bloodbound Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Bloodbound\\\\",
+        "File":  "Bloodbound_fenrir",
+        "Skin":  "Bloodbound"
+    },
+    {
+        "Group":  13,
+        "Number":  401,
+        "Name":  "Elegance Uniria",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Elegance\\\\",
+        "File":  "Elegance_bow",
+        "Skin":  "Elegance"
+    },
+    {
+        "Group":  13,
+        "Number":  402,
+        "Name":  "Santablue Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santablue\\\\",
+        "File":  "Santablue_horse",
+        "Skin":  "Santablue"
+    },
+    {
+        "Group":  13,
+        "Number":  403,
+        "Name":  "Santagreen Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Santagreen\\\\",
+        "File":  "Santagreen_horse",
+        "Skin":  "Santagreen"
+    },
+    {
+        "Group":  13,
+        "Number":  404,
+        "Name":  "Abyssal Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Abyssal\\\\",
+        "File":  "Abyssal_horse",
+        "Skin":  "Abyssal"
+    },
+    {
+        "Group":  13,
+        "Number":  405,
+        "Name":  "Black Pumpkin Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Blackpumpkin\\\\",
+        "File":  "Blackpumpkin_fenrir",
+        "Skin":  "Blackpumpkin"
+    },
+    {
+        "Group":  13,
+        "Number":  406,
+        "Name":  "Evil Rabbit Fenrir",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Evilrabbit\\\\",
+        "File":  "Evilrabbit_fenrir",
+        "Skin":  "Evilrabbit"
+    },
+    {
+        "Group":  13,
+        "Number":  407,
+        "Name":  "Hellfire Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Hellfire\\\\",
+        "File":  "Hellfire_horse",
+        "Skin":  "Hellfire"
+    },
+    {
+        "Group":  13,
+        "Number":  408,
+        "Name":  "Macabre Horse",
+        "Dir":  "Data\\\\Item\\\\CustomItem\\\\Skin\\\\Macabre\\\\",
+        "File":  "Macabre_horse",
+        "Skin":  "Macabre"
+    }
+]

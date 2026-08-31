@@ -48,6 +48,17 @@ OpenMU/**/.vs/
 OpenMU/docker-build*.log
 OpenMU/.data/
 OpenMU/publish/
+OpenMU/publish-*/
+OpenMU/JewelBank_Pack_COMPLETO/
+OpenMU/.git/
+OpenMU/.gemini/
+OpenMU/*.csv
+OpenMU/_*.py
+OpenMU/_*.ps1
+OpenMU/_*.sql
+OpenMU/*.ozt
+OpenMU/*.tga
+OpenMU/*.OZT
 
 # =============================================================================
 # MuMain (client)
@@ -90,3 +101,5 @@ tools/MUAssetInspector/**/[Bb]in/
 tools/MUAssetInspector/**/[Oo]bj/
 tools/mu-effect-glow-editor/node_modules/
 tools/_tmp_*
+
+/OpenMU-git-backup/

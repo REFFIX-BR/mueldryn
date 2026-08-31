@@ -1,0 +1,531 @@
+{
+  "source": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export",
+  "catalog_outputs": [
+    "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog",
+    "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Data\\Interface\\_catalog"
+  ],
+  "image_files_scanned": 1311,
+  "groups": {
+    "root": 658,
+    "ActiveInvasion": 7,
+    "Atlas": 97,
+    "bottom_panel": 1,
+    "Button": 13,
+    "CharacterOverview": 1,
+    "Collections": 1,
+    "Controls": 1,
+    "DamageStatistic": 8,
+    "DeathJournal": 22,
+    "EventList": 23,
+    "GameMaster": 1,
+    "GFx": 121,
+    "Gift": 1,
+    "GuestAccess": 1,
+    "GuildManager": 20,
+    "GuildOracle": 12,
+    "HarmonyMix": 1,
+    "HealthBar": 9,
+    "Icons": 1,
+    "InGameShop": 34,
+    "Inventory": 1,
+    "LegendHUD": 34,
+    "LegendUI": 12,
+    "Loading": 29,
+    "MacroUI": 15,
+    "MainMenu": 6,
+    "NaviMap": 106,
+    "new_main_frame_window": 23,
+    "Notification": 2,
+    "NpcIcons": 23,
+    "PartCharge1": 6,
+    "PartySearch": 4,
+    "QuestInfo": 16,
+    "SkillStack": 1
+  },
+  "sheet_count": 37,
+  "sheets": [
+    {
+      "group": "root",
+      "part": 1,
+      "parts": 3,
+      "asset_count": 300,
+      "size": [
+        1192,
+        3820
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\root_part01.png"
+      ]
+    },
+    {
+      "group": "root",
+      "part": 2,
+      "parts": 3,
+      "asset_count": 300,
+      "size": [
+        1192,
+        3820
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\root_part02.png"
+      ]
+    },
+    {
+      "group": "root",
+      "part": 3,
+      "parts": 3,
+      "asset_count": 58,
+      "size": [
+        1192,
+        796
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\root_part03.png"
+      ]
+    },
+    {
+      "group": "ActiveInvasion",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 7,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\ActiveInvasion.png"
+      ]
+    },
+    {
+      "group": "Atlas",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 97,
+      "size": [
+        1192,
+        1300
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Atlas.png"
+      ]
+    },
+    {
+      "group": "bottom_panel",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\bottom_panel.png"
+      ]
+    },
+    {
+      "group": "Button",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 13,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Button.png"
+      ]
+    },
+    {
+      "group": "CharacterOverview",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\CharacterOverview.png"
+      ]
+    },
+    {
+      "group": "Collections",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Collections.png"
+      ]
+    },
+    {
+      "group": "Controls",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Controls.png"
+      ]
+    },
+    {
+      "group": "DamageStatistic",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 8,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\DamageStatistic.png"
+      ]
+    },
+    {
+      "group": "DeathJournal",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 22,
+      "size": [
+        1192,
+        418
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\DeathJournal.png"
+      ]
+    },
+    {
+      "group": "EventList",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 23,
+      "size": [
+        1192,
+        418
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\EventList.png"
+      ]
+    },
+    {
+      "group": "GameMaster",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\GameMaster.png"
+      ]
+    },
+    {
+      "group": "GFx",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 121,
+      "size": [
+        1192,
+        1678
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\GFx.png"
+      ]
+    },
+    {
+      "group": "Gift",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Gift.png"
+      ]
+    },
+    {
+      "group": "GuestAccess",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\GuestAccess.png"
+      ]
+    },
+    {
+      "group": "GuildManager",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 20,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\GuildManager.png"
+      ]
+    },
+    {
+      "group": "GuildOracle",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 12,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\GuildOracle.png"
+      ]
+    },
+    {
+      "group": "HarmonyMix",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\HarmonyMix.png"
+      ]
+    },
+    {
+      "group": "HealthBar",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 9,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\HealthBar.png"
+      ]
+    },
+    {
+      "group": "Icons",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Icons.png"
+      ]
+    },
+    {
+      "group": "InGameShop",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 34,
+      "size": [
+        1192,
+        544
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\InGameShop.png"
+      ]
+    },
+    {
+      "group": "Inventory",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Inventory.png"
+      ]
+    },
+    {
+      "group": "LegendHUD",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 34,
+      "size": [
+        1192,
+        544
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\LegendHUD.png"
+      ]
+    },
+    {
+      "group": "LegendUI",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 12,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\LegendUI.png"
+      ]
+    },
+    {
+      "group": "Loading",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 29,
+      "size": [
+        1192,
+        418
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Loading.png"
+      ]
+    },
+    {
+      "group": "MacroUI",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 15,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\MacroUI.png"
+      ]
+    },
+    {
+      "group": "MainMenu",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 6,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\MainMenu.png"
+      ]
+    },
+    {
+      "group": "NaviMap",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 106,
+      "size": [
+        1192,
+        1426
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\NaviMap.png"
+      ]
+    },
+    {
+      "group": "new_main_frame_window",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 23,
+      "size": [
+        1192,
+        418
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\new_main_frame_window.png"
+      ]
+    },
+    {
+      "group": "Notification",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 2,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\Notification.png"
+      ]
+    },
+    {
+      "group": "NpcIcons",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 23,
+      "size": [
+        1192,
+        418
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\NpcIcons.png"
+      ]
+    },
+    {
+      "group": "PartCharge1",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 6,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\PartCharge1.png"
+      ]
+    },
+    {
+      "group": "PartySearch",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 4,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\PartySearch.png"
+      ]
+    },
+    {
+      "group": "QuestInfo",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 16,
+      "size": [
+        1192,
+        292
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\QuestInfo.png"
+      ]
+    },
+    {
+      "group": "SkillStack",
+      "part": 1,
+      "parts": 1,
+      "asset_count": 1,
+      "size": [
+        1192,
+        166
+      ],
+      "files": [
+        "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_catalog\\SkillStack.png"
+      ]
+    }
+  ],
+  "skipped_folders": [],
+  "errors": []
+}

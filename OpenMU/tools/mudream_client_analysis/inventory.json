@@ -1,0 +1,337 @@
+﻿{
+    "client_root":  "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online",
+    "generated_utc":  "2026-08-22T17:46:23.9655970Z",
+    "executables":  [
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Data\\Launcher\\MuUpdater.exe",
+                            "Length":  171520,
+                            "LastWriteTime":  "\/Date(1696861416000)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\BsSndRpt64.exe",
+                            "Length":  471184,
+                            "LastWriteTime":  "\/Date(1778870830000)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\BugSplatHD64.exe",
+                            "Length":  340112,
+                            "LastWriteTime":  "\/Date(1778870830000)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\MU.exe",
+                            "Length":  21945856,
+                            "LastWriteTime":  "\/Date(1787243704359)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\BsSndRpt64.exe",
+                            "Length":  471184,
+                            "LastWriteTime":  "\/Date(1705514854000)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\BugSplatHD64.exe",
+                            "Length":  340112,
+                            "LastWriteTime":  "\/Date(1705514860000)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\MU.exe",
+                            "Length":  16008704,
+                            "LastWriteTime":  "\/Date(1787243705673)\/"
+                        },
+                        {
+                            "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\PlayMudream.exe",
+                            "Length":  4759552,
+                            "LastWriteTime":  "\/Date(1783508566000)\/"
+                        }
+                    ],
+    "dlls":  [
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\BugSplat64.dll",
+                     "Length":  638608,
+                     "LastWriteTime":  "\/Date(1778870830000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\BugSplatRc64.dll",
+                     "Length":  287888,
+                     "LastWriteTime":  "\/Date(1778870830000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\discord_game_sdk.dll",
+                     "Length":  3488768,
+                     "LastWriteTime":  "\/Date(1778870830000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Reborn\\fmod.dll",
+                     "Length":  1842176,
+                     "LastWriteTime":  "\/Date(1778870830000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\BugSplat64.dll",
+                     "Length":  638608,
+                     "LastWriteTime":  "\/Date(1705514858000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\BugSplatRc64.dll",
+                     "Length":  287888,
+                     "LastWriteTime":  "\/Date(1705514864000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\discord_game_sdk.dll",
+                     "Length":  3488768,
+                     "LastWriteTime":  "\/Date(1651677770000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\x64\\fmod.dll",
+                     "Length":  1842176,
+                     "LastWriteTime":  "\/Date(1718128426000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\libEGL.dll",
+                     "Length":  459776,
+                     "LastWriteTime":  "\/Date(1778870828000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\libGLESv2.dll",
+                     "Length":  7922176,
+                     "LastWriteTime":  "\/Date(1778870830000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Newtonsoft.Json.dll",
+                     "Length":  576040,
+                     "LastWriteTime":  "\/Date(1616011414000)\/"
+                 },
+                 {
+                     "FullName":  "C:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\System.Net.Http.dll",
+                     "Length":  180832,
+                     "LastWriteTime":  "\/Date(1341911258000)\/"
+                 }
+             ],
+    "interface_exts":  {
+                           ".ozj":  15,
+                           ".jdream":  257,
+                           ".json":  14,
+                           ".ozt":  34,
+                           ".tdream":  493,
+                           ".png":  1529,
+                           ".pdream":  311,
+                           ".dds":  64,
+                           ".jpg":  529
+                       },
+    "interface_dirs":  [
+                           {
+                               "name":  "ActiveInvasion",
+                               "files":  7,
+                               "pdream":  7,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Atlas",
+                               "files":  105,
+                               "pdream":  78,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "bottom_panel",
+                               "files":  1,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Button",
+                               "files":  13,
+                               "pdream":  2,
+                               "tdream":  11
+                           },
+                           {
+                               "name":  "CharacterOverview",
+                               "files":  2,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Collections",
+                               "files":  3,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Controls",
+                               "files":  2,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "DamageStatistic",
+                               "files":  8,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "DeathJournal",
+                               "files":  22,
+                               "pdream":  22,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "EventList",
+                               "files":  23,
+                               "pdream":  23,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "GameMaster",
+                               "files":  2,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "GFx",
+                               "files":  123,
+                               "pdream":  41,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Gift",
+                               "files":  1,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "GuestAccess",
+                               "files":  1,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "GuildManager",
+                               "files":  20,
+                               "pdream":  6,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "GuildOracle",
+                               "files":  12,
+                               "pdream":  12,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "HarmonyMix",
+                               "files":  2,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "HealthBar",
+                               "files":  9,
+                               "pdream":  8,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Icons",
+                               "files":  1,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "InGameShop",
+                               "files":  35,
+                               "pdream":  4,
+                               "tdream":  26
+                           },
+                           {
+                               "name":  "Inventory",
+                               "files":  1,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "LegendHUD",
+                               "files":  34,
+                               "pdream":  34,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "LegendUI",
+                               "files":  12,
+                               "pdream":  12,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Loading",
+                               "files":  29,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "MacroUI",
+                               "files":  15,
+                               "pdream":  0,
+                               "tdream":  10
+                           },
+                           {
+                               "name":  "MainMenu",
+                               "files":  6,
+                               "pdream":  0,
+                               "tdream":  6
+                           },
+                           {
+                               "name":  "NaviMap",
+                               "files":  106,
+                               "pdream":  34,
+                               "tdream":  2
+                           },
+                           {
+                               "name":  "new_main_frame_window",
+                               "files":  23,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "Notification",
+                               "files":  2,
+                               "pdream":  2,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "NpcIcons",
+                               "files":  23,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "PartCharge1",
+                               "files":  6,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "PartySearch",
+                               "files":  4,
+                               "pdream":  0,
+                               "tdream":  4
+                           },
+                           {
+                               "name":  "QuestInfo",
+                               "files":  16,
+                               "pdream":  16,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "SkillStack",
+                               "files":  1,
+                               "pdream":  1,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "_catalog",
+                               "files":  38,
+                               "pdream":  0,
+                               "tdream":  0
+                           },
+                           {
+                               "name":  "_decrypted",
+                               "files":  1879,
+                               "pdream":  0,
+                               "tdream":  0
+                           }
+                       ]
+}

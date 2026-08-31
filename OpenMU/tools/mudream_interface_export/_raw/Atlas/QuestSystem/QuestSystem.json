@@ -1,0 +1,1179 @@
+{
+    "TextBgEffect": {
+        "x": 2279,
+        "y": 2864,
+        "w": 800,
+        "h": 132,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect05": {
+        "x": 1901,
+        "y": 725,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect04": {
+        "x": 1353,
+        "y": 725,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect03": {
+        "x": 1627,
+        "y": 725,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect02": {
+        "x": 1490,
+        "y": 725,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect01": {
+        "x": 1764,
+        "y": 725,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "StateCompleteScroll": {
+        "x": 2382,
+        "y": 804,
+        "w": 56,
+        "h": 56,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "StateCompleteBg": {
+        "x": 2771,
+        "y": 0,
+        "w": 224,
+        "h": 176,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowClick": {
+        "x": 2771,
+        "y": 578,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowHover": {
+        "x": 3164,
+        "y": 427,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowNormal": {
+        "x": 3135,
+        "y": 427,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonDisable": {
+        "x": 2487,
+        "y": 775,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonClick": {
+        "x": 2487,
+        "y": 820,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonHover": {
+        "x": 2889,
+        "y": 570,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonNormal": {
+        "x": 2889,
+        "y": 525,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowLeftNormal": {
+        "x": 3149,
+        "y": 82,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowLeftClick": {
+        "x": 3149,
+        "y": 0,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowLeftHover": {
+        "x": 2439,
+        "y": 804,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowLeftDisable": {
+        "x": 3149,
+        "y": 41,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowRightNormal": {
+        "x": 2704,
+        "y": 796,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowRightClick": {
+        "x": 3174,
+        "y": 0,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowRightHover": {
+        "x": 3174,
+        "y": 41,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ArrowRightDisable": {
+        "x": 2729,
+        "y": 796,
+        "w": 24,
+        "h": 40,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemNameBg": {
+        "x": 2889,
+        "y": 804,
+        "w": 184,
+        "h": 32,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemBgHover": {
+        "x": 2924,
+        "y": 329,
+        "w": 152,
+        "h": 150,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemBg": {
+        "x": 2771,
+        "y": 329,
+        "w": 152,
+        "h": 150,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "UnpinnedHover": {
+        "x": 3195,
+        "y": 227,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "PinnedHover": {
+        "x": 2038,
+        "y": 749,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Pinned": {
+        "x": 2038,
+        "y": 725,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Unpinned": {
+        "x": 2462,
+        "y": 845,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ElementCheckboxEnabledHover": {
+        "x": 3195,
+        "y": 202,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ElementCheckboxDisabledHover": {
+        "x": 2704,
+        "y": 837,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ElementCheckboxDisabled": {
+        "x": 2736,
+        "y": 750,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ElementCheckboxEnabled": {
+        "x": 2711,
+        "y": 750,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxSelectedHover": {
+        "x": 2800,
+        "y": 578,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxUnselectedHover": {
+        "x": 3149,
+        "y": 123,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxSelectedNormal": {
+        "x": 3178,
+        "y": 123,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxUnselectedNormal": {
+        "x": 3173,
+        "y": 275,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxUnselectedPressed": {
+        "x": 3077,
+        "y": 427,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterCheckboxSelectedPressed": {
+        "x": 3106,
+        "y": 427,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "TimeUpImg": {
+        "x": 2996,
+        "y": 152,
+        "w": 95,
+        "h": 18,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CompletedImg": {
+        "x": 3077,
+        "y": 275,
+        "w": 95,
+        "h": 18,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "SelectionHover": {
+        "x": 2062,
+        "y": 775,
+        "w": 424,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackgroundDaily": {
+        "x": 1538,
+        "y": 2199,
+        "w": 740,
+        "h": 664,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackgroundGuild": {
+        "x": 2279,
+        "y": 1534,
+        "w": 740,
+        "h": 664,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackgroundDungeon": {
+        "x": 1538,
+        "y": 1534,
+        "w": 740,
+        "h": 664,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackgroundEvent": {
+        "x": 2279,
+        "y": 869,
+        "w": 740,
+        "h": 664,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackgroundMain": {
+        "x": 1538,
+        "y": 869,
+        "w": 740,
+        "h": 664,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestBackgroundDaily": {
+        "x": 829,
+        "y": 869,
+        "w": 708,
+        "h": 724,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestBackgroundGuild": {
+        "x": 1353,
+        "y": 0,
+        "w": 708,
+        "h": 724,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestBackgroundDungeon": {
+        "x": 0,
+        "y": 2475,
+        "w": 708,
+        "h": 724,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestBackgroundEvent": {
+        "x": 0,
+        "y": 1750,
+        "w": 708,
+        "h": 724,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestBackgroundMain": {
+        "x": 2062,
+        "y": 0,
+        "w": 708,
+        "h": 724,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Community_I2 1": {
+        "x": 3195,
+        "y": 177,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I28 6": {
+        "x": 2038,
+        "y": 773,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Community_IC 6": {
+        "x": 3092,
+        "y": 152,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Community_IC 5": {
+        "x": 3117,
+        "y": 152,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I28 3": {
+        "x": 2038,
+        "y": 797,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I28 2": {
+        "x": 2038,
+        "y": 821,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I28 1": {
+        "x": 2038,
+        "y": 845,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Community_IC 4": {
+        "x": 3149,
+        "y": 152,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Community_IC 3": {
+        "x": 3178,
+        "y": 152,
+        "w": 24,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I30 3": {
+        "x": 2464,
+        "y": 804,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I30 2": {
+        "x": 2439,
+        "y": 845,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I30 1": {
+        "x": 3195,
+        "y": 251,
+        "w": 22,
+        "h": 23,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "23 6": {
+        "x": 2771,
+        "y": 480,
+        "w": 117,
+        "h": 97,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemRefine_IF 81": {
+        "x": 2889,
+        "y": 738,
+        "w": 184,
+        "h": 32,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MessageBox_CapitalSelect_I7 68": {
+        "x": 2924,
+        "y": 177,
+        "w": 152,
+        "h": 151,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "23 5": {
+        "x": 3077,
+        "y": 177,
+        "w": 117,
+        "h": 97,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemRefine_IF 80": {
+        "x": 2889,
+        "y": 705,
+        "w": 184,
+        "h": 32,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MessageBox_CapitalSelect_I7 67": {
+        "x": 2771,
+        "y": 177,
+        "w": 152,
+        "h": 151,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemSelected": {
+        "x": 2279,
+        "y": 804,
+        "w": 102,
+        "h": 59,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "23 4": {
+        "x": 3077,
+        "y": 329,
+        "w": 117,
+        "h": 97,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ItemRefine_IF 79": {
+        "x": 2889,
+        "y": 771,
+        "w": 184,
+        "h": 32,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MessageBox_CapitalSelect_I7 66": {
+        "x": 2996,
+        "y": 0,
+        "w": 152,
+        "h": 151,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconSkill": {
+        "x": 3199,
+        "y": 0,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconBuff": {
+        "x": 3173,
+        "y": 304,
+        "w": 19,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconLevelPoints": {
+        "x": 3199,
+        "y": 41,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconFinance": {
+        "x": 2214,
+        "y": 849,
+        "w": 25,
+        "h": 18,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconExperience": {
+        "x": 2240,
+        "y": 849,
+        "w": 25,
+        "h": 18,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "RewardBlockBg": {
+        "x": 2062,
+        "y": 750,
+        "w": 648,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MissionItemBg": {
+        "x": 829,
+        "y": 2319,
+        "w": 544,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I42 2": {
+        "x": 829,
+        "y": 2340,
+        "w": 544,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MissionBlockBg": {
+        "x": 2062,
+        "y": 725,
+        "w": 648,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "quest_I42 1": {
+        "x": 829,
+        "y": 2361,
+        "w": 544,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Quest Count 10 / 20": {
+        "x": 2062,
+        "y": 849,
+        "w": 151,
+        "h": 15,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Quest": {
+        "x": 2704,
+        "y": 775,
+        "w": 66,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackground": {
+        "x": 0,
+        "y": 869,
+        "w": 828,
+        "h": 880,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "InfoScrollBarPosNpc": {
+        "x": 731,
+        "y": 1750,
+        "w": 21,
+        "h": 517,
+        "ox": 745,
+        "oy": 235,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowNpc": {
+        "x": 2829,
+        "y": 578,
+        "w": 28,
+        "h": 28,
+        "ox": 776,
+        "oy": 24,
+        "points": {
+            
+        }
+    },
+    "BaseButtonNpc": {
+        "x": 2062,
+        "y": 804,
+        "w": 216,
+        "h": 44,
+        "ox": 63,
+        "oy": 800,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindowNpc2": {
+        "x": 2889,
+        "y": 615,
+        "w": 216,
+        "h": 44,
+        "ox": 550,
+        "oy": 800,
+        "points": {
+            
+        }
+    },
+    "NpcInfoBackgroundPos": {
+        "x": 2279,
+        "y": 2199,
+        "w": 740,
+        "h": 664,
+        "ox": 43,
+        "oy": 110,
+        "points": {
+            
+        }
+    },
+    "Background": {
+        "x": 0,
+        "y": 0,
+        "w": 1352,
+        "h": 868,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "FilterGuildPos": {
+        "x": 3135,
+        "y": 294,
+        "w": 28,
+        "h": 28,
+        "ox": 267,
+        "oy": 705,
+        "points": {
+            
+        }
+    },
+    "FilterEventPos": {
+        "x": 3106,
+        "y": 294,
+        "w": 28,
+        "h": 28,
+        "ox": 267,
+        "oy": 670,
+        "points": {
+            
+        }
+    },
+    "FilterDailyPos": {
+        "x": 3077,
+        "y": 294,
+        "w": 28,
+        "h": 28,
+        "ox": 54,
+        "oy": 740,
+        "points": {
+            
+        }
+    },
+    "FilterDungeonPos": {
+        "x": 3174,
+        "y": 82,
+        "w": 28,
+        "h": 28,
+        "ox": 54,
+        "oy": 705,
+        "points": {
+            
+        }
+    },
+    "FilterMainPos": {
+        "x": 2729,
+        "y": 837,
+        "w": 28,
+        "h": 28,
+        "ox": 54,
+        "oy": 670,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindow": {
+        "x": 2858,
+        "y": 578,
+        "w": 28,
+        "h": 28,
+        "ox": 1300,
+        "oy": 24,
+        "points": {
+            
+        }
+    },
+    "InfoScrollBarPos": {
+        "x": 753,
+        "y": 1750,
+        "w": 21,
+        "h": 517,
+        "ox": 1279,
+        "oy": 232,
+        "points": {
+            
+        }
+    },
+    "ListScrollBarPos": {
+        "x": 709,
+        "y": 1750,
+        "w": 21,
+        "h": 531,
+        "ox": 570,
+        "oy": 117,
+        "points": {
+            
+        }
+    },
+    "ListItemQuestStartPos": {
+        "x": 2711,
+        "y": 725,
+        "w": 24,
+        "h": 24,
+        "ox": 80,
+        "oy": 168,
+        "points": {
+            
+        }
+    },
+    "ListItemMapStartPos": {
+        "x": 2736,
+        "y": 725,
+        "w": 24,
+        "h": 24,
+        "ox": 56,
+        "oy": 136,
+        "points": {
+            
+        }
+    },
+    "BaseButton": {
+        "x": 2889,
+        "y": 480,
+        "w": 216,
+        "h": 44,
+        "ox": 637,
+        "oy": 772,
+        "points": {
+            
+        }
+    },
+    "BtnCloseWindow2": {
+        "x": 2889,
+        "y": 660,
+        "w": 216,
+        "h": 44,
+        "ox": 1072,
+        "oy": 772,
+        "points": {
+            
+        }
+    },
+    "QuestInfoBackgroundPos": {
+        "x": 829,
+        "y": 1594,
+        "w": 708,
+        "h": 724,
+        "ox": 608,
+        "oy": 110,
+        "points": {
+            
+        }
+    }
+}

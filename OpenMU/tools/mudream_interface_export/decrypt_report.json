@@ -1,0 +1,38 @@
+{
+  "source": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\Mudream.online\\Data\\Interface",
+  "output_png_jpg": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export",
+  "raw_decrypted": "c:\\Users\\JUNIOR-DEV\\Downloads\\MuServer-20260803T155926Z-1-001\\OpenMU\\tools\\mudream_interface_export\\_raw",
+  "encryption": {
+    "tdream": {
+      "key_hex": "58b685",
+      "format": "plain TGA (32-bit BGRA)"
+    },
+    "jdream": {
+      "key_hex": "8d391c",
+      "format": "JPEG/OZJ"
+    },
+    "pdream": {
+      "key_hex": "3aec29",
+      "format": "PNG"
+    }
+  },
+  "decrypted": {
+    "jdream->jpg": 257,
+    "pdream->png": 311,
+    "tdream->png": 493
+  },
+  "copied_or_converted": {
+    "png": 142,
+    "json": 13,
+    "ozt->png": 34,
+    "dds-raw-only": 0,
+    "ozj->jpg": 15,
+    "dds->png": 64
+  },
+  "failed_count": 0,
+  "failed_samples": [],
+  "dds_conversion": {
+    "success": 64,
+    "failed_count": 0
+  }
+}

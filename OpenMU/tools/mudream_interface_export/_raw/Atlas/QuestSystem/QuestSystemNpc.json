@@ -1,0 +1,211 @@
+{
+    "IconActiveDaily": {
+        "x": 242,
+        "y": 931,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewDaily": {
+        "x": 368,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteDaily": {
+        "x": 347,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveGuild": {
+        "x": 326,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewGuild": {
+        "x": 305,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteGuild": {
+        "x": 221,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveDungeon": {
+        "x": 221,
+        "y": 931,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewDungeon": {
+        "x": 221,
+        "y": 952,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteDungeon": {
+        "x": 221,
+        "y": 973,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveEvent": {
+        "x": 221,
+        "y": 994,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewEvent": {
+        "x": 221,
+        "y": 1015,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteEvent": {
+        "x": 221,
+        "y": 1036,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveMain": {
+        "x": 242,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewMain": {
+        "x": 263,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteMain": {
+        "x": 284,
+        "y": 910,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcDialogGlow": {
+        "x": 221,
+        "y": 881,
+        "w": 176,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcDialogSelected": {
+        "x": 0,
+        "y": 1038,
+        "w": 200,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcDialogFrame": {
+        "x": 0,
+        "y": 881,
+        "w": 220,
+        "h": 156,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "NpcBackground": {
+        "x": 0,
+        "y": 0,
+        "w": 828,
+        "h": 880,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    }
+}

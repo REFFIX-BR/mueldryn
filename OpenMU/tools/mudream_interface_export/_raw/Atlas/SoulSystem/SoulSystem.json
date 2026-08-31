@@ -1,0 +1,981 @@
+{
+    "CardSubIconLock": {
+        "x": 1435,
+        "y": 692,
+        "w": 32,
+        "h": 36,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardSubIcon": {
+        "x": 1793,
+        "y": 118,
+        "w": 52,
+        "h": 52,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardSubIconBg": {
+        "x": 1354,
+        "y": 757,
+        "w": 80,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBg4": {
+        "x": 1474,
+        "y": 0,
+        "w": 264,
+        "h": 626,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBg3": {
+        "x": 0,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBg2": {
+        "x": 265,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBg1": {
+        "x": 530,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2LeftDisable": {
+        "x": 1826,
+        "y": 424,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2LeftClick": {
+        "x": 1435,
+        "y": 786,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2LeftHover": {
+        "x": 1442,
+        "y": 851,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2LeftNormal": {
+        "x": 1846,
+        "y": 65,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1LeftDisable": {
+        "x": 1846,
+        "y": 118,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1LeftClick": {
+        "x": 1846,
+        "y": 171,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1LeftHover": {
+        "x": 1846,
+        "y": 224,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1LeftNormal": {
+        "x": 1739,
+        "y": 366,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2RightDisable": {
+        "x": 1768,
+        "y": 366,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2RightClick": {
+        "x": 1797,
+        "y": 424,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2RightHover": {
+        "x": 1768,
+        "y": 395,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn2RightNormal": {
+        "x": 1855,
+        "y": 395,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1RightDisable": {
+        "x": 1768,
+        "y": 424,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1RightClick": {
+        "x": 1739,
+        "y": 424,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1RightHover": {
+        "x": 1826,
+        "y": 395,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardBtn1RightNormal": {
+        "x": 1797,
+        "y": 395,
+        "w": 28,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetButtonDisabled": {
+        "x": 1474,
+        "y": 672,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetButtonClick": {
+        "x": 1474,
+        "y": 627,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetButtonHover": {
+        "x": 1474,
+        "y": 762,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetButtonNormal": {
+        "x": 1474,
+        "y": 807,
+        "w": 216,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonSelected": {
+        "x": 0,
+        "y": 1602,
+        "w": 184,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonDisable": {
+        "x": 0,
+        "y": 1647,
+        "w": 184,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonClick": {
+        "x": 0,
+        "y": 1692,
+        "w": 184,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonHover": {
+        "x": 0,
+        "y": 1737,
+        "w": 184,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BaseButtonNormal": {
+        "x": 0,
+        "y": 1782,
+        "w": 184,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetWindowBg": {
+        "x": 1325,
+        "y": 1512,
+        "w": 432,
+        "h": 260,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow3Num": {
+        "x": 1242,
+        "y": 869,
+        "w": 28,
+        "h": 13,
+        "ox": 311,
+        "oy": 157,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow3Icon": {
+        "x": 1335,
+        "y": 776,
+        "w": 16,
+        "h": 20,
+        "ox": 37,
+        "oy": 152,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow3NumBg": {
+        "x": 1354,
+        "y": 822,
+        "w": 87,
+        "h": 44,
+        "ox": 274,
+        "oy": 140,
+        "points": {
+            
+        }
+    },
+    "ResetWindowCancel": {
+        "x": 1691,
+        "y": 672,
+        "w": 184,
+        "h": 44,
+        "ox": 16,
+        "oy": 200,
+        "points": {
+            
+        }
+    },
+    "ResetWindowOk": {
+        "x": 1691,
+        "y": 627,
+        "w": 184,
+        "h": 44,
+        "ox": 233,
+        "oy": 199,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow2CheckBox": {
+        "x": 1442,
+        "y": 822,
+        "w": 28,
+        "h": 28,
+        "ox": 333,
+        "oy": 99,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow1Checkbox": {
+        "x": 1435,
+        "y": 757,
+        "w": 28,
+        "h": 28,
+        "ox": 333,
+        "oy": 50,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow3Text": {
+        "x": 1739,
+        "y": 332,
+        "w": 148,
+        "h": 13,
+        "ox": 64,
+        "oy": 157,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow2Text": {
+        "x": 530,
+        "y": 1512,
+        "w": 250,
+        "h": 16,
+        "ox": 64,
+        "oy": 107,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow1Text": {
+        "x": 1474,
+        "y": 852,
+        "w": 191,
+        "h": 14,
+        "ox": 64,
+        "oy": 58,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow2Icon": {
+        "x": 1435,
+        "y": 729,
+        "w": 20,
+        "h": 20,
+        "ox": 35,
+        "oy": 103,
+        "points": {
+            
+        }
+    },
+    "ResetWindowRow1Icon": {
+        "x": 1768,
+        "y": 309,
+        "w": 20,
+        "h": 20,
+        "ox": 35,
+        "oy": 54,
+        "points": {
+            
+        }
+    },
+    "CardBackground": {
+        "x": 1325,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CardSubIconLock1": {
+        "x": 1302,
+        "y": 813,
+        "w": 32,
+        "h": 36,
+        "ox": 181,
+        "oy": 349,
+        "points": {
+            
+        }
+    },
+    "CardSubIcon1": {
+        "x": 1793,
+        "y": 171,
+        "w": 52,
+        "h": 52,
+        "ox": 169,
+        "oy": 341,
+        "points": {
+            
+        }
+    },
+    "CardSubIconBg1": {
+        "x": 1354,
+        "y": 627,
+        "w": 80,
+        "h": 64,
+        "ox": 148,
+        "oy": 335,
+        "points": {
+            
+        }
+    },
+    "CardSubIconLock2": {
+        "x": 1435,
+        "y": 627,
+        "w": 32,
+        "h": 36,
+        "ox": 181,
+        "oy": 450,
+        "points": {
+            
+        }
+    },
+    "CardSubIcon2": {
+        "x": 1793,
+        "y": 65,
+        "w": 52,
+        "h": 52,
+        "ox": 169,
+        "oy": 442,
+        "points": {
+            
+        }
+    },
+    "CardSubIconBg2": {
+        "x": 1793,
+        "y": 0,
+        "w": 80,
+        "h": 64,
+        "ox": 148,
+        "oy": 436,
+        "points": {
+            
+        }
+    },
+    "CardSubIconLock3": {
+        "x": 1302,
+        "y": 776,
+        "w": 32,
+        "h": 36,
+        "ox": 181,
+        "oy": 549,
+        "points": {
+            
+        }
+    },
+    "CardSubIcon3": {
+        "x": 1793,
+        "y": 224,
+        "w": 52,
+        "h": 52,
+        "ox": 169,
+        "oy": 541,
+        "points": {
+            
+        }
+    },
+    "CardSubIconBg3": {
+        "x": 1354,
+        "y": 692,
+        "w": 80,
+        "h": 64,
+        "ox": 148,
+        "oy": 535,
+        "points": {
+            
+        }
+    },
+    "CardMainIconBorder": {
+        "x": 1209,
+        "y": 627,
+        "w": 144,
+        "h": 148,
+        "ox": 59,
+        "oy": 14,
+        "points": {
+            
+        }
+    },
+    "CardMainIcon": {
+        "x": 1209,
+        "y": 776,
+        "w": 92,
+        "h": 92,
+        "ox": 85,
+        "oy": 42,
+        "points": {
+            
+        }
+    },
+    "CardProgressBg1": {
+        "x": 1739,
+        "y": 0,
+        "w": 28,
+        "h": 331,
+        "ox": 115,
+        "oy": 269,
+        "points": {
+            
+        }
+    },
+    "CardProgressLight": {
+        "x": 1209,
+        "y": 869,
+        "w": 32,
+        "h": 12,
+        "ox": 113,
+        "oy": 564,
+        "points": {
+            
+        }
+    },
+    "CardProgress": {
+        "x": 265,
+        "y": 1557,
+        "w": 16,
+        "h": 300,
+        "ox": 121,
+        "oy": 269,
+        "points": {
+            
+        }
+    },
+    "CardProgressBg2": {
+        "x": 1768,
+        "y": 0,
+        "w": 24,
+        "h": 308,
+        "ox": 117,
+        "oy": 265,
+        "points": {
+            
+        }
+    },
+    "CardProgressArrow": {
+        "x": 1335,
+        "y": 813,
+        "w": 16,
+        "h": 16,
+        "ox": 100,
+        "oy": 563,
+        "points": {
+            
+        }
+    },
+    "CardName": {
+        "x": 1793,
+        "y": 277,
+        "w": 79,
+        "h": 20,
+        "ox": 92,
+        "oy": 140,
+        "points": {
+            
+        }
+    },
+    "CardPercentText": {
+        "x": 1271,
+        "y": 869,
+        "w": 30,
+        "h": 12,
+        "ox": 116,
+        "oy": 165,
+        "points": {
+            
+        }
+    },
+    "CardSubText3": {
+        "x": 1335,
+        "y": 830,
+        "w": 18,
+        "h": 13,
+        "ox": 79,
+        "oy": 564,
+        "points": {
+            
+        }
+    },
+    "CardSubText2": {
+        "x": 1335,
+        "y": 797,
+        "w": 18,
+        "h": 13,
+        "ox": 79,
+        "oy": 463,
+        "points": {
+            
+        }
+    },
+    "CardSubText1": {
+        "x": 1354,
+        "y": 867,
+        "w": 19,
+        "h": 13,
+        "ox": 79,
+        "oy": 362,
+        "points": {
+            
+        }
+    },
+    "CardBtn1Left": {
+        "x": 1797,
+        "y": 366,
+        "w": 28,
+        "h": 28,
+        "ox": 66,
+        "oy": 191,
+        "points": {
+            
+        }
+    },
+    "CardBtn2Left": {
+        "x": 1826,
+        "y": 366,
+        "w": 28,
+        "h": 28,
+        "ox": 36,
+        "oy": 191,
+        "points": {
+            
+        }
+    },
+    "CardBtn1Right": {
+        "x": 1855,
+        "y": 366,
+        "w": 28,
+        "h": 28,
+        "ox": 162,
+        "oy": 191,
+        "points": {
+            
+        }
+    },
+    "CardBtn2Right": {
+        "x": 1739,
+        "y": 395,
+        "w": 28,
+        "h": 28,
+        "ox": 192,
+        "oy": 191,
+        "points": {
+            
+        }
+    },
+    "CardPointCount": {
+        "x": 1302,
+        "y": 850,
+        "w": 36,
+        "h": 25,
+        "ox": 110,
+        "oy": 194,
+        "points": {
+            
+        }
+    },
+    "Background": {
+        "x": 0,
+        "y": 0,
+        "w": 1208,
+        "h": 884,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Close": {
+        "x": 1739,
+        "y": 346,
+        "w": 62,
+        "h": 19,
+        "ox": 1018,
+        "oy": 811,
+        "points": {
+            
+        }
+    },
+    "OK": {
+        "x": 1435,
+        "y": 664,
+        "w": 33,
+        "h": 19,
+        "ox": 833,
+        "oy": 811,
+        "points": {
+            
+        }
+    },
+    "Cancel": {
+        "x": 1793,
+        "y": 298,
+        "w": 76,
+        "h": 19,
+        "ox": 616,
+        "oy": 811,
+        "points": {
+            
+        }
+    },
+    "Reset": {
+        "x": 1802,
+        "y": 346,
+        "w": 62,
+        "h": 19,
+        "ox": 150,
+        "oy": 811,
+        "points": {
+            
+        }
+    },
+    "BtnReset": {
+        "x": 1474,
+        "y": 717,
+        "w": 216,
+        "h": 44,
+        "ox": 72,
+        "oy": 797,
+        "points": {
+            
+        }
+    },
+    "BtnCancel": {
+        "x": 0,
+        "y": 1557,
+        "w": 184,
+        "h": 44,
+        "ox": 562,
+        "oy": 797,
+        "points": {
+            
+        }
+    },
+    "BtnOk": {
+        "x": 1691,
+        "y": 762,
+        "w": 184,
+        "h": 44,
+        "ox": 757,
+        "oy": 797,
+        "points": {
+            
+        }
+    },
+    "BtnClose": {
+        "x": 1691,
+        "y": 807,
+        "w": 184,
+        "h": 44,
+        "ox": 952,
+        "oy": 797,
+        "points": {
+            
+        }
+    },
+    "BtnType4": {
+        "x": 0,
+        "y": 1512,
+        "w": 184,
+        "h": 44,
+        "ox": 591,
+        "oy": 94,
+        "points": {
+            
+        }
+    },
+    "BtnType3": {
+        "x": 0,
+        "y": 1827,
+        "w": 184,
+        "h": 44,
+        "ox": 407,
+        "oy": 94,
+        "points": {
+            
+        }
+    },
+    "BtnType2": {
+        "x": 1691,
+        "y": 717,
+        "w": 184,
+        "h": 44,
+        "ox": 223,
+        "oy": 94,
+        "points": {
+            
+        }
+    },
+    "BtnType1": {
+        "x": 265,
+        "y": 1512,
+        "w": 184,
+        "h": 44,
+        "ox": 39,
+        "oy": 94,
+        "points": {
+            
+        }
+    },
+    "CardPos4": {
+        "x": 1209,
+        "y": 0,
+        "w": 264,
+        "h": 626,
+        "ox": 869,
+        "oy": 152,
+        "points": {
+            
+        }
+    },
+    "CardPos3": {
+        "x": 1060,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 605,
+        "oy": 152,
+        "points": {
+            
+        }
+    },
+    "CardPos2": {
+        "x": 795,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 341,
+        "oy": 152,
+        "points": {
+            
+        }
+    },
+    "CardPos1": {
+        "x": 1590,
+        "y": 885,
+        "w": 264,
+        "h": 626,
+        "ox": 77,
+        "oy": 152,
+        "points": {
+            
+        }
+    }
+}

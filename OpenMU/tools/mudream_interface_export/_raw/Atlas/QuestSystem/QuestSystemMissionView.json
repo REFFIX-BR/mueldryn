@@ -1,0 +1,761 @@
+{
+    "Effect05": {
+        "x": 548,
+        "y": 0,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect04": {
+        "x": 0,
+        "y": 0,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect03": {
+        "x": 137,
+        "y": 0,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect02": {
+        "x": 274,
+        "y": 0,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "Effect01": {
+        "x": 411,
+        "y": 0,
+        "w": 136,
+        "h": 136,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DailyMonster": {
+        "x": 268,
+        "y": 337,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DailyCompleted": {
+        "x": 65,
+        "y": 632,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DailyActive": {
+        "x": 65,
+        "y": 567,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DailyAvailable": {
+        "x": 130,
+        "y": 502,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "GuildMonster": {
+        "x": 65,
+        "y": 502,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "GuildCompleted": {
+        "x": 0,
+        "y": 632,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "GuildActive": {
+        "x": 268,
+        "y": 272,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "GuildAvailable": {
+        "x": 130,
+        "y": 567,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DungeonMonster": {
+        "x": 0,
+        "y": 437,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DungeonCompleted": {
+        "x": 138,
+        "y": 303,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DungeonActive": {
+        "x": 130,
+        "y": 632,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "DungeonAvailable": {
+        "x": 0,
+        "y": 303,
+        "w": 68,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "EventMonster": {
+        "x": 0,
+        "y": 372,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "EventCompleted": {
+        "x": 65,
+        "y": 372,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "EventActive": {
+        "x": 130,
+        "y": 372,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "EventAvailable": {
+        "x": 69,
+        "y": 303,
+        "w": 68,
+        "h": 68,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MainMonster": {
+        "x": 65,
+        "y": 437,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MainCompleted": {
+        "x": 130,
+        "y": 437,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MainActive": {
+        "x": 0,
+        "y": 502,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "MainAvailable": {
+        "x": 0,
+        "y": 567,
+        "w": 64,
+        "h": 64,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseDisabled": {
+        "x": 216,
+        "y": 397,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseClick": {
+        "x": 229,
+        "y": 303,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseHover": {
+        "x": 676,
+        "y": 227,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "CloseNormal": {
+        "x": 195,
+        "y": 372,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ShowHover": {
+        "x": 685,
+        "y": 98,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ShowNormal": {
+        "x": 655,
+        "y": 227,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "HideHover": {
+        "x": 195,
+        "y": 397,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "HideNormal": {
+        "x": 229,
+        "y": 328,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "InfoHover": {
+        "x": 195,
+        "y": 437,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "InfoNormal": {
+        "x": 216,
+        "y": 372,
+        "w": 20,
+        "h": 24,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ScrollBarDisable": {
+        "x": 216,
+        "y": 303,
+        "w": 12,
+        "h": 48,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ScrollBarClick": {
+        "x": 203,
+        "y": 303,
+        "w": 12,
+        "h": 48,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ScrollBarHover": {
+        "x": 685,
+        "y": 0,
+        "w": 12,
+        "h": 48,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ScrollBarNormal": {
+        "x": 685,
+        "y": 49,
+        "w": 12,
+        "h": 48,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "ScrollBarBg": {
+        "x": 255,
+        "y": 272,
+        "w": 12,
+        "h": 368,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestMissionBgMini": {
+        "x": 0,
+        "y": 272,
+        "w": 254,
+        "h": 30,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveDaily": {
+        "x": 216,
+        "y": 588,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewDaily": {
+        "x": 195,
+        "y": 609,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteDaily": {
+        "x": 195,
+        "y": 588,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveGuild": {
+        "x": 216,
+        "y": 567,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewGuild": {
+        "x": 195,
+        "y": 567,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteGuild": {
+        "x": 216,
+        "y": 544,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveDungeon": {
+        "x": 216,
+        "y": 523,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewDungeon": {
+        "x": 195,
+        "y": 544,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteDungeon": {
+        "x": 195,
+        "y": 523,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveEvent": {
+        "x": 216,
+        "y": 502,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewEvent": {
+        "x": 195,
+        "y": 502,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteEvent": {
+        "x": 216,
+        "y": 462,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconActiveMain": {
+        "x": 195,
+        "y": 462,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconNewMain": {
+        "x": 216,
+        "y": 609,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "IconCompleteMain": {
+        "x": 216,
+        "y": 437,
+        "w": 20,
+        "h": 20,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnHideClick": {
+        "x": 622,
+        "y": 227,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnHideHover": {
+        "x": 660,
+        "y": 182,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnHideNormal": {
+        "x": 627,
+        "y": 182,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnShowClick": {
+        "x": 627,
+        "y": 137,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnShowHover": {
+        "x": 660,
+        "y": 137,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "BtnShowNormal": {
+        "x": 594,
+        "y": 182,
+        "w": 32,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestNameBgDaily": {
+        "x": 0,
+        "y": 227,
+        "w": 296,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestNameBgGuild": {
+        "x": 0,
+        "y": 137,
+        "w": 296,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestNameBgDungeon": {
+        "x": 297,
+        "y": 137,
+        "w": 296,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestNameBgEvent": {
+        "x": 0,
+        "y": 182,
+        "w": 296,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "QuestNameBgMain": {
+        "x": 297,
+        "y": 182,
+        "w": 296,
+        "h": 44,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "TimeIcon": {
+        "x": 594,
+        "y": 137,
+        "w": 32,
+        "h": 32,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    },
+    "HeaderBg": {
+        "x": 297,
+        "y": 227,
+        "w": 324,
+        "h": 28,
+        "ox": 0,
+        "oy": 0,
+        "points": {
+            
+        }
+    }
+}
