@@ -723,4 +723,10 @@ public enum UpdateVersion
     /// Enforces a 4.5-tile minimum between hunt-map farm spots and opens stacked point packs.
     /// </summary>
     SpreadHuntMapFarmSpots = 142,
+
+    /// <summary>
+    /// The version of the <see cref="WidenHuntMapFarmSpotsUpdatePlugIn"/>.
+    /// Re-thins hunt-map farm spots to 12-tile minimum spacing (Kanturu Relics, etc.).
+    /// </summary>
+    WidenHuntMapFarmSpots = 143,
 }

@@ -1,4 +1,4 @@
-// <copyright file="SpreadHuntMapFarmSpotsUpdatePlugIn.cs" company="MUnique">
+// <copyright file="WidenHuntMapFarmSpotsUpdatePlugIn.cs" company="MUnique">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -9,19 +9,18 @@ using MUnique.OpenMU.DataModel.Configuration;
 using MUnique.OpenMU.PlugIns;
 
 /// <summary>
-/// Hunt maps outside the curated city set inherited vanilla 1-mob grids. Farm density then
-/// put Quantity=6 on every point, so packs sit on top of each other. This keeps one farm
-/// spot per 4.5 tiles (1 tile ≈ 1 m) and opens remaining point packs into a 3×3 so the
-/// six mobs are not born on the same coordinate.
+/// Re-applies hunt-map farm spacing with a larger minimum distance. Update 142 used 4.5 tiles;
+/// Kanturu Relics (map 38) and similar end-game maps still looked stacked. City curated maps
+/// use ~28-tile grids — hunt maps use 12 m as a practical middle ground without Mudream server dumps.
 /// </summary>
 [PlugIn]
 [Display(Name = PlugInName, Description = PlugInDescription)]
-[Guid("6A8C2E91-4B7D-4F13-A9E0-2C5D8F1B0476")]
-public class SpreadHuntMapFarmSpotsUpdatePlugIn : UpdatePlugInBase
+[Guid("8F3A1C72-9D4E-4B60-A1E5-6C7D2F908B41")]
+public class WidenHuntMapFarmSpotsUpdatePlugIn : UpdatePlugInBase
 {
-    internal const string PlugInName = "Spread hunt-map farm spots";
+    internal const string PlugInName = "Widen hunt-map farm spots (12 m)";
     internal const string PlugInDescription =
-        "Enforces 4.5-tile minimum spacing between hunt-map farm spots and expands stacked Quantity=6 points into a 3x3 pack.";
+        "Re-thins hunt-map farm spots to a 12-tile minimum spacing (Kanturu, Aida, Karutan, etc.).";
 
     /// <inheritdoc />
     public override string Name => PlugInName;
@@ -30,7 +29,7 @@ public class SpreadHuntMapFarmSpotsUpdatePlugIn : UpdatePlugInBase
     public override string Description => PlugInDescription;
 
     /// <inheritdoc />
-    public override UpdateVersion Version => UpdateVersion.SpreadHuntMapFarmSpots;
+    public override UpdateVersion Version => UpdateVersion.WidenHuntMapFarmSpots;
 
     /// <inheritdoc />
     public override string DataInitializationKey => VersionSeasonSix.DataInitialization.Id;
@@ -39,12 +38,12 @@ public class SpreadHuntMapFarmSpotsUpdatePlugIn : UpdatePlugInBase
     public override bool IsMandatory => true;
 
     /// <inheritdoc />
-    public override DateTime CreatedAt => new(2026, 08, 31, 21, 0, 0, DateTimeKind.Utc);
+    public override DateTime CreatedAt => new(2026, 09, 01, 12, 0, 0, DateTimeKind.Utc);
 
     /// <inheritdoc />
     protected override async ValueTask ApplyAsync(IContext context, GameConfiguration gameConfiguration)
     {
-        HuntMapFarmSpotSpacing.Apply(gameConfiguration, HuntMapFarmSpotSpacing.InitialMinDistanceTiles);
+        HuntMapFarmSpotSpacing.Apply(gameConfiguration, HuntMapFarmSpotSpacing.WideMinDistanceTiles);
         await ValueTask.CompletedTask.ConfigureAwait(false);
     }
 }
