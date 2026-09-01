@@ -18,6 +18,9 @@ internal static class HuntMapFarmSpotSpacing
     /// <summary>Wider spacing so end-game maps (Kanturu, Aida, …) are not visually stacked.</summary>
     internal const float WideMinDistanceTiles = 12f;
 
+    /// <summary>Extra-wide spacing (~20 m) for hunt maps that still feel dense at 12 m.</summary>
+    internal const float ExtraWideMinDistanceTiles = 20f;
+
     /// <summary>
     /// Spawns larger than this on a side are area packs, not point spots — leave them.
     /// </summary>

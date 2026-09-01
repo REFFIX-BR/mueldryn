@@ -729,4 +729,10 @@ public enum UpdateVersion
     /// Re-thins hunt-map farm spots to 12-tile minimum spacing (Kanturu Relics, etc.).
     /// </summary>
     WidenHuntMapFarmSpots = 143,
+
+    /// <summary>
+    /// The version of the <see cref="WidenHuntMapFarmSpots20UpdatePlugIn"/>.
+    /// Re-thins hunt-map farm spots to 20-tile minimum spacing.
+    /// </summary>
+    WidenHuntMapFarmSpots20 = 144,
 }
