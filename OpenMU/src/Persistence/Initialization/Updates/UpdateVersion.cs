@@ -735,4 +735,9 @@ public enum UpdateVersion
     /// Re-thins hunt-map farm spots to 20-tile minimum spacing.
     /// </summary>
     WidenHuntMapFarmSpots20 = 144,
+
+    /// <summary>
+    /// The version of the <see cref="ReduceDefaultMonsterDropRatesUpdatePlugIn"/>.
+    /// </summary>
+    ReduceDefaultMonsterDropRates = 145,
 }

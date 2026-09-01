@@ -17,6 +17,9 @@ public class DefaultDropGenerator : IDropGenerator
     /// The amount of money which is dropped at least, and added to the gained experience.
     /// </summary>
     private const int BaseMoneyDrop = 7;
+
+    /// <summary>Scales zen dropped by monsters (applied after the money drop roll).</summary>
+    private const double MoneyDropScale = 0.25;
     private const int DropLevelMaxGap = 12;
     private const int SkillDropChancePercent = 50;
 
@@ -620,7 +623,8 @@ public class DefaultDropGenerator : IDropGenerator
         var item = this.GenerateSpecialItem(monster, selectedGroup);
         if (item is null && selectedGroup.ItemType == SpecialItemType.Money)
         {
-            droppedMoney = (uint)(gainedExperience + BaseMoneyDrop);
+            var raw = gainedExperience + BaseMoneyDrop;
+            droppedMoney = (uint)Math.Max(1, raw * MoneyDropScale);
         }
 
         return item;
