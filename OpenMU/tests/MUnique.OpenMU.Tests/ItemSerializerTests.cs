@@ -149,6 +149,31 @@ public class ItemSerializerTests<T>
     }
 
     /// <summary>
+    /// Regression: option + luck + ancient (no excellent) must not collide in the extended layout.
+    /// </summary>
+    [Test]
+    public void AncientWithOptionAndLuck()
+    {
+        var tuple = this.SerializeAndDeserializeAncientArmorWithOptionAndLuck();
+        var item = tuple.Item1;
+        var deserializedItem = tuple.Item2;
+
+        Assert.That(deserializedItem.Level, Is.EqualTo(item.Level));
+        Assert.That(deserializedItem.ItemSetGroups.Count, Is.EqualTo(1));
+        Assert.That(
+            deserializedItem.ItemSetGroups.First().AncientSetDiscriminator,
+            Is.EqualTo(item.ItemSetGroups.First().AncientSetDiscriminator));
+
+        var originalOption = item.ItemOptions.First(o => o.ItemOption?.OptionType == ItemOptionTypes.Option);
+        var deserializedOption = deserializedItem.ItemOptions.FirstOrDefault(o => o.ItemOption?.OptionType == ItemOptionTypes.Option);
+        Assert.That(deserializedOption, Is.Not.Null);
+        Assert.That(deserializedOption!.Level, Is.EqualTo(originalOption.Level));
+
+        Assert.That(deserializedItem.ItemOptions.Any(o => o.ItemOption?.OptionType == ItemOptionTypes.Luck), Is.True);
+        Assert.That(deserializedItem.ItemOptions.Any(o => o.ItemOption?.OptionType == ItemOptionTypes.AncientBonus), Is.True);
+    }
+
+    /// <summary>
     /// Tests if ancient items without bonus option are correctly (de)serialized.
     /// </summary>
     [Test]
@@ -250,6 +275,40 @@ public class ItemSerializerTests<T>
         var ancientBonus = context.CreateNew<ItemOptionLink>();
         ancientBonus.ItemOption = itemOfSet.BonusOption;
         ancientBonus.Level = 2; // 10 Str
+        item.ItemOptions.Add(ancientBonus);
+        item.ItemSetGroups.Add(itemOfSet);
+
+        var array = new byte[this._itemSerializer.NeededSpace];
+        this._itemSerializer.SerializeItem(array, item);
+
+        var deserializedItem = this._itemSerializer.DeserializeItem(array, this._gameConfiguration, context);
+        return new Tuple<Item, Item>(item, deserializedItem);
+    }
+
+    private Tuple<Item, Item> SerializeAndDeserializeAncientArmorWithOptionAndLuck()
+    {
+        using var context = this._contextProvider.CreateNewContext(this._gameConfiguration);
+        var item = context.CreateNew<Item>();
+        item.Definition = this._gameConfiguration.Items.First(i => i.Name == "Dragon Helm");
+        item.Level = 15;
+        item.Durability = 100;
+
+        var option = context.CreateNew<ItemOptionLink>();
+        option.ItemOption = item.Definition.PossibleItemOptions.SelectMany(def =>
+            def.PossibleOptions.Where(p => p.OptionType == ItemOptionTypes.Option)).First();
+        option.Level = 4;
+        item.ItemOptions.Add(option);
+
+        var luck = context.CreateNew<ItemOptionLink>();
+        luck.ItemOption = item.Definition.PossibleItemOptions.SelectMany(def =>
+            def.PossibleOptions.Where(p => p.OptionType == ItemOptionTypes.Luck)).First();
+        item.ItemOptions.Add(luck);
+
+        var ancientSet = this._gameConfiguration.ItemSetGroups.First(i => i.Name == "Hyon");
+        var itemOfSet = ancientSet.Items.First(i => i.ItemDefinition == item.Definition);
+        var ancientBonus = context.CreateNew<ItemOptionLink>();
+        ancientBonus.ItemOption = itemOfSet.BonusOption;
+        ancientBonus.Level = 1;
         item.ItemOptions.Add(ancientBonus);
         item.ItemSetGroups.Add(itemOfSet);
 

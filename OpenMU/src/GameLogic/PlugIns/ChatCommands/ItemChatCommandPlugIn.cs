@@ -167,13 +167,34 @@ public class ItemChatCommandPlugIn : ChatCommandPlugInBase<ItemChatCommandArgs>
 
     private static void AddAncientBonusOption(TemporaryItem item, ItemChatCommandArgs arguments)
     {
-        if (item.Definition != null && arguments.Ancient > 0
-                                    && item.Definition.PossibleItemSetGroups.FirstOrDefault(g => g.Items.Any(i => i.ItemDefinition == item.Definition && i.AncientSetDiscriminator == arguments.Ancient)) is { } ancientSet
-                                    && ancientSet.Items.FirstOrDefault(i => i.ItemDefinition == item.Definition) is { } itemOfItemSet)
+        if (item.Definition is null || arguments.Ancient == 0)
         {
-            var optionLink = new ItemOptionLink { ItemOption = itemOfItemSet.BonusOption, Level = arguments.AncientBonusLevel };
-            item.ItemOptions.Add(optionLink);
-            item.ItemSetGroups.Add(itemOfItemSet);
+            return;
         }
+
+        // Match by group/number (not only reference equality) so cache reloads still resolve.
+        var itemOfItemSet = item.Definition.PossibleItemSetGroups
+            .SelectMany(g => g.Items)
+            .FirstOrDefault(i =>
+                i.AncientSetDiscriminator == arguments.Ancient
+                && i.ItemDefinition is { } def
+                && def.Group == item.Definition.Group
+                && def.Number == item.Definition.Number);
+
+        if (itemOfItemSet is null)
+        {
+            return;
+        }
+
+        if (itemOfItemSet.BonusOption is not null && arguments.AncientBonusLevel > 0)
+        {
+            item.ItemOptions.Add(new ItemOptionLink
+            {
+                ItemOption = itemOfItemSet.BonusOption,
+                Level = arguments.AncientBonusLevel,
+            });
+        }
+
+        item.ItemSetGroups.Add(itemOfItemSet);
     }
 }

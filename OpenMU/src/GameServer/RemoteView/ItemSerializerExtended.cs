@@ -454,9 +454,12 @@ public class ItemSerializerExtended : IItemSerializer
         {
             get
             {
+                // Without excellent data, the next optional byte starts right after the
+                // option byte (or after flags when there is no option). Previously this
+                // returned AdditionalOptionIndex and ancient/harmony overwrote option/flags.
                 if (!this.Options.HasFlag(OptionFlags.HasExcellent))
                 {
-                    return this.ExcellentIndex;
+                    return this.AdditionalOptionIndex + 1;
                 }
 
                 var index = this.ExcellentRarityIndex + 1;
@@ -469,14 +472,10 @@ public class ItemSerializerExtended : IItemSerializer
             }
         }
 
-        private int AncientIndex => this.Options.HasFlag(OptionFlags.HasAncient) ? this.PostExcellentIndex : this.PostExcellentIndex;
+        private int AncientIndex => this.PostExcellentIndex;
 
-        private int HarmonyIndex => this.Options.HasFlag(OptionFlags.HasHarmony)
-            ? this.PostExcellentIndex + (this.Options.HasFlag(OptionFlags.HasAncient) ? 1 : 0)
-            : this.PostExcellentIndex + (this.Options.HasFlag(OptionFlags.HasAncient) ? 1 : 0);
+        private int HarmonyIndex => this.PostExcellentIndex + (this.Options.HasFlag(OptionFlags.HasAncient) ? 1 : 0);
 
-        private int SocketStartIndex => this.Options.HasFlag(OptionFlags.HasSockets)
-            ? this.HarmonyIndex + (this.Options.HasFlag(OptionFlags.HasHarmony) ? 1 : 0)
-            : this.HarmonyIndex + (this.Options.HasFlag(OptionFlags.HasHarmony) ? 1 : 0);
+        private int SocketStartIndex => this.HarmonyIndex + (this.Options.HasFlag(OptionFlags.HasHarmony) ? 1 : 0);
     }
 }
