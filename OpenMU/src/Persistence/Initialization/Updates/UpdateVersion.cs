@@ -740,4 +740,10 @@ public enum UpdateVersion
     /// The version of the <see cref="ReduceDefaultMonsterDropRatesUpdatePlugIn"/>.
     /// </summary>
     ReduceDefaultMonsterDropRates = 145,
+
+    /// <summary>
+    /// The version of the <see cref="AddMudreamT4AncientSetsUpdatePlugIn"/>.
+    /// Registers T4 ancient sets (Umbral/Silent/Shattered/Luminous/Celestial/Blazing/Stormborn).
+    /// </summary>
+    AddMudreamT4AncientSets = 146,
 }

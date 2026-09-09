@@ -647,6 +647,9 @@ public class AncientSets : InitializerBase
             (40, ItemGroups.Gloves, Stats.TotalVitality, 2),
             (40, ItemGroups.Armor, Stats.TotalVitality, 2),
             (40, ItemGroups.Helm, Stats.TotalVitality, 2));
+
+        // Mudream T4 sets (Ashcrow/Eclipse/Iris/Valiant/Glorious).
+        new MudreamT4AncientSets(this.Context, this.GameConfiguration).Initialize();
     }
 
     private void AddItems(ItemSetGroup set, params (short Number, ItemGroups Group, AttributeDefinition? BonusOption, int Discriminator)[] items)
