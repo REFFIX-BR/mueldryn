@@ -650,6 +650,12 @@ public class AncientSets : InitializerBase
 
         // Mudream T4 sets (Ashcrow/Eclipse/Iris/Valiant/Glorious).
         new MudreamT4AncientSets(this.Context, this.GameConfiguration).Initialize();
+
+        // Mudream T5–T8 armor + ancient sets.
+        new MudreamT5ToT8ArmorsAndSets(this.Context, this.GameConfiguration).Initialize();
+
+        // Gaps: SU/RF T4 armors+sets, RF T3 Vega/Chamer.
+        new MudreamFillMissingTier(this.Context, this.GameConfiguration).Initialize();
     }
 
     private void AddItems(ItemSetGroup set, params (short Number, ItemGroups Group, AttributeDefinition? BonusOption, int Discriminator)[] items)

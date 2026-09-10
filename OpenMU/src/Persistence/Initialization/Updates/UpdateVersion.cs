@@ -746,4 +746,20 @@ public enum UpdateVersion
     /// Registers T4 ancient sets (Umbral/Silent/Shattered/Luminous/Celestial/Blazing/Stormborn).
     /// </summary>
     AddMudreamT4AncientSets = 146,
+
+    /// <summary>
+    /// The version of the <see cref="AddMudreamT5ToT8ArmorsAndSetsUpdatePlugIn"/>.
+    /// </summary>
+    AddMudreamT5ToT8ArmorsAndSets = 147,
+
+    /// <summary>
+    /// The version of the <see cref="ExpandPegasusCollectionMaskUpdatePlugIn"/>.
+    /// </summary>
+    ExpandPegasusCollectionMask = 148,
+
+    /// <summary>
+    /// The version of the <see cref="AddMudreamFillMissingTierUpdatePlugIn"/>.
+    /// SU/RF T4 Aurelia+Drakzar and RF T3 Vega/Chamer.
+    /// </summary>
+    AddMudreamFillMissingTier = 149,
 }
