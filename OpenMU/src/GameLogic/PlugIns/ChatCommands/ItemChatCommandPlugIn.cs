@@ -40,6 +40,12 @@ public class ItemChatCommandPlugIn : ChatCommandPlugInBase<ItemChatCommandArgs>
             }
 
             var item = CreateItem(itemDefinition!, arguments);
+            if (arguments.Ancient > 0 && !item.ItemSetGroups.Any(s => s.AncientSetDiscriminator != 0))
+            {
+                await gameMaster.ShowBlueMessageAsync(
+                    $"[/item] anc={arguments.Ancient} not available for group={arguments.Group} number={arguments.Number}. Try the other ancient option (often anc=2).").ConfigureAwait(false);
+            }
+
             var dropCoordinates = gameMaster.CurrentMap.Terrain.GetRandomCoordinate(gameMaster.Position, 1);
             var droppedItem = new DroppedItem(item, dropCoordinates, gameMaster.CurrentMap, gameMaster);
             await gameMaster.CurrentMap.AddAsync(droppedItem).ConfigureAwait(false);
