@@ -10,6 +10,7 @@ using MUnique.OpenMU.DataModel.Configuration;
 using MUnique.OpenMU.DataModel.Configuration.Items;
 using MUnique.OpenMU.GameLogic.Attributes;
 using MUnique.OpenMU.Network;
+using MUnique.OpenMU.Persistence.Initialization.CharacterClasses;
 using MUnique.OpenMU.Persistence.Initialization.Items;
 
 /// <summary>
@@ -123,30 +124,58 @@ public class MudreamT5ToT8ArmorsAndSets : ArmorInitializerBase
     private void EnsureSet(byte number, string baseName, ClassMask cls, bool includeHelm, bool includeGloves, int tier)
     {
         var (drop, helmDef, armorDef, pantsDef, glovesDef, bootsDef, str, agi) = TierStats(tier);
+        // T7/T8 ancient set names match baseName ("Valmor"); piece-only item names avoid
+        // client tooltip "[T7] Valmor Valmor Armor". T5/T6 keep "Ravager Armor" under "Dread".
+        var usePieceOnlyName = number >= 100;
+        string PieceName(string piece) => usePieceOnlyName ? piece : $"{baseName} {piece}";
+
         if (includeHelm)
         {
-            this.EnsurePiece(number, 2, 2, 2, $"{baseName} Helm", drop, helmDef, 90, str, agi, cls);
+            this.EnsurePiece(number, 2, 2, 2, PieceName("Helm"), drop, helmDef, 90, str, agi, cls);
         }
 
-        this.EnsurePiece(number, 3, 2, 3, $"{baseName} Armor", drop, armorDef, 90, str, agi, cls);
-        this.EnsurePiece(number, 4, 2, 2, $"{baseName} Pants", drop, pantsDef, 90, str, agi, cls);
+        this.EnsurePiece(number, 3, 2, 3, PieceName("Armor"), drop, armorDef, 90, str, agi, cls);
+        this.EnsurePiece(number, 4, 2, 2, PieceName("Pants"), drop, pantsDef, 90, str, agi, cls);
         if (includeGloves)
         {
-            this.EnsurePiece(number, 5, 2, 2, $"{baseName} Gloves", drop, glovesDef, 90, str, agi, cls);
+            this.EnsurePiece(number, 5, 2, 2, PieceName("Gloves"), drop, glovesDef, 90, str, agi, cls);
         }
 
-        this.EnsurePiece(number, 6, 2, 2, $"{baseName} Boots", drop, bootsDef, 90, str, agi, cls);
+        this.EnsurePiece(number, 6, 2, 2, PieceName("Boots"), drop, bootsDef, 90, str, agi, cls);
     }
 
     private void EnsurePiece(byte number, byte slot, byte width, byte height, string name, byte dropLevel, int defense, byte durability, int str, int agi, ClassMask cls)
     {
         var group = (byte)(slot + 5);
-        if (this.GameConfiguration.Items.Any(i => i.Group == group && i.Number == number))
+        var (dw, dk, fe, mg, dl, su, rf) = ToFlags(cls);
+        var existing = this.GameConfiguration.Items.FirstOrDefault(i => i.Group == group && i.Number == number);
+        if (existing is not null)
         {
+            // Reconcile class/name/reqs/dims — stubs left Width/Height/ItemSlot unset and
+            // blocked ground pickup (CheckInvSpace) + equip (ItemSlot null).
+            existing.Name = name;
+            existing.DropLevel = dropLevel;
+            existing.DropsFromMonsters = false;
+            existing.Width = width;
+            existing.Height = height;
+            existing.Durability = durability;
+            existing.MaximumItemLevel = this.MaximumArmorLevel;
+            // Prefer the narrowest slot type that contains this slot (avoids multi-slot First() mismatches).
+            existing.ItemSlot = this.GameConfiguration.ItemSlotTypes
+                .Where(st => st.ItemSlots.Contains(slot))
+                .OrderBy(st => st.ItemSlots.Count)
+                .First();
+            this.ReplaceRequirement(existing, Stats.TotalStrengthRequirementValue, str);
+            this.ReplaceRequirement(existing, Stats.TotalAgilityRequirementValue, agi);
+            existing.QualifiedCharacters.Clear();
+            foreach (var characterClass in this.GameConfiguration.DetermineCharacterClasses(dw, dk, fe, mg, dl, su, rf))
+            {
+                existing.QualifiedCharacters.Add(characterClass);
+            }
+
             return;
         }
 
-        var (dw, dk, fe, mg, dl, su, rf) = ToFlags(cls);
         var item = this.CreateArmor(
             number, slot, width, height, name, dropLevel, defense, durability,
             0, str, agi, 0, 0, 0,
@@ -154,14 +183,42 @@ public class MudreamT5ToT8ArmorsAndSets : ArmorInitializerBase
         item.DropsFromMonsters = false;
     }
 
+    private void ReplaceRequirement(ItemDefinition item, AttributeDefinition attribute, int minimumValue)
+    {
+        var persistent = attribute.GetPersistent(this.GameConfiguration);
+        var existing = item.Requirements.FirstOrDefault(r => r.Attribute == persistent || r.Attribute == attribute);
+        if (minimumValue <= 0)
+        {
+            if (existing is not null)
+            {
+                item.Requirements.Remove(existing);
+            }
+
+            return;
+        }
+
+        if (existing is not null)
+        {
+            existing.MinimumValue = minimumValue;
+            return;
+        }
+
+        this.CreateItemRequirementIfNeeded(item, attribute, minimumValue);
+    }
+
     private static (byte Drop, int Helm, int Armor, int Pants, int Gloves, int Boots, int Str, int Agi) TierStats(int tier)
     {
+        // Strength bases must stay wearable under OpenMU's
+        // (3 * dropLevel * str / 100) + 20 formula for +15 ancient (dropLevel = Drop+30+45).
+        // Ashcrow uses ~160 base but DropLevel ~75 → ~740 STR at +15 anc.
+        // Our DropLevels are higher (95–140), so 160/180 still yields ~836/1019 — too high for GM ~500–800.
+        // Targets at +15 ancient: T5≈530, T6≈631, T7≈740, T8≈794.
         return tier switch
         {
-            5 => (95, 45, 70, 55, 40, 40, 200, 60),
-            6 => (110, 60, 90, 70, 55, 55, 240, 70),
-            7 => (125, 75, 110, 85, 70, 70, 280, 80),
-            _ => (140, 90, 130, 100, 85, 85, 320, 90),
+            5 => (95, 45, 70, 55, 40, 40, 100, 40),
+            6 => (110, 60, 90, 70, 55, 55, 110, 45),
+            7 => (125, 75, 110, 85, 70, 70, 120, 50),
+            _ => (140, 90, 130, 100, 85, 85, 120, 55),
         };
     }
 

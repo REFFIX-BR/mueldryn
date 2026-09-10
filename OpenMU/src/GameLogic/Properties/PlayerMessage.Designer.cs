@@ -1645,6 +1645,60 @@ namespace MUnique.OpenMU.GameLogic.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your class cannot equip this item..
+        /// </summary>
+        public static string YouCantWearThisItemWrongClass {
+            get {
+                return ResourceManager.GetString("YouCantWearThisItemWrongClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need more strength to equip this item..
+        /// </summary>
+        public static string YouNeedMoreStrength {
+            get {
+                return ResourceManager.GetString("YouNeedMoreStrength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need more agility to equip this item..
+        /// </summary>
+        public static string YouNeedMoreAgility {
+            get {
+                return ResourceManager.GetString("YouNeedMoreAgility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need more energy to equip this item..
+        /// </summary>
+        public static string YouNeedMoreEnergy {
+            get {
+                return ResourceManager.GetString("YouNeedMoreEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need more vitality to equip this item..
+        /// </summary>
+        public static string YouNeedMoreVitality {
+            get {
+                return ResourceManager.GetString("YouNeedMoreVitality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need more command to equip this item..
+        /// </summary>
+        public static string YouNeedMoreCommand {
+            get {
+                return ResourceManager.GetString("YouNeedMoreCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You got killed by {0}.
         /// </summary>
         public static string YouGotKilledBy {

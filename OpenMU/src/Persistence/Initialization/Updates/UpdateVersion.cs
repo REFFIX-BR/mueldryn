@@ -762,4 +762,22 @@ public enum UpdateVersion
     /// SU/RF T4 Aurelia+Drakzar and RF T3 Vega/Chamer.
     /// </summary>
     AddMudreamFillMissingTier = 149,
+
+    /// <summary>
+    /// The version of the <see cref="FixMudreamT5ToT8ArmorRequirementsUpdatePlugIn"/>.
+    /// Reconciles T5–T8 names, MG class flags, and STR/AGI requirement bases.
+    /// </summary>
+    FixMudreamT5ToT8ArmorRequirements = 150,
+
+    /// <summary>
+    /// The version of the <see cref="FixMudreamT5ToT8ArmorDimensionsUpdatePlugIn"/>.
+    /// Reconciles T5–T8 Width/Height/ItemSlot/Durability so ground pickup works.
+    /// </summary>
+    FixMudreamT5ToT8ArmorDimensions = 151,
+
+    /// <summary>
+    /// The version of the <see cref="FixMudreamT5ToT8ArmorWearabilityUpdatePlugIn"/>.
+    /// Re-lowers T5–T8 STR/AGI bases so +15 ancient is wearable at ~500–800 STR, and re-sets ItemSlot/MG flags.
+    /// </summary>
+    FixMudreamT5ToT8ArmorWearability = 152,
 }

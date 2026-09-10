@@ -4,7 +4,9 @@
 
 namespace MUnique.OpenMU.GameLogic;
 
+using MUnique.OpenMU.GameLogic.Attributes;
 using MUnique.OpenMU.GameLogic.PlugIns;
+using MUnique.OpenMU.GameLogic.Properties;
 using MUnique.OpenMU.GameLogic.Views.Inventory;
 using MUnique.OpenMU.Persistence;
 
@@ -21,17 +23,60 @@ public static class PlayerItemExtensions
     /// <returns><c>True</c>, if the player complies with the requirements of the specified item; Otherwise, <c>false</c>.</returns>
     public static bool CompliesRequirements(this Player player, Item item)
     {
+        return player.GetEquipRequirementFailureMessageKey(item) is null;
+    }
+
+    /// <summary>
+    /// Returns the localized blue-message resource key for why the player cannot equip the item,
+    /// or <c>null</c> when the player meets class and attribute requirements.
+    /// Distinguishes missing strength/agility/etc. from class mismatch (generic wear fail).
+    /// </summary>
+    public static string? GetEquipRequirementFailureMessageKey(this Player player, Item item)
+    {
         item.ThrowNotInitializedProperty(item.Definition is null, nameof(item.Definition));
 
         foreach (var requirement in item.Definition.Requirements.Select(item.GetRequirement))
         {
             if (player.Attributes![requirement.Attr] < requirement.Value)
             {
-                return false;
+                if (requirement.Attr == Stats.TotalStrength)
+                {
+                    return nameof(PlayerMessage.YouNeedMoreStrength);
+                }
+
+                if (requirement.Attr == Stats.TotalAgility)
+                {
+                    return nameof(PlayerMessage.YouNeedMoreAgility);
+                }
+
+                if (requirement.Attr == Stats.TotalEnergy)
+                {
+                    return nameof(PlayerMessage.YouNeedMoreEnergy);
+                }
+
+                if (requirement.Attr == Stats.TotalVitality)
+                {
+                    return nameof(PlayerMessage.YouNeedMoreVitality);
+                }
+
+                if (requirement.Attr == Stats.TotalLeadership)
+                {
+                    return nameof(PlayerMessage.YouNeedMoreCommand);
+                }
+
+                return nameof(PlayerMessage.YouCantWearThisItem);
             }
         }
 
-        return item.Definition.QualifiedCharacters.Contains(player.SelectedCharacter!.CharacterClass!);
+        // Compare by class Number — Contains() is reference-equality and can fail when
+        // QualifiedCharacters and SelectedCharacter.CharacterClass are distinct EF instances.
+        var characterClassNumber = player.SelectedCharacter!.CharacterClass!.Number;
+        if (!item.Definition.QualifiedCharacters.Any(c => c.Number == characterClassNumber))
+        {
+            return nameof(PlayerMessage.YouCantWearThisItemWrongClass);
+        }
+
+        return null;
     }
 
     /// <summary>

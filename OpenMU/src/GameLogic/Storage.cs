@@ -200,7 +200,7 @@ public class Storage : IStorage
         {
             for (byte column = 0; column < InventoryConstants.RowSize; column++)
             {
-                if (this.FitsInside(row, column, item.Definition.Width, item.Definition.Height))
+                if (this.FitsInside(row, column, item.Definition.Width == 0 ? (byte)1 : item.Definition.Width, item.Definition.Height == 0 ? (byte)1 : item.Definition.Height))
                 {
                     return (byte)((row * InventoryConstants.RowSize) + column + this._boxOffset + this._slotOffset);
                 }
@@ -371,7 +371,10 @@ public class Storage : IStorage
         var columnIndex = this.GetColumnIndex(slot);
         var rowIndex = this.GetRowIndex(slot);
         var itemDef = item.Definition;
-        if (!this.FitsInside((byte)rowIndex, (byte)columnIndex, itemDef.Width, itemDef.Height))
+        // Width/Height 0 stubs break inventory grid math and can crash clients on enter.
+        var width = itemDef.Width == 0 ? (byte)1 : itemDef.Width;
+        var height = itemDef.Height == 0 ? (byte)1 : itemDef.Height;
+        if (!this.FitsInside((byte)rowIndex, (byte)columnIndex, width, height))
         {
             return false;
         }
@@ -401,9 +404,11 @@ public class Storage : IStorage
 
     private void SetItemUsedSlots(Item item, int columnIndex, int rowIndex, bool used = true)
     {
-        for (int r = rowIndex; r < rowIndex + item.Definition!.Height; r++)
+        var width = item.Definition!.Width == 0 ? 1 : item.Definition.Width;
+        var height = item.Definition.Height == 0 ? 1 : item.Definition.Height;
+        for (int r = rowIndex; r < rowIndex + height; r++)
         {
-            for (int c = columnIndex; c < columnIndex + item.Definition.Width; c++)
+            for (int c = columnIndex; c < columnIndex + width; c++)
             {
                 if (r < this._rows && c < InventoryConstants.RowSize)
                 {

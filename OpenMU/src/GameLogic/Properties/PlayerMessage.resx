@@ -489,6 +489,24 @@
   <data name="YouCantWearThisItem" xml:space="preserve">
     <value>You can't wear this item.</value>
   </data>
+  <data name="YouCantWearThisItemWrongClass" xml:space="preserve">
+    <value>Your class cannot equip this item.</value>
+  </data>
+  <data name="YouNeedMoreStrength" xml:space="preserve">
+    <value>You need more strength to equip this item.</value>
+  </data>
+  <data name="YouNeedMoreAgility" xml:space="preserve">
+    <value>You need more agility to equip this item.</value>
+  </data>
+  <data name="YouNeedMoreEnergy" xml:space="preserve">
+    <value>You need more energy to equip this item.</value>
+  </data>
+  <data name="YouNeedMoreVitality" xml:space="preserve">
+    <value>You need more vitality to equip this item.</value>
+  </data>
+  <data name="YouNeedMoreCommand" xml:space="preserve">
+    <value>You need more command to equip this item.</value>
+  </data>
   <data name="ItemIsBoundToInventoryOfCharacter" xml:space="preserve">
     <value>This item is bound to the inventory of this character.</value>
   </data>

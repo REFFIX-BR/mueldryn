@@ -136,8 +136,9 @@ public class PickupItemAction
         }
 
         var slot = player.Inventory?.CheckInvSpace(droppedItem.Item);
-        if (slot < InventoryConstants.EquippableSlotsCount)
+        if (!slot.HasValue || slot < InventoryConstants.EquippableSlotsCount)
         {
+            await player.ShowLocalizedBlueMessageAsync(nameof(PlayerMessage.InventoryNotEnoughSpace)).ConfigureAwait(false);
             return (false, null);
         }
 

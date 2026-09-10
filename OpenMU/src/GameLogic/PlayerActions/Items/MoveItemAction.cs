@@ -248,8 +248,16 @@ public class MoveItemAction
         if (toStorage.Storage == player.Inventory && toSlot <= LastEquippableItemSlotIndex)
         {
             var itemDefinition = item.Definition;
-            if (storage.GetItem(toSlot) != null || itemDefinition?.ItemSlot is null)
+            if (storage.GetItem(toSlot) != null)
             {
+                return Movement.None;
+            }
+
+            // Stubs / unreconciled defs leave ItemSlot null — equip used to fail silently and
+            // appearance/inventory paths could NRE when treating the item as wearable.
+            if (itemDefinition?.ItemSlot is null)
+            {
+                await player.ShowLocalizedBlueMessageAsync(nameof(PlayerMessage.YouCantWearThisItem)).ConfigureAwait(false);
                 return Movement.None;
             }
 
@@ -260,17 +268,23 @@ public class MoveItemAction
                 return Movement.None;
             }
 
-            if (itemDefinition.ItemSlot.ItemSlots.Contains(toSlot) &&
-                player.CompliesRequirements(item))
+            if (itemDefinition.ItemSlot.ItemSlots.Contains(toSlot))
             {
-                if (itemDefinition.ConflictsWithEquippedHands(storage, toSlot))
+                var failKey = player.GetEquipRequirementFailureMessageKey(item);
+                if (failKey is null)
                 {
-                    // Attempting to equip a two-handed item to the left hand slot when a shield is in the right hand slot,
-                    // or trying to equip a one-handed weapon or shield to the right hand slot when a two-handed item is in the left hand slot.
-                    return Movement.None;
+                    if (itemDefinition.ConflictsWithEquippedHands(storage, toSlot))
+                    {
+                        // Attempting to equip a two-handed item to the left hand slot when a shield is in the right hand slot,
+                        // or trying to equip a one-handed weapon or shield to the right hand slot when a two-handed item is in the left hand slot.
+                        return Movement.None;
+                    }
+
+                    return Movement.Normal;
                 }
 
-                return Movement.Normal;
+                await player.ShowLocalizedBlueMessageAsync(failKey).ConfigureAwait(false);
+                return Movement.None;
             }
 
             await player.ShowLocalizedBlueMessageAsync(nameof(PlayerMessage.YouCantWearThisItem)).ConfigureAwait(false);
@@ -351,20 +365,22 @@ public class MoveItemAction
     {
         int rowIndex = (toSlot - toStorage.StartIndex) / RowSize;
         int columnIndex = (toSlot - toStorage.StartIndex) % RowSize;
+        var height = item.Definition!.Height == 0 ? 1 : item.Definition.Height;
+        var width = item.Definition.Width == 0 ? 1 : item.Definition.Width;
 
-        if (rowIndex + item.Definition!.Height > usedSlots.GetLength(0))
+        if (rowIndex + height > usedSlots.GetLength(0))
         {
             return true;
         }
 
-        if (columnIndex + item.Definition.Width > usedSlots.GetLength(1))
+        if (columnIndex + width > usedSlots.GetLength(1))
         {
             return true;
         }
 
-        for (int r = rowIndex; r < rowIndex + item.Definition!.Height; r++)
+        for (int r = rowIndex; r < rowIndex + height; r++)
         {
-            for (int c = columnIndex; c < columnIndex + item.Definition.Width; c++)
+            for (int c = columnIndex; c < columnIndex + width; c++)
             {
                 if (usedSlots[r, c])
                 {
@@ -380,13 +396,18 @@ public class MoveItemAction
     {
         int columnIndex = (blockingItem.ItemSlot - toStorage.StartIndex) % RowSize;
         int rowIndex = (blockingItem.ItemSlot - toStorage.StartIndex) / RowSize;
+        var height = blockingItem.Definition!.Height == 0 ? 1 : blockingItem.Definition.Height;
+        var width = blockingItem.Definition.Width == 0 ? 1 : blockingItem.Definition.Width;
 
         // Set all taken slots of this item to true
-        for (int r = rowIndex; r < rowIndex + blockingItem.Definition!.Height; r++)
+        for (int r = rowIndex; r < rowIndex + height; r++)
         {
-            for (int c = columnIndex; c < columnIndex + blockingItem.Definition.Width; c++)
+            for (int c = columnIndex; c < columnIndex + width; c++)
             {
-                usedSlots[r, c] = true;
+                if (r >= 0 && r < usedSlots.GetLength(0) && c >= 0 && c < usedSlots.GetLength(1))
+                {
+                    usedSlots[r, c] = true;
+                }
             }
         }
     }
