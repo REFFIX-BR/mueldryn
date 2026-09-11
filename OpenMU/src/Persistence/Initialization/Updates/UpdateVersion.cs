@@ -798,4 +798,10 @@ public enum UpdateVersion
     /// Reloads Fortress maps 69–72 walkmesh from Mudream EncTerrain70–73.
     /// </summary>
     SyncMudreamImperialFortressTerrain = 155,
+
+    /// <summary>
+    /// The version of the <see cref="RemapDungeonToMudreamImperialArenaUpdatePlugIn"/>.
+    /// Reloads Fortress maps 69–72 from Mudream World82 walkmesh (arena 137,113).
+    /// </summary>
+    RemapDungeonToMudreamImperialArena = 156,
 }

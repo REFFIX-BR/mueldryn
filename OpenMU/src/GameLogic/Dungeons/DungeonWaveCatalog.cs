@@ -10,14 +10,14 @@ namespace MUnique.OpenMU.GameLogic.Dungeons;
 public static class DungeonWaveCatalog
 {
     /// <summary>
-    /// Player spawn and fight arena (Gayion hall).
+    /// Player spawn and fight arena (Mudream Imperial Guardian / Karutan 2 hall).
     /// </summary>
-    public const byte ArenaX = 179;
+    public const byte ArenaX = 137;
 
     /// <summary>
-    /// Player spawn and fight arena (Gayion hall).
+    /// Player spawn and fight arena (Mudream Imperial Guardian / Karutan 2 hall).
     /// </summary>
-    public const byte ArenaY = 83;
+    public const byte ArenaY = 113;
 
     /// <summary>
     /// Final Gaia boss (Gayion The Gladiator).
@@ -45,32 +45,32 @@ public static class DungeonWaveCatalog
     public const int LootWindowSeconds = 20;
 
     /// <summary>
-    /// Inner fight box used for wave spawns (keeps mobs off walls and gates).
+    /// Inner fight box used for wave spawns (~18x18 Mudream arena around 137,113).
     /// </summary>
-    public const byte SpawnMinX = 175;
+    public const byte SpawnMinX = 129;
 
     /// <summary>Inner fight box used for wave spawns.</summary>
-    public const byte SpawnMaxX = 184;
+    public const byte SpawnMaxX = 145;
 
     /// <summary>Inner fight box used for wave spawns.</summary>
-    public const byte SpawnMinY = 81;
+    public const byte SpawnMinY = 105;
 
     /// <summary>Inner fight box used for wave spawns.</summary>
-    public const byte SpawnMaxY = 90;
+    public const byte SpawnMaxY = 121;
 
     /// <summary>
-    /// Walkable corridor + arena so players can reach the hall around (179, 72–86).
+    /// Walkable arena pad so players stay inside the Mudream Imperial hall.
     /// </summary>
-    public const byte WalkMinX = 168;
+    public const byte WalkMinX = 125;
 
-    /// <summary>Walkable corridor + arena.</summary>
-    public const byte WalkMaxX = 192;
+    /// <summary>Walkable arena pad.</summary>
+    public const byte WalkMaxX = 149;
 
-    /// <summary>Walkable corridor + arena.</summary>
-    public const byte WalkMinY = 68;
+    /// <summary>Walkable arena pad.</summary>
+    public const byte WalkMinY = 101;
 
-    /// <summary>Walkable corridor + arena.</summary>
-    public const byte WalkMaxY = 98;
+    /// <summary>Walkable arena pad.</summary>
+    public const byte WalkMaxY = 125;
 
     /// <summary>
     /// Gets the wave layouts. Wave 5 is a tank boss, wave 10 is Gaia.
