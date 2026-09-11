@@ -555,6 +555,12 @@
   <data name="CreateMonsterChatCommand_Description" xml:space="preserve">
     <value>Handles the chat command '/createmonster &lt;number&gt; &lt;intelligent&gt;'. Creates a monster which can be remote controlled by the GM.</value>
   </data>
+  <data name="SpawnChatCommandPlugIn_Name" xml:space="preserve">
+    <value>Spawn boss/monster chat command</value>
+  </data>
+  <data name="SpawnChatCommandPlugIn_Description" xml:space="preserve">
+    <value>Handles '/spawn id=604' or '/spawn alias=goldenkundun' (optional x/y). Spawns an intelligent monster at the GM feet or coordinates.</value>
+  </data>
   <data name="DisconnectChatCommandPlugIn_Name" xml:space="preserve">
     <value>Disconnect chat command</value>
   </data>

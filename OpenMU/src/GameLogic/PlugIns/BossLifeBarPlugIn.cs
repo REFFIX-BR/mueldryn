@@ -59,6 +59,25 @@ public class BossLifeBarPlugIn : IAttackableGotHitPlugIn, IAttackableGotKilledPl
         267, // Illusion of Kundun 5
         338, // Illusion of Kundun 6
         275, // Illusion of Kundun 7
+
+        // Mudream custom bosses (CustomMonsters.xml / BossHealthBar type=3)
+        583, // Lord Silvester
+        588, // Lord of Ferea
+        592, // Nix
+        602, // Golden Erohim
+        603, // Golden Hell Maine
+        604, // Golden Kundun
+        611, // Frozen King
+        612, // Infernal Overlord
+        618, // Pharaoh
+        619, // Lord Of Darkness
+        623, // Firestorm Dragonlord
+        624, // Flamestone Giant
+        694, // Netherlord
+        702, // Abbadon
+        724, // Nefarius
+        733, // Obsidar
+        753, // Jack O'Lantern
     ];
 
     /// <summary>

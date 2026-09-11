@@ -780,4 +780,10 @@ public enum UpdateVersion
     /// Re-lowers T5–T8 STR/AGI bases so +15 ancient is wearable at ~500–800 STR, and re-sets ItemSlot/MG flags.
     /// </summary>
     FixMudreamT5ToT8ArmorWearability = 152,
+
+    /// <summary>
+    /// The version of the <see cref="AddMudreamCustomBossesUpdatePlugIn"/>.
+    /// Registers Mudream custom bosses (Golden Kundun, Silvester, Jack O'Lantern, …) for /spawn.
+    /// </summary>
+    AddMudreamCustomBosses = 153,
 }

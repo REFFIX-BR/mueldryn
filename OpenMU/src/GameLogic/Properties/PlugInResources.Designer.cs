@@ -536,6 +536,24 @@ namespace MUnique.OpenMU.GameLogic.Properties {
                 return ResourceManager.GetString("CreateMonsterChatCommand_Name", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Handles &apos;/spawn id=604&apos; or &apos;/spawn alias=goldenkundun&apos; (optional x/y). Spawns an intelligent monster at the GM feet or coordinates..
+        /// </summary>
+        public static string SpawnChatCommandPlugIn_Description {
+            get {
+                return ResourceManager.GetString("SpawnChatCommandPlugIn_Description", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Spawn boss/monster chat command.
+        /// </summary>
+        public static string SpawnChatCommandPlugIn_Name {
+            get {
+                return ResourceManager.GetString("SpawnChatCommandPlugIn_Name", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Handles the chat command &apos;/disconnect &lt;char&gt;&apos;. Disconnects a player from the game server..
