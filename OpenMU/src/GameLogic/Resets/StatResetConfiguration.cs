@@ -22,7 +22,7 @@ public class StatResetConfiguration
     /// Gets or sets the required money for a stat reset.
     /// </summary>
     [Display(ResourceType = typeof(PlugInResources), Name = nameof(PlugInResources.StatResetConfiguration_RequiredMoney_Name))]
-    public int RequiredMoney { get; set; } = 1000000;
+    public int RequiredMoney { get; set; } = 5_000_000;
 
     /// <summary>
     /// Gets or sets the required item for a stat reset.

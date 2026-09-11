@@ -804,4 +804,10 @@ public enum UpdateVersion
     /// Reloads Fortress maps 69–72 from Mudream World82 walkmesh (arena 137,113).
     /// </summary>
     RemapDungeonToMudreamImperialArena = 156,
+
+    /// <summary>
+    /// The version of the <see cref="EnableReaddAndClearInvUpdatePlugIn"/>.
+    /// Enables /readd (5kk) and /clearinv; restores Fortress terrain after remap 156.
+    /// </summary>
+    EnableReaddAndClearInv = 157,
 }
