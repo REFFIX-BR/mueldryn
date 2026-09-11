@@ -792,4 +792,10 @@ public enum UpdateVersion
     /// Removes duplicate Level/etc. attributes that crashed /spawn.
     /// </summary>
     FixMudreamCustomBossAttributes = 154,
+
+    /// <summary>
+    /// The version of the <see cref="SyncMudreamImperialFortressTerrainUpdatePlugIn"/>.
+    /// Reloads Fortress maps 69–72 walkmesh from Mudream EncTerrain70–73.
+    /// </summary>
+    SyncMudreamImperialFortressTerrain = 155,
 }
