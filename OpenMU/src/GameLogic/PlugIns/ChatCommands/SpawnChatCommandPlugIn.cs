@@ -99,16 +99,24 @@ internal class SpawnChatCommandPlugIn : ChatCommandPlugInBase<SpawnChatCommandAr
             Y2 = (byte)Math.Min(centerY + 1, byte.MaxValue),
         };
 
-        INpcIntelligence intelligence = new BasicMonsterIntelligence();
-        var monster = new Monster(area, monsterDef, gameMap, gameMaster.GameContext.DropGenerator, intelligence, gameMaster.GameContext.PlugInManager, gameMaster.GameContext.PathFinderPool);
-        intelligence.Npc = monster;
+        try
+        {
+            INpcIntelligence intelligence = new BasicMonsterIntelligence();
+            var monster = new Monster(area, monsterDef, gameMap, gameMaster.GameContext.DropGenerator, intelligence, gameMaster.GameContext.PlugInManager, gameMaster.GameContext.PathFinderPool);
+            intelligence.Npc = monster;
 
-        monster.Initialize();
-        await gameMap.AddAsync(monster).ConfigureAwait(false);
-        monster.OnSpawn();
+            monster.Initialize();
+            await gameMap.AddAsync(monster).ConfigureAwait(false);
+            monster.OnSpawn();
 
-        await gameMaster.ShowBlueMessageAsync(
-            $"[/spawn] {monsterDef.Designation} (id={monsterNumber}) @ {centerX}/{centerY} object={monster.Id}").ConfigureAwait(false);
+            await gameMaster.ShowBlueMessageAsync(
+                $"[/spawn] {monsterDef.Designation} (id={monsterNumber}) @ {centerX}/{centerY} object={monster.Id}").ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            gameMaster.Logger.LogError(ex, "[/spawn] failed for monster {MonsterNumber}", monsterNumber);
+            await gameMaster.ShowBlueMessageAsync($"[/spawn] falhou id={monsterNumber}: {ex.Message}").ConfigureAwait(false);
+        }
     }
 
     private static bool TryResolveMonsterNumber(SpawnChatCommandArgs arguments, out short monsterNumber, out string error)

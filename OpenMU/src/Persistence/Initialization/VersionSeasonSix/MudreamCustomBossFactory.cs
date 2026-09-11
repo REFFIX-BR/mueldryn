@@ -32,6 +32,8 @@ internal static class MudreamCustomBossFactory
     /// </summary>
     internal static void AddMissing(IContext context, GameConfiguration gameConfiguration)
     {
+        DeduplicateBossAttributes(gameConfiguration);
+
         // Kundun-tier (classic ~5M HP style)
         AddBoss(context, gameConfiguration, 604, "Golden Kundun", 147, 5_000_000, 2000, 2500, 1500, 2000, 1000, 4, 10);
         AddBoss(context, gameConfiguration, 694, "Netherlord", 145, 4_500_000, 1900, 2400, 1400, 1900, 950, 4, 8);
@@ -128,5 +130,29 @@ internal static class MudreamCustomBossFactory
         itemDrop.PossibleItems.Add(box);
         monster.DropItemGroups.Add(itemDrop);
         gameConfiguration.DropItemGroups.Add(itemDrop);
+    }
+
+    /// <summary>
+    /// Removes duplicate AttributeDefinition rows on Mudream bosses (breaks MonsterAttributeHolder).
+    /// </summary>
+    internal static void DeduplicateBossAttributes(GameConfiguration gameConfiguration)
+    {
+        foreach (var number in BossNumbers)
+        {
+            var monster = gameConfiguration.Monsters.FirstOrDefault(m => m.Number == number);
+            if (monster is null || monster.Attributes.Count == 0)
+            {
+                continue;
+            }
+
+            var duplicates = monster.Attributes
+                .GroupBy(a => a.AttributeDefinition?.Id ?? Guid.Empty)
+                .SelectMany(g => g.Skip(1))
+                .ToList();
+            foreach (var duplicate in duplicates)
+            {
+                monster.Attributes.Remove(duplicate);
+            }
+        }
     }
 }

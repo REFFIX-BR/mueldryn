@@ -186,9 +186,12 @@ public class MonsterAttributeHolder : IAttributeSystem
 
     private static IDictionary<AttributeDefinition, float> BuildStatAttributes(MonsterDefinition monsterDefinition)
     {
-        return monsterDefinition.Attributes.ToDictionary(
-            m => m.AttributeDefinition ?? throw Error.NotInitializedProperty(m, nameof(m.AttributeDefinition)),
-            m => m.Value);
+        // Some update/init paths can leave duplicate AttributeDefinitions (e.g. Level twice).
+        // Keep the last value so GM /spawn and map spawns do not crash.
+        return monsterDefinition.Attributes
+            .Where(m => m.AttributeDefinition is not null)
+            .GroupBy(m => m.AttributeDefinition!)
+            .ToDictionary(g => g.Key, g => g.Last().Value);
     }
 
     private IDictionary<AttributeDefinition, IComposableAttribute> GetAttributeDictionary()

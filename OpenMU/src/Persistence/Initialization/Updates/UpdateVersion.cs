@@ -786,4 +786,10 @@ public enum UpdateVersion
     /// Registers Mudream custom bosses (Golden Kundun, Silvester, Jack O'Lantern, …) for /spawn.
     /// </summary>
     AddMudreamCustomBosses = 153,
+
+    /// <summary>
+    /// The version of the <see cref="FixMudreamCustomBossAttributesUpdatePlugIn"/>.
+    /// Removes duplicate Level/etc. attributes that crashed /spawn.
+    /// </summary>
+    FixMudreamCustomBossAttributes = 154,
 }
